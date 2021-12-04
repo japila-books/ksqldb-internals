@@ -102,3 +102,11 @@ nav:
   - Home: index.md
   - Internals:
     - Overview: overview.md
+    - KsqlConfig: KsqlConfig.md
+    - KsqlEngine: KsqlEngine.md
+    - KsqlParser: KsqlParser.md
+    - KsqlServerMain: KsqlServerMain.md
+    - ServerOptions: ServerOptions.md
+  - CLI:
+    - Cli: cli/Cli.md
+    - Ksql: cli/Ksql.md

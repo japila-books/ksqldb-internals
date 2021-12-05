@@ -1,3 +1,0 @@
-# ServerOptions
-
-`ServerOptions` is...FIXME

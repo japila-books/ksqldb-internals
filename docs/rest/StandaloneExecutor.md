@@ -1,0 +1,3 @@
+# StandaloneExecutor
+
+`StandaloneExecutor` is...FIXME

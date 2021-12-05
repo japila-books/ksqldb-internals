@@ -2,47 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/DefaultKsqlParser/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/EngineContext/</loc>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlConfig/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlEngine/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlExecutionContext/</loc>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlParser/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/KsqlServerMain/</loc>
-         <lastmod>2021-12-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/ServerOptions/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <loc>https://books.japila.pl/ksqldb-internals/SandboxedExecutionContext/</loc>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/overview/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/Cli/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/Ksql/</loc>
-         <lastmod>2021-12-04</lastmod>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/embedded/EmbeddedKsql/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/embedded/KsqlContext/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/CustomExecutors/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlResource/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlRestApplication/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlServerMain/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/RequestHandler/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/ServerOptions/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/StandaloneExecutor/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/StandaloneExecutorFactory/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/Statement/</loc>
+         <lastmod>2021-12-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/StatementExecutor/</loc>
+         <lastmod>2021-12-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

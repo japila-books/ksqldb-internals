@@ -74,3 +74,70 @@ KsqlRestApplication buildApplication(
 `buildApplication` is used when:
 
 * `KsqlServerMain` is requested to [createExecutable](KsqlServerMain.md#createExecutable)
+
+## <span id="startAsync"> startAsync
+
+```java
+void startAsync()
+```
+
+`startAsync` prints out the following DEBUG message to the logs:
+
+```text
+Starting the ksqlDB API server
+```
+
+`startAsync`...FIXME
+
+In the end, `startAsync` prints out the following INFO message to the logs followed by [displayWelcomeMessage](#displayWelcomeMessage).
+
+```text
+ksqlDB API server listening on [comma-separated listeners]
+```
+
+---
+
+`startAsync` is part of the [Executable](Executable.md#startAsync) abstraction.
+
+### <span id="displayWelcomeMessage"> displayWelcomeMessage
+
+```java
+void displayWelcomeMessage()
+```
+
+`displayWelcomeMessage`...FIXME
+
+In the end, `displayWelcomeMessage` prints out the following to the standard output:
+
+```text
+Server [version] listening on [comma-separated listeners]
+
+To access the KSQL CLI, run:
+ksql [listener]
+```
+
+### <span id="startKsql"> startKsql
+
+```java
+void startKsql(
+  KsqlConfig ksqlConfigWithPort)
+```
+
+`startKsql`...FIXME
+
+### <span id="initialize"> initialize
+
+```java
+void initialize(
+  KsqlConfig configWithApplicationServer)
+```
+
+`initialize`...FIXME
+
+### <span id="registerCommandTopic"> registerCommandTopic
+
+```java
+void registerCommandTopic()
+```
+
+`registerCommandTopic`...FIXME

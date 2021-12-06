@@ -12,7 +12,7 @@
 * `EngineContext` utility is used to [create an EngineContext](EngineContext.md#create) and [createSandbox](EngineContext.md#createSandbox)
 * `KsqlResource` is requested for [TERMINATE_CLUSTER](rest/KsqlResource.md#TERMINATE_CLUSTER)
 
-## <span id="parse"> parse
+## <span id="parse"> Parsing SQL Text
 
 ```java
 List<ParsedStatement> parse(
@@ -22,3 +22,15 @@ List<ParsedStatement> parse(
 `parse`...FIXME
 
 `parse` is part of the [KsqlParser](KsqlParser.md#parse) abstraction.
+
+## <span id="prepare"> Preparing ParsedStatement
+
+```java
+PreparedStatement<?> prepare(
+  ParsedStatement stmt,
+  TypeRegistry typeRegistry)
+```
+
+`prepare`...FIXME
+
+`prepare` is part of the [KsqlParser](KsqlParser.md#prepare) abstraction.

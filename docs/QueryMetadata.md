@@ -1,0 +1,3 @@
+# QueryMetadata
+
+`QueryMetadata` is...FIXME

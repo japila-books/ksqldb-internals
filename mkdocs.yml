@@ -104,18 +104,26 @@ nav:
   - Home: index.md
   - Internals:
     - Overview: overview.md
-    - DefaultKsqlParser: DefaultKsqlParser.md
     - EngineContext: EngineContext.md
+    - EngineExecutor: EngineExecutor.md
+    - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
-    - KsqlParser: KsqlParser.md
+    - QueryApplicationId: QueryApplicationId.md
+    - QueryBuilder: QueryBuilder.md
+    - QueryMetadata: QueryMetadata.md
+    - QueryMetadataImpl: QueryMetadataImpl.md
+    - QueryRegistry: QueryRegistry.md
+    - QueryRegistryImpl: QueryRegistryImpl.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
-  - CLI:
-    - Cli: cli/Cli.md
-    - Ksql: cli/Ksql.md
+    - TransientQueryMetadata: TransientQueryMetadata.md
   - REST:
+    - CommandQueue: rest/CommandQueue.md
+    - CommandStore: rest/CommandStore.md
     - CustomExecutors: rest/CustomExecutors.md
+    - DistributingExecutor: rest/DistributingExecutor.md
+    - Executable: rest/Executable.md
     - KsqlResource: rest/KsqlResource.md
     - KsqlRestApplication: rest/KsqlRestApplication.md
     - KsqlServerMain: rest/KsqlServerMain.md
@@ -125,6 +133,16 @@ nav:
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - Statement: rest/Statement.md
     - StatementExecutor: rest/StatementExecutor.md
+    - QueryExecutor: rest/QueryExecutor.md
+  - SQL:
+    - AstBuilder: AstBuilder.md
+    - DefaultKsqlParser: DefaultKsqlParser.md
+    - KsqlParser: KsqlParser.md
+    - SourceAccumulator: SourceAccumulator.md
+    - CreateStream: CreateStream.md
+  - CLI:
+    - Cli: cli/Cli.md
+    - Ksql: cli/Ksql.md
   - Embedded:
     - EmbeddedKsql: embedded/EmbeddedKsql.md
     - KsqlContext: embedded/KsqlContext.md

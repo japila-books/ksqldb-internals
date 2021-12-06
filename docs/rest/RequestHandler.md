@@ -5,19 +5,28 @@
 `RequestHandler` takes the following to be created:
 
 * <span id="customExecutors"> [CustomExecutors](CustomExecutors.md#EXECUTOR_MAP)
-* <span id="distributor"> `DistributingExecutor`
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [DistributingExecutor](#distributor)
+* [KsqlEngine](#ksqlEngine)
 * <span id="commandQueueSync"> `CommandQueueSync`
 
 `RequestHandler` is created when:
 
 * `KsqlResource` is requested to [configure](KsqlResource.md#configure)
 
+## <span id="ksqlEngine"> KsqlEngine
+
+`RequestHandler` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is used for the following:
+
+* [Executing SQL Statements](#execute) (and [executeStatement](#executeStatement))
+* [isVariableSubstitutionEnabled](#isVariableSubstitutionEnabled)
+
 ## <span id="distributor"> DistributingExecutor
 
-`RequestHandler` is given a `DistributingExecutor` when [created](#creating-instance).
+`RequestHandler` is given a [DistributingExecutor](DistributingExecutor.md) when [created](#creating-instance).
 
-The `DistributingExecutor` is used when [executeStatement](#executeStatement).
+The `DistributingExecutor` is used for [executing SQL statements](#executeStatement).
 
 ## <span id="execute"> Executing SQL Statements
 

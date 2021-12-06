@@ -1,0 +1,3 @@
+# TransientQueryMetadata
+
+`TransientQueryMetadata` is...FIXME

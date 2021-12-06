@@ -4,7 +4,7 @@
 
 ## Contract
 
-### <span id="parse"> parse
+### <span id="parse"> Parsing SQL Text
 
 ```java
 List<ParsedStatement> parse(
@@ -17,13 +17,17 @@ Used when:
 * `EngineContext` is requested to [parse a SQL statement](EngineContext.md#parse)
 * `KsqlResource` is requested for [TERMINATE_CLUSTER](rest/KsqlResource.md#TERMINATE_CLUSTER)
 
-### <span id="prepare"> prepare
+### <span id="prepare"> Preparing ParsedStatement
 
 ```java
 PreparedStatement<?> prepare(
   ParsedStatement statement,
   TypeRegistry typeRegistry)
 ```
+
+Used when:
+
+* `EngineContext` is requested to [prepare a ParsedStatement](EngineContext.md#prepare)
 
 ## Implementations
 

@@ -112,6 +112,7 @@ nav:
     - KsqlExecutionContext: KsqlExecutionContext.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
+    - QueryLogger: QueryLogger.md
     - QueryMetadata: QueryMetadata.md
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md

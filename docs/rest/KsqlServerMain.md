@@ -1,6 +1,43 @@
 # KsqlServerMain
 
-`KsqlServerMain` is a [standalone (command-line) application](#main).
+`KsqlServerMain` is a [standalone (command-line) application](#main) with [command-line options](ServerOptions.md):
+
+```text
+$ ./bin/ksql-server-start --help
+NAME
+        server - KSQL Cluster
+
+SYNOPSIS
+        server [ {-h | --help} ] [ --queries-file <queriesFile> ] [--]
+                <config-file>
+
+OPTIONS
+        -h, --help
+            Display help information
+
+        --queries-file <queriesFile>
+            Path to the query file on the local machine.
+
+        --
+            This option can be used to separate command-line options from the
+            list of arguments (useful when arguments might be mistaken for
+            command-line options)
+
+        <config-file>
+            A file specifying configs for the KSQL Server, KSQL, and its
+            underlying Kafka Streams instance(s). Refer to KSQL documentation
+            for a list of available configs.
+
+            This option may occur a maximum of 1 times
+```
+
+## <span id="ksql-server-start"> ksql-server-start Shell Script
+
+`KsqlServerMain` can be launched using `ksql-server-start` shell script (or `ksql-run-class` directly).
+
+```text
+./bin/ksql-run-class io.confluent.ksql.rest.server.KsqlServerMain
+```
 
 ## Creating Instance
 
@@ -15,9 +52,20 @@
 
 ## <span id="main"> Launching KsqlServerMain
 
-`main` [creates a ServerOptions from the command-line arguments](ServerOptions.md#parse).
+`main` [parses the command-line options](ServerOptions.md#parse) and loads the required [properties file](ServerOptions.md#getPropertiesFile).
 
-`main`...FIXME
+`main` takes `ksql.server.install.dir` configuration property from the properties file.
+
+`main` creates and [validates](#validateConfig) a [KsqlConfig](../KsqlConfig.md).
+
+`main` [configures QueryLogger](../QueryLogger.md#configure).
+
+`main` takes the [queries file](ServerOptions.md#getQueriesFile) (if used) and [creates an Executable](#createExecutable).
+
+`main` creates a new [KsqlServerMain](#creating-instance) (with the `Executable`) and [starts it up](#tryStartApp).
+
+!!! note
+    `main` is paused when [starting up the executable](#tryStartApp) (using [awaitTerminated](Executable.md#awaitTerminated)) until [notifyTerminated](Executable.md#notifyTerminated) which happens as part of a Java Virtual Machine shutdown hook.
 
 ### <span id="createExecutable"> Creating Executable
 
@@ -29,7 +77,7 @@ Executable createExecutable(
   KsqlConfig ksqlConfig)
 ```
 
-With [queriesFile](ServerOptions.md#getQueriesFile) specified, `createExecutable` [creates a StandaloneExecutor](StandaloneExecutorFactory.md#create).
+With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` [creates a StandaloneExecutor](StandaloneExecutorFactory.md#create) and returns.
 
 Otherwise, `createExecutable`...FIXME
 

@@ -11,6 +11,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/CommonCreateConfigs/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/CreateSource/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/CreateSourceProperties/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateStream/</loc>
          <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
@@ -97,6 +112,16 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SourceAccumulator/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SqlPrimitiveType/</loc>
+         <lastmod>2021-12-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SqlTypeParser/</loc>
          <lastmod>2021-12-07</lastmod>
          <changefreq>daily</changefreq>
     </url>

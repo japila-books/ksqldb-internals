@@ -8,7 +8,7 @@
 
 (**required**) A file with the configuration properties for the KSQL Server, KSQL, and underlying Kafka Streams instances.
 
-## <span id="QUERIES_FILE_CONFIG"><span id="ksql.queries.file"><span id="getQueriesFile"> Query File
+## <span id="QUERIES_FILE_CONFIG"><span id="ksql.queries.file"><span id="getQueriesFile"><span id="queries-file"> Query File
 
 A path to a query file on the local machine.
 

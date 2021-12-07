@@ -132,15 +132,20 @@ nav:
     - ServerOptions: rest/ServerOptions.md
     - StandaloneExecutor: rest/StandaloneExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
-    - Statement: rest/Statement.md
     - StatementExecutor: rest/StatementExecutor.md
     - QueryExecutor: rest/QueryExecutor.md
   - SQL:
     - AstBuilder: AstBuilder.md
+    - CommonCreateConfigs: CommonCreateConfigs.md
+    - CreateSource: CreateSource.md
+    - CreateStream: CreateStream.md
+    - CreateSourceProperties: CreateSourceProperties.md
     - DefaultKsqlParser: DefaultKsqlParser.md
     - KsqlParser: KsqlParser.md
     - SourceAccumulator: SourceAccumulator.md
-    - CreateStream: CreateStream.md
+    - SqlPrimitiveType: SqlPrimitiveType.md
+    - SqlTypeParser: SqlTypeParser.md
+    - Statement: Statement.md
   - CLI:
     - Cli: cli/Cli.md
     - Ksql: cli/Ksql.md

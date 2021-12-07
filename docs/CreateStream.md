@@ -21,7 +21,7 @@ ASSERT STREAM sourceName (tableElements)? (WITH tableProperties)?
 * <span id="elements"> `TableElements`
 * <span id="orReplace"> `orReplace` flag
 * <span id="notExists"> `notExists` flag
-* <span id="properties"> `CreateSourceProperties`
+* <span id="properties"> [CreateSourceProperties](CreateSourceProperties.md)
 * <span id="isSource"> `isSource` flag
 
 `CreateStream` is created when:

@@ -77,7 +77,7 @@ Executable createExecutable(
   KsqlConfig ksqlConfig)
 ```
 
-With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` [creates a StandaloneExecutor](StandaloneExecutorFactory.md#create) and returns.
+With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` [creates](StandaloneExecutorFactory.md#create) and returns a [StandaloneExecutor](StandaloneExecutor.md).
 
 Otherwise, `createExecutable`...FIXME
 

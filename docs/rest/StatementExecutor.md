@@ -1,6 +1,6 @@
 # StatementExecutor
 
-`StatementExecutor` is an [abstraction](#contract) of [executors](#implementations) of [Statement](Statement.md)s.
+`StatementExecutor` is an [abstraction](#contract) of [executors](#implementations) of [Statement](../Statement.md)s.
 
 `StatementExecutor` is a `FunctionalInterface` ([Java]({{ java.api }}/java/lang/FunctionalInterface.html)).
 

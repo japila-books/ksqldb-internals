@@ -1,0 +1,3 @@
+# SqlPrimitiveType
+
+`SqlPrimitiveType` is...FIXME

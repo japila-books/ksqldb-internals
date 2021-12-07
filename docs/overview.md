@@ -2,7 +2,7 @@
 
 [ksqlDB](https://ksqldb.io/) is _"the database purpose-built for stream processing applications._"
 
-ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) as the REST endpoint server to handle SQL queries.
+ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from the [command line](rest/ServerOptions.md#queries-file) or sent through a REST endpoint, e.g. using [ksql](cli/Ksql.md)).
 
 ```text
 $ ./bin/ksql-server-start config/ksql-server.properties
@@ -25,7 +25,6 @@ Server 7.2.0-0 listening on http://0.0.0.0:8088
 To access the KSQL CLI, run:
 ksql http://0.0.0.0:8088
 ```
-
 
 ksqlDB uses [Ksql](cli/Ksql.md) as the command-line interactive environment.
 

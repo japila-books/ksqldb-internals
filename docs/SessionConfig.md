@@ -1,0 +1,3 @@
+# SessionConfig
+
+`SessionConfig` is...FIXME

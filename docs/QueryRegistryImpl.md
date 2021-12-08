@@ -19,6 +19,14 @@ TransientQueryMetadata createTransientQuery(
   boolean excludeTombstones)
 ```
 
-`createTransientQuery`...FIXME
+`createTransientQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) to [create a QueryBuilder](QueryBuilderFactory.md#create).
+
+`createTransientQuery` requests the `QueryBuilder` to [buildTransientQuery](QueryBuilder.md#buildTransientQuery) (with a new `StreamsBuilder`) that gives a [TransientQueryMetadata](TransientQueryMetadata.md) back.
+
+`createTransientQuery` requests the `TransientQueryMetadata` to [initialize](QueryMetadataImpl.md#initialize).
+
+`createTransientQuery` [registerTransientQuery](#registerTransientQuery) and returns the `TransientQueryMetadata`.
+
+---
 
 `createTransientQuery` is part of the [QueryRegistry](QueryRegistry.md#createTransientQuery) abstraction.

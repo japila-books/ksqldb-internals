@@ -83,6 +83,7 @@ extra:
   book:
     title: ksqlDB
     kafka: https://books.japila.pl/kafka-internals
+    kafka_streams: https://books.japila.pl/kafka-streams-internals
   java:
     api: https://docs.oracle.com/en/java/javase/11/docs/api/java.base
   kafka:
@@ -106,18 +107,27 @@ nav:
     - Overview: overview.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
+    - ExecutionStep: ExecutionStep.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
+    - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
+    - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
+    - QueryBuilderFactory: QueryBuilderFactory.md
     - QueryLogger: QueryLogger.md
     - QueryMetadata: QueryMetadata.md
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
+    - RuntimeBuildContext: RuntimeBuildContext.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
+    - ServiceContext: ServiceContext.md
+    - SessionConfig: SessionConfig.md
+    - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
+    - SharedKafkaStreamsRuntimeImpl: SharedKafkaStreamsRuntimeImpl.md
     - TransientQueryMetadata: TransientQueryMetadata.md
   - REST:
     - CommandQueue: rest/CommandQueue.md

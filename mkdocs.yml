@@ -116,7 +116,6 @@ nav:
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
-    - LogicalPlanner: LogicalPlanner.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
@@ -136,6 +135,8 @@ nav:
     - SourceStep: SourceStep.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
+  - Query Planning:
+    - LogicalPlanner: LogicalPlanner.md
   - REST:
     - CommandQueue: rest/CommandQueue.md
     - CommandStore: rest/CommandStore.md

@@ -1,5 +1,20 @@
 # EngineContext
 
+## Creating Instance
+
+`EngineContext` takes the following to be created:
+
+* <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="processingLogContext"> `ProcessingLogContext`
+* <span id="metaStore"> `MutableMetaStore`
+* <span id="queryIdGenerator"> `QueryIdGenerator`
+* <span id="parser"> [KsqlParser](KsqlParser.md)
+* <span id="cleanupService"> `QueryCleanupService`
+* <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
+* <span id="queryRegistry"> [QueryRegistry](QueryRegistry.md)
+
+`EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
+
 ## <span id="parse"> parse
 
 ```java
@@ -43,8 +58,21 @@ EngineContext create(
   Collection<QueryEventListener> registrationListeners)
 ```
 
-`create`...FIXME
+`create` creates a [EngineContext](#creating-instance) (with a new [DefaultKsqlParser](DefaultKsqlParser.md), a new [QueryRegistryImpl](QueryRegistryImpl.md) and the others).
 
 `create` is used when:
 
 * `KsqlEngine` is [created](KsqlEngine.md#primaryContext)
+
+## <span id="createSandbox"> Creating Sandboxed EngineContext
+
+```java
+EngineContext createSandbox(
+  ServiceContext serviceContext)
+```
+
+`createSandbox` creates an [EngineContext](#creating-instance).
+
+`createSandbox` is used when:
+
+* `SandboxedExecutionContext` is [created](SandboxedExecutionContext.md#engineContext)

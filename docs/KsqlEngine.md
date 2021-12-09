@@ -1,5 +1,7 @@
 # KsqlEngine
 
+`KsqlEngine` is a facade of [EngineContext](#primaryContext).
+
 ## Creating Instance
 
 `KsqlEngine` takes the following to be created:
@@ -23,10 +25,36 @@
 
 `KsqlEngine` [creates an EngineContext](EngineContext.md#create) when [created](#creating-instance).
 
-The `EngineContext` is used when:
+`KsqlEngine` is (pretty much) a facade of the `EngineContext`.
 
-* [getAllLiveQueries](#getAllLiveQueries)
-* _many others_
+## <span id="execute"> Executing Statement
+
+```java
+ExecuteResult execute(
+  ServiceContext serviceContext,
+  ConfiguredStatement<?> statement) // (1)
+ExecuteResult execute(
+  ServiceContext serviceContext,
+  ConfiguredKsqlPlan plan)
+```
+
+1. [Plans the statement](#plan) and creates a `ConfiguredKsqlPlan`
+
+`execute` [creates an EngineExecutor](EngineExecutor.md#create) to [execute](EngineExecutor.md#execute) the `KsqlPlan` (of the `ConfiguredKsqlPlan`).
+
+`execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
+
+## <span id="plan"> Execution Planning
+
+```java
+KsqlPlan plan(
+  ServiceContext serviceContext,
+  ConfiguredStatement<?> statement)
+```
+
+`plan` [creates an EngineExecutor](EngineExecutor.md#create) to [plan](EngineExecutor.md#plan) the given `ConfiguredStatement`.
+
+`plan` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#plan) abstraction.
 
 ## <span id="getAllLiveQueries"> getAllLiveQueries
 

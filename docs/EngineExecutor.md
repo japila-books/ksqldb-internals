@@ -1,5 +1,57 @@
 # EngineExecutor
 
+## Creating Instance
+
+`EngineExecutor` takes the following to be created:
+
+* <span id="engineContext"> [EngineContext](EngineContext.md)
+* <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="config"> [SessionConfig](SessionConfig.md)
+
+`EngineExecutor` is created using [create](#create) factory.
+
+## <span id="create"> Creating EngineExecutor
+
+```java
+EngineExecutor create(
+  EngineContext engineContext,
+  ServiceContext serviceContext,
+  SessionConfig config)
+```
+
+`create` creates an [EngineExecutor](#creating-instance).
+
+!!! note
+    `create` is simply a convenient static factory method that does nothing but `new EngineExecutor` yet makes for a more readable fluent client code.
+
+    ```java
+    EngineExecutor
+      .create(...)
+      .plan(statement)
+    ```
+
+`create` is used when:
+
+* `KsqlEngine` is requested to [plan](KsqlEngine.md#plan), [execute](KsqlEngine.md#execute), [executeTransientQuery](KsqlEngine.md#executeTransientQuery), [createStreamPullQuery](KsqlEngine.md#createStreamPullQuery), [executeScalablePushQuery](KsqlEngine.md#executeScalablePushQuery), [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
+* `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan), [execute](SandboxedExecutionContext.md#execute), [executeTransientQuery](SandboxedExecutionContext.md#executeTransientQuery), [executeTablePullQueryQuery](SandboxedExecutionContext.md#executeTablePullQueryQuery), [executeScalablePushQuery](SandboxedExecutionContext.md#executeScalablePushQuery)
+
+## <span id="buildAndValidateLogicalPlan"> buildAndValidateLogicalPlan
+
+```java
+LogicalPlanNode buildAndValidateLogicalPlan(
+  ConfiguredStatement<?> statement,
+  ImmutableAnalysis analysis,
+  KsqlConfig config,
+  QueryPlannerOptions queryPlannerOptions,
+  boolean isScalablePush)
+```
+
+`buildAndValidateLogicalPlan`...FIXME
+
+`buildAndValidateLogicalPlan` is used when:
+
+* `EngineExecutor` is requested to [executeTablePullQuery](#executeTablePullQuery) and [executeScalablePushQuery](#executeScalablePushQuery)
+
 ## <span id="executeTransientQuery"> executeTransientQuery
 
 ```java

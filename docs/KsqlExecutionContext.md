@@ -32,6 +32,21 @@ Used when:
 * `StatementParser` is requested to `parseSingleStatement`
 * `KsqlResource` is requested to [handleKsqlStatements](rest/KsqlResource.md#handleKsqlStatements)
 
+### <span id="plan"> Execution Planning of SQL Statement
+
+```java
+KsqlPlan plan(
+  ServiceContext serviceContext,
+  ConfiguredStatement<?> statement)
+```
+
+Used when:
+
+* `KsqlEngine` is requested to [execute a SQL statement](KsqlEngine.md#execute)
+* `SandboxedExecutionContext` is requested to [execute a SQL statement](SandboxedExecutionContext.md#execute)
+* `SchemaRegisterInjector` is requested to `registerForCreateAs`
+* `ValidatedCommandFactory` is requested to `createForPlannedQuery`
+
 ### <span id="prepare"> Preparing ParsedStatement
 
 ```java

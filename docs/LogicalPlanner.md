@@ -1,5 +1,18 @@
 # LogicalPlanner
 
+## Creating Instance
+
+`LogicalPlanner` takes the following to be created:
+
+* <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
+* <span id="analysis"> `ImmutableAnalysis`
+* <span id="metaStore"> `MetaStore`
+
+`LogicalPlanner` is created when:
+
+* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
+* `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
+
 ## <span id="buildPersistentLogicalPlan"> buildPersistentLogicalPlan
 
 ```java

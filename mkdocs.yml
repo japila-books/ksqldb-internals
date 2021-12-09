@@ -105,18 +105,22 @@ nav:
   - Home: index.md
   - Internals:
     - Overview: overview.md
+    - DataSourceNode: DataSourceNode.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
+    - ExecutionStepFactory: ExecutionStepFactory.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
+    - LogicalPlanner: LogicalPlanner.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
+    - QueryEngine: QueryEngine.md
     - QueryLogger: QueryLogger.md
     - QueryMetadata: QueryMetadata.md
     - QueryMetadataImpl: QueryMetadataImpl.md
@@ -124,10 +128,13 @@ nav:
     - QueryRegistryImpl: QueryRegistryImpl.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
+    - SchemaKSourceFactory: SchemaKSourceFactory.md
     - ServiceContext: ServiceContext.md
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
     - SharedKafkaStreamsRuntimeImpl: SharedKafkaStreamsRuntimeImpl.md
+    - SourceStep: SourceStep.md
+    - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
   - REST:
     - CommandQueue: rest/CommandQueue.md

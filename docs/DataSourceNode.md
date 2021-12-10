@@ -18,3 +18,6 @@
 ## <span id="schemaKStreamFactory"> SchemaKStreamFactory
 
 `DataSourceNode` can be given a `SchemaKStreamFactory` when [created](#creating-instance). Unless given, `DataSourceNode` uses [SchemaKSourceFactory](SchemaKSourceFactory.md#buildSource).
+
+!!! note
+    Note the difference in type names, i.e. `SchemaKStreamFactory` (with `Stream` inside) vs `SchemaKSourceFactory` (with `Source` instead).

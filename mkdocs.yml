@@ -128,6 +128,7 @@ nav:
     - RuntimeBuildContext: RuntimeBuildContext.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
+    - SchemaKStream: SchemaKStream.md
     - ServiceContext: ServiceContext.md
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md

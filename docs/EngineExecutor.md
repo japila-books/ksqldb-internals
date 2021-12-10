@@ -35,6 +35,27 @@ EngineExecutor create(
 * `KsqlEngine` is requested to [plan](KsqlEngine.md#plan), [execute](KsqlEngine.md#execute), [executeTransientQuery](KsqlEngine.md#executeTransientQuery), [createStreamPullQuery](KsqlEngine.md#createStreamPullQuery), [executeScalablePushQuery](KsqlEngine.md#executeScalablePushQuery), [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
 * `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan), [execute](SandboxedExecutionContext.md#execute), [executeTransientQuery](SandboxedExecutionContext.md#executeTransientQuery), [executeTablePullQueryQuery](SandboxedExecutionContext.md#executeTablePullQueryQuery), [executeScalablePushQuery](SandboxedExecutionContext.md#executeScalablePushQuery)
 
+## <span id="executeTablePullQuery"> executeTablePullQuery
+
+```java
+PullQueryResult executeTablePullQuery(
+  ImmutableAnalysis analysis,
+  ConfiguredStatement<Query> statement,
+  HARouting routing,
+  RoutingOptions routingOptions,
+  QueryPlannerOptions queryPlannerOptions,
+  Optional<PullQueryExecutorMetrics> pullQueryMetrics,
+  boolean startImmediately,
+  Optional<ConsistencyOffsetVector> consistencyOffsetVector)
+```
+
+`executeTablePullQuery`...FIXME
+
+`executeTablePullQuery` is used when:
+
+* `KsqlEngine` is requested to [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
+* `SandboxedExecutionContext` is requested to [executeTablePullQuery](SandboxedExecutionContext.md#executeTablePullQuery)
+
 ## <span id="buildAndValidateLogicalPlan"> buildAndValidateLogicalPlan
 
 ```java
@@ -46,11 +67,13 @@ LogicalPlanNode buildAndValidateLogicalPlan(
   boolean isScalablePush)
 ```
 
-`buildAndValidateLogicalPlan`...FIXME
+`buildAndValidateLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md) to [buildQueryLogicalPlan](LogicalPlanner.md#buildQueryLogicalPlan) (that gives an `OutputNode`).
+
+In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement of the given `ConfiguredStatement` and the `OutputNode`).
 
 `buildAndValidateLogicalPlan` is used when:
 
-* `EngineExecutor` is requested to [executeTablePullQuery](#executeTablePullQuery) and [executeScalablePushQuery](#executeScalablePushQuery)
+* `EngineExecutor` is requested to [executeTablePullQuery](#executeTablePullQuery) (with the `isScalablePush` flag disabled) and [executeScalablePushQuery](#executeScalablePushQuery) (with the `isScalablePush` flag enabled)
 
 ## <span id="executeTransientQuery"> executeTransientQuery
 

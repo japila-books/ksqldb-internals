@@ -70,3 +70,19 @@ QueryMetadataHolder handlePushQuery(
 ```
 
 `handlePushQuery`...FIXME
+
+### <span id="handleTablePullQuery"> handleTablePullQuery
+
+```java
+QueryMetadataHolder handleTablePullQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> configured,
+  Map<String, Object> requestProperties,
+  Optional<Boolean> isInternalRequest,
+  SlidingWindowRateLimiter pullBandRateLimiter,
+  AtomicReference<PullQueryResult> resultForMetrics,
+  Optional<ConsistencyOffsetVector> consistencyOffsetVector)
+```
+
+`handleTablePullQuery`...FIXME

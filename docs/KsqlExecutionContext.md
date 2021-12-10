@@ -4,6 +4,25 @@
 
 ## Contract (Subset)
 
+### <span id="executeTablePullQuery"> executeTablePullQuery
+
+```java
+PullQueryResult executeTablePullQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  HARouting routing,
+  RoutingOptions routingOptions,
+  QueryPlannerOptions queryPlannerOptions,
+  Optional<PullQueryExecutorMetrics> pullQueryMetrics,
+  boolean startImmediately,
+  Optional<ConsistencyOffsetVector> consistencyOffsetVector)
+```
+
+Used when:
+
+* `QueryExecutor` is requested to [handleTablePullQuery](rest/QueryExecutor.md#handleTablePullQuery)
+
 ### <span id="getAllLiveQueries"> getAllLiveQueries
 
 ```java

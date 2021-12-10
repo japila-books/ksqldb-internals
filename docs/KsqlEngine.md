@@ -88,3 +88,22 @@ PreparedStatement<?> prepare(
 `prepare` requests the [EngineContext](#primaryContext) to [prepare the given ParsedStatement](EngineContext.md#prepare).
 
 `prepare` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#prepare) abstraction.
+
+## <span id="executeTablePullQuery"> executeTablePullQuery
+
+```java
+PullQueryResult executeTablePullQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  HARouting routing,
+  RoutingOptions routingOptions,
+  QueryPlannerOptions plannerOptions,
+  Optional<PullQueryExecutorMetrics> pullQueryMetrics,
+  boolean startImmediately,
+  Optional<ConsistencyOffsetVector> consistencyOffsetVector)
+```
+
+`executeTablePullQuery`...FIXME
+
+`executeTablePullQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTablePullQuery) abstraction.

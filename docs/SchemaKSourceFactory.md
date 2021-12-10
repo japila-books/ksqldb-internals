@@ -15,7 +15,7 @@ SchemaKStream<?> buildSource(
 
 * `DataSourceNode` is [created](DataSourceNode.md#schemaKStreamFactory)
 
-### <span id="buildStream"> Building SchemaKStream
+### <span id="buildStream"> buildStream
 
 ```java
 SchemaKStream<?> buildStream(
@@ -25,3 +25,26 @@ SchemaKStream<?> buildStream(
 ```
 
 `buildStream`...FIXME
+
+### <span id="buildWindowedStream"> buildWindowedStream
+
+```java
+SchemaKStream<?> buildWindowedStream(
+  PlanBuildContext buildContext,
+  DataSource dataSource,
+  Stacker contextStacker)
+```
+
+`buildWindowedStream`...FIXME
+
+### <span id="schemaKStream"> schemaKStream
+
+```java
+SchemaKStream<K> schemaKStream(
+  PlanBuildContext buildContext,
+  LogicalSchema schema,
+  KeyFormat keyFormat,
+  SourceStep<KStreamHolder<K>> streamSource)
+```
+
+`schemaKStream` creates a [SchemaKStream](SchemaKStream.md).

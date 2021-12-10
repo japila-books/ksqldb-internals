@@ -25,6 +25,20 @@ OutputNode buildPersistentLogicalPlan()
 
 * `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
 
+## <span id="buildQueryLogicalPlan"> buildQueryLogicalPlan
+
+```java
+OutputNode buildQueryLogicalPlan(
+  QueryPlannerOptions queryPlannerOptions,
+  boolean isScalablePush)
+```
+
+`buildQueryLogicalPlan`...FIXME
+
+`buildQueryLogicalPlan` is used when:
+
+* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
+
 ## <span id="buildSourceNode"> buildSourceNode
 
 ```java

@@ -9,7 +9,11 @@ SchemaKStream<?> buildSource(
   QueryContext.Stacker contextStacker)
 ```
 
-`buildSource`...FIXME
+`buildSource` requests the given [DataSource](DataSource.md) whether it is windowed or not and the type.
+
+For `KSTREAM` type, `buildSource` builds a [windowed](#buildWindowedStream) or [regular](#buildStream) stream based on whether it is windowed or not, respectively.
+
+For `KTABLE` type, `buildSource` builds a [windowed](#buildWindowedTable) or [regular](#buildTable) table based on whether it is windowed or not, respectively.
 
 `buildSource` is used when:
 

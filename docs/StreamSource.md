@@ -1,6 +1,6 @@
 # StreamSource
 
-`StreamSource` is a [SourceStep](SourceStep.md) of `KStreamHolder<GenericKey>`.
+`StreamSource` is a [SourceStep](SourceStep.md) of `KStreamHolder<GenericKey>` with a `KStream` ([Kafka Streams]({{ book.kafka_streams }}/kstream/KStream)).
 
 ## Creating Instance
 
@@ -15,4 +15,16 @@
 
 `StreamSource` is created when:
 
-* `ExecutionStepFactory` is requested to [streamSource](ExecutionStepFactory.md#streamSource)
+* `ExecutionStepFactory` is requested to [create a StreamSource](ExecutionStepFactory.md#streamSource)
+
+## <span id="build"> build
+
+```java
+KStreamHolder<GenericKey> build(
+  PlanBuilder builder,
+  PlanInfo info)
+```
+
+`build` requests the given [PlanBuilder](PlanBuilder.md) to [visitStreamSource](PlanBuilder.md#visitStreamSource) (with this `StreamSource` and the given `PlanInfo`).
+
+`build` is part of the [ExecutionStep](ExecutionStep.md#build) abstraction.

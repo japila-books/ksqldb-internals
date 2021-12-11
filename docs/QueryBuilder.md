@@ -27,7 +27,7 @@ The `KafkaStreamsBuilder` is used when:
 * [buildPersistentQueryInDedicatedRuntime](#buildPersistentQueryInDedicatedRuntime)
 * [getKafkaStreamsInstance](#getKafkaStreamsInstance)
 
-## <span id="buildTransientQuery"> buildTransientQuery
+## <span id="buildTransientQuery"> Building Transient Query
 
 ```java
 TransientQueryMetadata buildTransientQuery(
@@ -45,15 +45,30 @@ TransientQueryMetadata buildTransientQuery(
   Optional<ImmutableMap<TopicPartition, Long>> endOffsets)
 ```
 
+!!! danger "Kafka Streams"
+    `buildTransientQuery` is given a new `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) that is used to build a [RuntimeBuildContext](#buildContext) and then a `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology)).
+
+    That means that the Kafka Streams topology can only be created while [building the RuntimeBuildContext](#buildContext).
+
 `buildTransientQuery` requests the [SessionConfig](#config) for the [KsqlConfig](SessionConfig.md#getConfig) (with overrides applied).
 
-`buildTransientQuery` [builds an application ID](QueryApplicationId.md#build) (with `persistent` flag disabled).
+`buildTransientQuery` builds the following:
 
-`buildTransientQuery` builds a [RuntimeBuildContext](#buildContext), [buildStreamsProperties](#buildStreamsProperties), [buildQueryImplementation](#buildQueryImplementation) and [buildTransientQueryQueue](#buildTransientQueryQueue).
+* [Application ID](QueryApplicationId.md#build) (with `persistent` flag disabled)
+* [RuntimeBuildContext](#buildContext)
+* [Configuration properties](#buildStreamsProperties)
+* [QueryImplementation](#buildQueryImplementation)
+* [TransientQueryQueue](#buildTransientQueryQueue)
 
-`buildTransientQuery` requests the given `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) to build a topology.
+`buildTransientQuery` requests the given `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) to build a `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology)).
 
-`buildTransientQuery`...FIXME
+`buildTransientQuery` determines a `ResultType` (based on the `QueryImplementation` and the optional `windowInfo`):
+
+* `WINDOWED_TABLE` for a `KTableHolder` with the `windowInfo` specified
+* `TABLE` for a `KTableHolder` with no `windowInfo` specified
+* `STREAM` for all other cases
+
+In the end, `buildTransientQuery` creates a [TransientQueryMetadata](TransientQueryMetadata.md).
 
 `buildTransientQuery` is used when:
 
@@ -84,7 +99,7 @@ Object buildQueryImplementation(
 
 `buildQueryImplementation` creates a [KSPlanBuilder](KSPlanBuilder.md) with the given [RuntimeBuildContext](RuntimeBuildContext.md).
 
-`buildQueryImplementation` requests the given `physicalPlan` to [build](ExecutionStep.md#build) (wiht the `PlanBuilder`).
+In the end, `buildQueryImplementation` requests the given [physical plan](ExecutionStep.md) to [build a Kafka Streams application](ExecutionStep.md#build) (with the `KSPlanBuilder`).
 
 `buildQueryImplementation` is used when:
 

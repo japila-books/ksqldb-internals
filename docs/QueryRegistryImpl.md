@@ -1,6 +1,6 @@
 # QueryRegistryImpl
 
-## <span id="createTransientQuery"> createTransientQuery
+## <span id="createTransientQuery"> Creating Transient Query
 
 ```java
 TransientQueryMetadata createTransientQuery(
@@ -19,9 +19,9 @@ TransientQueryMetadata createTransientQuery(
   boolean excludeTombstones)
 ```
 
-`createTransientQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) to [create a QueryBuilder](QueryBuilderFactory.md#create).
+`createTransientQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create).
 
-`createTransientQuery` requests the `QueryBuilder` to [buildTransientQuery](QueryBuilder.md#buildTransientQuery) (with a new `StreamsBuilder`) that gives a [TransientQueryMetadata](TransientQueryMetadata.md) back.
+`createTransientQuery` requests the `QueryBuilder` to [build a transient query](QueryBuilder.md#buildTransientQuery) (with a new `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) that gives a [TransientQueryMetadata](TransientQueryMetadata.md)).
 
 `createTransientQuery` requests the `TransientQueryMetadata` to [initialize](QueryMetadataImpl.md#initialize).
 

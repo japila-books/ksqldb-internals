@@ -105,17 +105,21 @@ nav:
   - Home: index.md
   - Internals:
     - Overview: overview.md
+    - DataSource: DataSource.md
     - DataSourceNode: DataSourceNode.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
     - ExecutionStepFactory: ExecutionStepFactory.md
+    - JoinNode: JoinNode.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
+    - PlanBuilder: PlanBuilder.md
+    - PlanNode: PlanNode.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
@@ -125,7 +129,6 @@ nav:
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
-    - RuntimeBuildContext: RuntimeBuildContext.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
@@ -133,11 +136,25 @@ nav:
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
     - SharedKafkaStreamsRuntimeImpl: SharedKafkaStreamsRuntimeImpl.md
+    - SingleSourcePlanNode: SingleSourcePlanNode.md
+    - SourceBuilder: SourceBuilder.md
+    - SourceBuilderBase: SourceBuilderBase.md
+    - SourceBuilderV1: SourceBuilderV1.md
     - SourceStep: SourceStep.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
   - Query Planning:
+    - Analysis: Analysis.md
+    - Analyzer: Analyzer.md
+    - AstVisitor: AstVisitor.md
+    - DefaultTraversalVisitor: DefaultTraversalVisitor.md
+    - ImmutableAnalysis: ImmutableAnalysis.md
     - LogicalPlanner: LogicalPlanner.md
+    - PullQueryValidator: PullQueryValidator.md
+    - Query: Query.md
+    - RewrittenAnalysis: RewrittenAnalysis.md
+    - RuntimeBuildContext: RuntimeBuildContext.md
+    - Visitor: Visitor.md
   - REST:
     - CommandQueue: rest/CommandQueue.md
     - CommandStore: rest/CommandStore.md
@@ -155,12 +172,14 @@ nav:
     - QueryExecutor: rest/QueryExecutor.md
   - SQL:
     - AstBuilder: AstBuilder.md
+    - AstBuilder.Visitor: AstBuilder_Visitor.md
     - CommonCreateConfigs: CommonCreateConfigs.md
     - CreateSource: CreateSource.md
     - CreateStream: CreateStream.md
     - CreateSourceProperties: CreateSourceProperties.md
     - DefaultKsqlParser: DefaultKsqlParser.md
     - KsqlParser: KsqlParser.md
+    - Node: Node.md
     - SourceAccumulator: SourceAccumulator.md
     - SqlPrimitiveType: SqlPrimitiveType.md
     - SqlTypeParser: SqlTypeParser.md

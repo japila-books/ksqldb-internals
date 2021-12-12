@@ -15,6 +15,12 @@
 
 `EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
 
+## <span id="ddlCommandFactory"> CommandFactories
+
+`EngineContext` creates a [CommandFactories](CommandFactories.md) when [created](#creating-instance).
+
+The `CommandFactories` is used to [create a DdlCommand](#createDdlCommand).
+
 ## <span id="parse"> parse
 
 ```java
@@ -81,6 +87,8 @@ EngineContext createSandbox(
 
 ```java
 DdlCommand createDdlCommand(
+  KsqlStructuredDataOutputNode outputNode)
+DdlCommand createDdlCommand(
   String sqlExpression,
   ExecutableDdlStatement statement,
   SessionConfig config)
@@ -90,4 +98,4 @@ DdlCommand createDdlCommand(
 
 `createDdlCommand` is used when:
 
-* `EngineExecutor` is requested to [plan a ExecutableDdlStatement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan a ExecutableDdlStatement](EngineExecutor.md#plan) and [maybeCreateSinkDdl](EngineExecutor.md#maybeCreateSinkDdl)

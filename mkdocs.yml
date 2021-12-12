@@ -148,11 +148,14 @@ nav:
     - Analyzer: Analyzer.md
     - AstVisitor: AstVisitor.md
     - CommandFactories: CommandFactories.md
+    - CreateSourceFactory: CreateSourceFactory.md
+    - DdlCommandFactory: DdlCommandFactory.md
     - DefaultTraversalVisitor: DefaultTraversalVisitor.md
     - ImmutableAnalysis: ImmutableAnalysis.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: LogicalPlanner.md
+    - MetaStore: MetaStore.md
     - PullQueryValidator: PullQueryValidator.md
     - Query: Query.md
     - RewrittenAnalysis: RewrittenAnalysis.md

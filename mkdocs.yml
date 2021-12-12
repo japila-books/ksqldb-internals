@@ -190,3 +190,5 @@ nav:
   - Embedded:
     - EmbeddedKsql: embedded/EmbeddedKsql.md
     - KsqlContext: embedded/KsqlContext.md
+  - Misc:
+    - Debugging ksqlDB: debugging.md

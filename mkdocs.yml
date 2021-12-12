@@ -147,8 +147,11 @@ nav:
     - Analysis: Analysis.md
     - Analyzer: Analyzer.md
     - AstVisitor: AstVisitor.md
+    - CommandFactories: CommandFactories.md
     - DefaultTraversalVisitor: DefaultTraversalVisitor.md
     - ImmutableAnalysis: ImmutableAnalysis.md
+    - KsqlPlan: KsqlPlan.md
+    - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: LogicalPlanner.md
     - PullQueryValidator: PullQueryValidator.md
     - Query: Query.md
@@ -165,6 +168,7 @@ nav:
     - KsqlRestApplication: rest/KsqlRestApplication.md
     - KsqlServerMain: rest/KsqlServerMain.md
     - RequestHandler: rest/RequestHandler.md
+    - RequestValidator: rest/RequestValidator.md
     - ServerOptions: rest/ServerOptions.md
     - StandaloneExecutor: rest/StandaloneExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
@@ -178,6 +182,7 @@ nav:
     - CreateStream: CreateStream.md
     - CreateSourceProperties: CreateSourceProperties.md
     - DefaultKsqlParser: DefaultKsqlParser.md
+    - ExecutableDdlStatement: ExecutableDdlStatement.md
     - KsqlParser: KsqlParser.md
     - Node: Node.md
     - SourceAccumulator: SourceAccumulator.md

@@ -107,3 +107,21 @@ PullQueryResult executeTablePullQuery(
 `executeTablePullQuery`...FIXME
 
 `executeTablePullQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTablePullQuery) abstraction.
+
+## <span id="isExecutableStatement"> isExecutableStatement
+
+```java
+boolean isExecutableStatement(
+  Statement statement)
+```
+
+`isExecutableStatement` is positive (`true`) when the given [Statement](Statement.md) is one of the following:
+
+* [ExecutableDdlStatement](ExecutableDdlStatement.md)
+* `QueryContainer`
+* [Query](Query.md)
+
+`isExecutableStatement` is used when:
+
+* `EngineExecutor` is requested to [throwOnNonExecutableStatement](EngineExecutor.md#throwOnNonExecutableStatement)
+* `RequestValidator` is requested to [validate](rest/RequestValidator.md#validate)

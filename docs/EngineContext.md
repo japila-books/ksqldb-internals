@@ -76,3 +76,18 @@ EngineContext createSandbox(
 `createSandbox` is used when:
 
 * `SandboxedExecutionContext` is [created](SandboxedExecutionContext.md#engineContext)
+
+## <span id="createDdlCommand"> Creating DdlCommand
+
+```java
+DdlCommand createDdlCommand(
+  String sqlExpression,
+  ExecutableDdlStatement statement,
+  SessionConfig config)
+```
+
+`createDdlCommand` requests the [CommandFactories](#ddlCommandFactory) to [create a DdlCommand](CommandFactories.md#create).
+
+`createDdlCommand` is used when:
+
+* `EngineExecutor` is requested to [plan a ExecutableDdlStatement](EngineExecutor.md#plan)

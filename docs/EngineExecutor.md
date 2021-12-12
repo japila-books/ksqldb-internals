@@ -108,3 +108,35 @@ ExecutorPlans planQuery(
 `planQuery` is used when:
 
 * `EngineExecutor` is requested to [executeTransientQuery](#executeTransientQuery), [executeStreamPullQuery](#executeStreamPullQuery), [sourceTablePlan](#sourceTablePlan), [plan](#plan)
+
+## <span id="plan"> Planning Statement
+
+```java
+KsqlPlan plan(
+  ConfiguredStatement<?> statement)
+```
+
+`plan` requests the given `ConfiguredStatement` for the [Statement](Statement.md).
+
+For a [ExecutableDdlStatement](ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](CreateStream.md) or a `CreateTable`. They are supposed to be a [source](CreateSource.md#isSource).
+
+For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan) (with the statement). Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [creates a KsqlPlanV1](KsqlPlan.md#ddlPlanCurrent).
+
+Otherwise, `plan`...FIXME
+
+---
+
+`plan` [throws a KsqlStatementException for a non-executable statement](#throwOnNonExecutableStatement).
+
+`plan` throws a `KsqlStatementException` for a [CreateStream](CreateStream.md) or a `CreateTable` that are [source](CreateSource.md#isSource) the [ksql.source.table.materialization.enabled](#isSourceTableMaterializationEnabled) configuration property is disabled:
+
+```text
+Cannot execute command because source table materialization is disabled.
+```
+
+---
+
+`plan` is used when:
+
+* `KsqlEngine` is requested to [plan](KsqlEngine.md#plan)
+* `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan)

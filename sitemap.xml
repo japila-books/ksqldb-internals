@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/CreateSourceFactory/</loc>
+         <lastmod>2021-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateSourceProperties/</loc>
          <lastmod>2021-12-12</lastmod>
          <changefreq>daily</changefreq>
@@ -62,6 +67,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DataSourceNode/</loc>
+         <lastmod>2021-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/DdlCommandFactory/</loc>
          <lastmod>2021-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -157,6 +167,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/LogicalPlanner/</loc>
+         <lastmod>2021-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/MetaStore/</loc>
          <lastmod>2021-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>

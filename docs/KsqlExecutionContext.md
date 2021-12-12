@@ -51,7 +51,7 @@ Used when:
 * `StatementParser` is requested to `parseSingleStatement`
 * `KsqlResource` is requested to [handleKsqlStatements](rest/KsqlResource.md#handleKsqlStatements)
 
-### <span id="plan"> Execution Planning of SQL Statement
+### <span id="plan"> Query Planning
 
 ```java
 KsqlPlan plan(

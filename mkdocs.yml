@@ -143,13 +143,16 @@ nav:
     - SourceStep: SourceStep.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
+    - VersionCheckerAgent: VersionCheckerAgent.md
   - Query Planning:
     - Analysis: Analysis.md
     - Analyzer: Analyzer.md
     - AstVisitor: AstVisitor.md
     - CommandFactories: CommandFactories.md
     - CreateSourceFactory: CreateSourceFactory.md
+    - CreateStreamCommand: CreateStreamCommand.md
     - DdlCommandFactory: DdlCommandFactory.md
+    - DdlStatement: DdlStatement.md
     - DefaultTraversalVisitor: DefaultTraversalVisitor.md
     - ImmutableAnalysis: ImmutableAnalysis.md
     - KsqlPlan: KsqlPlan.md
@@ -160,6 +163,7 @@ nav:
     - Query: Query.md
     - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md
+    - UserFunctionLoader: UserFunctionLoader.md
     - Visitor: Visitor.md
   - REST:
     - CommandQueue: rest/CommandQueue.md
@@ -170,6 +174,7 @@ nav:
     - KsqlResource: rest/KsqlResource.md
     - KsqlRestApplication: rest/KsqlRestApplication.md
     - KsqlServerMain: rest/KsqlServerMain.md
+    - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ServerOptions: rest/ServerOptions.md

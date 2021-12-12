@@ -109,7 +109,7 @@ ExecutorPlans planQuery(
 
 * `EngineExecutor` is requested to [executeTransientQuery](#executeTransientQuery), [executeStreamPullQuery](#executeStreamPullQuery), [sourceTablePlan](#sourceTablePlan), [plan](#plan)
 
-## <span id="plan"> Planning Statement
+## <span id="plan"> Query Planning
 
 ```java
 KsqlPlan plan(

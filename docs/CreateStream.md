@@ -1,6 +1,6 @@
 # CreateStream
 
-`CreateStream` is a `CreateSource` and a `ExecutableDdlStatement` that represents the following SQL statements:
+`CreateStream` is a [CreateSource](CreateSource.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents the following SQL statements:
 
 ```text
 CREATE (OR REPLACE)? (SOURCE)? STREAM (IF NOT EXISTS)? sourceName

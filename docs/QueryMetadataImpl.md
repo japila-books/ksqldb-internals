@@ -8,7 +8,7 @@
 
 * <span id="statementString"> Statement Text
 * <span id="logicalSchema"> `LogicalSchema`
-* <span id="sourceNames"> `SourceName`s
+* <span id="sourceNames"> Names of the Sources
 * <span id="executionPlan"> Execution Plan
 * <span id="queryApplicationId"> queryApplicationId
 * <span id="topology"> `Topology`

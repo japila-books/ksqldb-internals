@@ -191,8 +191,10 @@ nav:
     - CreateSourceProperties: CreateSourceProperties.md
     - DefaultKsqlParser: DefaultKsqlParser.md
     - ExecutableDdlStatement: ExecutableDdlStatement.md
+    - InsertInto: InsertInto.md
     - KsqlParser: KsqlParser.md
     - Node: Node.md
+    - QueryContainer: QueryContainer.md
     - SourceAccumulator: SourceAccumulator.md
     - SqlPrimitiveType: SqlPrimitiveType.md
     - SqlTypeParser: SqlTypeParser.md

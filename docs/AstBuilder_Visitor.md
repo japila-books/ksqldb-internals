@@ -23,20 +23,35 @@ Query visitQuery(
   SqlBaseParser.QueryContext context)
 ```
 
-`visitQuery` is part of the `SqlBaseBaseVisitor` abstraction to handle a `SELECT` statement (a query).
+`visitQuery` is part of the `SqlBaseBaseVisitor` abstraction to handle `SELECT` statements (queries).
 
-```text
+```antlr
 query
-: SELECT selectItem (',' selectItem)*
-    FROM from=relation
-    (WINDOW  windowExpression)?
-    (WHERE where=booleanExpression)?
-    (GROUP BY groupBy)?
-    (PARTITION BY partitionBy)?
-    (HAVING having=booleanExpression)?
-    (EMIT resultMaterialization)?
-    limitClause?
-;
+    : SELECT selectItem (',' selectItem)*
+      FROM from=relation
+      (WINDOW  windowExpression)?
+      (WHERE where=booleanExpression)?
+      (GROUP BY groupBy)?
+      (PARTITION BY partitionBy)?
+      (HAVING having=booleanExpression)?
+      (EMIT resultMaterialization)?
+      limitClause?
+    ;
 ```
 
 `visitQuery`...FIXME
+
+## <span id="visitInsertInto"> Parsing INSERT INTO Statement
+
+```java
+Node visitInsertInto(
+  SqlBaseParser.InsertIntoContext context)
+```
+
+`visitInsertInto` is part of the `SqlBaseBaseVisitor` abstraction to handle `INSERT INTO` statements.
+
+```antlr
+INSERT INTO sourceName (WITH tableProperties)? query
+```
+
+`visitInsertInto` creates an [InsertInto](InsertInto.md).

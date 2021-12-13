@@ -66,14 +66,14 @@ List<QueryMetadata> getAllLiveQueries()
 
 `getAllLiveQueries` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#getAllLiveQueries) abstraction.
 
-## <span id="parse"> Parsing SQL Text
+## <span id="parse"> Parsing SQL Statements
 
 ```java
 List<ParsedStatement> parse(
   String sql)
 ```
 
-`parse`...FIXME
+`parse` requests the [EngineContext](#primaryContext) to [parse the given SQL statements](EngineContext.md#parse) (into a collection of `ParsedStatement`s).
 
 `parse` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#parse) abstraction.
 

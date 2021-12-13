@@ -21,14 +21,14 @@
 
 The `CommandFactories` is used to [create a DdlCommand](#createDdlCommand).
 
-## <span id="parse"> parse
+## <span id="parse"> Parsing SQL Statements
 
 ```java
 List<ParsedStatement> parse(
   String sql)
 ```
 
-`parse` requests the [KsqlParser](#parser) to [parse the SQL text](KsqlParser.md#parse).
+`parse` requests the [KsqlParser](#parser) to [parse the given SQL statements](KsqlParser.md#parse).
 
 `parse` is used when:
 

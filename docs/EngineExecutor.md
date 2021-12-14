@@ -67,9 +67,9 @@ LogicalPlanNode buildAndValidateLogicalPlan(
   boolean isScalablePush)
 ```
 
-`buildAndValidateLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md) to [buildQueryLogicalPlan](LogicalPlanner.md#buildQueryLogicalPlan) (that gives an `OutputNode`).
+`buildAndValidateLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md) to [buildQueryLogicalPlan](LogicalPlanner.md#buildQueryLogicalPlan) (that gives an [OutputNode](OutputNode.md)).
 
-In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement of the given `ConfiguredStatement` and the `OutputNode`).
+In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement of the given `ConfiguredStatement` and the [OutputNode](OutputNode.md)).
 
 `buildAndValidateLogicalPlan` is used when:
 
@@ -102,6 +102,10 @@ ExecutorPlans planQuery(
   Optional<String> withQueryId,
   MetaStore metaStore)
 ```
+
+`planQuery` requests the [EngineContext](#engineContext) to [createQueryEngine](EngineContext.md#createQueryEngine) (with the [ServiceContext](#serviceContext)).
+
+`planQuery` [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan).
 
 `planQuery`...FIXME
 

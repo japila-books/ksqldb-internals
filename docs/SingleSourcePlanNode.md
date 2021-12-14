@@ -7,7 +7,7 @@
 * `AggregateNode`
 * `FilterNode`
 * `FlatMapNode`
-* `OutputNode`
+* [OutputNode](OutputNode.md)
 * `PreJoinRepartitionNode`
 * `ProjectNode`
 * `QueryFilterNode`

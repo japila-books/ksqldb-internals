@@ -195,6 +195,7 @@ nav:
     - InsertInto: InsertInto.md
     - KsqlParser: KsqlParser.md
     - Node: Node.md
+    - OutputNode: OutputNode.md
     - QueryContainer: QueryContainer.md
     - SourceAccumulator: SourceAccumulator.md
     - SqlPrimitiveType: SqlPrimitiveType.md

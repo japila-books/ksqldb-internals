@@ -186,6 +186,7 @@ nav:
     - AstBuilder: AstBuilder.md
     - AstBuilder.Visitor: AstBuilder_Visitor.md
     - CommonCreateConfigs: CommonCreateConfigs.md
+    - CreateAsSelect: CreateAsSelect.md
     - CreateSource: CreateSource.md
     - CreateStream: CreateStream.md
     - CreateSourceProperties: CreateSourceProperties.md

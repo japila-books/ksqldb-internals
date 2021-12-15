@@ -178,7 +178,9 @@ nav:
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ServerOptions: rest/ServerOptions.md
-    - StandaloneExecutor: rest/StandaloneExecutor.md
+    - StandaloneExecutor:
+      - StandaloneExecutor: rest/StandaloneExecutor.md
+      - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutor: rest/StatementExecutor.md
     - QueryExecutor: rest/QueryExecutor.md

@@ -2,6 +2,25 @@
 
 `StandaloneExecutor` is an [Executable](Executable.md).
 
+## Creating Instance
+
+`StandaloneExecutor` takes the following to be created:
+
+* <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
+* <span id="processingLogConfig"> `ProcessingLogConfig`
+* <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
+* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* <span id="queriesFile"> Queries File
+* <span id="udfLoader"> [UserFunctionLoader](../UserFunctionLoader.md)
+* <span id="failOnNoQueries"> `failOnNoQueries` flag
+* <span id="versionChecker"> [VersionCheckerAgent](../VersionCheckerAgent.md)
+* <span id="injectorFactory"> `injectorFactory` function `BiFunction<KsqlExecutionContext, ServiceContext, Injector>`
+* <span id="metricCollectors"> `MetricCollectors`
+
+`StandaloneExecutor` is created when:
+
+* `StandaloneExecutorFactory` utility is used to [create a StandaloneExecutor](StandaloneExecutorFactory.md#create)
+
 ## <span id="startAsync"> startAsync
 
 ```java
@@ -28,7 +47,7 @@ In the end, `startAsync` requests the [VersionCheckerAgent](#versionChecker) to 
 
 `startAsync` is part of the [Executable](Executable.md#startAsync) abstraction.
 
-### <span id="readQueriesFile"> readQueriesFile
+### <span id="readQueriesFile"> Loading Queries File
 
 ```java
 String readQueriesFile(
@@ -37,7 +56,7 @@ String readQueriesFile(
 
 `readQueriesFile` reads the given `queryFilePath` with `UTF_8` encoding.
 
-### <span id="processesQueryFile"> processesQueryFile
+### <span id="processesQueryFile"> Processing Queries
 
 ```java
 void processesQueryFile(
@@ -46,7 +65,7 @@ void processesQueryFile(
 
 `processesQueryFile` requests the [KsqlEngine](#ksqlEngine) to [parse the SQL queries](../KsqlEngine.md#parse) (into a collection of `ParsedStatement`s).
 
-`processesQueryFile` [validate the ParsedStatements](#validateStatements).
+`processesQueryFile` [validates the ParsedStatements](#validateStatements).
 
 `processesQueryFile` uses the [injectorFactory](#injectorFactory) to create an `Injector` (with the [KsqlEngine](#ksqlEngine) and the [ServiceContext](#serviceContext)).
 

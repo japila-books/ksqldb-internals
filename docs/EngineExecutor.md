@@ -85,7 +85,7 @@ TransientQueryMetadata executeTransientQuery(
 
 `executeTransientQuery`...FIXME
 
-In the end, `executeTransientQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) that is in turn requested to [createTransientQuery](QueryRegistry.md#createTransientQuery).
+In the end, `executeTransientQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a transient query](QueryRegistry.md#createTransientQuery).
 
 `executeTransientQuery` is used when:
 

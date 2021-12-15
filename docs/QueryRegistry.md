@@ -4,6 +4,30 @@
 
 ## Contract (Subset)
 
+### <span id="createOrReplacePersistentQuery"> createOrReplacePersistentQuery
+
+```java
+PersistentQueryMetadata createOrReplacePersistentQuery(
+  SessionConfig config,
+  ServiceContext serviceContext,
+  ProcessingLogContext processingLogContext,
+  MetaStore metaStore,
+  String statementText,
+  QueryId queryId,
+  Optional<DataSource> sinkDataSource,
+  Set<DataSource> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  KsqlConstants.PersistentQueryType persistentQueryType,
+  Optional<String> sharedRuntimeId)
+```
+
+[QueryRegistryImpl.createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery)
+
+Used when:
+
+* `EngineExecutor` is requested to [executeTransientQuery](EngineExecutor.md#executeTransientQuery)
+
 ### <span id="createTransientQuery"> createTransientQuery
 
 ```java

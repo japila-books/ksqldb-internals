@@ -104,3 +104,55 @@ In the end, `buildQueryImplementation` requests the given [physical plan](Execut
 `buildQueryImplementation` is used when:
 
 * `QueryBuilder` is requested to [buildTransientQuery](#buildTransientQuery), [buildPersistentQueryInDedicatedRuntime](#buildPersistentQueryInDedicatedRuntime), [buildPersistentQueryInSharedRuntime](#buildPersistentQueryInSharedRuntime) and [getNamedTopology](#getNamedTopology)
+
+## <span id="createOrReplacePersistentQuery"> createOrReplacePersistentQuery
+
+```java
+PersistentQueryMetadata createOrReplacePersistentQuery(
+  SessionConfig config,
+  ServiceContext serviceContext,
+  ProcessingLogContext processingLogContext,
+  MetaStore metaStore,
+  String statementText,
+  QueryId queryId,
+  Optional<DataSource> sinkDataSource,
+  Set<DataSource> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  KsqlConstants.PersistentQueryType persistentQueryType,
+  Optional<String> sharedRuntimeId)
+```
+
+`createOrReplacePersistentQuery`...FIXME
+
+`createOrReplacePersistentQuery` is part of the [QueryRegistry](QueryRegistry.md#createOrReplacePersistentQuery) abstraction.
+
+### <span id="buildPersistentQueryInSharedRuntime"> buildPersistentQueryInSharedRuntime
+
+```java
+PersistentQueryMetadata buildPersistentQueryInSharedRuntime(
+  KsqlConfig ksqlConfig,
+  KsqlConstants.PersistentQueryType persistentQueryType,
+  String statementText,
+  QueryId queryId,
+  Optional<DataSource> sinkDataSource,
+  Set<DataSource> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  QueryMetadata.Listener listener,
+  Supplier<List<PersistentQueryMetadata>> allPersistentQueries,
+  MetricCollectors metricCollectors)
+```
+
+`buildPersistentQueryInSharedRuntime`...FIXME
+
+### <span id="getKafkaStreamsInstance"> getKafkaStreamsInstance
+
+```java
+SharedKafkaStreamsRuntime getKafkaStreamsInstance(
+  Set<SourceName> sources,
+  QueryId queryID,
+  MetricCollectors metricCollectors)
+```
+
+`getKafkaStreamsInstance`...FIXME

@@ -90,7 +90,7 @@ extra:
     version: 3.0.0
     github: https://github.com/apache/kafka/tree/3.0.0
   ksqldb:
-    version: 0.22.0
+    version: 0.23.1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaceklaskowski

@@ -27,3 +27,18 @@ CreateSourceProperties from(
 `from` is used when:
 
 * `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder.md#visitCreateTable), [visitCreateStream](AstBuilder.md#visitCreateStream), [visitAssertStream](AstBuilder.md#visitAssertStream) and [visitAssertTable](AstBuilder.md#visitAssertTable)
+
+## <span id="getValueFormat"> value_format
+
+```java
+Optional<FormatInfo> getValueFormat()
+```
+
+`getValueFormat` takes [FORMAT](#getFormatName) (if defined) or defaults to [VALUE_FORMAT](CommonCreateConfigs.md#VALUE_FORMAT_PROPERTY) property (using the [PropertiesConfig](#props)).
+
+If defined (using either configuration property), the value format is converted to `FormatInfo` (with [getValueFormatProperties](#getValueFormatProperties)).
+
+`getValueFormat` is used when:
+
+* `DefaultFormatInjector` is requested to `injectForCreateStatement`
+* `SourcePropertiesUtil` is requested to [getValueFormat](SourcePropertiesUtil.md#getValueFormat)

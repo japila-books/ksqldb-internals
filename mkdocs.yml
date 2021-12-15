@@ -190,16 +190,20 @@ nav:
     - CommonCreateConfigs: CommonCreateConfigs.md
     - CreateAsSelect: CreateAsSelect.md
     - CreateSource: CreateSource.md
+    - CreateSourceAsProperties: CreateSourceAsProperties.md
     - CreateStream: CreateStream.md
     - CreateSourceProperties: CreateSourceProperties.md
     - DefaultKsqlParser: DefaultKsqlParser.md
     - ExecutableDdlStatement: ExecutableDdlStatement.md
+    - Format: Format.md
+    - FormatFactory: FormatFactory.md
     - InsertInto: InsertInto.md
     - KsqlParser: KsqlParser.md
     - Node: Node.md
     - OutputNode: OutputNode.md
     - QueryContainer: QueryContainer.md
     - SourceAccumulator: SourceAccumulator.md
+    - SourcePropertiesUtil: SourcePropertiesUtil.md
     - SqlPrimitiveType: SqlPrimitiveType.md
     - SqlTypeParser: SqlTypeParser.md
     - Statement: Statement.md

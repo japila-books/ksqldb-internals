@@ -48,3 +48,19 @@ CREATE OR REPLACE is not supported on source [stream|table]s.
 `throwIfCreateOrReplaceOnSourceStreamOrTable` is used when:
 
 * `CreateSourceFactory` is requested for [CreateStreamCommand](#createStreamCommand) and [CreateTableCommand](#createTableCommand) DDL commands
+
+## <span id="buildFormats"> buildFormats
+
+```java
+Formats buildFormats(
+  SourceName name,
+  LogicalSchema schema,
+  CreateSourceProperties props,
+  KsqlConfig ksqlConfig)
+```
+
+`buildFormats`...FIXME
+
+`buildFormats` is used when:
+
+* `CreateSourceFactory` is requested for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand) and [CreateTableCommand](CreateSourceFactory.md#createTableCommand)

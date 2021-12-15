@@ -1,5 +1,7 @@
 # CommonCreateConfigs
 
+## <span id="FORMAT_PROPERTY"><span id="FORMAT"> FORMAT
+
 ## <span id="KAFKA_TOPIC_NAME_PROPERTY"><span id="KAFKA_TOPIC"> KAFKA_TOPIC
 
 The topic that stores the data of the source
@@ -11,6 +13,16 @@ Default: (undefined)
 The format of the serialized value
 
 Default: (undefined)
+
+Overrides [KsqlConfig.KSQL_DEFAULT_VALUE_FORMAT_CONFIG](KsqlConfig.md#KSQL_DEFAULT_VALUE_FORMAT_CONFIG)
+
+Must not be specified with [FORMAT](#FORMAT)
+
+Used when:
+
+* `DefaultSchemaInjector` is requested to `shouldInferSchema`
+* `CreateSourceAsProperties` is requested for the [value_format](CreateSourceAsProperties.md#getValueFormat)
+* `CreateSourceProperties` is requested for the [value_format](CreateSourceProperties.md#getValueFormat) and to [withFormats](CreateSourceProperties.md#withFormats)
 
 ## <span id="SOURCE_NUMBER_OF_PARTITIONS"><span id="PARTITIONS"> PARTITIONS
 

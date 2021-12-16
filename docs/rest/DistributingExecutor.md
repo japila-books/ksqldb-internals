@@ -9,7 +9,7 @@
 * <span id="distributedCmdResponseTimeout"> DistributedCmdResponse Timeout
 * <span id="injectorFactory"> `BiFunction<KsqlExecutionContext, ServiceContext, Injector>`
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`
-* <span id="validatedCommandFactory"> `ValidatedCommandFactory`
+* <span id="validatedCommandFactory"> [ValidatedCommandFactory](ValidatedCommandFactory.md)
 * <span id="errorHandler"> Error Handler
 * <span id="commandRunnerWarning"> CommandRunner Warning
 

@@ -64,7 +64,7 @@ Used when:
 * `KsqlEngine` is requested to [execute a SQL statement](KsqlEngine.md#execute)
 * `SandboxedExecutionContext` is requested to [execute a SQL statement](SandboxedExecutionContext.md#execute)
 * `SchemaRegisterInjector` is requested to `registerForCreateAs`
-* `ValidatedCommandFactory` is requested to `createForPlannedQuery`
+* `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 
 ### <span id="prepare"> Preparing ParsedStatement
 

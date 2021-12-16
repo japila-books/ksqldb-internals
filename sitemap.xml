@@ -461,6 +461,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/CommandRunner/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandStore/</loc>
          <lastmod>2021-12-16</lastmod>
          <changefreq>daily</changefreq>
@@ -481,12 +486,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/InternalKsqlClientFactory/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlConfigurable/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlResource/</loc>
          <lastmod>2021-12-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlRestApplication/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlRestConfig/</loc>
          <lastmod>2021-12-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

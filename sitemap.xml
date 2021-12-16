@@ -451,6 +451,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/Command/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandQueue/</loc>
          <lastmod>2021-12-16</lastmod>
          <changefreq>daily</changefreq>

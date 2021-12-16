@@ -540,4 +540,9 @@
          <lastmod>2021-12-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/ValidatedCommandFactory/</loc>
+         <lastmod>2021-12-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

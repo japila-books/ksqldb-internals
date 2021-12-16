@@ -167,6 +167,7 @@ nav:
     - UserFunctionLoader: UserFunctionLoader.md
     - Visitor: Visitor.md
   - REST:
+    - Command: rest/Command.md
     - CommandQueue: rest/CommandQueue.md
     - CommandStore: rest/CommandStore.md
     - CustomExecutors: rest/CustomExecutors.md

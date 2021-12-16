@@ -1,0 +1,3 @@
+# ValidatedCommandFactory
+
+`ValidatedCommandFactory` is...FIXME

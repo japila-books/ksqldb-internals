@@ -177,6 +177,7 @@ nav:
     - KsqlRestApplication: rest/KsqlRestApplication.md
     - KsqlServerMain: rest/KsqlServerMain.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
+    - QueryExecutor: rest/QueryExecutor.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ServerOptions: rest/ServerOptions.md
@@ -185,7 +186,7 @@ nav:
       - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutor: rest/StatementExecutor.md
-    - QueryExecutor: rest/QueryExecutor.md
+    - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
   - SQL:
     - AstBuilder: AstBuilder.md
     - AstBuilder.Visitor: AstBuilder_Visitor.md

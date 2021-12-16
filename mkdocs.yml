@@ -161,6 +161,7 @@ nav:
     - MetaStore: MetaStore.md
     - PullQueryValidator: PullQueryValidator.md
     - Query: Query.md
+    - QueryPlan: QueryPlan.md
     - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md
@@ -215,3 +216,4 @@ nav:
     - KsqlContext: embedded/KsqlContext.md
   - Misc:
     - Debugging ksqlDB: debugging.md
+    - Persistent Queries: persistent-queries.md

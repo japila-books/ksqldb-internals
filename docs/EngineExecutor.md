@@ -144,3 +144,30 @@ Cannot execute command because source table materialization is disabled.
 
 * `KsqlEngine` is requested to [plan](KsqlEngine.md#plan)
 * `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan)
+
+## <span id="execute"> Executing Query
+
+```java
+ExecuteResult execute(
+  KsqlPlan plan)
+```
+
+`execute`...FIXME
+
+In the end, `execute` [executePersistentQuery](#executePersistentQuery).
+
+`execute` is used when:
+
+* `KsqlEngine` is requested to [execute a query](KsqlEngine.md#execute)
+* `SandboxedExecutionContext` is requested to [execute a query](SandboxedExecutionContext.md#execute)
+
+### <span id="executePersistentQuery"> executePersistentQuery
+
+```java
+PersistentQueryMetadata executePersistentQuery(
+  QueryPlan queryPlan,
+  String statementText,
+  KsqlConstants.PersistentQueryType persistentQueryType)
+```
+
+`executePersistentQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create or replace a persistent query](QueryRegistry.md#createOrReplacePersistentQuery) (for the given [QueryPlan](QueryPlan.md) and `PersistentQueryType`).

@@ -169,12 +169,16 @@ nav:
   - REST:
     - Command: rest/Command.md
     - CommandQueue: rest/CommandQueue.md
+    - CommandRunner: rest/CommandRunner.md
     - CommandStore: rest/CommandStore.md
     - CustomExecutors: rest/CustomExecutors.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
+    - InternalKsqlClientFactory: rest/InternalKsqlClientFactory.md
+    - KsqlConfigurable: rest/KsqlConfigurable.md
     - KsqlResource: rest/KsqlResource.md
     - KsqlRestApplication: rest/KsqlRestApplication.md
+    - KsqlRestConfig: rest/KsqlRestConfig.md
     - KsqlServerMain: rest/KsqlServerMain.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - QueryExecutor: rest/QueryExecutor.md

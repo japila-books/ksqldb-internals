@@ -1,8 +1,19 @@
 # KsqlResource
 
+## <span id="configure"> configure
+
+```java
+void configure(
+  KsqlConfig config)
+```
+
+`configure`...FIXME
+
+`configure` is part of the [KsqlConfigurable](KsqlConfigurable.md#configure) abstraction.
+
 ## <span id="handler"> RequestHandler
 
-`KsqlResource` creates a `RequestHandler` when requested to [configure](#configure).
+`KsqlResource` creates a [RequestHandler](RequestHandler.md) when requested to [configure](#configure).
 
 `RequestHandler` is used when:
 

@@ -1,6 +1,22 @@
 # KsqlServerMain
 
-`KsqlServerMain` is a [standalone (command-line) application](#main) with [command-line options](ServerOptions.md):
+`KsqlServerMain` is a [standalone application](#main) to [start an Executable](#createExecutable):
+
+1. [StandaloneExecutor](StandaloneExecutor.md) for [queries file](ServerOptions.md#getQueriesFile)
+1. [KsqlRestApplication](KsqlRestApplication.md) unless [ksql.connect.worker.config](../KsqlConfig.md#CONNECT_WORKER_CONFIG_FILE_PROPERTY) configuration property is specified
+1. `MultiExecutable` with a `ConnectExecutable` and the `KsqlRestApplication`
+
+`KsqlServerMain` supports [command-line options](ServerOptions.md).
+
+`KsqlServerMain` can be launched on command line using [ksql-server-start](#ksql-server-start) shell script.
+
+## <span id="ksql-server-start"> ksql-server-start Shell Script
+
+`ksql-server-start` shell script (indirectly or `ksql-run-class` directly) is used to [launch KsqlServerMain on command line](#main).
+
+```text
+./bin/ksql-run-class io.confluent.ksql.rest.server.KsqlServerMain
+```
 
 ```text
 $ ./bin/ksql-server-start --help
@@ -31,14 +47,6 @@ OPTIONS
             This option may occur a maximum of 1 times
 ```
 
-## <span id="ksql-server-start"> ksql-server-start Shell Script
-
-`KsqlServerMain` can be launched using `ksql-server-start` shell script (or `ksql-run-class` directly).
-
-```text
-./bin/ksql-run-class io.confluent.ksql.rest.server.KsqlServerMain
-```
-
 ## Creating Instance
 
 `KsqlServerMain` takes the following to be created:
@@ -50,17 +58,21 @@ OPTIONS
 
 * `KsqlServerMain` standalone application is [launched](#main)
 
-## <span id="main"> Launching KsqlServerMain
+## <span id="main"> Launching KsqlServerMain (on Command Line)
 
-`main` [parses the command-line options](ServerOptions.md#parse) and loads the required [properties file](ServerOptions.md#getPropertiesFile).
-
-`main` takes `ksql.server.install.dir` configuration property from the properties file.
+`main` [parses the command-line options](ServerOptions.md#parse) and loads the required [properties file](ServerOptions.md#getPropertiesFile) (with the Java system properties applied overriding earlier values).
 
 `main` creates and [validates](#validateConfig) a [KsqlConfig](../KsqlConfig.md).
 
-`main` [configures QueryLogger](../QueryLogger.md#configure).
+`main` [configures QueryLogger](../QueryLogger.md#configure) (with the `KsqlConfig`).
 
-`main` takes the [queries file](ServerOptions.md#getQueriesFile) (if used) and [creates an Executable](#createExecutable).
+`main` [creates an Executable](#createExecutable) based on the following:
+
+1. Properties with the Java system properties applied
+1. [queries file](ServerOptions.md#getQueriesFile) command-line option (if defined)
+1. `ksql.server.install.dir` configuration property from the properties file
+1. A new [KsqlConfig](../KsqlConfig.md) with the config and system properties
+1. A new `MetricCollectors`
 
 `main` creates a new [KsqlServerMain](#creating-instance) (with the `Executable`) and [starts it up](#tryStartApp).
 
@@ -74,12 +86,15 @@ Executable createExecutable(
   Map<String, String> properties,
   Optional<String> queriesFile,
   String installDir,
-  KsqlConfig ksqlConfig)
+  KsqlConfig ksqlConfig,
+  MetricCollectors metricCollectors)
 ```
 
-With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` [creates](StandaloneExecutorFactory.md#create) and returns a [StandaloneExecutor](StandaloneExecutor.md).
+With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` returns a new [StandaloneExecutor](StandaloneExecutorFactory.md#create).
 
-Otherwise, `createExecutable`...FIXME
+Otherwise, `createExecutable` creates a [KsqlRestConfig](KsqlRestConfig.md) (with the given `properties`) to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (with the `KsqlRestConfig` and the given `MetricCollectors`).
+
+With no [ksql.connect.worker.config](../KsqlConfig.md#CONNECT_WORKER_CONFIG_FILE_PROPERTY) configuration property specified, `createExecutable` returns the `KsqlRestApplication`. Otherwise, `createExecutable` creates a `ConnectExecutable` and returns a `MultiExecutable` (with the `ConnectExecutable` and the `KsqlRestApplication`).
 
 ### <span id="tryStartApp"> tryStartApp
 

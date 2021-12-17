@@ -174,16 +174,19 @@ nav:
     - CustomExecutors: rest/CustomExecutors.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
+    - InteractiveStatementExecutor: rest/InteractiveStatementExecutor.md
     - InternalKsqlClientFactory: rest/InternalKsqlClientFactory.md
     - KsqlConfigurable: rest/KsqlConfigurable.md
     - KsqlResource: rest/KsqlResource.md
     - KsqlRestApplication: rest/KsqlRestApplication.md
     - KsqlRestConfig: rest/KsqlRestConfig.md
+    - KsqlServerEndpoints: rest/KsqlServerEndpoints.md
     - KsqlServerMain: rest/KsqlServerMain.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - QueryExecutor: rest/QueryExecutor.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
+    - ReservedInternalTopics: rest/ReservedInternalTopics.md
     - ServerOptions: rest/ServerOptions.md
     - StandaloneExecutor:
       - StandaloneExecutor: rest/StandaloneExecutor.md
@@ -204,6 +207,7 @@ nav:
     - ExecutableDdlStatement: ExecutableDdlStatement.md
     - Format: Format.md
     - FormatFactory: FormatFactory.md
+    - Injector: Injector.md
     - InsertInto: InsertInto.md
     - KsqlParser: KsqlParser.md
     - Node: Node.md

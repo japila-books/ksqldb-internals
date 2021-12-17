@@ -154,14 +154,14 @@ ExecuteResult execute(
 
 `execute`...FIXME
 
-In the end, `execute` [executePersistentQuery](#executePersistentQuery).
+In the end, `execute` [executes the persistent query](#executePersistentQuery).
 
 `execute` is used when:
 
 * `KsqlEngine` is requested to [execute a query](KsqlEngine.md#execute)
 * `SandboxedExecutionContext` is requested to [execute a query](SandboxedExecutionContext.md#execute)
 
-### <span id="executePersistentQuery"> executePersistentQuery
+### <span id="executePersistentQuery"> Executing Persistent Query
 
 ```java
 PersistentQueryMetadata executePersistentQuery(

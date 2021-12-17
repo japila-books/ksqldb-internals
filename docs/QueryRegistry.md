@@ -22,11 +22,11 @@ PersistentQueryMetadata createOrReplacePersistentQuery(
   Optional<String> sharedRuntimeId)
 ```
 
-[QueryRegistryImpl.createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery)
+See [QueryRegistryImpl.createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery)
 
 Used when:
 
-* `EngineExecutor` is requested to [executeTransientQuery](EngineExecutor.md#executeTransientQuery)
+* `EngineExecutor` is requested to [execute a persistent query](EngineExecutor.md#executePersistentQuery)
 
 ### <span id="createTransientQuery"> createTransientQuery
 

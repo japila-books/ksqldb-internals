@@ -10,7 +10,7 @@
 * <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="restConfig"> [KsqlRestConfig](KsqlRestConfig.md)
-* <span id="commandRunner"> [CommandRunner](CommandRunner.md)
+* [CommandRunner](#commandRunner)
 * <span id="commandStore"> [CommandStore](CommandStore.md)
 * <span id="statusResource"> `StatusResource`
 * <span id="streamedQueryResource"> `StreamedQueryResource`
@@ -51,6 +51,14 @@ ksqlDB API server instance created
 
 `KsqlRestApplication` is created using [buildApplication](#buildApplication) utility.
 
+## <span id="commandRunner"> CommandRunner
+
+`KsqlRestApplication` is given a [CommandRunner](CommandRunner.md) when [created](#creating-instance).
+
+The `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands) followed by [starting command execution](CommandRunner.md#start) in [initialize](#initialize). The `CommandRunner` is up and running until [shutdown](#shutdown) (when it is requested to [close](CommandRunner.md#close)).
+
+The `CommandRunner` is used to create a [HealthCheckResource](#healthCheckResource) when `KsqlRestApplication` is [created](#creating-instance).
+
 ## <span id="configurables"> KsqlConfigurables
 
 `KsqlRestApplication` is given [KsqlConfigurable](KsqlConfigurable.md)s when [created](#creating-instance).
@@ -90,7 +98,7 @@ KsqlRestApplication buildApplication(
 
 `buildApplication`...FIXME
 
-`buildApplication` builds the name of the command internal topic.
+`buildApplication` [builds the name of the command topic](ReservedInternalTopics.md#commandTopic) (to create a [CommandStore](CommandStore.md#create) and a [CommandRunner](CommandRunner.md#commandTopicName)).
 
 `buildApplication` [creates a CommandStore](CommandStore.md#create).
 

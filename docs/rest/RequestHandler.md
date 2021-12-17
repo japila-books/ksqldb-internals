@@ -47,7 +47,7 @@ KsqlEntityList execute(
 
 * `KsqlResource` is requested to [terminateCluster](KsqlResource.md#terminateCluster) and [handleKsqlStatements](KsqlResource.md#handleKsqlStatements)
 
-### <span id="executeStatement"> executeStatement
+### <span id="executeStatement"> Executing Statement
 
 ```java
 <T extends Statement> Optional<KsqlEntity> executeStatement(
@@ -57,4 +57,12 @@ KsqlEntityList execute(
   KsqlEntityList entities)
 ```
 
-`executeStatement`...FIXME
+`executeStatement` requests the given `PreparedStatement` for the [Statement](../Statement.md) and its Java class that is used to request the [CommandQueueSync](#commandQueueSync) to `waitFor`.
+
+`executeStatement` creates a `ConfiguredStatement` for the given `PreparedStatement` (with a new `SessionConfig`).
+
+`executeStatement` looks up the [StatementExecutor](StatementExecutor.md) for the `Statement` class in the [CustomExecutors](#customExecutors) registry (or defaults to the [DistributingExecutor](#distributor) to [execute the statement](DistributingExecutor.md#execute)).
+
+`executeStatement` requests the `StatementExecutor` to [execute the statement](StatementExecutor.md#execute).
+
+Unless handled, `executeStatement` requests the [DistributingExecutor](#distributor) to [execute the statement](DistributingExecutor.md#execute).

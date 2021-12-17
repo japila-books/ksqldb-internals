@@ -13,6 +13,8 @@ QueuedCommandStatus enqueueCommand(
   Producer<CommandId, Command> transactionalProducer)
 ```
 
+See [CommandStore](CommandStore.md#enqueueCommand)
+
 Used when:
 
 * `DistributingExecutor` is requested to [execute a SQL statement](DistributingExecutor.md#execute)

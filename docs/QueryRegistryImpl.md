@@ -66,4 +66,35 @@ void registerPersistentQuery(
   PersistentQueryMetadata persistentQuery)
 ```
 
-`registerPersistentQuery`...FIXME
+`registerPersistentQuery` takes the `QueryId` from the given `PersistentQueryMetadata`.
+
+`registerPersistentQuery` requests the given `PersistentQueryMetadata` to [initialize](QueryMetadata.md#initialize) when this is a new query (a new `QueryId`) or the old query is not sandboxed.
+
+`registerPersistentQuery` adds the `QueryId` with the `PersistentQueryMetadata` to the [persistentQueries](#persistentQueries) registry.
+
+`registerPersistentQuery` registers the persistent query based on the [type](PersistentQueryMetadata.md#getPersistentQueryType):
+
+* For `CREATE_SOURCE`, the single source name with the query ID in the [createAsQueries](#createAsQueries) registry
+
+* For `CREATE_AS`, the sink name with the query ID in the [createAsQueries](#createAsQueries) registry
+
+* For `INSERT`, all the sink and source names with the query ID in the [insertQueries](#insertQueries) registry
+
+`registerPersistentQuery` adds the `QueryId` with the `PersistentQueryMetadata` to the [allLiveQueries](#allLiveQueries) registry.
+
+In the end, `registerPersistentQuery` [notifies event listeners](#notifyCreate).
+
+## <span id="notifyCreate"> Notifying QueryEventListeners about Create Queries
+
+```java
+void notifyCreate(
+  ServiceContext serviceContext,
+  MetaStore metaStore,
+  QueryMetadata queryMetadata)
+```
+
+`notifyCreate` requests the [QueryEventListeners](#eventListeners) to [onCreate](QueryEventListener.md#onCreate)
+
+`notifyCreate` is used when:
+
+* `QueryRegistryImpl` is requested to [create a StreamPullQuery](#createStreamPullQuery) and register [persistent](#registerPersistentQuery) or [transient](#registerTransientQuery) queries

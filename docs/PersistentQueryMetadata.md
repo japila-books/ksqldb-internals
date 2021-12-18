@@ -1,0 +1,3 @@
+# PersistentQueryMetadata
+
+`PersistentQueryMetadata` is...FIXME

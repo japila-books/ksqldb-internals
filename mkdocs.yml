@@ -124,11 +124,13 @@ nav:
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
     - QueryEngine: QueryEngine.md
+    - QueryEventListener: QueryEventListener.md
     - QueryLogger: QueryLogger.md
     - QueryMetadata: QueryMetadata.md
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
+    - PersistentQueryMetadata: PersistentQueryMetadata.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md

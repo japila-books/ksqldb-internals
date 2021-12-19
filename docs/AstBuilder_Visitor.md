@@ -2,7 +2,7 @@
 
 `Visitor` is a `SqlBaseBaseVisitor` to build a [Node](Node.md).
 
-!!! danger "ANTLR"
+!!! warning "ANTLR"
     `SqlBaseBaseVisitor` is generated from `SqlBase.g4` SQL grammar by ANTLR at build time.
 
 ## Creating Instance

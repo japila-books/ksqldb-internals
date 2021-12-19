@@ -45,7 +45,7 @@ TransientQueryMetadata buildTransientQuery(
   Optional<ImmutableMap<TopicPartition, Long>> endOffsets)
 ```
 
-!!! danger "Kafka Streams"
+!!! warning "Kafka Streams"
     `buildTransientQuery` is given a new `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) that is used to build a [RuntimeBuildContext](#buildContext) and then a `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology)).
 
     That means that the Kafka Streams topology can only be created while [building the RuntimeBuildContext](#buildContext).
@@ -89,13 +89,16 @@ RuntimeBuildContext buildContext(
 
 * `QueryBuilder` is requested to [buildTransientQuery](#buildTransientQuery), [buildPersistentQueryInDedicatedRuntime](#buildPersistentQueryInDedicatedRuntime), [buildPersistentQueryInSharedRuntime](#buildPersistentQueryInSharedRuntime) and [getNamedTopology](#getNamedTopology)
 
-## <span id="buildQueryImplementation"> buildQueryImplementation
+## <span id="buildQueryImplementation"> Building Query Implementation
 
 ```java
 Object buildQueryImplementation(
   ExecutionStep<?> physicalPlan,
   RuntimeBuildContext runtimeBuildContext)
 ```
+
+!!! warning "Kafka Streams"
+    This is the moment in a ksqlDB query's life cycle when the [physical plan](ExecutionStep.md) is converted into a Kafka Streams application.
 
 `buildQueryImplementation` creates a [KSPlanBuilder](KSPlanBuilder.md) with the given [RuntimeBuildContext](RuntimeBuildContext.md).
 

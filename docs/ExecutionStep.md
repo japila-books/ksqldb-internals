@@ -20,5 +20,27 @@ Used when:
 
 ## Implementations
 
+* `ForeignKeyTableTableJoin`
 * [SourceStep](SourceStep.md)
-* _many others_
+* `StreamAggregate`
+* `StreamFilter`
+* `StreamFlatMap`
+* `StreamGroupBy`
+* `StreamGroupByKey`
+* `StreamGroupByV1`
+* `StreamSelect`
+* `StreamSelectKey`
+* `StreamSelectKeyV1`
+* `StreamSink`
+* `StreamStreamJoin`
+* `StreamTableJoin`
+* `StreamWindowedAggregate`
+* `TableAggregate`
+* `TableFilter`
+* `TableGroupBy`
+* `TableGroupByV1`
+* `TableSelect`
+* `TableSelectKey`
+* `TableSink`
+* `TableSuppress`
+* `TableTableJoin`

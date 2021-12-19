@@ -156,3 +156,31 @@ SharedKafkaStreamsRuntime getKafkaStreamsInstance(
 ```
 
 `getKafkaStreamsInstance`...FIXME
+
+## <span id="buildPersistentQueryInDedicatedRuntime"> buildPersistentQueryInDedicatedRuntime
+
+```java
+PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(
+  KsqlConfig ksqlConfig,
+  KsqlConstants.PersistentQueryType persistentQueryType,
+  String statementText,
+  QueryId queryId,
+  Optional<DataSource> sinkDataSource,
+  Set<DataSource> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  QueryMetadata.Listener listener,
+  Supplier<List<PersistentQueryMetadata>> allPersistentQueries,
+  StreamsBuilder streamsBuilder,
+  MetricCollectors metricCollectors)
+```
+
+`buildPersistentQueryInDedicatedRuntime` [builds an application ID](QueryApplicationId.md#build) (with the `persistent` flag enabled).
+
+`buildPersistentQueryInDedicatedRuntime` [buildStreamsProperties](#buildStreamsProperties).
+
+`buildPersistentQueryInDedicatedRuntime`...FIXME
+
+`buildPersistentQueryInDedicatedRuntime` is used when:
+
+* `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery) (with a shared runtime ID)

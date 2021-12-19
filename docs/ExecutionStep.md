@@ -1,6 +1,6 @@
 # ExecutionStep
 
-`ExecutionStep<S>` is an [abstraction](#contract) of [execution steps](#implementations) to [build S](#build).
+`ExecutionStep<S>` is an [abstraction](#contract) of [execution steps](#implementations) (_physical plans_) to [build S](#build).
 
 ## Contract (Subset)
 

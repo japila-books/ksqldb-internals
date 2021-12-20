@@ -33,6 +33,8 @@ SchemaKStream<?> buildStream(
 
 `buildStream` requests the given `PlanBuildContext` to `buildNodeContext`.
 
-In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) to [create a SchemaKStream](SchemaKSourceFactory.md#buildSource).
+In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) for a [SchemaKStream](SchemaKSourceFactory.md#buildSource).
+
+---
 
 `buildStream` is part of the [PlanNode](PlanNode.md#buildStream) abstraction.

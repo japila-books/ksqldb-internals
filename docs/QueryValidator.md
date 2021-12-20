@@ -1,0 +1,3 @@
+# QueryValidator
+
+`QueryValidator` is...FIXME

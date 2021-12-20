@@ -24,8 +24,17 @@ Builds a [SchemaKStream](SchemaKStream.md)
 `PlanNode` takes the following to be created:
 
 * <span id="id"> `PlanNodeId`
-* <span id="nodeOutputType"> `DataSourceType`
+* [DataSourceType](#nodeOutputType)
 * <span id="sourceName"> Source Name
 
 !!! note "Abstract Class"
     `PlanNode` is an abstract class and cannot be created directly. It is created indirectly for the [concrete PlanNodes](#implementations).
+
+### <span id="DataSourceType"><span id="nodeOutputType"> DataSourceType
+
+`PlanNode` is given a `DataSourceType` when [created](#creating-instance).
+
+DataSourceType | ksqlType
+---------------|---------
+ KSTREAM | STREAM
+ KTABLE | TABLE

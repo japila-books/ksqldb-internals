@@ -119,6 +119,7 @@ nav:
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
     - PlanBuilder: PlanBuilder.md
+    - PlanInfoExtractor: PlanInfoExtractor.md
     - PlanNode: PlanNode.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
@@ -164,7 +165,9 @@ nav:
     - MetaStore: MetaStore.md
     - PullQueryValidator: PullQueryValidator.md
     - Query: Query.md
+    - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
+    - QueryValidator: QueryValidator.md
     - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md

@@ -28,7 +28,7 @@ SchemaKStream<?> buildStream(
   Stacker contextStacker)
 ```
 
-`buildStream`...FIXME
+`buildStream` [creates a new SchemaKStream](#schemaKStream) with a [StreamSource](ExecutionStepFactory.md#streamSource).
 
 ### <span id="buildWindowedStream"> buildWindowedStream
 

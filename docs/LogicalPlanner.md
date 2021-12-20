@@ -39,6 +39,8 @@ The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the follo
 OutputNode buildPersistentLogicalPlan()
 ```
 
+`buildPersistentLogicalPlan` [buildSourceNode](#buildSourceNode).
+
 `buildPersistentLogicalPlan`...FIXME
 
 `buildPersistentLogicalPlan` is used when:

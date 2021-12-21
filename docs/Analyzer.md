@@ -14,3 +14,47 @@
 * `QueryAnalyzer` is [created](QueryAnalyzer.md#analyzer)
 
 ![Analyzer](images/Analyzer.png)
+
+## <span id="analyze"> Query Analysis
+
+```java
+Analysis analyze(
+  Query query,
+  Optional<Sink> sink)
+```
+
+`analyze` creates a [Visitor](#Visitor) (for the given [Query](Query.md) and a flag to indicate whether the sink is defined or not for persistent queries).
+
+`analyze` requests the `Visitor` to [process](AstVisitor.md#process) the given [Query](Query.md) and [analyzeNonStdOutSink](#analyzeNonStdOutSink) if the sink is defined.
+
+`analyze` requests the `Visitor` to [validate the analysis](#validate).
+
+In the end, `analyze` requests the the `Visitor` for the [Analysis](#analysis).
+
+`analyze` is used when:
+
+* `QueryAnalyzer` is requested to [analyze a query](QueryAnalyzer.md#analyze)
+
+## <span id="Visitor"> Visitor
+
+`Visitor` is a [DefaultTraversalVisitor](DefaultTraversalVisitor.md) to produce an `AstNode` that `Analyzer` uses to [analyze queries](#analyze).
+
+`Visitor` is a `private final` class of `Analyzer`.
+
+### <span id="analysis"> Analysis
+
+`Visitor` creates an [Analysis](Analysis.md) when created.
+
+The `Analysis` instance is mutated (_changed_) while visiting AST nodes while [analyzing a query](#analyze).
+
+### <span id="visitAliasedRelation"> visitAliasedRelation
+
+```java
+AstNode visitAliasedRelation(
+  AliasedRelation node,
+  Void context)
+```
+
+`visitAliasedRelation` makes sure that the `Table` relation is registered in the [MetaStore](#metaStore) and requests the [Analysis](#analysis) to [register the alias with the DataSource](Analysis.md#addDataSource).
+
+`visitAliasedRelation` is part of the [DefaultTraversalVisitor](DefaultTraversalVisitor.md#visitAliasedRelation) abstraction.

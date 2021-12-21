@@ -4,6 +4,18 @@
 
 ## Contract (Subset)
 
+### <span id="getJoin"> getJoin
+
+```java
+List<JoinInfo> getJoin()
+```
+
+See [Analysis](Analysis.md#getJoin)
+
+Used when:
+
+* `LogicalPlanner` is requested to [build a source node](LogicalPlanner.md#buildSourceNode)
+
 ### <span id="isJoin"> isJoin
 
 ```java

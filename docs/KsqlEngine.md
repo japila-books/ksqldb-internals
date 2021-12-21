@@ -125,3 +125,18 @@ boolean isExecutableStatement(
 
 * `EngineExecutor` is requested to [throwOnNonExecutableStatement](EngineExecutor.md#throwOnNonExecutableStatement)
 * `RequestValidator` is requested to [validate](rest/RequestValidator.md#validate)
+
+## <span id="analyzeQueryWithNoOutputTopic"> analyzeQueryWithNoOutputTopic
+
+```java
+ImmutableAnalysis analyzeQueryWithNoOutputTopic(
+  Query query,
+  String queryText,
+  Map<String, Object> configOverrides)
+```
+
+`analyzeQueryWithNoOutputTopic`...FIXME
+
+`analyzeQueryWithNoOutputTopic` is used when:
+
+* `QueryExecutor` is requested to [handle pull or push queries](rest/QueryExecutor.md#handleQuery)

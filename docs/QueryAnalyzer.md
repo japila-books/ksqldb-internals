@@ -18,6 +18,8 @@
 
 Unless given, `QueryAnalyzer` creates an [Analyzer](Analyzer.md) when [created](#creating-instance).
 
+The `Analyzer` is used to [analyze a query](#analyze).
+
 ## <span id="analyze"> Query Analysis
 
 ```java

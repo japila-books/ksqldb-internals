@@ -1,6 +1,6 @@
 # QueryEngine
 
-## <span id="buildQueryLogicalPlan"> buildQueryLogicalPlan
+## <span id="buildQueryLogicalPlan"> Building Logical Query Plan (buildQueryLogicalPlan)
 
 ```java
 OutputNode buildQueryLogicalPlan(
@@ -19,6 +19,12 @@ OutputNode buildQueryLogicalPlan(
 `buildQueryLogicalPlan` requests the `QueryAnalyzer` to [analyze the given query](QueryAnalyzer.md#analyze).
 
 In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md) to [buildPersistentLogicalPlan](LogicalPlanner.md#buildPersistentLogicalPlan).
+
+---
+
+The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](QueryContainer.md#getSink)).
+
+---
 
 `buildQueryLogicalPlan` is used when:
 

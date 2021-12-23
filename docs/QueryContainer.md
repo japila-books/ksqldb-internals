@@ -37,7 +37,7 @@ Sink getSink()
 
 Used when:
 
-* `EngineExecutor` is requested to [plan a ConfiguredStatement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan)
 
 ## Implementations
 

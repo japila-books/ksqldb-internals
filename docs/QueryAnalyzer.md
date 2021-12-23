@@ -34,6 +34,12 @@ Analysis analyze(
 
 `analyze` requests the [pull](#pullQueryValidator) or [push query validator](#pushQueryValidator) to [validate the analysis](QueryValidator.md#validate) based on whether it is a [pull query](Query.md#isPullQuery) or not, respectively.
 
+---
+
+The optional `Sink` can only be defined when `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan).
+
+---
+
 `analyze` is used when:
 
 * `KsqlEngine` is requested to [analyzeQueryWithNoOutputTopic](KsqlEngine.md#analyzeQueryWithNoOutputTopic)

@@ -57,4 +57,16 @@ AstNode visitAliasedRelation(
 
 `visitAliasedRelation` makes sure that the `Table` relation is registered in the [MetaStore](#metaStore) and requests the [Analysis](#analysis) to [register the alias with the DataSource](Analysis.md#addDataSource).
 
-`visitAliasedRelation` is part of the [DefaultTraversalVisitor](DefaultTraversalVisitor.md#visitAliasedRelation) abstraction.
+`visitAliasedRelation` is part of the [AstVisitor](AstVisitor.md#visitAliasedRelation) abstraction.
+
+### <span id="visitSelect"> visitSelect
+
+```java
+AstNode visitSelect(
+  Select node,
+  Void context)
+```
+
+`visitSelect`...FIXME
+
+`visitSelect` is part of the [AstVisitor](AstVisitor.md#visitSelect) abstraction.

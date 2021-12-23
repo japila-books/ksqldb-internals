@@ -16,6 +16,14 @@ Used when:
 
 * `LogicalPlanner` is requested to [build a source node](LogicalPlanner.md#buildSourceNode)
 
+### <span id="getSelectItems"> getSelectItems
+
+```java
+List<SelectItem> getSelectItems()
+```
+
+See [Analysis](Analysis.md#getSelectItems)
+
 ### <span id="isJoin"> isJoin
 
 ```java

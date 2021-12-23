@@ -85,7 +85,7 @@ KsqlPlan ddlPlanCurrent(
 
 * `EngineExecutor` is requested to [plan a DdlStatement](EngineExecutor.md#plan) (for a non-source table)
 
-## <span id="queryPlanCurrent"> queryPlanCurrent
+## <span id="queryPlanCurrent"> Creating KsqlPlanV1 (queryPlanCurrent)
 
 ```java
 KsqlPlan queryPlanCurrent(

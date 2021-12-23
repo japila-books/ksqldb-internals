@@ -113,7 +113,7 @@ ExecutorPlans planQuery(
 
 * `EngineExecutor` is requested to [executeTransientQuery](#executeTransientQuery), [executeStreamPullQuery](#executeStreamPullQuery), [sourceTablePlan](#sourceTablePlan), [plan](#plan)
 
-## <span id="plan"> Query Planning
+## <span id="plan"> Query Planning (plan)
 
 ```java
 KsqlPlan plan(
@@ -122,13 +122,23 @@ KsqlPlan plan(
 
 `plan` requests the given `ConfiguredStatement` for the [Statement](Statement.md).
 
+### <span id="plan-ExecutableDdlStatement"> ExecutableDdlStatement
+
 For a [ExecutableDdlStatement](ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](CreateStream.md) or a `CreateTable`. They are supposed to be a [source](CreateSource.md#isSource).
 
-For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan) (with the statement). Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [creates a KsqlPlanV1](KsqlPlan.md#ddlPlanCurrent).
+For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan). Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [creates a KsqlPlanV1](KsqlPlan.md#ddlPlanCurrent).
 
-Otherwise, `plan`...FIXME
+### <span id="plan-QueryContainer"> Planning QueryContainer
 
----
+Otherwise, `plan` assumes that the `Statement` is a [QueryContainer](QueryContainer.md) and [plans the query](#planQuery) (with the `Sink` among the others that gives a `PhysicalPlan`).
+
+`plan` [maybeCreateSinkDdl](#maybeCreateSinkDdl).
+
+`plan` creates a [QueryPlan](QueryPlan.md).
+
+In the end, `plan` [creates a KsqlPlanV1](KsqlPlan.md#queryPlanCurrent).
+
+### <span id="plan-exceptions"> Exceptions
 
 `plan` [throws a KsqlStatementException for a non-executable statement](#throwOnNonExecutableStatement).
 
@@ -138,12 +148,12 @@ Otherwise, `plan`...FIXME
 Cannot execute command because source table materialization is disabled.
 ```
 
----
+### <span id="plan-usage"> Usage
 
 `plan` is used when:
 
-* `KsqlEngine` is requested to [plan](KsqlEngine.md#plan)
-* `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan)
+* `KsqlEngine` is requested to [plan a query](KsqlEngine.md#plan)
+* `SandboxedExecutionContext` is requested to [plan a query](SandboxedExecutionContext.md#plan)
 
 ## <span id="execute"> Executing Query
 

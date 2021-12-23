@@ -18,7 +18,7 @@
 
 While being [created](#creating-instance), `SandboxedExecutionContext` requests the given [source EngineContext](#sourceContext) to [create a sandboxed EngineContext](EngineContext.md#createSandbox).
 
-## <span id="plan"> Query Planning
+## <span id="plan"> Query Planning (plan)
 
 ```java
 KsqlPlan plan(

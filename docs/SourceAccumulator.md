@@ -8,7 +8,7 @@ aliasedRelation
     ;
 
 relationPrimary
-    : sourceName                                                  #tableName
+    : sourceName                        #tableName
     ;
 ```
 

@@ -27,6 +27,15 @@ Statement buildStatement(
 
 * `DefaultKsqlParser` is requested to [prepare a ParsedStatement](DefaultKsqlParser.md#prepare)
 
+### <span id="getSources"> getSources
+
+```java
+Set<SourceName> getSources(
+  ParseTree parseTree)
+```
+
+`getSources` creates a [SourceAccumulator](SourceAccumulator.md) to visit (the nodes of) the given `ParseTree`. In the end, `getSources` requests the `SourceAccumulator` for the [sources](SourceAccumulator.md#getSources).
+
 ## <span id="build"> Parsing SQL Text
 
 ```java

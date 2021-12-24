@@ -1,4 +1,4 @@
-# Visitor
+# AstBuilder.Visitor
 
 `Visitor` is a `SqlBaseBaseVisitor` to build a [Node](Node.md).
 
@@ -41,7 +41,41 @@ query
 
 `visitQuery`...FIXME
 
-## <span id="visitInsertInto"> Parsing INSERT INTO Statement
+## <span id="visitCreateStream"> Parsing CREATE STREAM Statement (visitCreateStream)
+
+```java
+Node visitCreateStream(
+  SqlBaseParser.CreateStreamContext context)
+```
+
+`visitCreateStream` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM` statements.
+
+```antlr
+CREATE (OR REPLACE)? (SOURCE)? STREAM (IF NOT EXISTS)? sourceName
+(tableElements)?
+(WITH tableProperties)?
+```
+
+`visitCreateStream` creates an [CreateStream](CreateStream.md).
+
+## <span id="visitCreateTable"> Parsing CREATE TABLE Statement (visitCreateTable)
+
+```java
+Node visitCreateTable(
+  SqlBaseParser.CreateTableContext context)
+```
+
+`visitCreateTable` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE` statements.
+
+```antlr
+CREATE (OR REPLACE)? (SOURCE)? TABLE (IF NOT EXISTS)? sourceName
+(tableElements)?
+(WITH tableProperties)?
+```
+
+`visitCreateTable` creates an [CreateTable](CreateTable.md).
+
+## <span id="visitInsertInto"> Parsing INSERT INTO Statement (visitInsertInto)
 
 ```java
 Node visitInsertInto(

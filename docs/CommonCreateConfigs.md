@@ -8,6 +8,8 @@ The topic that stores the data of the source
 
 Default: (undefined)
 
+## <span id="TIMESTAMP_FORMAT_PROPERTY"><span id="TIMESTAMP_FORMAT"> TIMESTAMP_FORMAT
+
 ## <span id="VALUE_FORMAT_PROPERTY"><span id="VALUE_FORMAT"> VALUE_FORMAT
 
 The format of the serialized value

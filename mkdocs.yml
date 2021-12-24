@@ -203,12 +203,14 @@ nav:
   - SQL:
     - AstBuilder: AstBuilder.md
     - AstBuilder.Visitor: AstBuilder_Visitor.md
+    - AstNode: AstNode.md
     - CommonCreateConfigs: CommonCreateConfigs.md
     - CreateAsSelect: CreateAsSelect.md
     - CreateSource: CreateSource.md
     - CreateSourceAsProperties: CreateSourceAsProperties.md
-    - CreateStream: CreateStream.md
     - CreateSourceProperties: CreateSourceProperties.md
+    - CreateStream: CreateStream.md
+    - CreateTable: CreateTable.md
     - DefaultKsqlParser: DefaultKsqlParser.md
     - ExecutableDdlStatement: ExecutableDdlStatement.md
     - Format: Format.md

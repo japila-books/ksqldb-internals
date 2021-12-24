@@ -13,7 +13,7 @@
 * [withPartitions](#withPartitions)
 * [withFormats](#withFormats)
 
-While being created, `CreateSourceProperties` creates a `PropertiesConfig` and...FIXME
+While being created, `CreateSourceProperties` creates a [PropertiesConfig](#props) and performs parameter validations.
 
 ## <span id="from"> Creating CreateSourceProperties
 
@@ -26,7 +26,33 @@ CreateSourceProperties from(
 
 `from` is used when:
 
-* `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder.md#visitCreateTable), [visitCreateStream](AstBuilder.md#visitCreateStream), [visitAssertStream](AstBuilder.md#visitAssertStream) and [visitAssertTable](AstBuilder.md#visitAssertTable)
+* `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder_Visitor.md#visitCreateTable), [visitCreateStream](AstBuilder_Visitor.md#visitCreateStream), [visitAssertStream](AstBuilder_Visitor.md#visitAssertStream) and [visitAssertTable](AstBuilder_Visitor.md#visitAssertTable)
+
+## <span id="props"> PropertiesConfig
+
+When [created](#creating-instance), `CreateSourceProperties` creates a `PropertiesConfig` with the following configuration properties.
+
+### <span id="SOURCE_CONNECTOR"> SOURCE_CONNECTOR
+
+Indicates that this source was created by a connector with the given name.
+
+Default: `null`
+
+### <span id="WINDOW_SIZE"> WINDOW_SIZE
+
+Window size of `HOPPING` or `TUMBLING` windows, e.g. `20 SECONDS`
+
+Default: `null`
+
+### <span id="WINDOW_TYPE"> WINDOW_TYPE
+
+Supported values:
+
+* `SESSION`
+* `HOPPING`
+* `TUMBLING`
+
+Default: `null`
 
 ## <span id="getValueFormat"> value_format
 

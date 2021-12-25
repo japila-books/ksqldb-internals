@@ -47,7 +47,7 @@ void handleStatements(
   String line)
 ```
 
-`handleStatements` requests the [DefaultKsqlParser](#KSQL_PARSER) to [parse the given line](../KsqlParser.md#parse) (into `ParsedStatement`s).
+`handleStatements` requests the [DefaultKsqlParser](#KSQL_PARSER) to [parse the given line](../parser/KsqlParser.md#parse) (into `ParsedStatement`s).
 
 !!! note
     There could be one or more `ParsedStatement`s in the given `line`.

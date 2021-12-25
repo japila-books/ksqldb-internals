@@ -32,7 +32,7 @@ Analysis analyze(
 
 `analyze` requests the [Analyzer](#analyzer) to [analyze the query](Analyzer.md#analyze).
 
-`analyze` requests the [pull](#pullQueryValidator) or [push query validator](#pushQueryValidator) to [validate the analysis](QueryValidator.md#validate) based on whether it is a [pull query](Query.md#isPullQuery) or not, respectively.
+`analyze` requests the [pull](#pullQueryValidator) or [push query validator](#pushQueryValidator) to [validate the analysis](QueryValidator.md#validate) based on whether it is a [pull query](parser/Query.md#isPullQuery) or not, respectively.
 
 ---
 

@@ -27,7 +27,7 @@ SqlTypeParser create(
 `create` is used when:
 
 * `UserFunctionLoader` is created
-* `AstBuilder.Visitor` is [created](AstBuilder.md#Visitor)
+* `AstBuilder.Visitor` is [created](parser/AstBuilder.md#Visitor)
 * `SchemaParser` is requested to `parse` a schema
 * `SqlTypeDeserializer` is requested to `deserialize`
 * `KsqlTargetUtil` is requested to `createSchema`

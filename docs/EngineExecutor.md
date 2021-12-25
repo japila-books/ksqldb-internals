@@ -120,17 +120,17 @@ KsqlPlan plan(
   ConfiguredStatement<?> statement)
 ```
 
-`plan` requests the given `ConfiguredStatement` for the [Statement](Statement.md).
+`plan` requests the given `ConfiguredStatement` for the [Statement](parser/Statement.md).
 
 ### <span id="plan-ExecutableDdlStatement"> ExecutableDdlStatement
 
-For a [ExecutableDdlStatement](ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](CreateStream.md) or a `CreateTable`. They are supposed to be a [source](CreateSource.md#isSource).
+For a [ExecutableDdlStatement](parser/ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](parser/CreateStream.md) or a `CreateTable`. They are supposed to be a [source](parser/CreateSource.md#isSource).
 
 For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan). Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [creates a KsqlPlanV1](KsqlPlan.md#ddlPlanCurrent).
 
 ### <span id="plan-QueryContainer"> Planning QueryContainer
 
-Otherwise, `plan` assumes that the `Statement` is a [QueryContainer](QueryContainer.md) and [plans the query](#planQuery) (with the `Sink` among the others that gives a `PhysicalPlan`).
+Otherwise, `plan` assumes that the `Statement` is a [QueryContainer](parser/QueryContainer.md) and [plans the query](#planQuery) (with the `Sink` among the others that gives a `PhysicalPlan`).
 
 `plan` [maybeCreateSinkDdl](#maybeCreateSinkDdl).
 
@@ -142,7 +142,7 @@ In the end, `plan` [creates a KsqlPlanV1](KsqlPlan.md#queryPlanCurrent).
 
 `plan` [throws a KsqlStatementException for a non-executable statement](#throwOnNonExecutableStatement).
 
-`plan` throws a `KsqlStatementException` for a [CreateStream](CreateStream.md) or a `CreateTable` that are [source](CreateSource.md#isSource) the [ksql.source.table.materialization.enabled](#isSourceTableMaterializationEnabled) configuration property is disabled:
+`plan` throws a `KsqlStatementException` for a [CreateStream](parser/CreateStream.md) or a `CreateTable` that are [source](parser/CreateSource.md#isSource) the [ksql.source.table.materialization.enabled](#isSourceTableMaterializationEnabled) configuration property is disabled:
 
 ```text
 Cannot execute command because source table materialization is disabled.

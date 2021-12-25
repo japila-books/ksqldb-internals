@@ -23,9 +23,9 @@ Analysis analyze(
   Optional<Sink> sink)
 ```
 
-`analyze` creates a [Visitor](#Visitor) (for the given [Query](Query.md) and a flag to indicate whether the sink is defined or not for persistent queries).
+`analyze` creates a [Visitor](#Visitor) (for the given [Query](parser/Query.md) and a flag to indicate whether the sink is defined or not for persistent queries).
 
-`analyze` requests the `Visitor` to [process](AstVisitor.md#process) the given [Query](Query.md) and [analyzeNonStdOutSink](#analyzeNonStdOutSink) if the sink is defined.
+`analyze` requests the `Visitor` to [process](parser/AstVisitor.md#process) the given `Query` and [analyzeNonStdOutSink](#analyzeNonStdOutSink) if the sink is defined.
 
 `analyze` requests the `Visitor` to [validate the analysis](#validate).
 
@@ -37,7 +37,7 @@ In the end, `analyze` requests the the `Visitor` for the [Analysis](#analysis).
 
 ## <span id="Visitor"> Visitor
 
-`Visitor` is a [DefaultTraversalVisitor](DefaultTraversalVisitor.md) to produce an `AstNode` that `Analyzer` uses to [analyze queries](#analyze).
+`Visitor` is a [DefaultTraversalVisitor](parser/DefaultTraversalVisitor.md) to produce an `AstNode` that `Analyzer` uses to [analyze queries](#analyze).
 
 `Visitor` is a `private final` class of `Analyzer`.
 
@@ -57,7 +57,7 @@ AstNode visitAliasedRelation(
 
 `visitAliasedRelation` makes sure that the `Table` relation is registered in the [MetaStore](#metaStore) and requests the [Analysis](#analysis) to [register the alias with the DataSource](Analysis.md#addDataSource).
 
-`visitAliasedRelation` is part of the [AstVisitor](AstVisitor.md#visitAliasedRelation) abstraction.
+`visitAliasedRelation` is part of the [AstVisitor](parser/AstVisitor.md#visitAliasedRelation) abstraction.
 
 ### <span id="visitSelect"> visitSelect
 
@@ -69,4 +69,4 @@ AstNode visitSelect(
 
 `visitSelect`...FIXME
 
-`visitSelect` is part of the [AstVisitor](AstVisitor.md#visitSelect) abstraction.
+`visitSelect` is part of the [AstVisitor](parser/AstVisitor.md#visitSelect) abstraction.

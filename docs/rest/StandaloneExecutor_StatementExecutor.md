@@ -17,18 +17,18 @@
 
 ## <span id="HANDLERS"> Statement Handlers
 
-`StatementExecutor` creates `HANDLERS` collection of handlers (_functions_) of [Statement](../Statement.md)s.
+`StatementExecutor` creates `HANDLERS` collection of handlers (_functions_) of [Statement](../parser/Statement.md)s.
 
 SQL | Statement Class | Handler
 ----|-----------------|---------
  <span id="SetProperty"> SET | `SetProperty` | `StatementExecutor::handleSetProperty`
  UNSET | `UnsetProperty` | `StatementExecutor::handleUnsetProperty`
- CREATE STREAM | [CreateStream](../CreateStream.md) | `StatementExecutor::handleExecutableDdl`
+ CREATE STREAM | [CreateStream](../parser/CreateStream.md) | `StatementExecutor::handleExecutableDdl`
  CREATE TABLE | `CreateTable` | `StatementExecutor::handleExecutableDdl`
  REGISTER TYPE | `RegisterType` | `StatementExecutor::handleExecutableDdl`
  <span id="CreateStreamAsSelect"> CREATE STREAM AS SELECT | `CreateStreamAsSelect` | [handlePersistentQuery](#handlePersistentQuery)
  <span id="CreateTableAsSelect"> CREATE TABLE AS SELECT | `CreateTableAsSelect` | [handlePersistentQuery](#handlePersistentQuery)
- <span id="InsertInto"> INSERT INTO | [InsertInto](../InsertInto.md) | [handlePersistentQuery](#handlePersistentQuery)
+ <span id="InsertInto"> INSERT INTO | [InsertInto](../parser/InsertInto.md) | [handlePersistentQuery](#handlePersistentQuery)
 
 The `HANDLERS` is used in [execute](#execute) and [generateSupportedMessage](#generateSupportedMessage).
 

@@ -1,6 +1,6 @@
 # AstBuilder
 
-`AstBuilder` uses [Visitor](Visitor.md) to parse SQL statements (using ANTLR).
+`AstBuilder` uses [Visitor](AstBuilder_Visitor.md) to parse SQL statements (using ANTLR).
 
 ## Creating Instance
 
@@ -21,13 +21,13 @@ Statement buildStatement(
   ParserRuleContext parseTree)
 ```
 
-`buildStatement`...FIXME
+`buildStatement` [collects the source names](#getSources) (in a SQL statement) and [builds a Statement](#build).
 
 `buildStatement` is used when:
 
 * `DefaultKsqlParser` is requested to [prepare a ParsedStatement](DefaultKsqlParser.md#prepare)
 
-### <span id="getSources"> getSources
+### <span id="getSources"> Collecting Source Names
 
 ```java
 Set<SourceName> getSources(
@@ -36,7 +36,7 @@ Set<SourceName> getSources(
 
 `getSources` creates a [SourceAccumulator](SourceAccumulator.md) to visit (the nodes of) the given `ParseTree`. In the end, `getSources` requests the `SourceAccumulator` for the [sources](SourceAccumulator.md#getSources).
 
-## <span id="build"> Parsing SQL Text
+## <span id="build"> Building Parsed Tree (build)
 
 ```java
 <T extends Node> T build(

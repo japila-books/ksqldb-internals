@@ -8,7 +8,7 @@
 * <span id="processingLogContext"> `ProcessingLogContext`
 * <span id="metaStore"> `MutableMetaStore`
 * <span id="queryIdGenerator"> `QueryIdGenerator`
-* <span id="parser"> [KsqlParser](KsqlParser.md)
+* <span id="parser"> [KsqlParser](parser/KsqlParser.md)
 * <span id="cleanupService"> `QueryCleanupService`
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="queryRegistry"> [QueryRegistry](QueryRegistry.md)
@@ -28,7 +28,7 @@ List<ParsedStatement> parse(
   String sql)
 ```
 
-`parse` requests the [KsqlParser](#parser) to [parse the given SQL statements](KsqlParser.md#parse).
+`parse` requests the [KsqlParser](#parser) to [parse the given SQL statements](parser/KsqlParser.md#parse).
 
 `parse` is used when:
 
@@ -44,7 +44,7 @@ PreparedStatement<?> prepare(
   Map<String, String> variablesMap)
 ```
 
-`prepare` requests the [KsqlParser](#parser) to [prepare the ParsedStatement](KsqlParser.md#parse) and creates a new `PreparedStatement`.
+`prepare` requests the [KsqlParser](#parser) to [prepare the ParsedStatement](parser/KsqlParser.md#parse) and creates a new `PreparedStatement`.
 
 `prepare` is used when:
 
@@ -64,7 +64,7 @@ EngineContext create(
   Collection<QueryEventListener> registrationListeners)
 ```
 
-`create` creates a [EngineContext](#creating-instance) (with a new [DefaultKsqlParser](DefaultKsqlParser.md), a new [QueryRegistryImpl](QueryRegistryImpl.md) and the others).
+`create` creates a [EngineContext](#creating-instance) (with a new [DefaultKsqlParser](parser/DefaultKsqlParser.md), a new [QueryRegistryImpl](QueryRegistryImpl.md) and the others).
 
 `create` is used when:
 

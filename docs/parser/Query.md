@@ -20,6 +20,6 @@
 
 `Query` is created when:
 
-* `EngineExecutor` is requested to [sourceTablePlan](EngineExecutor.md#sourceTablePlan)
+* `EngineExecutor` is requested to [sourceTablePlan](../EngineExecutor.md#sourceTablePlan)
 * `Rewriter` is requested to `visitQuery`
-* `AstBuilder.Visitor` is requested to [visitQuery](Visitor.md#visitQuery)
+* `AstBuilder.Visitor` is requested to [visitQuery](AstBuilder_Visitor.md#visitQuery)

@@ -16,7 +16,7 @@ The format of the serialized value
 
 Default: (undefined)
 
-Overrides [KsqlConfig.KSQL_DEFAULT_VALUE_FORMAT_CONFIG](KsqlConfig.md#KSQL_DEFAULT_VALUE_FORMAT_CONFIG)
+Overrides [KsqlConfig.KSQL_DEFAULT_VALUE_FORMAT_CONFIG](../KsqlConfig.md#KSQL_DEFAULT_VALUE_FORMAT_CONFIG)
 
 Must not be specified with [FORMAT](#FORMAT)
 

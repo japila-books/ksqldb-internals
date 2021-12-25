@@ -115,11 +115,11 @@ boolean isExecutableStatement(
   Statement statement)
 ```
 
-`isExecutableStatement` is positive (`true`) when the given [Statement](Statement.md) is one of the following:
+`isExecutableStatement` is positive (`true`) when the given [Statement](parser/Statement.md) is one of the following:
 
-* [ExecutableDdlStatement](ExecutableDdlStatement.md)
-* [QueryContainer](QueryContainer.md)
-* [Query](Query.md)
+* [ExecutableDdlStatement](parser/ExecutableDdlStatement.md)
+* [QueryContainer](parser/QueryContainer.md)
+* [Query](parser/Query.md)
 
 `isExecutableStatement` is used when:
 

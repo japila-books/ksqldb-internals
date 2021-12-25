@@ -22,7 +22,7 @@ In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md
 
 ---
 
-The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](QueryContainer.md#getSink)).
+The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](parser/QueryContainer.md#getSink)).
 
 ---
 

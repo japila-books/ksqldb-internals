@@ -1,6 +1,6 @@
 # AstBuilder.Visitor
 
-`Visitor` is a `SqlBaseBaseVisitor` to build a [Node](Node.md).
+`Visitor` is a `SqlBaseBaseVisitor` to build a [Node](Node.md) (that `AstBuilder` uses to [build a parsed tree](AstBuilder.md#build)).
 
 !!! warning "ANTLR"
     `SqlBaseBaseVisitor` is generated from `SqlBase.g4` SQL grammar by ANTLR at build time.
@@ -14,7 +14,7 @@
 
 `Visitor` is created when:
 
-* `AstBuilder` is requested to [build a node tree](AstBuilder.md#build)
+* `AstBuilder` is requested to [build a parsed tree](AstBuilder.md#build)
 
 ## <span id="visitQuery"> visitQuery
 

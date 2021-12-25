@@ -28,7 +28,7 @@ StatementExecutorResponse execute(
 
 `execute` requests the [injectorFactory](#injectorFactory) to [inject](../Injector.md#inject) into the given `ConfiguredStatement`.
 
-For [InsertInto](../InsertInto.md)s, `execute` [validateInsertIntoQueries](#validateInsertIntoQueries).
+For [InsertInto](../parser/InsertInto.md)s, `execute` [validateInsertIntoQueries](#validateInsertIntoQueries).
 
 `execute` requests the [CommandQueue](#commandQueue) for a [transactional Kafka producer](CommandQueue.md#createTransactionalProducer) (`Producer<CommandId, Command>` to produce to the command topic).
 

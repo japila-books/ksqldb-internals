@@ -17,7 +17,7 @@ CreateStreamCommand createStreamCommand(
   KsqlConfig ksqlConfig)
 ```
 
-`createStreamCommand` requests the [MetaStore](#metaStore) for the [DataSource](MetaStore.md#getSource) for the given [CreateStream](CreateStream.md).
+`createStreamCommand` requests the [MetaStore](#metaStore) for the [DataSource](MetaStore.md#getSource) for the given [CreateStream](parser/CreateStream.md).
 
 `createStreamCommand` [throwIfCreateOrReplaceOnSourceStreamOrTable](#throwIfCreateOrReplaceOnSourceStreamOrTable).
 
@@ -35,10 +35,10 @@ void throwIfCreateOrReplaceOnSourceStreamOrTable(
   DataSource existingSource)
 ```
 
-`throwIfCreateOrReplaceOnSourceStreamOrTable` throws a `KsqlException` when the given [CreateSource](CreateSource.md) is as follows:
+`throwIfCreateOrReplaceOnSourceStreamOrTable` throws a `KsqlException` when the given [CreateSource](parser/CreateSource.md) is as follows:
 
-1. [CREATE OR REPLACE](CreateSource.md#isOrReplace)
-1. [SOURCE](CreateSource.md#isSource) or the given [DataSource](DataSource.md) is a [source](DataSource.md#isSource)
+1. [CREATE OR REPLACE](parser/CreateSource.md#isOrReplace)
+1. [SOURCE](parser/CreateSource.md#isSource) or the given [DataSource](DataSource.md) is a [source](DataSource.md#isSource)
 
 ```text
 Cannot add [stream|table] '[source-name]':

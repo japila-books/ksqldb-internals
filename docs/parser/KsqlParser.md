@@ -17,9 +17,9 @@ See [DefaultKsqlParser](DefaultKsqlParser.md#parse)
 
 Used when:
 
-* `Cli` is requested to [substituteVariables](cli/Cli.md#substituteVariables) and [handleStatements](cli/Cli.md#handleStatements)
-* `EngineContext` is requested to [parse SQL statements](EngineContext.md#parse)
-* `KsqlResource` is requested for [TERMINATE_CLUSTER](rest/KsqlResource.md#TERMINATE_CLUSTER)
+* `Cli` is requested to [substituteVariables](../cli/Cli.md#substituteVariables) and [handleStatements](../cli/Cli.md#handleStatements)
+* `EngineContext` is requested to [parse SQL statements](../EngineContext.md#parse)
+* `KsqlResource` is requested for [TERMINATE_CLUSTER](../rest/KsqlResource.md#TERMINATE_CLUSTER)
 
 ### <span id="prepare"> Preparing ParsedStatement
 
@@ -31,7 +31,7 @@ PreparedStatement<?> prepare(
 
 Used when:
 
-* `EngineContext` is requested to [prepare a ParsedStatement](EngineContext.md#prepare)
+* `EngineContext` is requested to [prepare a ParsedStatement](../EngineContext.md#prepare)
 
 ## Implementations
 

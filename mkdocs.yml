@@ -111,6 +111,9 @@ nav:
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
     - ExecutionStepFactory: ExecutionStepFactory.md
+    - Format: Format.md
+    - FormatFactory: FormatFactory.md
+    - Injector: Injector.md
     - JoinNode: JoinNode.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
@@ -145,33 +148,64 @@ nav:
     - SourceBuilderBase: SourceBuilderBase.md
     - SourceBuilderV1: SourceBuilderV1.md
     - SourceStep: SourceStep.md
+    - SqlPrimitiveType: SqlPrimitiveType.md
+    - SqlTypeParser: SqlTypeParser.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - VersionCheckerAgent: VersionCheckerAgent.md
+  - Query Parsing:
+    - parser/index.md
+    - AstBuilder:
+      - AstBuilder: parser/AstBuilder.md
+      - Visitor: parser/AstBuilder_Visitor.md
+    - AstVisitor: parser/AstVisitor.md
+    - CommonCreateConfigs: parser/CommonCreateConfigs.md
+    - CreateSource:
+      - CreateSource: parser/CreateSource.md
+      - CreateSourceProperties: parser/CreateSourceProperties.md
+    - CreateTable: parser/CreateTable.md
+    - DdlStatement:
+      - DdlStatement: parser/DdlStatement.md
+      - ExecutableDdlStatement: parser/ExecutableDdlStatement.md
+    - DefaultKsqlParser: parser/DefaultKsqlParser.md
+    - DefaultTraversalVisitor: parser/DefaultTraversalVisitor.md
+    - KsqlParser: parser/KsqlParser.md
+    - Tree Nodes:
+      - AstNode: parser/AstNode.md
+      - CreateAsSelect: parser/CreateAsSelect.md
+      - CreateSourceAsProperties: parser/CreateSourceAsProperties.md
+      - CreateStream: parser/CreateStream.md
+      - Expression: parser/Expression.md
+      - InsertInto: parser/InsertInto.md
+      - KsqlWindowExpression: parser/KsqlWindowExpression.md
+      - Node: parser/Node.md
+      - Statement: parser/Statement.md
+      - Query: parser/Query.md
+      - QueryContainer: parser/QueryContainer.md
+    - SourceAccumulator: parser/SourceAccumulator.md
+    - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
   - Query Planning:
     - Analysis: Analysis.md
-    - Analyzer: Analyzer.md
-    - AstVisitor: AstVisitor.md
+    - Analyzer:
+      - Analyzer: Analyzer.md
+      - Visitor: Analyzer_Visitor.md
     - CommandFactories: CommandFactories.md
     - CreateSourceFactory: CreateSourceFactory.md
     - CreateStreamCommand: CreateStreamCommand.md
     - DdlCommandFactory: DdlCommandFactory.md
-    - DdlStatement: DdlStatement.md
-    - DefaultTraversalVisitor: DefaultTraversalVisitor.md
     - ImmutableAnalysis: ImmutableAnalysis.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: LogicalPlanner.md
     - MetaStore: MetaStore.md
+    - OutputNode: OutputNode.md
     - PullQueryValidator: PullQueryValidator.md
-    - Query: Query.md
     - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
     - QueryValidator: QueryValidator.md
     - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md
-    - Visitor: Visitor.md
   - REST:
     - Command: rest/Command.md
     - CommandQueue: rest/CommandQueue.md
@@ -200,32 +234,6 @@ nav:
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutor: rest/StatementExecutor.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
-  - SQL:
-    - AstBuilder: AstBuilder.md
-    - AstBuilder.Visitor: AstBuilder_Visitor.md
-    - AstNode: AstNode.md
-    - CommonCreateConfigs: CommonCreateConfigs.md
-    - CreateAsSelect: CreateAsSelect.md
-    - CreateSource: CreateSource.md
-    - CreateSourceAsProperties: CreateSourceAsProperties.md
-    - CreateSourceProperties: CreateSourceProperties.md
-    - CreateStream: CreateStream.md
-    - CreateTable: CreateTable.md
-    - DefaultKsqlParser: DefaultKsqlParser.md
-    - ExecutableDdlStatement: ExecutableDdlStatement.md
-    - Format: Format.md
-    - FormatFactory: FormatFactory.md
-    - Injector: Injector.md
-    - InsertInto: InsertInto.md
-    - KsqlParser: KsqlParser.md
-    - Node: Node.md
-    - OutputNode: OutputNode.md
-    - QueryContainer: QueryContainer.md
-    - SourceAccumulator: SourceAccumulator.md
-    - SourcePropertiesUtil: SourcePropertiesUtil.md
-    - SqlPrimitiveType: SqlPrimitiveType.md
-    - SqlTypeParser: SqlTypeParser.md
-    - Statement: Statement.md
   - CLI:
     - Cli: cli/Cli.md
     - Ksql: cli/Ksql.md

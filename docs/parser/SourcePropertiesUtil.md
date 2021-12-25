@@ -15,6 +15,6 @@ Value format not present
 
 `getValueFormat` is used when:
 
-* `CreateSourceFactory` is requested to [buildFormats](CreateSourceFactory.md#buildFormats)
+* `CreateSourceFactory` is requested to [buildFormats](../CreateSourceFactory.md#buildFormats)
 * `DefaultSchemaInjector` is requested to `getValueSchema`
 * `SchemaRegisterInjector` is requested to `registerForCreateSource`

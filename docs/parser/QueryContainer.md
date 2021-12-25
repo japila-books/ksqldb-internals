@@ -14,7 +14,7 @@ Query getQuery()
 
 Used when:
 
-* `EngineExecutor` is requested to [plan a ConfiguredStatement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan a ConfiguredStatement](../EngineExecutor.md#plan)
 * `TopicCreateInjector` is requested to `injectForCreateAsSelect`
 * `DefaultTraversalVisitor` is requested to [visitInsertInto](DefaultTraversalVisitor.md#visitInsertInto), [visitCreateStreamAsSelect](DefaultTraversalVisitor.md#visitCreateStreamAsSelect), [visitCreateTableAsSelect](DefaultTraversalVisitor.md#visitCreateTableAsSelect)
 * _a few others_
@@ -27,7 +27,7 @@ Optional<String> getQueryId()
 
 Used when:
 
-* `EngineExecutor` is requested to [plan a ConfiguredStatement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan a ConfiguredStatement](../EngineExecutor.md#plan)
 
 ### <span id="getSink"> getSink
 
@@ -37,7 +37,7 @@ Sink getSink()
 
 Used when:
 
-* `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan a statement](../EngineExecutor.md#plan)
 
 ## Implementations
 

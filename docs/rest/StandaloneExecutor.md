@@ -84,7 +84,7 @@ void validateStatements(
 
 `validateStatements` creates a [StatementExecutor](StatementExecutor.md) to [execute the ParsedStatements](#executeStatements).
 
-In the end, if [failOnNoQueries](#failOnNoQueries) and there was no [QueryContainer](../QueryContainer.md), `validateStatements` throws a `KsqlException`:
+In the end, if [failOnNoQueries](#failOnNoQueries) and there was no [QueryContainer](../parser/QueryContainer.md), `validateStatements` throws a `KsqlException`:
 
 ```text
 The SQL file does not contain any persistent queries.

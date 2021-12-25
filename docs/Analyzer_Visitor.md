@@ -1,6 +1,6 @@
 # Visitor
 
-`Visitor` is a [DefaultTraversalVisitor](DefaultTraversalVisitor.md).
+`Visitor` is a [DefaultTraversalVisitor](parser/DefaultTraversalVisitor.md).
 
 `Visitor` is a `private final class` of [Analyzer](Analyzer.md).
 

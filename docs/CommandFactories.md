@@ -13,12 +13,12 @@
 
 ## <span id="FACTORIES"> Command Factories
 
-`CommandFactories` creates `FACTORIES` collection of handlers (_functions_) for [DdlStatement](DdlStatement.md)s to produce `DdlCommand`s.
+`CommandFactories` creates `FACTORIES` collection of handlers (_functions_) for [DdlStatement](parser/DdlStatement.md)s to produce `DdlCommand`s.
 
 DdlStatement    | Handler
 ----------------|---------------------
- [CreateStream](CreateStream.md) | [handleCreateStream](#handleCreateStream)
- `CreateTable`  | `handleCreateTable`
+ [CreateStream](parser/CreateStream.md) | [handleCreateStream](#handleCreateStream)
+ [CreateTable](parser/CreateTable.md)   | `handleCreateTable`
  `DropStream`   | `handleDropStream`
  `DropTable`    | `handleDropTable`
  `RegisterType` | `handleRegisterType`
@@ -40,7 +40,7 @@ DdlCommand create(
   SessionConfig config)
 ```
 
-`create` looks up (the class of) the given [DdlStatement](DdlStatement.md) in the [FACTORIES](#FACTORIES) registry and requests it to handle it (and produce a `DdlCommand`).
+`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry and requests it to handle it (and produce a `DdlCommand`).
 
 Unless found, `create` throws a `KsqlException`:
 
@@ -67,4 +67,4 @@ CreateStreamCommand handleCreateStream(
   CreateStream statement)
 ```
 
-`handleCreateStream` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand) (for the given [CreateStream](CreateStream.md) statement).
+`handleCreateStream` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand) (for the given [CreateStream](parser/CreateStream.md) statement).

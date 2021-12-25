@@ -5,5 +5,5 @@
 ## Implementations
 
 * `SourceTopicsExtractor`
-* [Analyzer.Visitor](Visitor.md)
+* [Analyzer.Visitor](../Analyzer_Visitor.md)
 * `DataSourceExtractor.Visitor`

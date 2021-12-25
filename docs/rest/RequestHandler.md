@@ -57,7 +57,7 @@ KsqlEntityList execute(
   KsqlEntityList entities)
 ```
 
-`executeStatement` requests the given `PreparedStatement` for the [Statement](../Statement.md) and its Java class that is used to request the [CommandQueueSync](#commandQueueSync) to `waitFor`.
+`executeStatement` requests the given `PreparedStatement` for the [Statement](../parser/Statement.md) and its Java class that is used to request the [CommandQueueSync](#commandQueueSync) to `waitFor`.
 
 `executeStatement` creates a `ConfiguredStatement` for the given `PreparedStatement` (with a new `SessionConfig`).
 

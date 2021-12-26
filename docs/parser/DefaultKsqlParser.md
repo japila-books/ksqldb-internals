@@ -34,7 +34,7 @@ List<ParsedStatement> parse(
 
 `parse` is part of the [KsqlParser](KsqlParser.md#parse) abstraction.
 
-## <span id="prepare"> Preparing ParsedStatement (prepare)
+## <span id="prepare"> Preparing Statement for Execution
 
 ```java
 PreparedStatement<?> prepare(

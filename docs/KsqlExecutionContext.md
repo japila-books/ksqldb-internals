@@ -4,6 +4,23 @@
 
 ## Contract (Subset)
 
+### <span id="createSandbox"> createSandbox
+
+```java
+KsqlExecutionContext createSandbox(
+  ServiceContext serviceContext)
+```
+
+Used when:
+
+* `KsqlContext` is requested to [execute a SQL text](embedded/KsqlContext.md#sql)
+* `DefaultSchemaInjector` is requested to `forCreateAsStatement`
+* `SchemaRegisterInjector` is requested to `registerForCreateAs`
+* `StandaloneExecutor` is requested to [validateStatements](rest/StandaloneExecutor.md#validateStatements)
+* `DistributingExecutor` is requested to [execute](rest/DistributingExecutor.md#execute)
+* `ExplainExecutor` is requested to `explainStatement`
+* `KsqlResource` is requested to [configure](rest/KsqlResource.md#configure)
+
 ### <span id="executeTablePullQuery"> executeTablePullQuery
 
 ```java
@@ -66,7 +83,7 @@ Used when:
 * `SchemaRegisterInjector` is requested to `registerForCreateAs`
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 
-### <span id="prepare"> Preparing ParsedStatement
+### <span id="prepare"> Preparing Statement for Execution
 
 ```java
 PreparedStatement<?> prepare(
@@ -84,9 +101,9 @@ Used when:
 * `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
 * `QueryEndpoint` is requested to `createStatement`
 * `RequestHandler` is requested to [execute](rest/RequestHandler.md#execute)
-* `RequestValidator` is requested to `validate`
+* `RequestValidator` is requested to [validate](rest/RequestValidator.md#validate)
 * `SqlFormatInjector` is requested to `inject`
-* `StandaloneExecutor.StatementExecutor` is requested to `prepare` a `ParsedStatement`
+* `StandaloneExecutor.StatementExecutor` is requested to [prepare a statement](rest/StandaloneExecutor_StatementExecutor.md#prepare)
 * `StatementParser` is requested to `parseSingleStatement`
 
 ## Implementations

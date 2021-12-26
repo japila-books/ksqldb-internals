@@ -14,12 +14,12 @@
 
 ## <span id="KSQL_VARIABLE_SUBSTITUTION_ENABLE"><span id="ksql.variable.substitution.enable"> ksql.variable.substitution.enable
 
-Enables variable substitution on SQL statements
+Enables variable substitution in SQL statements
 
 Default: `true`
 
 Used when:
 
-* `Cli` is requested to `isVariableSubstitutionEnabled`
-* `RequestHandler` is requested to `isVariableSubstitutionEnabled`
-* `RequestValidator` is requested to `isVariableSubstitutionEnabled`
+* `Cli` is requested to [isVariableSubstitutionEnabled](cli/Cli.md#isVariableSubstitutionEnabled)
+* `RequestHandler` is requested to [isVariableSubstitutionEnabled](rest/RequestHandler.md#isVariableSubstitutionEnabled)
+* `RequestValidator` is requested to [isVariableSubstitutionEnabled](rest/RequestValidator.md#isVariableSubstitutionEnabled)

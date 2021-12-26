@@ -77,7 +77,7 @@ List<ParsedStatement> parse(
 
 `parse` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#parse) abstraction.
 
-## <span id="prepare"> Preparing ParsedStatement
+## <span id="prepare"> Preparing Statement for Execution
 
 ```java
 PreparedStatement<?> prepare(

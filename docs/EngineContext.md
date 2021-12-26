@@ -36,7 +36,7 @@ List<ParsedStatement> parse(
 * `KsqlEngine` is requested to [parse a SQL text](KsqlEngine.md#parse)
 * `SandboxedExecutionContext` is requested to `parse`
 
-## <span id="prepare"> Preparing ParsedStatement (prepare)
+## <span id="prepare"> Preparing Statement for Execution
 
 ```java
 PreparedStatement<?> prepare(
@@ -53,10 +53,12 @@ PreparedStatement<?> prepare(
 
 In the end, `prepare` creates a new `PreparedStatement`.
 
+---
+
 `prepare` is used when:
 
-* `KsqlEngine` is requested to [prepare a ParsedStatement](KsqlEngine.md#prepare)
-* `SandboxedExecutionContext` is requested to `prepare` a `ParsedStatement`
+* `KsqlEngine` is requested to [prepare a statement for execution](KsqlEngine.md#prepare)
+* `SandboxedExecutionContext` is requested to [prepare a statement for execution](SandboxedExecutionContext.md#prepare)
 
 ### <span id="substituteVariables"> Variable Substitution
 

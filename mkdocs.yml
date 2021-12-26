@@ -194,7 +194,9 @@ nav:
     - CommandFactories: CommandFactories.md
     - CreateSourceFactory: CreateSourceFactory.md
     - CreateStreamCommand: CreateStreamCommand.md
+    - DataSourceExtractor: DataSourceExtractor.md
     - DdlCommandFactory: DdlCommandFactory.md
+    - ExpressionRewriterPlugin: ExpressionRewriterPlugin.md
     - ImmutableAnalysis: ImmutableAnalysis.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
@@ -202,6 +204,7 @@ nav:
     - MetaStore: MetaStore.md
     - OutputNode: OutputNode.md
     - PullQueryValidator: PullQueryValidator.md
+    - RewriterPlugin: RewriterPlugin.md
     - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
     - QueryValidator: QueryValidator.md

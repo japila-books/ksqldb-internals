@@ -1,0 +1,3 @@
+# RewriterPlugin
+
+`RewriterPlugin` is...FIXME

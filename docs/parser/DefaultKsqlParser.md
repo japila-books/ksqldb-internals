@@ -12,7 +12,7 @@
 * `EngineContext` utility is used to [create an EngineContext](../EngineContext.md#create) and [createSandbox](../EngineContext.md#createSandbox)
 * `KsqlResource` is requested for [TERMINATE_CLUSTER](../rest/KsqlResource.md#TERMINATE_CLUSTER)
 
-## <span id="parse"> Parsing SQL Statements
+## <span id="parse"> Parsing SQL Statements (parse)
 
 ```java
 List<ParsedStatement> parse(
@@ -34,7 +34,7 @@ List<ParsedStatement> parse(
 
 `parse` is part of the [KsqlParser](KsqlParser.md#parse) abstraction.
 
-## <span id="prepare"> Preparing ParsedStatement
+## <span id="prepare"> Preparing ParsedStatement (prepare)
 
 ```java
 PreparedStatement<?> prepare(
@@ -42,6 +42,10 @@ PreparedStatement<?> prepare(
   TypeRegistry typeRegistry)
 ```
 
-`prepare`...FIXME
+`prepare` creates an [AstBuilder](AstBuilder.md) (with the given `TypeRegistry`) to [build a Statement](AstBuilder.md#buildStatement).
+
+In the end, `prepare` creates a `PreparedStatement` (with the SQL query in text format and as the [Statement](Statement.md)).
+
+---
 
 `prepare` is part of the [KsqlParser](KsqlParser.md#prepare) abstraction.

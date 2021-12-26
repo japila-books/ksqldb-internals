@@ -184,11 +184,13 @@ nav:
       - QueryContainer: parser/QueryContainer.md
     - SourceAccumulator: parser/SourceAccumulator.md
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
+    - VariableSubstitutor: parser/VariableSubstitutor.md
   - Query Planning:
     - Analysis: Analysis.md
     - Analyzer:
       - Analyzer: Analyzer.md
       - Visitor: Analyzer_Visitor.md
+    - AstSanitizer: AstSanitizer.md
     - CommandFactories: CommandFactories.md
     - CreateSourceFactory: CreateSourceFactory.md
     - CreateStreamCommand: CreateStreamCommand.md

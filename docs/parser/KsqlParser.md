@@ -29,6 +29,8 @@ PreparedStatement<?> prepare(
   TypeRegistry typeRegistry)
 ```
 
+See [DefaultKsqlParser](DefaultKsqlParser.md#prepare)
+
 Used when:
 
 * `EngineContext` is requested to [prepare a ParsedStatement](../EngineContext.md#prepare)

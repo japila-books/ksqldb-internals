@@ -36,7 +36,7 @@ List<ParsedStatement> parse(
 * `KsqlEngine` is requested to [parse a SQL text](KsqlEngine.md#parse)
 * `SandboxedExecutionContext` is requested to `parse`
 
-## <span id="prepare"> prepare
+## <span id="prepare"> Preparing ParsedStatement (prepare)
 
 ```java
 PreparedStatement<?> prepare(
@@ -44,12 +44,29 @@ PreparedStatement<?> prepare(
   Map<String, String> variablesMap)
 ```
 
-`prepare` requests the [KsqlParser](#parser) to [prepare the ParsedStatement](parser/KsqlParser.md#parse) and creates a new `PreparedStatement`.
+`prepare` [substitutes variables](#substituteVariables) (in the given `ParsedStatement` with the `variablesMap`) and then requests the [KsqlParser](#parser) to [prepare the ParsedStatement](parser/KsqlParser.md#parse) (with the variables resolved).
+
+`prepare` [sanitizes the statement](AstSanitizer.md#sanitize) based on the following configuration properties (in the [KsqlConfig](#ksqlConfig)):
+
+* [ksql.lambdas.enabled](KsqlConfig.md#KSQL_LAMBDAS_ENABLED)
+* [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED)
+
+In the end, `prepare` creates a new `PreparedStatement`.
 
 `prepare` is used when:
 
 * `KsqlEngine` is requested to [prepare a ParsedStatement](KsqlEngine.md#prepare)
 * `SandboxedExecutionContext` is requested to `prepare` a `ParsedStatement`
+
+### <span id="substituteVariables"> Variable Substitution
+
+```java
+ParsedStatement substituteVariables(
+  ParsedStatement stmt,
+  Map<String, String> variablesMap)
+```
+
+`substituteVariables` [substitutes variables](parser/VariableSubstitutor.md#substitute) (in the given `ParsedStatement` with the `variablesMap`) and then [parses the SQL text](#parse).
 
 ## <span id="create"> Creating EngineContext
 

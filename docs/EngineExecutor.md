@@ -21,14 +21,17 @@ EngineExecutor create(
 
 `create` creates an [EngineExecutor](#creating-instance).
 
-!!! note
-    `create` is simply a convenient static factory method that does nothing but `new EngineExecutor` yet makes for a more readable fluent client code.
+---
 
-    ```java
-    EngineExecutor
-      .create(...)
-      .plan(statement)
-    ```
+`create` is simply a convenient static factory method that does nothing but `new EngineExecutor` and that little programming trick makes for a more readable fluent client code.
+
+```java
+EngineExecutor
+  .create(...)
+  .plan(statement)
+```
+
+---
 
 `create` is used when:
 
@@ -75,7 +78,7 @@ In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the 
 
 * `EngineExecutor` is requested to [executeTablePullQuery](#executeTablePullQuery) (with the `isScalablePush` flag disabled) and [executeScalablePushQuery](#executeScalablePushQuery) (with the `isScalablePush` flag enabled)
 
-## <span id="executeTransientQuery"> executeTransientQuery
+## <span id="executeTransientQuery"> Executing Transient Query
 
 ```java
 TransientQueryMetadata executeTransientQuery(
@@ -89,10 +92,10 @@ In the end, `executeTransientQuery` requests the [EngineContext](#engineContext)
 
 `executeTransientQuery` is used when:
 
-* `KsqlEngine` is requested to [executeTransientQuery](KsqlEngine.md#executeTransientQuery)
-* `SandboxedExecutionContext` is requested to [executeTransientQuery](SandboxedExecutionContext.md#executeTransientQuery)
+* `KsqlEngine` is requested to [execute a transient query](KsqlEngine.md#executeTransientQuery)
+* `SandboxedExecutionContext` is requested to [execute a transient query](SandboxedExecutionContext.md#executeTransientQuery)
 
-## <span id="planQuery"> planQuery
+## <span id="planQuery"> Query Planning (planQuery)
 
 ```java
 ExecutorPlans planQuery(
@@ -103,17 +106,26 @@ ExecutorPlans planQuery(
   MetaStore metaStore)
 ```
 
-`planQuery` requests the [EngineContext](#engineContext) to [createQueryEngine](EngineContext.md#createQueryEngine) (with the [ServiceContext](#serviceContext)).
+`planQuery` requests the [EngineContext](#engineContext) to [create a QueryEngine](EngineContext.md#createQueryEngine) (for the [ServiceContext](#serviceContext)).
 
-`planQuery` [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan).
+!!! note
+    `planQuery` creates a [QueryEngine](QueryEngine.md) every time it is executed.
 
-`planQuery`...FIXME
+`planQuery` [builds a logical query plan](QueryEngine.md#buildQueryLogicalPlan).
+
+`planQuery` creates a `LogicalPlanNode`, a `QueryId` and looks up a `PersistentQueryMetadata` (in [QueryRegistry](EngineContext.md#getQueryRegistry)) for the `QueryId` (if one exists).
+
+`planQuery` [builds a physical query plan](QueryEngine.md#buildPhysicalPlan) (a [PhysicalPlan](PhysicalPlan.md)).
+
+In the end, `planQuery` creates a `ExecutorPlans` (with the `LogicalPlanNode` and the `PhysicalPlan`).
+
+---
 
 `planQuery` is used when:
 
-* `EngineExecutor` is requested to [executeTransientQuery](#executeTransientQuery), [executeStreamPullQuery](#executeStreamPullQuery), [sourceTablePlan](#sourceTablePlan), [plan](#plan)
+* `EngineExecutor` is requested to execute [transient](#executeTransientQuery) and [stream pull](#executeStreamPullQuery) queries, and to [plan a statement](#plan) (and [sourceTablePlan](#sourceTablePlan))
 
-## <span id="plan"> Query Planning (plan)
+## <span id="plan"> Planning Statement
 
 ```java
 KsqlPlan plan(
@@ -147,6 +159,27 @@ In the end, `plan` [creates a KsqlPlanV1](KsqlPlan.md#queryPlanCurrent).
 ```text
 Cannot execute command because source table materialization is disabled.
 ```
+
+### <span id="maybeCreateSinkDdl"> maybeCreateSinkDdl
+
+```java
+Optional<DdlCommand> maybeCreateSinkDdl(
+  ConfiguredStatement<?> cfgStatement,
+  KsqlStructuredDataOutputNode outputNode)
+```
+
+`maybeCreateSinkDdl`...FIXME
+
+### <span id="sourceTablePlan"> sourceTablePlan
+
+```java
+KsqlPlan sourceTablePlan(
+  ConfiguredStatement<?> statement)
+```
+
+`sourceTablePlan` assumes that the given `ConfiguredStatement` is for a [CreateTable](parser/CreateTable.md).
+
+`sourceTablePlan`...FIXME
 
 ### <span id="plan-usage"> Usage
 

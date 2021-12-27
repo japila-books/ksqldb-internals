@@ -140,3 +140,16 @@ ImmutableAnalysis analyzeQueryWithNoOutputTopic(
 `analyzeQueryWithNoOutputTopic` is used when:
 
 * `QueryExecutor` is requested to [handle pull or push queries](rest/QueryExecutor.md#handleQuery)
+
+## <span id="executeTransientQuery"> Executing Transient Query
+
+```java
+TransientQueryMetadata executeTransientQuery(
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  boolean excludeTombstones)
+```
+
+`executeTransientQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [executeTransientQuery](EngineExecutor.md#executeTransientQuery).
+
+`executeTransientQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTransientQuery) abstraction.

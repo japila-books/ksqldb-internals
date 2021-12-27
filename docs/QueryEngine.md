@@ -1,5 +1,16 @@
 # QueryEngine
 
+## Creating Instance
+
+`QueryEngine` takes the following to be created:
+
+* <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="processingLogContext"> `ProcessingLogContext`
+
+`QueryEngine` is created when:
+
+* `EngineContext` is requested to [create one](EngineContext.md#createQueryEngine)
+
 ## <span id="buildQueryLogicalPlan"> Building Logical Query Plan (buildQueryLogicalPlan)
 
 ```java
@@ -27,5 +38,22 @@ The optional `Sink` can only be defined when `EngineExecutor` is requested to [p
 ---
 
 `buildQueryLogicalPlan` is used when:
+
+* `EngineExecutor` is requested to [planQuery](EngineExecutor.md#planQuery)
+
+## <span id="buildPhysicalPlan"> Building Physical Query Plan (buildPhysicalPlan)
+
+```java
+PhysicalPlan buildPhysicalPlan(
+  LogicalPlanNode logicalPlanNode,
+  SessionConfig config,
+  MetaStore metaStore,
+  QueryId queryId,
+  Optional<PlanInfo> oldPlanInfo)
+```
+
+`buildPhysicalPlan`...FIXME
+
+`buildPhysicalPlan` is used when:
 
 * `EngineExecutor` is requested to [planQuery](EngineExecutor.md#planQuery)

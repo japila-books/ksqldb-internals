@@ -15,6 +15,31 @@
 
 `EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
 
+## <span id="createQueryEngine"> Creating QueryEngine
+
+```java
+QueryEngine createQueryEngine(
+  ServiceContext serviceContext)
+```
+
+`createQueryEngine` creates a [QueryEngine](#creating-instance) (with the given [ServiceContext](ServiceContext.md) and the [ProcessingLogContext](#processingLogContext)).
+
+---
+
+`createQueryEngine` is simply a convenient static factory method that does nothing but `new QueryEngine` and that little programming trick makes for a more readable fluent client code.
+
+```java
+EngineContext
+  .createQueryEngine(...)
+  .buildPhysicalPlan(...)
+```
+
+---
+
+`createQueryEngine` is used when:
+
+* `EngineExecutor` is requested to [planQuery](#planQuery)
+
 ## <span id="ddlCommandFactory"> CommandFactories
 
 `EngineContext` creates a [CommandFactories](CommandFactories.md) when [created](#creating-instance).

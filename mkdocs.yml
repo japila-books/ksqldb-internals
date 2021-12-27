@@ -186,6 +186,7 @@ nav:
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
   - Query Planning:
+    - query-planning/index.md
     - Analysis: Analysis.md
     - Analyzer:
       - Analyzer: Analyzer.md
@@ -200,9 +201,12 @@ nav:
     - ImmutableAnalysis: ImmutableAnalysis.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
+    - KsqlStructuredDataOutputNode: KsqlStructuredDataOutputNode.md
     - LogicalPlanner: LogicalPlanner.md
     - MetaStore: MetaStore.md
     - OutputNode: OutputNode.md
+    - PhysicalPlan: PhysicalPlan.md
+    - PhysicalPlanBuilder: PhysicalPlanBuilder.md
     - PullQueryValidator: PullQueryValidator.md
     - RewriterPlugin: RewriterPlugin.md
     - QueryAnalyzer: QueryAnalyzer.md

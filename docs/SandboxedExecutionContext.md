@@ -50,3 +50,16 @@ ExecuteResult execute(
 In the end, `execute` returns the `ExecuteResult`.
 
 `execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
+
+## <span id="executeTransientQuery"> Executing Transient Query
+
+```java
+TransientQueryMetadata executeTransientQuery(
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  boolean excludeTombstones)
+```
+
+`executeTransientQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [executeTransientQuery](EngineExecutor.md#executeTransientQuery).
+
+`executeTransientQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTransientQuery) abstraction.

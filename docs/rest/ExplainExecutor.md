@@ -1,8 +1,8 @@
 # ExplainExecutor
 
-`ExplainExecutor` is a utility to [explain statements](#explain).
+`ExplainExecutor` is a utility to [explain queries or statements](#explain).
 
-## <span id="execute"> execute
+## <span id="execute"> Executing Explain
 
 ```java
 StatementExecutorResponse execute(
@@ -16,4 +16,40 @@ StatementExecutorResponse execute(
 
 `execute` is used when:
 
-* `CustomExecutors` is requested to [handle an Explain query](CustomExecutors.md#Explain)
+* `CustomExecutors` is requested to [handle an Explain statement](CustomExecutors.md#Explain)
+
+### <span id="explain"> Explaining Query or Statement
+
+```java
+QueryDescriptionEntity explain(
+  ServiceContext serviceContext,
+  ConfiguredStatement<Explain> statement,
+  KsqlExecutionContext executionContext,
+  SessionProperties sessionProperties)
+```
+
+`explain` looks up a query ID from the given `ConfiguredStatement`.
+
+If found, `explain` [explainQuery](#explainQuery). Otherwise, `explain` [explainStatement](#explainStatement).
+
+### <span id="explainStatement"> Explaining Statement
+
+```java
+QueryDescription explainStatement(
+  ConfiguredStatement<Explain> explain,
+  KsqlExecutionContext executionContext,
+  ServiceContext serviceContext)
+```
+
+`explainStatement`...FIXME
+
+### <span id="explainQuery"> Explaining Query
+
+```java
+QueryDescription explainQuery(
+  String queryId,
+  KsqlExecutionContext executionContext,
+  SessionProperties sessionProperties)
+```
+
+`explainQuery`...FIXME

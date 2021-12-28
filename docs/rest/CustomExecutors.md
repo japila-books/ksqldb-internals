@@ -2,9 +2,7 @@
 
 `CustomExecutors` is a collection of [StatementExecutor](StatementExecutor.md)s that do not need to be distributed.
 
-`CustomExecutors` is used by [KsqlResource](KsqlResource.md) for the following:
-
-* [Creating a RequestHandler](KsqlResource.md#handler) (and [shouldSynchronize](KsqlResource.md#shouldSynchronize) for a `DefaultCommandQueueSync`)
+`CustomExecutors` is used by [KsqlResource](KsqlResource.md) to [create a RequestHandler](KsqlResource.md#handler) (and [shouldSynchronize](KsqlResource.md#shouldSynchronize) for the `DefaultCommandQueueSync`).
 
 ## <span id="EXECUTOR_MAP"> EXECUTOR_MAP
 
@@ -35,6 +33,7 @@ Enum Name | Class | StatementExecutor
                   | `UndefineVariable` | `VariableExecutor::unset`
                   | `UnsetProperty` | `PropertyExecutor::unset`
 
-## <span id="Explain"> Explain
+### <span id="Explain"> Explain
 
-[ExplainExecutor::execute](ExplainExecutor.md#execute)
+* [Explain](../parser/Explain.md)
+* [ExplainExecutor](ExplainExecutor.md)

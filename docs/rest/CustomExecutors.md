@@ -2,7 +2,11 @@
 
 `CustomExecutors` is a collection of [StatementExecutor](StatementExecutor.md)s that do not need to be distributed.
 
-<span id="EXECUTOR_MAP">
+`CustomExecutors` is used by [KsqlResource](KsqlResource.md) for the following:
+
+* [Creating a RequestHandler](KsqlResource.md#handler) (and [shouldSynchronize](KsqlResource.md#shouldSynchronize) for a `DefaultCommandQueueSync`)
+
+## <span id="EXECUTOR_MAP"> EXECUTOR_MAP
 
 Enum Name | Class | StatementExecutor
 ----------|-------|---------
@@ -13,7 +17,7 @@ Enum Name | Class | StatementExecutor
  `DESCRIBE_STREAMS` | `DescribeStreams` | `ListSourceExecutor::describeStreams`
  `DESCRIBE_TABLES` | `DescribeTables` | `ListSourceExecutor::describeTables`
                   | `DropConnector` | `DropConnectorExecutor::execute`
-                  | `Explain` | `ExplainExecutor::execute`
+                  | [Explain](#Explain) | `ExplainExecutor::execute`
                   | `InsertValues` | `InsertValuesExecutor::execute`
  `LIST_CONNECTORS` | `ListConnectors` | `ListConnectorsExecutor::execute`
  `LIST_CONNECTOR_PLUGINS` | `ListConnectorPlugins` | `ListConnectorPluginsExecutor::execute`
@@ -30,3 +34,7 @@ Enum Name | Class | StatementExecutor
                   | `TerminateQuery` | `TerminateQueryExecutor::execute`
                   | `UndefineVariable` | `VariableExecutor::unset`
                   | `UnsetProperty` | `PropertyExecutor::unset`
+
+## <span id="Explain"> Explain
+
+[ExplainExecutor::execute](ExplainExecutor.md#execute)

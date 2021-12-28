@@ -11,6 +11,31 @@ void configure(
 
 `configure` is part of the [KsqlConfigurable](KsqlConfigurable.md#configure) abstraction.
 
+## <span id="shouldSynchronize"> shouldSynchronize
+
+```java
+boolean shouldSynchronize(
+  Class<? extends Statement> statementClass)
+```
+
+`shouldSynchronize` is `true` when the given `statementClass` is as follows:
+
+1. Not in [SYNC_BLACKLIST](#SYNC_BLACKLIST)
+1. In [EXECUTOR_MAP](CustomExecutors.md#EXECUTOR_MAP)
+
+`shouldSynchronize` is used when:
+
+* `KsqlResource` is requested to [configure](#configure) (and creates a `DefaultCommandQueueSync` for the [RequestHandler](#handler))
+
+## <span id="SYNC_BLACKLIST"> SYNC_BLACKLIST
+
+* `ListTopics`
+* `ListFunctions`
+* `DescribeFunction`
+* `ListProperties`
+* `SetProperty`
+* `UnsetProperty`
+
 ## <span id="handler"> RequestHandler
 
 `KsqlResource` creates a [RequestHandler](RequestHandler.md) when requested to [configure](#configure).

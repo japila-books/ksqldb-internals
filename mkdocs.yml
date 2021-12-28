@@ -175,6 +175,7 @@ nav:
       - CreateAsSelect: parser/CreateAsSelect.md
       - CreateSourceAsProperties: parser/CreateSourceAsProperties.md
       - CreateStream: parser/CreateStream.md
+      - Explain: parser/Explain.md
       - Expression: parser/Expression.md
       - InsertInto: parser/InsertInto.md
       - KsqlWindowExpression: parser/KsqlWindowExpression.md
@@ -223,6 +224,7 @@ nav:
     - CustomExecutors: rest/CustomExecutors.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
+    - ExplainExecutor: rest/ExplainExecutor.md
     - InteractiveStatementExecutor: rest/InteractiveStatementExecutor.md
     - InternalKsqlClientFactory: rest/InternalKsqlClientFactory.md
     - KsqlConfigurable: rest/KsqlConfigurable.md

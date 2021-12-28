@@ -4,7 +4,7 @@
 
 ## Contract (Subset)
 
-### <span id="createSandbox"> createSandbox
+### <span id="createSandbox"> Creating Sandboxed Execution Context (createSandbox)
 
 ```java
 KsqlExecutionContext createSandbox(

@@ -75,6 +75,21 @@ CREATE (OR REPLACE)? (SOURCE)? TABLE (IF NOT EXISTS)? sourceName
 
 `visitCreateTable` creates an [CreateTable](CreateTable.md).
 
+## <span id="visitExplain"> Parsing EXPLAIN Statement (visitExplain)
+
+```java
+Node visitExplain(
+  SqlBaseParser.ExplainContext ctx)
+```
+
+`visitExplain` is part of the `SqlBaseBaseVisitor` abstraction to handle `EXPLAIN` statements.
+
+```antlr
+EXPLAIN (statement | identifier)
+```
+
+`visitExplain` creates an [Explain](Explain.md) node.
+
 ## <span id="visitInsertInto"> Parsing INSERT INTO Statement (visitInsertInto)
 
 ```java

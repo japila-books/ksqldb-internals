@@ -1,6 +1,6 @@
 # SandboxedExecutionContext
 
-`SandboxedExecutionContext` is a [KsqlExecutionContext](KsqlExecutionContext.md).
+`SandboxedExecutionContext` is a [KsqlExecutionContext](KsqlExecutionContext.md) for executing SQL statements without affecting the state of the system (i.e. no changes to the core engine's state nor the state of external services).
 
 ## Creating Instance
 
@@ -8,11 +8,19 @@
 
 * <span id="sourceContext"> [EngineContext](EngineContext.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="metricCollectors"> `MetricCollectors`
 
 `SandboxedExecutionContext` is created when:
 
-* `KsqlEngine` is requested to [createSandbox](KsqlEngine.md#createSandbox)
-* `SandboxedExecutionContext` is requested to [createSandbox](SandboxedExecutionContext.md#createSandbox)
+* `KsqlEngine` is requested to [create a sandboxed execution context](KsqlEngine.md#createSandbox)
+* `SandboxedExecutionContext` is requested to [create a sandboxed execution context](#createSandbox)
+
+---
+
+`SandboxedExecutionContext` is a `KsqlExecutionContext` and part of the abstraction is to [create a SandboxedExecutionContext](KsqlExecutionContext.md#createSandbox).
+This is exactly `SandboxedExecutionContext` itself by default.
+
+That's why instances of `SandboxedExecutionContext`s are created indirectly via [KsqlExecutionContext](KsqlExecutionContext.md#createSandbox).
 
 ## <span id="engineContext"> EngineContext
 

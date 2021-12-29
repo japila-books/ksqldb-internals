@@ -95,6 +95,21 @@ In the end, `executeTransientQuery` requests the [EngineContext](#engineContext)
 * `KsqlEngine` is requested to [execute a transient query](KsqlEngine.md#executeTransientQuery)
 * `SandboxedExecutionContext` is requested to [execute a transient query](SandboxedExecutionContext.md#executeTransientQuery)
 
+## <span id="executeStreamPullQuery"> Executing Stream Pull Query
+
+```java
+TransientQueryMetadata executeStreamPullQuery(
+  ConfiguredStatement<Query> statement,
+  boolean excludeTombstones,
+  ImmutableMap<TopicPartition, Long> endOffsets)
+```
+
+`executeStreamPullQuery`...FIXME
+
+`executeStreamPullQuery` is used when:
+
+* `KsqlEngine` is requested to [create a stream pull query](KsqlEngine.md#createStreamPullQuery)
+
 ## <span id="planQuery"> Query Planning (planQuery)
 
 ```java
@@ -106,24 +121,30 @@ ExecutorPlans planQuery(
   MetaStore metaStore)
 ```
 
+`planQuery` is used when:
+
+* `EngineExecutor` is requested to execute [transient](#executeTransientQuery) and [stream pull](#executeStreamPullQuery) queries, and to [plan a statement](#plan) (and [sourceTablePlan](#sourceTablePlan))
+
+### <span id="planQuery-QueryEngine"> Creating QueryEngine
+
 `planQuery` requests the [EngineContext](#engineContext) to [create a QueryEngine](EngineContext.md#createQueryEngine) (for the [ServiceContext](#serviceContext)).
 
 !!! note
     `planQuery` creates a [QueryEngine](QueryEngine.md) every time it is executed.
 
-`planQuery` [builds a logical query plan](QueryEngine.md#buildQueryLogicalPlan).
+### <span id="planQuery-OutputNode"> Building Logical Plan
 
-`planQuery` creates a `LogicalPlanNode`, a `QueryId` and looks up a `PersistentQueryMetadata` (in [QueryRegistry](EngineContext.md#getQueryRegistry)) for the `QueryId` (if one exists).
+`planQuery` [builds a logical query plan](QueryEngine.md#buildQueryLogicalPlan) (an [OutputNode](OutputNode.md)).
+
+`planQuery` creates a `LogicalPlanNode` (for the query statement text and the `OutputNode`), a `QueryId` and looks up a `PersistentQueryMetadata` (in [QueryRegistry](EngineContext.md#getQueryRegistry)) for the `QueryId` (if one exists).
+
+### <span id="planQuery-PhysicalPlan"> Building Physical Plan
 
 `planQuery` [builds a physical query plan](QueryEngine.md#buildPhysicalPlan) (a [PhysicalPlan](PhysicalPlan.md)).
 
+### <span id="planQuery-PhysicalPlan"> Creating ExecutorPlans
+
 In the end, `planQuery` creates a `ExecutorPlans` (with the `LogicalPlanNode` and the `PhysicalPlan`).
-
----
-
-`planQuery` is used when:
-
-* `EngineExecutor` is requested to execute [transient](#executeTransientQuery) and [stream pull](#executeStreamPullQuery) queries, and to [plan a statement](#plan) (and [sourceTablePlan](#sourceTablePlan))
 
 ## <span id="plan"> Planning Statement
 

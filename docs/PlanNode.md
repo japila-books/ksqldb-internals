@@ -2,9 +2,9 @@
 
 `PlanNode` is an [abstraction](#contract) of [nodes](#implementations) of a query plan.
 
-## Contract (Subset)
+## Contract (Abstract Methods)
 
-### <span id="buildStream"> buildStream
+### <span id="buildStream"> Building SchemaKStream
 
 ```java
 SchemaKStream<?> buildStream(
@@ -12,6 +12,30 @@ SchemaKStream<?> buildStream(
 ```
 
 Builds a [SchemaKStream](SchemaKStream.md)
+
+Used when:
+
+* `PhysicalPlanBuilder` is requested to [build a PhysicalPlan](PhysicalPlanBuilder.md#buildPhysicalPlan)
+* _others_ (less important?)
+
+### <span id="getPartitions"> Number of Partitions
+
+```java
+int getPartitions(
+  KafkaTopicClient kafkaTopicClient)
+```
+
+### <span id="getSchema"> LogicalSchema
+
+```java
+LogicalSchema getSchema()
+```
+
+### <span id="getSources"> Sources
+
+```java
+List<PlanNode> getSources()
+```
 
 ## Implementations
 

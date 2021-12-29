@@ -212,6 +212,7 @@ nav:
     - RewriterPlugin: RewriterPlugin.md
     - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
+    - QueryPlannerOptions: QueryPlannerOptions.md
     - QueryValidator: QueryValidator.md
     - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md

@@ -40,6 +40,21 @@ Used when:
 
 * `QueryExecutor` is requested to [handleTablePullQuery](rest/QueryExecutor.md#handleTablePullQuery)
 
+### <span id="executeTransientQuery"> Executing Transient Query
+
+```java
+TransientQueryMetadata executeTransientQuery(
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  boolean excludeTombstones)
+```
+
+Used when:
+
+* `CustomExecutors` is requested to [handle a QUERY statement](rest/CustomExecutors.md#QUERY)
+* `ExplainExecutor` is requested to [explain a QUERY statement](rest/ExplainExecutor.md#explainStatement)
+* `QueryExecutor` is requested to [handlePushQuery](rest/QueryExecutor.md#handlePushQuery)
+
 ### <span id="getAllLiveQueries"> getAllLiveQueries
 
 ```java
@@ -90,7 +105,7 @@ PreparedStatement<?> prepare(
   ParsedStatement stmt,
   Map<String, String> variablesMap)
 PreparedStatement<?> prepare(
-  ParsedStatement stmt) // (1)
+  ParsedStatement stmt) // (1)!
 ```
 
 1. Uses an empty `Map`

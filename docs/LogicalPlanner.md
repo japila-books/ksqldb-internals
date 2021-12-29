@@ -47,7 +47,7 @@ OutputNode buildPersistentLogicalPlan()
 
 * `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
 
-## <span id="buildQueryLogicalPlan"> buildQueryLogicalPlan
+## <span id="buildQueryLogicalPlan"> Building Logical Query Plan
 
 ```java
 OutputNode buildQueryLogicalPlan(
@@ -55,13 +55,27 @@ OutputNode buildQueryLogicalPlan(
   boolean isScalablePush)
 ```
 
-`buildQueryLogicalPlan`...FIXME
-
 `buildQueryLogicalPlan` is used when:
 
 * `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
 
-## <span id="buildSourceNode"> buildSourceNode
+### <span id="buildQueryLogicalPlan-source"> Source Node
+
+`buildQueryLogicalPlan` [builds a source PlanNode](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
+
+### <span id="buildQueryLogicalPlan-where"> Filter Node
+
+For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildQueryLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md). Otherwise, `buildQueryLogicalPlan` throws a `KsqlException` for a missing `WHERE` clause unless [getTableScansEnabled](QueryPlannerOptions.md#getTableScansEnabled) is enabled.
+
+### <span id="buildQueryLogicalPlan-where"> Limit Node
+
+For a non-`isScalablePush` query with `LIMIT` clause, `buildQueryLogicalPlan` [builds a limit PlanNode](#buildLimitNode) to be the current [PlanNode](PlanNode.md).
+
+### <span id="buildQueryLogicalPlan-project"> Project Node
+
+In the end, `buildQueryLogicalPlan` creates a `QueryProjectNode` (to be the current [PlanNode](PlanNode.md)) and [buildOutputNode](#buildOutputNode).
+
+## <span id="buildSourceNode"> Building Source Node
 
 ```java
 PlanNode buildSourceNode(
@@ -97,3 +111,16 @@ JoinNode buildJoin(
 ```
 
 `buildJoin` creates a [JoinNode](JoinNode.md).
+
+## <span id="buildOutputNode"> Building Output Node
+
+```java
+OutputNode buildOutputNode(
+  PlanNode sourcePlanNode)
+```
+
+`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](parser/QueryContainer.md) or not (a `Sink` to write into is defined or not), respectively.
+
+`buildOutputNode` is used when:
+
+* `LogicalPlanner` is requested to [buildPersistentLogicalPlan](#buildPersistentLogicalPlan) and [buildQueryLogicalPlan](#buildQueryLogicalPlan)

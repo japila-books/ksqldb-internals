@@ -4,11 +4,13 @@
 
 ## Contract
 
-### <span id="getSinkName"> getSinkName
+### <span id="getSinkName"> Optional Sink Name
 
 ```java
 Optional<SourceName> getSinkName()
 ```
+
+The name of a stream or table (to write into)
 
 Used when:
 
@@ -19,7 +21,7 @@ Used when:
 ## Implementations
 
 * `KsqlBareOutputNode`
-* `KsqlStructuredDataOutputNode`
+* [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md)
 
 ## Creating Instance
 

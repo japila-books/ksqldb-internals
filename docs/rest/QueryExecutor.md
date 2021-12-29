@@ -19,7 +19,7 @@
 
 `QueryExecutor` is created when:
 
-* `KsqlRestApplication` is requested to [buildApplication](KsqlRestApplication.md#buildApplication)
+* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
 
 ## <span id="handleStatement"> handleStatement
 
@@ -43,6 +43,18 @@ QueryMetadataHolder handleStatement(
 * `StreamedQueryResource` is requested to `handleStatement`
 * `WSQueryEndpoint` is requested to `handleStatement`
 
+### <span id="handlePushQuery"> handlePushQuery
+
+```java
+QueryMetadataHolder handlePushQuery(
+  ServiceContext serviceContext,
+  PreparedStatement<Query> statement,
+  Map<String, Object> streamsProperties,
+  boolean excludeTombstones)
+```
+
+`handlePushQuery`...FIXME
+
 ### <span id="handleQuery"> handleQuery
 
 ```java
@@ -59,17 +71,18 @@ QueryMetadataHolder handleQuery(
 
 `handleQuery`...FIXME
 
-### <span id="handlePushQuery"> handlePushQuery
+### <span id="handleStreamPullQuery"> handleStreamPullQuery
 
 ```java
-QueryMetadataHolder handlePushQuery(
+QueryMetadataHolder handleStreamPullQuery(
+  ImmutableAnalysis analysis,
   ServiceContext serviceContext,
-  PreparedStatement<Query> statement,
-  Map<String, Object> streamsProperties,
-  boolean excludeTombstones)
+  ConfiguredStatement<Query> configured,
+  AtomicReference<StreamPullQueryMetadata> resultForMetrics,
+  AtomicReference<Decrementer> refDecrementer)
 ```
 
-`handlePushQuery`...FIXME
+`handleStreamPullQuery`...FIXME
 
 ### <span id="handleTablePullQuery"> handleTablePullQuery
 

@@ -12,4 +12,19 @@
 
 `PhysicalPlanBuilder` is created when:
 
-* `QueryEngine` is requested to [buildPhysicalPlan](QueryEngine.md#buildPhysicalPlan)
+* `QueryEngine` is requested to [build a physical plan](QueryEngine.md#buildPhysicalPlan)
+
+## <span id="buildPhysicalPlan"> Building Physical Plan
+
+```java
+PhysicalPlan buildPhysicalPlan(
+  LogicalPlanNode logicalPlanNode,
+  QueryId queryId,
+  Optional<PlanInfo> oldPlanInfo)
+```
+
+`buildPhysicalPlan`...FIXME
+
+`buildPhysicalPlan` is used when:
+
+* `QueryEngine` is requested to [build a physical plan](QueryEngine.md#buildPhysicalPlan)

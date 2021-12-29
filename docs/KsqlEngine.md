@@ -153,3 +153,19 @@ TransientQueryMetadata executeTransientQuery(
 `executeTransientQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [executeTransientQuery](EngineExecutor.md#executeTransientQuery).
 
 `executeTransientQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTransientQuery) abstraction.
+
+## <span id="createStreamPullQuery"> Creating Stream Pull Query
+
+```java
+StreamPullQueryMetadata createStreamPullQuery(
+  ServiceContext serviceContext,
+  ImmutableAnalysis analysis,
+  ConfiguredStatement<Query> statementOrig,
+  boolean excludeTombstones)
+```
+
+`createStreamPullQuery`...FIXME
+
+`createStreamPullQuery` is used when:
+
+* `QueryExecutor` is requested to [handle a stream pull query](rest/QueryExecutor.md#handleStreamPullQuery)

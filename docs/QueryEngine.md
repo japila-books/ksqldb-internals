@@ -39,7 +39,7 @@ The optional `Sink` can only be defined when `EngineExecutor` is requested to [p
 
 `buildQueryLogicalPlan` is used when:
 
-* `EngineExecutor` is requested to [planQuery](EngineExecutor.md#planQuery)
+* `EngineExecutor` is requested to [plan a query](EngineExecutor.md#planQuery)
 
 ## <span id="buildPhysicalPlan"> Building Physical Query Plan (buildPhysicalPlan)
 

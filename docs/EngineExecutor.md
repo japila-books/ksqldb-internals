@@ -110,7 +110,7 @@ TransientQueryMetadata executeStreamPullQuery(
 
 * `KsqlEngine` is requested to [create a stream pull query](KsqlEngine.md#createStreamPullQuery)
 
-## <span id="planQuery"> Query Planning (planQuery)
+## <span id="planQuery"> Planning Query for Execution (planQuery)
 
 ```java
 ExecutorPlans planQuery(

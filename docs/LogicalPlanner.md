@@ -41,7 +41,7 @@ OutputNode buildPersistentLogicalPlan()
 
 `buildPersistentLogicalPlan` is used when:
 
-* `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
+* `QueryEngine` is requested to [build a logical plan of a query](QueryEngine.md#buildQueryLogicalPlan)
 
 ### <span id="buildPersistentLogicalPlan-source"> Source Node
 
@@ -58,6 +58,15 @@ For a query with `PartitionBy` clause (per the [RewrittenAnalysis](#analysis)), 
 ### <span id="buildPersistentLogicalPlan-tableFunctions"> FlatMapNode
 
 For a query with `TableFunctions` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildFlatMapNode](#buildFlatMapNode).
+
+#### <span id="buildFlatMapNode"> Building FlatMapNode
+
+```java
+FlatMapNode buildFlatMapNode(
+  PlanNode sourcePlanNode)
+```
+
+`buildFlatMapNode` creates a [FlatMapNode](FlatMapNode.md) (with a `PlanNodeId` with `FlatMap` ID).
 
 ### <span id="buildPersistentLogicalPlan-groupBy"> AggregateNode
 

@@ -1,7 +1,5 @@
 # SchemaKStream
 
-`SchemaKStream<K>` is...FIXME
-
 ## Creating Instance
 
 `SchemaKStream` takes the following to be created:
@@ -15,4 +13,4 @@
 `SchemaKStream` is created when:
 
 * `SchemaKSourceFactory` is requested to [schemaKStream](SchemaKSourceFactory.md#schemaKStream)
-* `SchemaKStream` is requested to [into](#into), [filter](#filter), and others
+* `SchemaKStream` is requested to [into](#into), [filter](#filter), [flatMap](#flatMap) and _others_

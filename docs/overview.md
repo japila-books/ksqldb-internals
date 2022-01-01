@@ -32,3 +32,7 @@ ksqlDB uses [Ksql](cli/Ksql.md) as the command-line interactive environment.
 $ ./bin/ksql
 ksql>
 ```
+
+## Learning Resources
+
+1. [Deep Dive into ksqlDB Deployment Options](https://www.confluent.io/blog/deep-dive-ksql-deployment-options/)

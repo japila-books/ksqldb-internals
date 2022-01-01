@@ -18,7 +18,7 @@
 DdlStatement    | Handler
 ----------------|---------------------
  [CreateStream](parser/CreateStream.md) | [handleCreateStream](#handleCreateStream)
- [CreateTable](parser/CreateTable.md)   | `handleCreateTable`
+ [CreateTable](parser/CreateTable.md)   | [handleCreateTable](#handleCreateTable)
  `DropStream`   | `handleDropStream`
  `DropTable`    | `handleDropTable`
  `RegisterType` | `handleRegisterType`
@@ -68,3 +68,13 @@ CreateStreamCommand handleCreateStream(
 ```
 
 `handleCreateStream` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand) (for the given [CreateStream](parser/CreateStream.md) statement).
+
+## <span id="handleCreateTable"> handleCreateTable
+
+```java
+CreateTableCommand handleCreateTable(
+  CallInfo callInfo,
+  CreateTable statement)
+```
+
+`handleCreateTable` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateTableCommand](CreateSourceFactory.md#createTableCommand) (for the given [CreateTable](parser/CreateTable.md) statement).

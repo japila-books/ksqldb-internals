@@ -27,6 +27,20 @@ In the end, `createStreamCommand` creates a [CreateStreamCommand](CreateStreamCo
 
 * `CommandFactories` is requested to [handle a CreateStream DDL statement](CommandFactories.md#handleCreateStream)
 
+## <span id="createTableCommand"> Creating CreateTableCommand
+
+```java
+CreateTableCommand createTableCommand(
+  CreateTable statement,
+  KsqlConfig ksqlConfig)
+```
+
+`createTableCommand`...FIXME
+
+`createTableCommand` is used when:
+
+* `CommandFactories` is requested to [handle a CreateTable DDL statement](CommandFactories.md#handleCreateTable)
+
 ## <span id="throwIfCreateOrReplaceOnSourceStreamOrTable"> throwIfCreateOrReplaceOnSourceStreamOrTable
 
 ```java

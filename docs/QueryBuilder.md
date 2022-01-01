@@ -104,33 +104,13 @@ Object buildQueryImplementation(
 
 In the end, `buildQueryImplementation` requests the given [physical plan](ExecutionStep.md) to [build a Kafka Streams application](ExecutionStep.md#build) (with the `KSPlanBuilder`).
 
-`buildQueryImplementation` is used when:
+`buildQueryImplementation` is used when `QueryBuilder` is requested to build the following:
 
-* `QueryBuilder` is requested to [buildTransientQuery](#buildTransientQuery), [buildPersistentQueryInDedicatedRuntime](#buildPersistentQueryInDedicatedRuntime), [buildPersistentQueryInSharedRuntime](#buildPersistentQueryInSharedRuntime) and [getNamedTopology](#getNamedTopology)
+* [Transient query](#buildTransientQuery)
+* [Persistent query in a dedicated](#buildPersistentQueryInDedicatedRuntime) or [shared](#buildPersistentQueryInSharedRuntime) runtime
+* [getNamedTopology](#getNamedTopology)
 
-## <span id="createOrReplacePersistentQuery"> createOrReplacePersistentQuery
-
-```java
-PersistentQueryMetadata createOrReplacePersistentQuery(
-  SessionConfig config,
-  ServiceContext serviceContext,
-  ProcessingLogContext processingLogContext,
-  MetaStore metaStore,
-  String statementText,
-  QueryId queryId,
-  Optional<DataSource> sinkDataSource,
-  Set<DataSource> sources,
-  ExecutionStep<?> physicalPlan,
-  String planSummary,
-  KsqlConstants.PersistentQueryType persistentQueryType,
-  Optional<String> sharedRuntimeId)
-```
-
-`createOrReplacePersistentQuery`...FIXME
-
-`createOrReplacePersistentQuery` is part of the [QueryRegistry](QueryRegistry.md#createOrReplacePersistentQuery) abstraction.
-
-### <span id="buildPersistentQueryInSharedRuntime"> buildPersistentQueryInSharedRuntime
+## <span id="buildPersistentQueryInSharedRuntime"> Building Persistent Query (Shared Runtime)
 
 ```java
 PersistentQueryMetadata buildPersistentQueryInSharedRuntime(
@@ -144,10 +124,36 @@ PersistentQueryMetadata buildPersistentQueryInSharedRuntime(
   String planSummary,
   QueryMetadata.Listener listener,
   Supplier<List<PersistentQueryMetadata>> allPersistentQueries,
+  String applicationId,
   MetricCollectors metricCollectors)
 ```
 
+`buildPersistentQueryInSharedRuntime` [looks up the (shared) KafkaStreams instance](#getKafkaStreamsInstance) for the given `applicationId`.
+
+`buildPersistentQueryInSharedRuntime` requests the (shared) KafkaStreams instance for the `KafkaStreams` instance to create a `NamedTopologyBuilder` (Kafka Streams) for the given `queryId`.
+
+`buildPersistentQueryInSharedRuntime` [builds a query implementation](#buildQueryImplementation) for the given [physical plan](ExecutionStep.md).
+
+`buildPersistentQueryInSharedRuntime` requests the `NamedTopologyBuilder` to build a `NamedTopology` (Kafka Streams).
+
 `buildPersistentQueryInSharedRuntime`...FIXME
+
+`buildPersistentQueryInSharedRuntime` is used when:
+
+* `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery)
+
+### <span id="getNamedTopology"> Finding NamedTopology
+
+```java
+NamedTopology getNamedTopology(
+  SharedKafkaStreamsRuntime sharedRuntime,
+  QueryId queryId,
+  String applicationId,
+  Map<String, Object>  queryOverrides,
+  ExecutionStep<?> physicalPlan)
+```
+
+`getNamedTopology`...FIXME
 
 ### <span id="getKafkaStreamsInstance"> getKafkaStreamsInstance
 
@@ -160,7 +166,7 @@ SharedKafkaStreamsRuntime getKafkaStreamsInstance(
 
 `getKafkaStreamsInstance`...FIXME
 
-## <span id="buildPersistentQueryInDedicatedRuntime"> buildPersistentQueryInDedicatedRuntime
+## <span id="buildPersistentQueryInDedicatedRuntime"> Building Persistent Query (Dedicated Runtime)
 
 ```java
 PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(

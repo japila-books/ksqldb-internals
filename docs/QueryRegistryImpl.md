@@ -1,5 +1,21 @@
 # QueryRegistryImpl
 
+## Creating Instance
+
+`QueryRegistryImpl` takes the following to be created:
+
+* <span id="eventListeners"> [QueryEventListener](QueryEventListener.md)s
+* [QueryBuilderFactory](#queryBuilderFactory)
+* <span id="metricCollectors"> `MetricCollectors`
+
+`QueryRegistryImpl` is created when:
+
+* `EngineContext` utility is used to [create an EngineContext](EngineContext.md#create)
+
+## <span id="queryBuilderFactory"> QueryBuilderFactory
+
+`QueryRegistryImpl` is given a [QueryBuilderFactory](QueryBuilderFactory.md) or defines a function to create a [QueryBuilder](QueryBuilder.md) when [created](#creating-instance).
+
 ## <span id="createTransientQuery"> Creating Transient Query
 
 ```java

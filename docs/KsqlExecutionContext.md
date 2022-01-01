@@ -21,6 +21,26 @@ Used when:
 * `ExplainExecutor` is requested to `explainStatement`
 * `KsqlResource` is requested to [configure](rest/KsqlResource.md#configure)
 
+### <span id="execute"> Executing KsqlPlan or Statement
+
+```java
+ExecuteResult execute(
+  ServiceContext serviceContext,
+  ConfiguredKsqlPlan plan)
+ExecuteResult execute(
+  ServiceContext serviceContext,
+  ConfiguredStatement<?> statement)
+```
+
+Used when:
+
+* `ExplainExecutor` is requested to [explain a Statement](rest/ExplainExecutor.md#explainStatement)
+* `InteractiveStatementExecutor` is requested to [execute a plan](rest/InteractiveStatementExecutor.md#executePlan)
+* `KsqlContext` is requested to [execute](embedded/KsqlContext.md#execute)
+* `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
+* `StandaloneExecutor.StatementExecutor` is requested to [handleExecutableDdl](rest/StandaloneExecutor_StatementExecutor.md#handleExecutableDdl) and [handlePersistentQuery](rest/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery)
+* `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
+
 ### <span id="executeTablePullQuery"> executeTablePullQuery
 
 ```java

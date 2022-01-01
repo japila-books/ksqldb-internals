@@ -4,16 +4,14 @@
 
 `KsqlContext` takes the following to be created:
 
-* <span id="serviceContext"> ServiceContext
+* <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
-* <span id="injectorFactory"> `BiFunction<KsqlExecutionContext, ServiceContext, Injector>`
+* <span id="injectorFactory"> [Injector](../Injector.md) Factory (`BiFunction<KsqlExecutionContext, ServiceContext, Injector>`)
 
-`KsqlContext` is created when:
+`KsqlContext` is created using [create](#create) utility.
 
-* `KsqlContext` utility is used to [create a KsqlContext](#create)
-
-## <span id="create"> Creating KsqlContext
+### <span id="create"> Creating KsqlContext
 
 ```java
 KsqlContext create(
@@ -23,6 +21,27 @@ KsqlContext create(
 
 `create`...FIXME
 
-`create` is used when:
+## <span id="sql"> Executing SQL Text
 
-* [EmbeddedKsql](EmbeddedKsql.md) standalone application is launched
+```java
+List<QueryMetadata> sql(
+  String sql)
+List<QueryMetadata> sql(
+  String sql,
+  Map<String, ?> overriddenProperties)
+```
+
+`sql`...FIXME
+
+### <span id="execute"> Executing Statement
+
+```java
+ExecuteResult execute(
+  KsqlExecutionContext executionContext,
+  ParsedStatement stmt,
+  KsqlConfig ksqlConfig,
+  Map<String, Object> mutableSessionPropertyOverrides,
+  Injector injector)
+```
+
+`execute`...FIXME

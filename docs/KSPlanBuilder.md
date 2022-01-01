@@ -13,7 +13,7 @@
 
 `KSPlanBuilder` is created when:
 
-* `QueryBuilder` is requested to [buildQueryImplementation](QueryBuilder.md#buildQueryImplementation)
+* `QueryBuilder` is requested to [build a query implementation](QueryBuilder.md#buildQueryImplementation)
 
 ## <span id="visitStreamSource"> visitStreamSource
 

@@ -22,7 +22,7 @@ QueryEngine createQueryEngine(
   ServiceContext serviceContext)
 ```
 
-`createQueryEngine` creates a [QueryEngine](#creating-instance) (with the given [ServiceContext](ServiceContext.md) and the [ProcessingLogContext](#processingLogContext)).
+`createQueryEngine` creates an [QueryEngine](#creating-instance) (with the given [ServiceContext](ServiceContext.md) and the [ProcessingLogContext](#processingLogContext)).
 
 ---
 

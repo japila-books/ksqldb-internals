@@ -216,9 +216,14 @@ ExecuteResult execute(
   KsqlPlan plan)
 ```
 
-`execute`...FIXME
+!!! note "KsqlPlan"
+    It is an `IllegalStateException` if the given [KsqlPlan](KsqlPlan.md) has neither a [physical plan](KsqlPlan.md#getQueryPlan) nor a [DdlCommand](KsqlPlan.md#getDdlCommand).
 
-In the end, `execute` [executes the persistent query](#executePersistentQuery).
+For the given [KsqlPlan](KsqlPlan.md) with no [physical plan](KsqlPlan.md#getQueryPlan), `execute` [executes the DDL command](#executeDdl) (of the [KsqlPlan](KsqlPlan.md#getDdlCommand) with the `withQuery` flag off) and returns.
+
+Otherwise, with a [physical plan](KsqlPlan.md#getQueryPlan), `execute` [executes a DDL command](#executeDdl) (if available) and [executes the persistent query](#executePersistentQuery).
+
+---
 
 `execute` is used when:
 

@@ -14,6 +14,33 @@
 
 * `Analyzer.Visitor` is [created](Analyzer.md#analysis)
 
+## <span id="tableFunctions"> TableFunctions
+
+`Analysis` defines `tableFunctions` registry of `FunctionCall`s that are added in [addTableFunction](#addTableFunction).
+
+### <span id="addTableFunction"> addTableFunction
+
+```java
+void addTableFunction(
+  FunctionCall functionCall)
+```
+
+`addTableFunction` adds the given `FunctionCall` to the [tableFunctions](#tableFunctions) registry.
+
+`addTableFunction` is used when:
+
+* `Analyzer.Visitor` is requested to [visitTableFunctions](Analyzer.md#visitTableFunctions)
+
+### <span id="getTableFunctions"> getTableFunctions
+
+```java
+List<FunctionCall> getTableFunctions()
+```
+
+`getTableFunctions` returns the [tableFunctions](#tableFunctions).
+
+`getTableFunctions` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getTableFunctions) abstraction.
+
 ## <span id="selectItems"> SelectItems
 
 `Analysis` defines `joinInfo` registry of `JoinInfo`s that are added in [addJoin](#addJoin).

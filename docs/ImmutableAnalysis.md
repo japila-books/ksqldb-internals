@@ -1,8 +1,24 @@
 # ImmutableAnalysis
 
-`ImmutableAnalysis` is an [abstraction](#contract) of [query analysers](#implementations).
+`ImmutableAnalysis` is an [abstraction](#contract) of the [query analysis results](#implementations).
+
+This `Immutable` prefix in the name of `ImmutableAnalysis` is to denote that it is an immutable view over the AST tree of a SQL statement (as parsed using [Analyzer.Visitor](Analyzer_Visitor.md)).
 
 ## Contract (Subset)
+
+### <span id="getTableFunctions"> getTableFunctions
+
+```java
+List<FunctionCall> getTableFunctions()
+```
+
+See [Analysis](Analysis.md#getTableFunctions)
+
+Used when:
+
+* `QueryAnalyzer` is requested to [analyze a Query](QueryAnalyzer.md#analyze)
+* `LogicalPlanner` is requested to [buildPersistentLogicalPlan](LogicalPlanner.md#buildPersistentLogicalPlan)
+* `FlatMapNode` is [created](FlatMapNode.md#tableFunctions) and [buildSchema](FlatMapNode.md#buildSchema)
 
 ### <span id="getJoin"> getJoin
 

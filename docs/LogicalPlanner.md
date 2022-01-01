@@ -15,7 +15,7 @@
 
 ## <span id="analysis"> ImmutableAnalysis and RewrittenAnalysis
 
-`LogicalPlanner` creates a `RewrittenAnalysis` for the given `ImmutableAnalysis` when [created](#creating-instance).
+`LogicalPlanner` creates a `RewrittenAnalysis` for the given [ImmutableAnalysis](ImmutableAnalysis.md) when [created](#creating-instance).
 
 The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the following:
 
@@ -39,15 +39,39 @@ The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the follo
 OutputNode buildPersistentLogicalPlan()
 ```
 
-`buildPersistentLogicalPlan` [buildSourceNode](#buildSourceNode).
-
-`buildPersistentLogicalPlan`...FIXME
-
 `buildPersistentLogicalPlan` is used when:
 
 * `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
 
-## <span id="buildQueryLogicalPlan"> Building Logical Query Plan
+### <span id="buildPersistentLogicalPlan-source"> Source Node
+
+`buildPersistentLogicalPlan` [builds a source node](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
+
+### <span id="buildPersistentLogicalPlan-where"> Filter Node
+
+For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md).
+
+### <span id="buildPersistentLogicalPlan-partitionBy"> UserRepartitionNode
+
+For a query with `PartitionBy` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildUserRepartitionNode](#buildUserRepartitionNode).
+
+### <span id="buildPersistentLogicalPlan-tableFunctions"> FlatMapNode
+
+For a query with `TableFunctions` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildFlatMapNode](#buildFlatMapNode).
+
+### <span id="buildPersistentLogicalPlan-groupBy"> AggregateNode
+
+For a query with `GroupBy` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildAggregateNode](#buildAggregateNode). Otherwise, `buildPersistentLogicalPlan`...FIXME
+
+### <span id="buildPersistentLogicalPlan-RefinementInfo"> RefinementInfo
+
+For a query with a `RefinementInfo` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan`...FIXME
+
+### <span id="buildPersistentLogicalPlan-OutputNode"> OutputNode
+
+In the end, `buildPersistentLogicalPlan` [builds an output node](#buildOutputNode).
+
+## <span id="buildQueryLogicalPlan"> Building Logical Plan of Query (buildQueryLogicalPlan)
 
 ```java
 OutputNode buildQueryLogicalPlan(
@@ -59,21 +83,21 @@ OutputNode buildQueryLogicalPlan(
 
 * `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
 
-### <span id="buildQueryLogicalPlan-source"> Source Node
+### <span id="buildQueryLogicalPlan-source"> Step 1. Source Node
 
-`buildQueryLogicalPlan` [builds a source PlanNode](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
+`buildQueryLogicalPlan` [builds a source node](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
 
-### <span id="buildQueryLogicalPlan-where"> Filter Node
+### <span id="buildQueryLogicalPlan-where"> Step 2. Filter Node
 
 For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildQueryLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md). Otherwise, `buildQueryLogicalPlan` throws a `KsqlException` for a missing `WHERE` clause unless [getTableScansEnabled](QueryPlannerOptions.md#getTableScansEnabled) is enabled.
 
-### <span id="buildQueryLogicalPlan-where"> Limit Node
+### <span id="buildQueryLogicalPlan-where"> Step 3. Limit Node
 
 For a non-`isScalablePush` query with `LIMIT` clause, `buildQueryLogicalPlan` [builds a limit PlanNode](#buildLimitNode) to be the current [PlanNode](PlanNode.md).
 
-### <span id="buildQueryLogicalPlan-project"> Project Node
+### <span id="buildQueryLogicalPlan-project"> Step 4. Project Node
 
-In the end, `buildQueryLogicalPlan` creates a `QueryProjectNode` (to be the current [PlanNode](PlanNode.md)) and [buildOutputNode](#buildOutputNode).
+In the end, `buildQueryLogicalPlan` creates a `QueryProjectNode` (to be the current [PlanNode](PlanNode.md)) and [builds an output node](#buildOutputNode).
 
 ## <span id="buildSourceNode"> Building Source Node
 
@@ -119,7 +143,7 @@ OutputNode buildOutputNode(
   PlanNode sourcePlanNode)
 ```
 
-`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](parser/QueryContainer.md) or not (a `Sink` to write into is defined or not), respectively.
+`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](parser/QueryContainer.md) or not (with a `Sink` to write into defined or not), respectively.
 
 `buildOutputNode` is used when:
 

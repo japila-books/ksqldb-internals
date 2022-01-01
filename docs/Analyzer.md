@@ -70,3 +70,12 @@ AstNode visitSelect(
 `visitSelect`...FIXME
 
 `visitSelect` is part of the [AstVisitor](parser/AstVisitor.md#visitSelect) abstraction.
+
+### <span id="visitTableFunctions"> visitTableFunctions
+
+```java
+void visitTableFunctions(
+  Expression expression)
+```
+
+`visitTableFunctions` creates a `TableFunctionVisitor` to `process` the given [Expression](parser/Expression.md).

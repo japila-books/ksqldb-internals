@@ -188,7 +188,10 @@ nav:
     - VariableSubstitutor: parser/VariableSubstitutor.md
   - Query Planning:
     - query-planning/index.md
-    - Analysis: Analysis.md
+    - Analysis:
+      - Analysis: Analysis.md
+      - ImmutableAnalysis: ImmutableAnalysis.md
+      - RewrittenAnalysis: RewrittenAnalysis.md
     - Analyzer:
       - Analyzer: Analyzer.md
       - Visitor: Analyzer_Visitor.md
@@ -199,7 +202,7 @@ nav:
     - DataSourceExtractor: DataSourceExtractor.md
     - DdlCommandFactory: DdlCommandFactory.md
     - ExpressionRewriterPlugin: ExpressionRewriterPlugin.md
-    - ImmutableAnalysis: ImmutableAnalysis.md
+    - FlatMapNode: FlatMapNode.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
     - KsqlStructuredDataOutputNode: KsqlStructuredDataOutputNode.md
@@ -214,7 +217,6 @@ nav:
     - QueryPlan: QueryPlan.md
     - QueryPlannerOptions: QueryPlannerOptions.md
     - QueryValidator: QueryValidator.md
-    - RewrittenAnalysis: RewrittenAnalysis.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md
   - REST:

@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/FlatMapNode/</loc>
+         <lastmod>2022-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/Format/</loc>
          <lastmod>2022-01-01</lastmod>
          <changefreq>daily</changefreq>

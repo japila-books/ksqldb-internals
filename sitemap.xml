@@ -31,6 +31,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/CreateSourceCommand/</loc>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateSourceFactory/</loc>
          <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
@@ -56,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/DdlCommand/</loc>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommandFactory/</loc>
          <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
@@ -77,6 +87,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ExecutionStepFactory/</loc>
+         <lastmod>2022-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/Executor/</loc>
          <lastmod>2022-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -1,16 +1,6 @@
 # CreateStream
 
-`CreateStream` is a [CreateSource](CreateSource.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents the following SQL statements:
-
-```text
-CREATE (OR REPLACE)? (SOURCE)? STREAM (IF NOT EXISTS)? sourceName
-  (tableElements)?
-  (WITH tableProperties)?
-```
-
-```text
-ASSERT STREAM sourceName (tableElements)? (WITH tableProperties)?
-```
+`CreateStream` is a [CreateSource](CreateSource.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [CREATE STREAM](AstBuilder.md#visitCreateStream) and [ASSERT STREAM](AstBuilder.md#visitAssertStream) statements.
 
 ## Creating Instance
 
@@ -26,4 +16,4 @@ ASSERT STREAM sourceName (tableElements)? (WITH tableProperties)?
 
 `CreateStream` is created when:
 
-* `AstBuilder.Visitor` is requested to [visitCreateStream](AstBuilder.md#visitCreateStream) and [visitAssertStream](AstBuilder.md#visitAssertStream)
+* `AstBuilder.Visitor` is requested to parse [CREATE STREAM](AstBuilder.md#visitCreateStream) and [ASSERT STREAM](AstBuilder.md#visitAssertStream) statements

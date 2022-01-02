@@ -35,4 +35,10 @@ ksql>
 
 ## Learning Resources
 
+### Articles
+
 1. [Deep Dive into ksqlDB Deployment Options](https://www.confluent.io/blog/deep-dive-ksql-deployment-options/)
+
+### Videos
+
+1. [KSQL 201: A Deep Dive into Query Processing](https://www.confluent.io/kafka-summit-london18/ksql-201-a-deep-dive-into-query-processing/)

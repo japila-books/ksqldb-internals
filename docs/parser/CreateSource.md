@@ -21,7 +21,7 @@ SourceType getSourceType()
 ## Implementations
 
 * [CreateStream](CreateStream.md)
-* `CreateTable`
+* [CreateTable](CreateTable.md)
 
 ## Creating Instance
 

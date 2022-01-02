@@ -11,6 +11,8 @@
 
 ## <span id="createStreamCommand"> Creating CreateStreamCommand
 
+### <span id="createStreamCommand-CreateStream"> CreateStream
+
 ```java
 CreateStreamCommand createStreamCommand(
   CreateStream statement,
@@ -26,6 +28,19 @@ In the end, `createStreamCommand` creates a [CreateStreamCommand](CreateStreamCo
 `createStreamCommand` is used when:
 
 * `CommandFactories` is requested to [handle a CreateStream DDL statement](CommandFactories.md#handleCreateStream)
+
+### <span id="createStreamCommand-KsqlStructuredDataOutputNode"> KsqlStructuredDataOutputNode
+
+```java
+CreateStreamCommand createStreamCommand(
+  KsqlStructuredDataOutputNode outputNode)
+```
+
+`createStreamCommand` creates a [CreateStreamCommand](CreateStreamCommand.md) for the given [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) (with the [isSource](CreateStreamCommand.md#isSource) flag disabled).
+
+`createStreamCommand` is used when:
+
+* `CommandFactories` is requested to [create](CommandFactories.md#create)
 
 ## <span id="createTableCommand"> Creating CreateTableCommand
 

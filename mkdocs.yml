@@ -197,10 +197,13 @@ nav:
       - Visitor: Analyzer_Visitor.md
     - AstSanitizer: AstSanitizer.md
     - CommandFactories: CommandFactories.md
+    - CreateSourceCommand: CreateSourceCommand.md
     - CreateSourceFactory: CreateSourceFactory.md
     - CreateStreamCommand: CreateStreamCommand.md
     - DataSourceExtractor: DataSourceExtractor.md
+    - DdlCommand: DdlCommand.md
     - DdlCommandFactory: DdlCommandFactory.md
+    - Executor: Executor.md
     - ExpressionRewriterPlugin: ExpressionRewriterPlugin.md
     - FlatMapNode: FlatMapNode.md
     - KsqlPlan: KsqlPlan.md

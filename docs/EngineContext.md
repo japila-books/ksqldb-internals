@@ -142,4 +142,4 @@ DdlCommand createDdlCommand(
 
 `createDdlCommand` is used when:
 
-* `EngineExecutor` is requested to [plan a ExecutableDdlStatement](EngineExecutor.md#plan) and [maybeCreateSinkDdl](EngineExecutor.md#maybeCreateSinkDdl)
+* `EngineExecutor` is requested to [plan an ExecutableDdlStatement](EngineExecutor.md#plan) and [maybeCreateSinkDdl](EngineExecutor.md#maybeCreateSinkDdl)

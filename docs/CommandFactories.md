@@ -40,7 +40,7 @@ DdlCommand create(
   SessionConfig config)
 ```
 
-`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry and requests it to handle it (and produce a `DdlCommand`).
+`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry to handle it (and produce a `DdlCommand`).
 
 Unless found, `create` throws a `KsqlException`:
 

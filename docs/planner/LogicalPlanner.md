@@ -6,7 +6,7 @@
 
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * [ImmutableAnalysis](#analysis)
-* <span id="metaStore"> `MetaStore`
+* <span id="metaStore"> [MetaStore](../MetaStore.md)
 
 `LogicalPlanner` is created when:
 
@@ -39,23 +39,25 @@ The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the follo
 OutputNode buildPersistentLogicalPlan()
 ```
 
+`buildPersistentLogicalPlan` creates an [OutputNode](OutputNode.md).
+
 `buildPersistentLogicalPlan` is used when:
 
 * `QueryEngine` is requested to [build a logical plan of a query](../QueryEngine.md#buildQueryLogicalPlan)
 
-### <span id="buildPersistentLogicalPlan-source"> Source Node
+### <span id="buildPersistentLogicalPlan-source"> Step 1. Source Node
 
 `buildPersistentLogicalPlan` [builds a source node](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
 
-### <span id="buildPersistentLogicalPlan-where"> Filter Node
+### <span id="buildPersistentLogicalPlan-where"> Step 2. FilterNode
 
 For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md).
 
-### <span id="buildPersistentLogicalPlan-partitionBy"> UserRepartitionNode
+### <span id="buildPersistentLogicalPlan-partitionBy"> Step 3. UserRepartitionNode
 
 For a query with `PartitionBy` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildUserRepartitionNode](#buildUserRepartitionNode).
 
-### <span id="buildPersistentLogicalPlan-tableFunctions"> FlatMapNode
+### <span id="buildPersistentLogicalPlan-tableFunctions"> Step 4. FlatMapNode
 
 For a query with `TableFunctions` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildFlatMapNode](#buildFlatMapNode).
 
@@ -108,7 +110,7 @@ For a non-`isScalablePush` query with `LIMIT` clause, `buildQueryLogicalPlan` [b
 
 In the end, `buildQueryLogicalPlan` creates a `QueryProjectNode` (to be the current [PlanNode](PlanNode.md)) and [builds an output node](#buildOutputNode).
 
-## <span id="buildSourceNode"> Building Source Node
+## <span id="buildSourceNode"> Building DataSourceNode or JoinNode (buildSourceNode)
 
 ```java
 PlanNode buildSourceNode(
@@ -123,7 +125,7 @@ Otherwise, `buildSourceNode`...FIXME
 
 * `LogicalPlanner` is requested to [buildPersistentLogicalPlan](#buildPersistentLogicalPlan) and [buildQueryLogicalPlan](#buildQueryLogicalPlan)
 
-### <span id="buildNonJoinNode"> buildNonJoinNode
+### <span id="buildNonJoinNode"> Creating DataSourceNode (buildNonJoinNode)
 
 ```java
 DataSourceNode buildNonJoinNode(
@@ -134,7 +136,7 @@ DataSourceNode buildNonJoinNode(
 
 `buildNonJoinNode` creates a [DataSourceNode](DataSourceNode.md) (with a new `PlanNodeId` with `KsqlTopic` ID).
 
-### <span id="buildJoin"> buildJoin
+### <span id="buildJoin"> Creating JoinNode (buildJoin)
 
 ```java
 JoinNode buildJoin(

@@ -11,11 +11,11 @@ SchemaKStream<?> buildStream(
   PlanBuildContext buildContext)
 ```
 
-Builds a [SchemaKStream](SchemaKStream.md)
+Builds a [SchemaKStream](../SchemaKStream.md)
 
 Used when:
 
-* `PhysicalPlanBuilder` is requested to [build a PhysicalPlan](PhysicalPlanBuilder.md#buildPhysicalPlan)
+* `PhysicalPlanBuilder` is requested to [build a PhysicalPlan](../PhysicalPlanBuilder.md#buildPhysicalPlan)
 * _others_ (less important?)
 
 ### <span id="getPartitions"> Number of Partitions

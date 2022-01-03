@@ -4,18 +4,18 @@
 
 `LogicalPlanner` takes the following to be created:
 
-* <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
+* <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * [ImmutableAnalysis](#analysis)
 * <span id="metaStore"> `MetaStore`
 
 `LogicalPlanner` is created when:
 
-* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
-* `QueryEngine` is requested to [buildQueryLogicalPlan](QueryEngine.md#buildQueryLogicalPlan)
+* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](../EngineExecutor.md#buildAndValidateLogicalPlan)
+* `QueryEngine` is requested to [buildQueryLogicalPlan](../QueryEngine.md#buildQueryLogicalPlan)
 
 ## <span id="analysis"> ImmutableAnalysis and RewrittenAnalysis
 
-`LogicalPlanner` creates a `RewrittenAnalysis` for the given [ImmutableAnalysis](ImmutableAnalysis.md) when [created](#creating-instance).
+`LogicalPlanner` creates a `RewrittenAnalysis` for the given [ImmutableAnalysis](../ImmutableAnalysis.md) when [created](#creating-instance).
 
 The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the following:
 
@@ -41,7 +41,7 @@ OutputNode buildPersistentLogicalPlan()
 
 `buildPersistentLogicalPlan` is used when:
 
-* `QueryEngine` is requested to [build a logical plan of a query](QueryEngine.md#buildQueryLogicalPlan)
+* `QueryEngine` is requested to [build a logical plan of a query](../QueryEngine.md#buildQueryLogicalPlan)
 
 ### <span id="buildPersistentLogicalPlan-source"> Source Node
 
@@ -90,7 +90,7 @@ OutputNode buildQueryLogicalPlan(
 
 `buildQueryLogicalPlan` is used when:
 
-* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](EngineExecutor.md#buildAndValidateLogicalPlan)
+* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](../EngineExecutor.md#buildAndValidateLogicalPlan)
 
 ### <span id="buildQueryLogicalPlan-source"> Step 1. Source Node
 
@@ -152,7 +152,7 @@ OutputNode buildOutputNode(
   PlanNode sourcePlanNode)
 ```
 
-`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](parser/QueryContainer.md) or not (with a `Sink` to write into defined or not), respectively.
+`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](../parser/QueryContainer.md) or not (with a `Sink` to write into defined or not), respectively.
 
 `buildOutputNode` is used when:
 

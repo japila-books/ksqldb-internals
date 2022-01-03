@@ -12,13 +12,13 @@
 * <span id="timestampColumn"> `TimestampColumn`
 * <span id="ksqlTopic"> `KsqlTopic`
 * <span id="limit"> Limit
-* <span id="doCreateInto"> `doCreateInto` flag
+* <span id="doCreateInto"><span id="createInto"> `doCreateInto` flag
 * <span id="sinkName"> Sink Name
 * <span id="orReplace"> `orReplace` flag
 
 `KsqlStructuredDataOutputNode` is created when:
 
-* `LogicalPlanner` is requested to [build an output node](LogicalPlanner.md#buildOutputNode) (for a [QueryContainer](parser/QueryContainer.md))
+* `LogicalPlanner` is requested to [build an OutputNode](LogicalPlanner.md#buildOutputNode) (for a [QueryContainer](../parser/QueryContainer.md))
 
 ## <span id="buildStream"> Building SchemaKStream
 
@@ -29,7 +29,7 @@ SchemaKStream<?> buildStream(
 
 `buildStream` requests the [source PlanNode](SingleSourcePlanNode.md#getSource) to [build a SchemaKStream](#buildStream).
 
-In the end, `buildStream` requests the [SchemaKStream](SchemaKStream.md) to [into](SchemaKStream.md#into) (for the [ksqlTopic](#ksqlTopic) and the [timestampColumn](OutputNode.md#timestampColumn)).
+In the end, `buildStream` requests the [SchemaKStream](../SchemaKStream.md) to [into](../SchemaKStream.md#into) (for the [ksqlTopic](#ksqlTopic) and the [timestampColumn](OutputNode.md#timestampColumn)).
 
 ---
 

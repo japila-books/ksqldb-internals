@@ -106,7 +106,6 @@ nav:
   - Internals:
     - Overview: overview.md
     - DataSource: DataSource.md
-    - DataSourceNode: DataSourceNode.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
@@ -114,7 +113,6 @@ nav:
     - Format: Format.md
     - FormatFactory: FormatFactory.md
     - Injector: Injector.md
-    - JoinNode: JoinNode.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KSPlanBuilder: KSPlanBuilder.md
@@ -123,7 +121,6 @@ nav:
     - KsqlExecutionContext: KsqlExecutionContext.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
-    - PlanNode: PlanNode.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
@@ -143,7 +140,6 @@ nav:
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
     - SharedKafkaStreamsRuntimeImpl: SharedKafkaStreamsRuntimeImpl.md
-    - SingleSourcePlanNode: SingleSourcePlanNode.md
     - SourceBuilder: SourceBuilder.md
     - SourceBuilderBase: SourceBuilderBase.md
     - SourceBuilderV1: SourceBuilderV1.md
@@ -187,7 +183,7 @@ nav:
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
   - Query Planning:
-    - query-planning/index.md
+    - planner/index.md
     - Analysis:
       - Analysis: Analysis.md
       - ImmutableAnalysis: ImmutableAnalysis.md
@@ -205,20 +201,25 @@ nav:
     - DdlCommandFactory: DdlCommandFactory.md
     - Executor: Executor.md
     - ExpressionRewriterPlugin: ExpressionRewriterPlugin.md
-    - FlatMapNode: FlatMapNode.md
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
-    - KsqlStructuredDataOutputNode: KsqlStructuredDataOutputNode.md
-    - LogicalPlanner: LogicalPlanner.md
+    - LogicalPlanner: planner/LogicalPlanner.md
     - MetaStore: MetaStore.md
-    - OutputNode: OutputNode.md
     - PhysicalPlan: PhysicalPlan.md
     - PhysicalPlanBuilder: PhysicalPlanBuilder.md
+    - Plan Tree Nodes:
+      - DataSourceNode: planner/DataSourceNode.md
+      - FlatMapNode: planner/FlatMapNode.md
+      - JoinNode: planner/JoinNode.md
+      - KsqlStructuredDataOutputNode: planner/KsqlStructuredDataOutputNode.md
+      - OutputNode: planner/OutputNode.md
+      - PlanNode: planner/PlanNode.md
+      - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
     - PullQueryValidator: PullQueryValidator.md
     - RewriterPlugin: RewriterPlugin.md
     - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
-    - QueryPlannerOptions: QueryPlannerOptions.md
+    - QueryPlannerOptions: planner/QueryPlannerOptions.md
     - QueryValidator: QueryValidator.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md

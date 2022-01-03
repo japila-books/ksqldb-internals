@@ -17,8 +17,22 @@ See [Analysis](Analysis.md#getTableFunctions)
 Used when:
 
 * `QueryAnalyzer` is requested to [analyze a Query](QueryAnalyzer.md#analyze)
-* `LogicalPlanner` is requested to [buildPersistentLogicalPlan](LogicalPlanner.md#buildPersistentLogicalPlan)
-* `FlatMapNode` is [created](FlatMapNode.md#tableFunctions) and [buildSchema](FlatMapNode.md#buildSchema)
+* `LogicalPlanner` is requested to [buildPersistentLogicalPlan](planner/LogicalPlanner.md#buildPersistentLogicalPlan)
+* `FlatMapNode` is [created](planner/FlatMapNode.md#tableFunctions) and [buildSchema](planner/FlatMapNode.md#buildSchema)
+
+### <span id="getInto"> getInto
+
+```java
+Optional<Into> getInto()
+```
+
+See [Analysis](Analysis.md#getInto)
+
+Used when:
+
+* `PullQueryValidator` is requested to [validate](PullQueryValidator.md#validate)
+* `PushQueryValidator` is requested to `validate`
+* `LogicalPlanner` is requested to [buildOutputNode](planner/LogicalPlanner.md#buildOutputNode), [getTargetSchema](planner/LogicalPlanner.md#getTargetSchema), [buildAggregateNode](planner/LogicalPlanner.md#buildAggregateNode), [buildUserProjectNode](planner/LogicalPlanner.md#buildUserProjectNode) and [buildAggregateSchema](planner/LogicalPlanner.md#buildAggregateSchema)
 
 ### <span id="getJoin"> getJoin
 
@@ -30,7 +44,7 @@ See [Analysis](Analysis.md#getJoin)
 
 Used when:
 
-* `LogicalPlanner` is requested to [build a source node](LogicalPlanner.md#buildSourceNode)
+* `LogicalPlanner` is requested to [build a source node](planner/LogicalPlanner.md#buildSourceNode)
 
 ### <span id="getSelectItems"> getSelectItems
 
@@ -51,7 +65,7 @@ See [Analysis](Analysis.md#isJoin)
 Used when:
 
 * `PullQueryValidator` is [created](PullQueryValidator.md#RULES)
-* `LogicalPlanner` is requested to [build a source node](LogicalPlanner.md#buildSourceNode)
+* `LogicalPlanner` is requested to [build a source node](planner/LogicalPlanner.md#buildSourceNode)
 
 ## Implementations
 

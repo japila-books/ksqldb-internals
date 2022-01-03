@@ -36,7 +36,7 @@ CreateStreamCommand createStreamCommand(
   KsqlStructuredDataOutputNode outputNode)
 ```
 
-`createStreamCommand` creates a [CreateStreamCommand](CreateStreamCommand.md) for the given [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) (with the [isSource](CreateStreamCommand.md#isSource) flag disabled).
+`createStreamCommand` creates a [CreateStreamCommand](CreateStreamCommand.md) for the given [KsqlStructuredDataOutputNode](planner/KsqlStructuredDataOutputNode.md) (with the [isSource](CreateStreamCommand.md#isSource) flag disabled).
 
 `createStreamCommand` is used when:
 

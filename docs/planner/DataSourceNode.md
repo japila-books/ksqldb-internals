@@ -5,11 +5,11 @@
 `DataSourceNode` takes the following to be created:
 
 * <span id="id"> `PlanNodeId`
-* <span id="dataSource"> [DataSource](DataSource.md)
+* <span id="dataSource"> [DataSource](../DataSource.md)
 * <span id="alias"> Source Name
 * [SchemaKStreamFactory](#schemaKStreamFactory)
 * <span id="isWindowed"> `isWindowed` flag
-* <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
+* <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 
 `DataSourceNode` is created when:
 
@@ -17,12 +17,12 @@
 
 ## <span id="schemaKStreamFactory"> SchemaKStreamFactory
 
-`DataSourceNode` can be given a `SchemaKStreamFactory` when [created](#creating-instance). Unless given, `DataSourceNode` uses [SchemaKSourceFactory](SchemaKSourceFactory.md#buildSource).
+`DataSourceNode` can be given a `SchemaKStreamFactory` when [created](#creating-instance). Unless given, `DataSourceNode` uses [SchemaKSourceFactory](../SchemaKSourceFactory.md#buildSource).
 
 !!! note
     Note the difference in type names, i.e. `SchemaKStreamFactory` (with `Stream` inside) vs `SchemaKSourceFactory` (with `Source` instead).
 
-The `SchemaKStreamFactory` is used to [create a SchemaKStream](SchemaKSourceFactory.md#buildSource) when `DataSourceNode` is requested to [build one](#buildStream).
+The `SchemaKStreamFactory` is used to [create a SchemaKStream](../SchemaKSourceFactory.md#buildSource) when `DataSourceNode` is requested to [build one](#buildStream).
 
 ## <span id="buildStream"> Building SchemaKStream
 
@@ -33,7 +33,7 @@ SchemaKStream<?> buildStream(
 
 `buildStream` requests the given `PlanBuildContext` to `buildNodeContext`.
 
-In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) for a [SchemaKStream](SchemaKSourceFactory.md#buildSource).
+In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) for a [SchemaKStream](../SchemaKSourceFactory.md#buildSource).
 
 ---
 

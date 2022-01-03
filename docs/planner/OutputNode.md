@@ -14,8 +14,8 @@ The name of a stream or table (to write into)
 
 Used when:
 
-* `CreateSourceFactory` is requested to [createStreamCommand](CreateSourceFactory.md#createStreamCommand) and [createTableCommand](CreateSourceFactory.md#createTableCommand)
-* `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan), [maybeCreateSinkDdl](EngineExecutor.md#maybeCreateSinkDdl), [validateExistingSink](EngineExecutor.md#validateExistingSink)
+* `CreateSourceFactory` is requested to [createStreamCommand](../CreateSourceFactory.md#createStreamCommand) and [createTableCommand](../CreateSourceFactory.md#createTableCommand)
+* `EngineExecutor` is requested to [plan a statement](../EngineExecutor.md#plan), [maybeCreateSinkDdl](../EngineExecutor.md#maybeCreateSinkDdl), [validateExistingSink](../EngineExecutor.md#validateExistingSink)
 * `QueryIdUtil` is requested to `buildId`
 
 ## Implementations

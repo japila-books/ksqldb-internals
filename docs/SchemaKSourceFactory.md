@@ -17,7 +17,7 @@ For `KTABLE` type, `buildSource` builds a [windowed](#buildWindowedTable) or [re
 
 `buildSource` is used when:
 
-* `DataSourceNode` is [created](DataSourceNode.md#schemaKStreamFactory)
+* `DataSourceNode` is [created](planner/DataSourceNode.md#schemaKStreamFactory)
 
 ### <span id="buildStream"> buildStream
 

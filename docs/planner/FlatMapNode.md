@@ -9,7 +9,7 @@
 * <span id="id"> `PlanNodeId`
 * <span id="source"> Parent [PlanNode](PlanNode.md)
 * <span id="functionRegistry"> `FunctionRegistry`
-* <span id="analysis"> [ImmutableAnalysis](ImmutableAnalysis.md)
+* <span id="analysis"> [ImmutableAnalysis](../ImmutableAnalysis.md)
 
 `FlatMapNode` is created when:
 
@@ -22,6 +22,6 @@ SchemaKStream<?> buildStream(
   PlanBuildContext buildContext)
 ```
 
-`buildStream` requests the [source node](SingleSourcePlanNode.md#getSource) to [build a SchemaKStream](PlanNode.md#buildStream) to [flatMap](SchemaKStream.md#flatMap).
+`buildStream` requests the [source node](SingleSourcePlanNode.md#getSource) to [build a SchemaKStream](PlanNode.md#buildStream) to [flatMap](../SchemaKStream.md#flatMap).
 
 `buildStream` is part of the [PlanNode](PlanNode.md#buildStream) abstraction.

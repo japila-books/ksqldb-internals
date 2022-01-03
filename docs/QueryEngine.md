@@ -9,9 +9,9 @@
 
 `QueryEngine` is created when:
 
-* `EngineContext` is requested to [create one](EngineContext.md#createQueryEngine)
+* `EngineContext` is requested to [create one](EngineContext.md#createQueryEngine) (when `EngineExecutor` is requested to [plan a Query for execution](#planQuery))
 
-## <span id="buildQueryLogicalPlan"> Building Logical Query Plan (buildQueryLogicalPlan)
+## <span id="buildQueryLogicalPlan"> Building Logical Plan of Query (buildQueryLogicalPlan)
 
 ```java
 OutputNode buildQueryLogicalPlan(
@@ -22,6 +22,14 @@ OutputNode buildQueryLogicalPlan(
   boolean rowpartitionRowoffsetEnabled)
 ```
 
+`buildQueryLogicalPlan` takes a [Query](parser/Query.md) statement and returns an [OutputNode](planner/OutputNode.md).
+
+---
+
+The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](parser/QueryContainer.md#getSink)).
+
+---
+
 `buildQueryLogicalPlan` creates a [QueryAnalyzer](QueryAnalyzer.md) with the [MetaStore](MetaStore.md) and the values of the following configuration properties (from the given [KsqlConfig](KsqlConfig.md)):
 
 * [KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG](KsqlConfig.md#KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG)
@@ -29,11 +37,7 @@ OutputNode buildQueryLogicalPlan(
 
 `buildQueryLogicalPlan` requests the `QueryAnalyzer` to [analyze the given query](QueryAnalyzer.md#analyze).
 
-In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](LogicalPlanner.md) to [buildPersistentLogicalPlan](LogicalPlanner.md#buildPersistentLogicalPlan).
-
----
-
-The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](parser/QueryContainer.md#getSink)).
+In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](planner/LogicalPlanner.md) to [buildPersistentLogicalPlan](planner/LogicalPlanner.md#buildPersistentLogicalPlan).
 
 ---
 

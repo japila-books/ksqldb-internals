@@ -22,11 +22,11 @@ QueryEngine createQueryEngine(
   ServiceContext serviceContext)
 ```
 
-`createQueryEngine` creates an [QueryEngine](#creating-instance) (with the given [ServiceContext](ServiceContext.md) and the [ProcessingLogContext](#processingLogContext)).
+`createQueryEngine` creates a [QueryEngine](#creating-instance) (with the given [ServiceContext](ServiceContext.md) and the [ProcessingLogContext](#processingLogContext)).
 
 ---
 
-`createQueryEngine` is simply a convenient static factory method that does nothing but `new QueryEngine` and that little programming trick makes for a more readable fluent client code.
+`createQueryEngine` is simply a convenient factory method that does nothing but `new QueryEngine` and that little programming trick makes for a more readable fluent client code.
 
 ```java
 EngineContext
@@ -38,7 +38,7 @@ EngineContext
 
 `createQueryEngine` is used when:
 
-* `EngineExecutor` is requested to [planQuery](#planQuery)
+* `EngineExecutor` is requested to [plan a Query for execution](EngineExecutor.md#planQuery)
 
 ## <span id="ddlCommandFactory"> CommandFactories
 

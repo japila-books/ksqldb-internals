@@ -100,6 +100,8 @@ extra:
       link: https://linkedin.com/in/jaceklaskowski
     - icon: fontawesome/brands/medium
       link: https://jaceklaskowski.medium.com
+  vertx:
+    api: https://vertx.io/docs/3.9.12/apidocs
 
 nav:
   - Home: index.md
@@ -241,10 +243,12 @@ nav:
     - KsqlServerEndpoints: rest/KsqlServerEndpoints.md
     - KsqlServerMain: rest/KsqlServerMain.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
+    - QueryEndpoint: rest/QueryEndpoint.md
     - QueryExecutor: rest/QueryExecutor.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ReservedInternalTopics: rest/ReservedInternalTopics.md
+    - ScalablePushUtil: rest/ScalablePushUtil.md
     - ServerOptions: rest/ServerOptions.md
     - StandaloneExecutor:
       - StandaloneExecutor: rest/StandaloneExecutor.md
@@ -258,6 +262,10 @@ nav:
   - Embedded:
     - EmbeddedKsql: embedded/EmbeddedKsql.md
     - KsqlContext: embedded/KsqlContext.md
+  - API:
+    - Endpoints: api/Endpoints.md
+    - Server: api/Server.md
+    - ServerVerticle: api/ServerVerticle.md
   - Misc:
     - Debugging ksqlDB: debugging.md
     - Persistent Queries: persistent-queries.md

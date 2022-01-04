@@ -21,7 +21,7 @@
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
 
-## <span id="handleStatement"> handleStatement
+## <span id="handleStatement"> Handling Statement
 
 ```java
 QueryMetadataHolder handleStatement(
@@ -35,27 +35,15 @@ QueryMetadataHolder handleStatement(
   boolean excludeTombstones)
 ```
 
-`handleStatement`...FIXME
+For a [Query](../parser/Query.md) statement, `handleStatement` [handles it](#handleQuery). Otherwise, `handleStatement` returns an empty `QueryMetadataHolder`.
 
 `handleStatement` is used when:
 
-* `QueryEndpoint` is requested to [createQueryPublisher](#createQueryPublisher)
+* `QueryEndpoint` is requested to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
 * `StreamedQueryResource` is requested to `handleStatement`
 * `WSQueryEndpoint` is requested to `handleStatement`
 
-### <span id="handlePushQuery"> handlePushQuery
-
-```java
-QueryMetadataHolder handlePushQuery(
-  ServiceContext serviceContext,
-  PreparedStatement<Query> statement,
-  Map<String, Object> streamsProperties,
-  boolean excludeTombstones)
-```
-
-`handlePushQuery`...FIXME
-
-### <span id="handleQuery"> handleQuery
+## <span id="handleQuery"> Handling Query
 
 ```java
 QueryMetadataHolder handleQuery(
@@ -69,7 +57,57 @@ QueryMetadataHolder handleQuery(
   boolean excludeTombstones)
 ```
 
-`handleQuery`...FIXME
+`handleQuery` is used when:
+
+* `QueryExecutor` is requested to [handle a statement](#handleStatement)
+
+### Pull Queries
+
+For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
+
+With [ksql.pull.queries.enable](../KsqlConfig.md#KSQL_PULL_QUERIES_ENABLE_CONFIG) disabled, `handleQuery` throws a `KsqlStatementException`:
+
+```text
+Pull queries are disabled.
+```
+
+`handleQuery` determines a `ConsistencyOffsetVector` based on [ksql.query.pull.consistency.token.enabled](../KsqlConfig.md#KSQL_QUERY_PULL_CONSISTENCY_OFFSET_VECTOR_ENABLED) in the [KsqlConfig](#ksqlConfig) and the given `requestProperties`.
+
+For a `KTABLE` data source (`FROM` clause), `handleQuery` [handleTablePullQuery](#handleTablePullQuery).
+
+For a `KSTREAM` data source (`FROM` clause), `handleQuery` [handleStreamPullQuery](#handleStreamPullQuery).
+
+### Scalable Push Queries
+
+For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
+
+`handleQuery` prints out the following INFO message to the logs:
+
+```text
+Scalable push query created
+```
+
+`handleQuery` [handleScalablePushQuery](#handleScalablePushQuery).
+
+### Transient Queries
+
+Otherwise, `handleQuery` prints out the following INFO message to the logs and [handlePushQuery](#handlePushQuery).
+
+```text
+Transient query created
+```
+
+### <span id="handlePushQuery"> handlePushQuery
+
+```java
+QueryMetadataHolder handlePushQuery(
+  ServiceContext serviceContext,
+  PreparedStatement<Query> statement,
+  Map<String, Object> streamsProperties,
+  boolean excludeTombstones)
+```
+
+`handlePushQuery`...FIXME
 
 ### <span id="handleStreamPullQuery"> handleStreamPullQuery
 

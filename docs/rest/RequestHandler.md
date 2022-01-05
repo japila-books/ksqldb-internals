@@ -17,10 +17,7 @@
 
 `RequestHandler` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
 
-The `KsqlEngine` is used for the following:
-
-* [Executing SQL Statements](#execute) (and [executeStatement](#executeStatement))
-* [isVariableSubstitutionEnabled](#isVariableSubstitutionEnabled)
+The `KsqlEngine` is used for [executing SQL Statements](#execute) (to [execute a Statement](#executeStatement) and [isVariableSubstitutionEnabled](#isVariableSubstitutionEnabled)).
 
 ## <span id="distributor"> DistributingExecutor
 
@@ -28,7 +25,7 @@ The `KsqlEngine` is used for the following:
 
 The `DistributingExecutor` is used for [executing SQL statements](#executeStatement).
 
-## <span id="execute"> Executing SQL Statements
+## <span id="execute"> Executing SQL Statements (execute)
 
 ```java
 KsqlEntityList execute(
@@ -37,15 +34,11 @@ KsqlEntityList execute(
   SessionProperties sessionProperties)
 ```
 
-`execute`...FIXME
-
-`execute` [executes the SQL statement](#executeStatement).
-
-`execute`...FIXME
+For every SQL statement (in the given `statements`), `execute` requests the [KsqlEngine](#ksqlEngine) to [prepare it for execution](../KsqlEngine.md#prepare) (possibly with [variable substitution](#isVariableSubstitutionEnabled)) and then [executes it](#executeStatement).
 
 `execute` is used when:
 
-* `KsqlResource` is requested to [terminateCluster](KsqlResource.md#terminateCluster) and [handleKsqlStatements](KsqlResource.md#handleKsqlStatements)
+* `KsqlResource` is requested to [handle a REST request to execute SQL statements](KsqlResource.md#handleKsqlStatements) and [terminate the cluster](KsqlResource.md#terminateCluster)
 
 ### <span id="executeStatement"> Executing Statement
 
@@ -66,3 +59,12 @@ KsqlEntityList execute(
 `executeStatement` requests the `StatementExecutor` to [execute the statement](StatementExecutor.md#execute).
 
 Unless handled, `executeStatement` requests the [DistributingExecutor](#distributor) to [execute the statement](DistributingExecutor.md#execute).
+
+### <span id="isVariableSubstitutionEnabled"> isVariableSubstitutionEnabled
+
+```java
+boolean isVariableSubstitutionEnabled(
+  SessionProperties sessionProperties)
+```
+
+`isVariableSubstitutionEnabled` is positive (`true`) when [ksql.variable.substitution.enable](../KsqlConfig.md#KSQL_VARIABLE_SUBSTITUTION_ENABLE) is `true` in the given `SessionProperties` or the [KsqlConfig](../KsqlEngine.md#getKsqlConfig) (of the [KsqlEngine](#ksqlEngine)).

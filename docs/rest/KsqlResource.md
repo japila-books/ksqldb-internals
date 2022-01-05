@@ -45,7 +45,7 @@ boolean shouldSynchronize(
 * [terminateCluster](#terminateCluster)
 * [handleKsqlStatements](#handleKsqlStatements)
 
-## <span id="handleKsqlStatements"> handleKsqlStatements
+## <span id="handleKsqlStatements"> Handling Statements
 
 ```java
 EndpointResponse handleKsqlStatements(
@@ -59,17 +59,21 @@ EndpointResponse handleKsqlStatements(
 Received: [request]
 ```
 
-`handleKsqlStatements`...FIXME
+`handleKsqlStatements` requests the [KsqlEngine](#ksqlEngine) to [parse the SQL text](../KsqlEngine.md#parse) (from the given `KsqlRequest`).
 
-`handleKsqlStatements` requests the [KsqlEngine](#ksqlEngine) to [parse the SQL text](../KsqlEngine.md#parse).
-
-`handleKsqlStatements`...FIXME
+`handleKsqlStatements` requests the [RequestValidator](#validator) to [validate](RequestValidator.md#validate) the statements (in a `SandboxedServiceContext`).
 
 `handleKsqlStatements` requests the [RequestHandler](#handler) to [execute the SQL statements](RequestHandler.md#execute).
 
-`handleKsqlStatements`...FIXME
+In the end, `handleKsqlStatements` prints out the following INFO message to the logs:
+
+```text
+Processed successfully: [request]
+```
+
+---
 
 `handleKsqlStatements` is used when:
 
-* `KsqlServerEndpoints` is requested to `executeKsqlRequest`
+* `KsqlServerEndpoints` is requested to [execute a KsqlRequest](KsqlServerEndpoints.md#executeKsqlRequest)
 * `ServerInternalKsqlClient` is requested to `makeKsqlRequest`

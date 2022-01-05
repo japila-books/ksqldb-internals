@@ -32,7 +32,7 @@ void start(
 
 `start` is part of the `Verticle` ([Vert.x]({{ vertx.api }}/io/vertx/core/Verticle.html#start-io.vertx.core.Promise-)) abstraction.
 
-### <span id="setupRouter"> setupRouter
+## <span id="setupRouter"> URIs
 
 ```java
 Router setupRouter()
@@ -50,7 +50,7 @@ URI      | HTTP Method | Handler
  `/info` | `GET` | `this::handleInfoRequest`
  `/inserts-stream` | `POST` | `InsertsStreamHandler`
  `/is_valid_property/:property` | `GET` | `this::handleIsValidPropertyRequest`
- `/ksql` | `POST` | `this::handleKsqlRequest`
+ `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest)
  `/ksql/terminate` | `POST` | `this::handleTerminateRequest`
  `/lag` | `POST` | `this::handleLagReportRequest`
  `/query` | `POST` | `this::handleQueryRequest`
@@ -60,3 +60,12 @@ URI      | HTTP Method | Handler
  `/v1/metadata` | `GET` | `this::handleServerMetadataRequest`
  `/v1/metadata/id` | `GET` | `this::handleServerMetadataClusterIdRequest`
  `/ws/query` | `GET` | `this::handleWebsocket`
+
+### <span id="handleKsqlRequest"> Handling KsqlRequest
+
+```java
+void handleKsqlRequest(
+  RoutingContext routingContext)
+```
+
+`handleKsqlRequest` requests the [Endpoints](#endpoints) to [execute the KsqlRequest](Endpoints.md#executeKsqlRequest).

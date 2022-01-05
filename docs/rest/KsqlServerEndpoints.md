@@ -42,3 +42,16 @@ CompletableFuture<QueryPublisher> createQueryPublisher(
 `createQueryPublisher`...FIXME
 
 `createQueryPublisher` is part of the [Endpoints](../api/Endpoints.md#createQueryPublisher) abstraction.
+
+## <span id="executeKsqlRequest"> Executing KsqlRequest
+
+```java
+CompletableFuture<EndpointResponse> executeKsqlRequest(
+  KsqlRequest request,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext)
+```
+
+`executeKsqlRequest`...FIXME
+
+`executeKsqlRequest` is part of the [Endpoints](../api/Endpoints.md#executeKsqlRequest) abstraction.

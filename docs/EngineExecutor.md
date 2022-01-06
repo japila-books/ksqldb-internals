@@ -250,7 +250,7 @@ PullQueryResult executeTablePullQuery(
 * `KsqlEngine` is requested to [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
 * `SandboxedExecutionContext` is requested to [executeTablePullQuery](SandboxedExecutionContext.md#executeTablePullQuery)
 
-## <span id="buildAndValidateLogicalPlan"> buildAndValidateLogicalPlan
+## <span id="buildAndValidateLogicalPlan"> Building Logical Plan of Query (buildAndValidateLogicalPlan)
 
 ```java
 LogicalPlanNode buildAndValidateLogicalPlan(
@@ -261,10 +261,24 @@ LogicalPlanNode buildAndValidateLogicalPlan(
   boolean isScalablePush)
 ```
 
-`buildAndValidateLogicalPlan` creates a [LogicalPlanner](planner/LogicalPlanner.md) to [buildQueryLogicalPlan](planner/LogicalPlanner.md#buildQueryLogicalPlan) (that gives an [OutputNode](planner/OutputNode.md)).
+`buildAndValidateLogicalPlan` is given a statement (along with the [analysis](ImmutableAnalysis.md)) and the `isScalablePush` flag as follows:
 
-In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement of the given `ConfiguredStatement` and the [OutputNode](planner/OutputNode.md)).
+* `true` when [executing a scalable push query](#executeScalablePushQuery)
+* `false` when [executing a table pull query](#executeTablePullQuery)
+
+!!! note "Naming"
+    Since `buildAndValidateLogicalPlan` is to execute [buildQueryLogicalPlan](planner/LogicalPlanner.md#buildQueryLogicalPlan) it'd make sense to call it alike, _wouldn't it?_
+
+    After all, `buildAndValidateLogicalPlan` is a facade to [LogicalPlanner](planner/LogicalPlanner.md).
+
+---
+
+`buildAndValidateLogicalPlan` creates a [LogicalPlanner](planner/LogicalPlanner.md) to [build a logical plan of a query](planner/LogicalPlanner.md#buildQueryLogicalPlan) (that gives an [OutputNode](planner/OutputNode.md)).
+
+In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement text of the given `ConfiguredStatement` and the [OutputNode](planner/OutputNode.md)).
+
+---
 
 `buildAndValidateLogicalPlan` is used when:
 
-* `EngineExecutor` is requested to [executeTablePullQuery](#executeTablePullQuery) (with the `isScalablePush` flag disabled) and [executeScalablePushQuery](#executeScalablePushQuery) (with the `isScalablePush` flag enabled)
+* `EngineExecutor` is requested to execute [table pull](#executeTablePullQuery) or [scalable push](#executeScalablePushQuery) queries

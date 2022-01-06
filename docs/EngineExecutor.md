@@ -190,12 +190,14 @@ ScalablePushQueryMetadata executeScalablePushQuery(
   Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
 ```
 
-`executeScalablePushQuery`...FIXME
+`executeScalablePushQuery` [buildAndValidateLogicalPlan](#buildAndValidateLogicalPlan) (with `isScalablePush` flag enabled).
+
+In the end, `executeScalablePushQuery` creates a `ScalablePushQueryMetadata` (with a new `TransientQueryQueue`).
 
 `executeScalablePushQuery` is used when:
 
-* `KsqlEngine` is requested to [executeScalablePushQuery](KsqlEngine.md#executeScalablePushQuery)
-* `SandboxedExecutionContext` is requested to [executeScalablePushQuery](SandboxedExecutionContext.md#executeScalablePushQuery)
+* `KsqlEngine` is requested to [execute a scalable push query](KsqlEngine.md#executeScalablePushQuery)
+* `SandboxedExecutionContext` is requested to [execute a scalable push query](SandboxedExecutionContext.md#executeScalablePushQuery)
 
 ## <span id="executeStreamPullQuery"> Executing Stream Pull Query
 
@@ -247,8 +249,8 @@ PullQueryResult executeTablePullQuery(
 
 `executeTablePullQuery` is used when:
 
-* `KsqlEngine` is requested to [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
-* `SandboxedExecutionContext` is requested to [executeTablePullQuery](SandboxedExecutionContext.md#executeTablePullQuery)
+* `KsqlEngine` is requested to [execute a table pull query](KsqlEngine.md#executeTablePullQuery)
+* `SandboxedExecutionContext` is requested to [execute a table pull query](SandboxedExecutionContext.md#executeTablePullQuery)
 
 ## <span id="buildAndValidateLogicalPlan"> Building Logical Plan of Query (buildAndValidateLogicalPlan)
 

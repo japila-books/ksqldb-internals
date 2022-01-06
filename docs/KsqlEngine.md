@@ -89,7 +89,25 @@ PreparedStatement<?> prepare(
 
 `prepare` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#prepare) abstraction.
 
-## <span id="executeTablePullQuery"> executeTablePullQuery
+## <span id="executeScalablePushQuery"> Executing Scalable Push Query
+
+```java
+ScalablePushQueryMetadata executeScalablePushQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  PushRouting pushRouting,
+  PushRoutingOptions pushRoutingOptions,
+  QueryPlannerOptions queryPlannerOptions,
+  Context context,
+  Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
+```
+
+`executeScalablePushQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [execute a scalable push query](EngineExecutor.md#executeScalablePushQuery).
+
+`executeScalablePushQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeScalablePushQuery) abstraction.
+
+## <span id="executeTablePullQuery"> Executing Table Pull Query
 
 ```java
 PullQueryResult executeTablePullQuery(

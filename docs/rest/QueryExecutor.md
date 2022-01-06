@@ -77,7 +77,7 @@ For a `KTABLE` data source (`FROM` clause), `handleQuery` [handleTablePullQuery]
 
 For a `KSTREAM` data source (`FROM` clause), `handleQuery` [handleStreamPullQuery](#handleStreamPullQuery).
 
-### Scalable Push Queries
+### <span id="handleQuery-scalable-push-query"> Scalable Push Queries
 
 For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
 
@@ -108,6 +108,32 @@ QueryMetadataHolder handlePushQuery(
 ```
 
 `handlePushQuery`...FIXME
+
+### <span id="handleScalablePushQuery"> Executing Scalable Push Query (handleScalablePushQuery)
+
+```java
+QueryMetadataHolder handleScalablePushQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  PreparedStatement<Query> statement,
+  Map<String, Object> configOverrides,
+  Map<String, Object> requestProperties,
+  Context context,
+  SlidingWindowRateLimiter scalablePushBandRateLimiter,
+  AtomicReference<ScalablePushQueryMetadata> resultForMetrics)
+```
+
+`handleScalablePushQuery` requests the [KsqlEngine](#ksqlEngine) to [execute a scalable push query](../KsqlEngine.md#executeScalablePushQuery).
+
+In the end, `handleScalablePushQuery` prints out the following INFO message to the logs:
+
+```text
+Streaming scalable push query
+```
+
+`handleScalablePushQuery` is used when:
+
+* `QueryExecutor` is requested to [handle a Query](#handleQuery-scalable-push-query)
 
 ### <span id="handleStreamPullQuery"> handleStreamPullQuery
 

@@ -41,7 +41,25 @@ Used when:
 * `StandaloneExecutor.StatementExecutor` is requested to [handleExecutableDdl](rest/StandaloneExecutor_StatementExecutor.md#handleExecutableDdl) and [handlePersistentQuery](rest/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery)
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 
-### <span id="executeTablePullQuery"> executeTablePullQuery
+### <span id="executeScalablePushQuery"> Executing Scalable Push Query
+
+```java
+ScalablePushQueryMetadata executeScalablePushQuery(
+  ImmutableAnalysis analysis,
+  ServiceContext serviceContext,
+  ConfiguredStatement<Query> statement,
+  PushRouting pushRouting,
+  PushRoutingOptions pushRoutingOptions,
+  QueryPlannerOptions queryPlannerOptions,
+  Context context,
+  Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
+```
+
+Used when:
+
+* `QueryExecutor` is requested to [handle a scalable push query](rest/QueryExecutor.md#handleScalablePushQuery)
+
+### <span id="executeTablePullQuery"> Executing Table Pull Query
 
 ```java
 PullQueryResult executeTablePullQuery(
@@ -97,7 +115,7 @@ Used when:
 
 * `KsqlContext` is requested to [sql](embedded/KsqlContext.md#sql)
 * `SqlFormatInjector` is requested to `inject`
-* `QueryEndpoint` is requested to `createStatement`
+* `QueryEndpoint` is requested to [createStatement](rest/QueryEndpoint.md#createStatement)
 * `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
 * `StandaloneExecutor` is requested to [processesQueryFile](rest/StandaloneExecutor.md#processesQueryFile)
 * `StatementParser` is requested to `parseSingleStatement`

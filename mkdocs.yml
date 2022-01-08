@@ -228,6 +228,7 @@ nav:
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md
   - REST:
+    - rest/index.md
     - Command: rest/Command.md
     - CommandQueue: rest/CommandQueue.md
     - CommandRunner: rest/CommandRunner.md

@@ -14,6 +14,8 @@
 
 ## <span id="KSQL_ROWPARTITION_ROWOFFSET_ENABLED"><span id="ksql.rowpartition.rowoffset.enabled"> ksql.rowpartition.rowoffset.enabled
 
+## <span id="KSQL_SERVICE_ID_CONFIG"><span id="ksql.service.id"> ksql.service.id
+
 ## <span id="KSQL_SOURCE_TABLE_MATERIALIZATION_ENABLED"><span id="ksql.source.table.materialization.enabled"> ksql.source.table.materialization.enabled
 
 ## <span id="KSQL_VARIABLE_SUBSTITUTION_ENABLE"><span id="ksql.variable.substitution.enable"> ksql.variable.substitution.enable

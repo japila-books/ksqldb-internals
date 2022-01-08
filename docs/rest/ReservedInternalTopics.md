@@ -11,23 +11,58 @@
 * `InsertValuesExecutor` is requested to `getDataSource`
 * `ListTopicsExecutor` is requested to `listTopics`
 
-## Internal KSQL Command Topic
+## Internal ksqlDB Topics
 
-### <span id="commandTopic"> commandTopic
+### <span id="commandTopic"> Command Topic
 
 ```java
 String commandTopic(
   KsqlConfig ksqlConfig)
 ```
 
-`commandTopic`...FIXME
+`commandTopic` [builds the name of a ksqlDB internal topic](#toKsqlInternalTopic) with `command_topic` topic suffix:
+
+```text
+_confluent-ksql-[ksql.service.id]_command_topic
+```
 
 `commandTopic` is used when:
 
-* `KafkaBrokerCheck` is requested to `check`
+* `HealthCheckAgent.KafkaBrokerCheck` is requested to `check`
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (and creates a [CommandStore](CommandStore.md#create))
 * `KsqlRestoreCommandTopic` is created
 
-### <span id="KSQL_COMMAND_TOPIC_SUFFIX"> Topic Name Prefix
+### <span id="configsTopic"> Configs Topic
 
-`ReservedInternalTopics` assumes `command_topic` as the prefix of the name of the [command topic](#commandTopic).
+```java
+String configsTopic(
+  KsqlConfig ksqlConfig)
+```
+
+`configsTopic` [builds the name of a ksqlDB internal topic](#toKsqlInternalTopic) with `configs` topic suffix:
+
+```text
+_confluent-ksql-[ksql.service.id]_configs
+```
+
+`configsTopic` is used when:
+
+* `StandaloneExecutorFactory` utility is used to [create a StandaloneExecutor](StandaloneExecutorFactory.md#create)
+
+## <span id="toKsqlInternalTopic"> toKsqlInternalTopic
+
+```java
+String toKsqlInternalTopic(
+  KsqlConfig ksqlConfig,
+  String topicSuffix)
+```
+
+`toKsqlInternalTopic` builds a name (of a ksqlDB internal topic) in the following format (based on the [ksql.service.id](../KsqlConfig.md#KSQL_SERVICE_ID_CONFIG) in the given [KsqlConfig](../KsqlConfig.md) and the given `topicSuffix`):
+
+```text
+_confluent-ksql-[ksql.service.id]_[topicSuffix]
+```
+
+`toKsqlInternalTopic` is used when:
+
+* `ReservedInternalTopics` utility is used for [commandTopic](#commandTopic) and [configsTopic](#configsTopic)

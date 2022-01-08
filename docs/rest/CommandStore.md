@@ -1,5 +1,7 @@
 # CommandStore
 
+`CommandStore` is a [CommandQueue](CommandQueue.md).
+
 ## Creating Instance
 
 `CommandStore` takes the following to be created:
@@ -17,7 +19,7 @@
 
 `CommandStore` is created using [create](#create) utility.
 
-### <span id="create"> Creating CommandStore
+### <span id="create"> create
 
 ```java
 CommandStore create(

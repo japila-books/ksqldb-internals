@@ -32,7 +32,7 @@
 ```java
 ExecuteResult execute(
   ServiceContext serviceContext,
-  ConfiguredStatement<?> statement) // (1)
+  ConfiguredStatement<?> statement) // (1)!
 ExecuteResult execute(
   ServiceContext serviceContext,
   ConfiguredKsqlPlan plan)
@@ -40,7 +40,7 @@ ExecuteResult execute(
 
 1. [Plans the statement](#plan) and creates a `ConfiguredKsqlPlan` for the other `execute`
 
-`execute` [creates an EngineExecutor](EngineExecutor.md#create) to [execute](EngineExecutor.md#execute) the `KsqlPlan` (of the `ConfiguredKsqlPlan`).
+`execute` [creates an EngineExecutor](EngineExecutor.md#create) to [execute](EngineExecutor.md#execute) the [KsqlPlan](KsqlPlan.md) (of the given `ConfiguredKsqlPlan`).
 
 `execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
 

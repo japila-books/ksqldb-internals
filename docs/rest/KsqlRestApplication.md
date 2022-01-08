@@ -79,6 +79,12 @@ KsqlRestApplication buildApplication(
   MetricCollectors metricCollectors)
 ```
 
+`buildApplication` is used when:
+
+* `KsqlServerMain` is requested for an [Executable](KsqlServerMain.md#createExecutable)
+
+### <span id="buildApplication-vertx"> Step 1. Vert.x
+
 `buildApplication` creates a Vert.x subsystem.
 
 !!! note "Vert.x"
@@ -102,17 +108,21 @@ KsqlRestApplication buildApplication(
 
 `buildApplication` [creates a CommandStore](CommandStore.md#create).
 
+### <span id="buildApplication-statementExecutor"> Step x. InteractiveStatementExecutor
+
+`buildApplication` [creates an InteractiveStatementExecutor](InteractiveStatementExecutor.md).
+
 `buildApplication`...FIXME
 
-`buildApplication` creates a [QueryExecutor](QueryExecutor.md).
+`buildApplication` creates a [QueryExecutor](QueryExecutor.md) and a `StreamedQueryResource`.
+
+### <span id="buildApplication-commandRunner"> Step x. CommandRunner
+
+`buildApplication` creates a [CommandRunner](CommandRunner.md) (with the [InteractiveStatementExecutor](#buildApplication-statementExecutor)).
 
 `buildApplication`...FIXME
 
 In the end, `buildApplication` creates a [KsqlRestApplication](#creating-instance).
-
-`buildApplication` is used when:
-
-* `KsqlServerMain` is requested for an [Executable](KsqlServerMain.md#createExecutable)
 
 ## <span id="startAsync"> startAsync
 

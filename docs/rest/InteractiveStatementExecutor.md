@@ -7,7 +7,7 @@ void handleStatement(
   QueuedCommand queuedCommand)
 ```
 
-`handleStatement`...FIXME
+`handleStatement` [handles](#handleStatementWithTerminatedQueries) the [Command](Command.md) (from the given `QueuedCommand` and with the `EXECUTE` mode).
 
 `handleStatement` is used when:
 
@@ -37,13 +37,17 @@ void handleStatementWithTerminatedQueries(
   long offset)
 ```
 
-If the given [Command](Command.md) has a [KsqlPlan](Command.md#getPlan), `handleStatementWithTerminatedQueries` [executes the plan](#executePlan).
-
-Otherwise, `handleStatementWithTerminatedQueries`...FIXME
-
 `handleStatementWithTerminatedQueries` is used when:
 
-* `InteractiveStatementExecutor` is requested to [handleStatement](#handleStatement) and [handleRestore](#handleRestore)
+* `InteractiveStatementExecutor` is requested to [handleStatement](#handleStatement) (with `EXECUTE` mode) and [handleRestore](#handleRestore) (with `RESTORE` mode)
+
+### <span id="handleStatementWithTerminatedQueries-executePlan"> Case 1. Command with KsqlPlan
+
+If the given [Command](Command.md) has a [KsqlPlan](Command.md#getPlan), `handleStatementWithTerminatedQueries` [executes](#executePlan) the [KsqlPlan](../KsqlPlan.md).
+
+### <span id="handleStatementWithTerminatedQueries-others"> Others
+
+Otherwise, `handleStatementWithTerminatedQueries`...FIXME
 
 ### <span id="executePlan"> Executing Plan
 
@@ -57,4 +61,8 @@ void executePlan(
   long offset)
 ```
 
-`executePlan` requests the [KsqlEngine](#ksqlEngine) to [execute the plan](../KsqlEngine.md#execute).
+`executePlan` requests the [KsqlEngine](#ksqlEngine) to [execute](../KsqlEngine.md#execute) the given [KsqlPlan](../KsqlPlan.md).
+
+`executePlan` increments `queryIdGenerator` internal counter.
+
+For the `KsqlPlan` for a `Query` and the mode `EXECUTE`, `executePlan` requests the query to [start](../QueryMetadata.md#start).

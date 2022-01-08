@@ -145,19 +145,24 @@ KsqlPlan sourceTablePlan(
 * `KsqlEngine` is requested to [plan a query](KsqlEngine.md#plan)
 * `SandboxedExecutionContext` is requested to [plan a query](SandboxedExecutionContext.md#plan)
 
-## <span id="execute"> Executing KsqlPlan (execute)
+## <span id="execute"> Executing KsqlPlan (DdlCommand or Persistent Query)
 
 ```java
 ExecuteResult execute(
   KsqlPlan plan)
 ```
 
-!!! note "KsqlPlan"
-    It is an `IllegalStateException` if the given [KsqlPlan](KsqlPlan.md) has neither a [physical plan](KsqlPlan.md#getQueryPlan) nor a [DdlCommand](KsqlPlan.md#getDdlCommand).
+!!! note "IllegalStateException"
+    It is an `IllegalStateException` when the given [KsqlPlan](KsqlPlan.md) has neither a [physical plan](KsqlPlan.md#getQueryPlan) nor a [DdlCommand](KsqlPlan.md#getDdlCommand).
 
 For the given [KsqlPlan](KsqlPlan.md) with no [physical plan](KsqlPlan.md#getQueryPlan), `execute` [executes the DDL command](#executeDdl) (of the [KsqlPlan](KsqlPlan.md#getDdlCommand) with the `withQuery` flag off) and returns.
 
-Otherwise, with a [physical plan](KsqlPlan.md#getQueryPlan), `execute` [executes a DDL command](#executeDdl) (if available) and [executes the persistent query](#executePersistentQuery).
+---
+
+!!! note "Physical Plan with optional DdlCommand"
+    The given [KsqlPlan](KsqlPlan.md) may have a [physical plan](KsqlPlan.md#getQueryPlan) with or without a [DdlCommand](KsqlPlan.md#getDdlCommand).
+
+Otherwise, for the given [KsqlPlan](KsqlPlan.md) with a [physical plan](KsqlPlan.md#getQueryPlan), `execute` executes a [DDL command](#executeDdl) (if available) and then the [persistent query](#executePersistentQuery).
 
 ---
 

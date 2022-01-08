@@ -5,7 +5,7 @@
 `CommandRunner` takes the following to be created:
 
 * <span id="statementExecutor"> [InteractiveStatementExecutor](InteractiveStatementExecutor.md)
-* <span id="commandStore"> [CommandQueue](CommandQueue.md)
+* [CommandQueue](#commandStore)
 * <span id="maxRetries"> `maxRetries`
 * <span id="clusterTerminator"> `ClusterTerminator`
 * <span id="serverState"> `ServerState`
@@ -20,7 +20,26 @@
 
 `CommandRunner` is created when:
 
-* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
+* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner)
+
+## <span id="commandStore"> CommandQueue
+
+`CommandRunner` is given a [CommandQueue](CommandQueue.md) when [created](#creating-instance).
+
+The `CommandQueue` is used when `CommandRunner` is requested for the following:
+
+* [processPriorCommands](#processPriorCommands)
+* [fetchAndRunCommands](#fetchAndRunCommands)
+
+### <span id="getCommandQueue"> getCommandQueue
+
+```java
+CommandQueue getCommandQueue()
+```
+
+`getCommandQueue` is used when:
+
+* `KsqlResource` is requested to [configure](KsqlResource.md#configure) and [handleKsqlStatements](KsqlResource.md#handleKsqlStatements)
 
 ## <span id="commandDeserializer"> Command Deserializer
 
@@ -63,7 +82,7 @@ void fetchAndRunCommands()
 Found [size] new writes to command topic
 ```
 
-For every queued command, `fetchAndRunCommands` [execute the statement](#executeStatement).
+For every `QueuedCommand`, `fetchAndRunCommands` [executes them](#executeStatement).
 
 ### <span id="executeStatement"> Executing Statement
 
@@ -72,15 +91,13 @@ void executeStatement(
   QueuedCommand queuedCommand)
 ```
 
-`executeStatement` uses the [commandDeserializer](#commandDeserializer) to deserialize a SQL statement (from the `QueuedCommand`).
-
-`executeStatement` prints out the following INFO message to the logs:
+`executeStatement` takes the statement from the given `QueuedCommand` and prints out the following INFO message to the logs:
 
 ```text
 Executing statement: [commandStatement]
 ```
 
-`executeStatement` creates a Java `Runnable` which, when run, requests the [InteractiveStatementExecutor](#statementExecutor) to [handle the statement](InteractiveStatementExecutor.md#handleStatement) and prints out the following INFO message to the logs:
+`executeStatement` creates a `Runnable` ([Java]({{ java.api }}/java/lang/Runnable.html)) which, when run, requests the [InteractiveStatementExecutor](#statementExecutor) to [handle the QueuedCommand](InteractiveStatementExecutor.md#handleStatement) and prints out the following INFO message to the logs:
 
 ```text
 Executed statement: [commandStatement]

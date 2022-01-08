@@ -173,6 +173,8 @@ nav:
       - CreateAsSelect: parser/CreateAsSelect.md
       - CreateSourceAsProperties: parser/CreateSourceAsProperties.md
       - CreateStream: parser/CreateStream.md
+      - CreateStreamAsSelect: parser/CreateStreamAsSelect.md
+      - CreateTableAsSelect: parser/CreateTableAsSelect.md
       - Explain: parser/Explain.md
       - Expression: parser/Expression.md
       - InsertInto: parser/InsertInto.md

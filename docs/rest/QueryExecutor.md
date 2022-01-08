@@ -162,4 +162,6 @@ QueryMetadataHolder handleTablePullQuery(
   Optional<ConsistencyOffsetVector> consistencyOffsetVector)
 ```
 
-`handleTablePullQuery`...FIXME
+`handleTablePullQuery` creates a `PullQueryConfigRoutingOptions` and a `PullQueryConfigPlannerOptions`.
+
+In the end, `handleTablePullQuery` requests the [KsqlEngine](#ksqlEngine) to [executeTablePullQuery](../KsqlEngine.md#executeTablePullQuery).

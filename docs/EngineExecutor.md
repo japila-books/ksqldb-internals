@@ -245,7 +245,11 @@ PullQueryResult executeTablePullQuery(
   Optional<ConsistencyOffsetVector> consistencyOffsetVector)
 ```
 
-`executeTablePullQuery`...FIXME
+`executeTablePullQuery` [buildAndValidateLogicalPlan](#buildAndValidateLogicalPlan) followed by [buildPullPhysicalPlan](#buildPullPhysicalPlan).
+
+`executeTablePullQuery` creates a `PullQueryQueue` and a `PullQueryQueuePopulator` (to requests the given `HARouting` to `handlePullQuery`).
+
+`executeTablePullQuery` creates a `PullQueryResult` (and starts it when the given `startImmediately` flag is enabled).
 
 `executeTablePullQuery` is used when:
 

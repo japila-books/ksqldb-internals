@@ -107,6 +107,53 @@ INSERT INTO sourceName (WITH tableProperties)? query
 
 `visitInsertInto` creates an [InsertInto](InsertInto.md).
 
+### <span id="visitCreateStreamAs"> visitCreateStreamAs
+
+```java
+Node visitCreateStreamAs(
+  SqlBaseParser.CreateStreamAsContext context)
+```
+
+`visitCreateStreamAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM AS` (CSAS) statements.
+
+```antlr
+CREATE (OR REPLACE)? STREAM (IF NOT EXISTS)? sourceName
+  (WITH tableProperties)? AS query
+```
+
+`visitCreateStreamAs` creates a [CreateStreamAsSelect](CreateStreamAsSelect.md).
+
+### <span id="visitCreateTableAs"> visitCreateTableAs
+
+```java
+Node visitCreateTableAs(
+  SqlBaseParser.CreateTableAsContext context)
+```
+
+`visitCreateTableAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE AS` (CTAS) statements.
+
+```antlr
+CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
+  (WITH tableProperties)? AS query
+```
+
+`visitCreateTableAs` creates a [CreateTableAsSelect](CreateTableAsSelect.md).
+
+### <span id="visitInsertInto"> visitInsertInto
+
+```java
+Node visitInsertInto(
+  SqlBaseParser.InsertIntoContext context)
+```
+
+`visitInsertInto` is part of the `SqlBaseBaseVisitor` abstraction to handle `INSERT INTO` statements.
+
+```antlr
+INSERT INTO sourceName (WITH tableProperties)? query
+```
+
+`visitInsertInto` creates a [InsertInto](InsertInto.md).
+
 ### <span id="visitQuery"> SELECT
 
 ```java
@@ -131,3 +178,22 @@ query
 ```
 
 `visitQuery` creates a [Query](Query.md).
+
+## <span id="buildingPersistentQuery"> buildingPersistentQuery Flag
+
+`Visitor` defines `buildingPersistentQuery` internal flag that is `false` when [created](#creating-instance).
+
+`buildingPersistentQuery` flag is turned on (`true`) when [withinPersistentQuery](#withinPersistentQuery).
+
+## <span id="withinPersistentQuery"> withinPersistentQuery
+
+```java
+T withinPersistentQuery(
+  Supplier<T> task)
+```
+
+`withinPersistentQuery`...FIXME
+
+`withinPersistentQuery` is used when:
+
+* `Visitor` is requested to parse [CreateStreamAs](#visitCreateStreamAs), [CreateTableAs](#visitCreateTableAs) and [InsertInto](#visitInsertInto) statements

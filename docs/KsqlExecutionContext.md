@@ -104,6 +104,23 @@ Used when:
 * `ListQueriesExecutor` is requested to `getLocalSimple`, `getLocalExtended`
 * `QueryCapacityUtil` utility is used to `getNumLivePushQueries`
 
+### <span id="getPersistentQueries"> getPersistentQueries
+
+```java
+List<PersistentQueryMetadata> getPersistentQueries()
+```
+
+Used when:
+
+* `KsqlContext` is requested to [getPersistentQueries](embedded/KsqlContext.md#getPersistentQueries)
+* `KsqlEngineMetrics` is requested to `configureNumPersistentQueries` and `configureGaugeForState`
+* `PersistentQuerySaturationMetrics` is requested to `run`
+* `DiscoverClusterService` is requested to `runOneIteration`
+* `SendLagService` is requested to `runOneIteration`
+* `StandaloneExecutor` is requested to [processesQueryFile](rest/StandaloneExecutor.md#processesQueryFile)
+* `CommandRunner` is requested to [processPriorCommands](rest/CommandRunner.md#processPriorCommands)
+* _others_
+
 ### <span id="parse"> Parsing SQL Text
 
 ```java

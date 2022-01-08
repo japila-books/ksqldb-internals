@@ -611,6 +611,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/</loc>
+         <lastmod>2022-01-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/Command/</loc>
          <lastmod>2022-01-08</lastmod>
          <changefreq>daily</changefreq>

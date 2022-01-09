@@ -26,7 +26,7 @@ That's why instances of `SandboxedExecutionContext`s are created indirectly via 
 
 While being [created](#creating-instance), `SandboxedExecutionContext` requests the given [source EngineContext](#sourceContext) to [create a sandboxed EngineContext](EngineContext.md#createSandbox).
 
-## <span id="plan"> Query Planning (plan)
+## <span id="plan"> Statement Planning (plan)
 
 ```java
 KsqlPlan plan(

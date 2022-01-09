@@ -10,6 +10,8 @@
 Optional<DdlCommand> getDdlCommand()
 ```
 
+[DdlCommand](DdlCommand.md)
+
 Used when:
 
 * `EngineExecutor` is requested to [execute a query](EngineExecutor.md#execute)
@@ -40,6 +42,8 @@ Used when:
 Optional<QueryPlan> getQueryPlan()
 ```
 
+[QueryPlan](QueryPlan.md)
+
 Used when:
 
 * `EngineExecutor` is requested to [execute a query](EngineExecutor.md#execute)
@@ -50,6 +54,8 @@ Used when:
 ```java
 String getStatementText()
 ```
+
+[Statement](parser/Statement.md) (in text format)
 
 Used when:
 
@@ -71,7 +77,7 @@ Used when:
 
 * [KsqlPlanV1](KsqlPlanV1.md)
 
-## <span id="ddlPlanCurrent"> ddlPlanCurrent
+## <span id="ddlPlanCurrent"> Creating KsqlPlan for DdlCommand (ddlPlanCurrent)
 
 ```java
 KsqlPlan ddlPlanCurrent(
@@ -79,13 +85,13 @@ KsqlPlan ddlPlanCurrent(
   DdlCommand ddlCommand)
 ```
 
-`ddlPlanCurrent` creates a [KsqlPlanV1](KsqlPlanV1.md) with the given `statementText` and the `DdlCommand` (if given).
+`ddlPlanCurrent` creates a [KsqlPlanV1](KsqlPlanV1.md) with the given `statementText` and the [DdlCommand](DdlCommand.md).
 
 `ddlPlanCurrent` is used when:
 
-* `EngineExecutor` is requested to [plan a DdlStatement](EngineExecutor.md#plan) (for a non-source table)
+* `EngineExecutor` is requested to [plan an ExecutableDdlStatement](EngineExecutor.md#plan-ExecutableDdlStatement) (for a non-source table)
 
-## <span id="queryPlanCurrent"> Creating KsqlPlanV1 (queryPlanCurrent)
+## <span id="queryPlanCurrent"> Creating KsqlPlan for QueryPlan (queryPlanCurrent)
 
 ```java
 KsqlPlan queryPlanCurrent(
@@ -98,4 +104,4 @@ KsqlPlan queryPlanCurrent(
 
 `queryPlanCurrent` is used when:
 
-* `EngineExecutor` is requested to [sourceTablePlan](EngineExecutor.md#sourceTablePlan) and [plan a statement](EngineExecutor.md#plan)
+* `EngineExecutor` is requested to [plan an ExecutableDdlStatement](EngineExecutor.md#plan-ExecutableDdlStatement) (with a [source table](EngineExecutor.md#sourceTablePlan)) and [plan a QueryContainer](EngineExecutor.md#plan-QueryContainer)

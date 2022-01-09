@@ -21,7 +21,7 @@ Used when:
 * `ExplainExecutor` is requested to `explainStatement`
 * `KsqlResource` is requested to [configure](rest/KsqlResource.md#configure)
 
-### <span id="execute"> Executing KsqlPlan or Statement
+### <span id="execute"> Statement Execution (execute)
 
 ```java
 ExecuteResult execute(
@@ -32,13 +32,15 @@ ExecuteResult execute(
   ConfiguredStatement<?> statement)
 ```
 
+Executes a [KsqlPlan](KsqlPlan.md) or a [Statement](parser/Statement.md)
+
 Used when:
 
-* `ExplainExecutor` is requested to [explain a Statement](rest/ExplainExecutor.md#explainStatement)
-* `InteractiveStatementExecutor` is requested to [execute a plan](rest/InteractiveStatementExecutor.md#executePlan)
-* `KsqlContext` is requested to [execute](embedded/KsqlContext.md#execute)
-* `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
+* `InteractiveStatementExecutor` is requested to [execute a KsqlPlan](rest/InteractiveStatementExecutor.md#executePlan)
+* `KsqlContext` is requested to [execute a statement](embedded/KsqlContext.md#execute)
 * `StandaloneExecutor.StatementExecutor` is requested to [handleExecutableDdl](rest/StandaloneExecutor_StatementExecutor.md#handleExecutableDdl) and [handlePersistentQuery](rest/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery)
+* `ExplainExecutor` is requested to [explain a Statement](rest/ExplainExecutor.md#explainStatement)
+* `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 
 ### <span id="executeScalablePushQuery"> Executing Scalable Push Query
@@ -138,7 +140,7 @@ Used when:
 * `StatementParser` is requested to `parseSingleStatement`
 * `KsqlResource` is requested to [handleKsqlStatements](rest/KsqlResource.md#handleKsqlStatements)
 
-### <span id="plan"> Query Planning
+### <span id="plan"> Statement Planning (plan)
 
 ```java
 KsqlPlan plan(
@@ -148,8 +150,8 @@ KsqlPlan plan(
 
 Used when:
 
-* `KsqlEngine` is requested to [execute a SQL statement](KsqlEngine.md#execute)
-* `SandboxedExecutionContext` is requested to [execute a SQL statement](SandboxedExecutionContext.md#execute)
+* `KsqlEngine` is requested to [execute a statement](KsqlEngine.md#execute)
+* `SandboxedExecutionContext` is requested to [execute a statement](SandboxedExecutionContext.md#execute)
 * `SchemaRegisterInjector` is requested to `registerForCreateAs`
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 

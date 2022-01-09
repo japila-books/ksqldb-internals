@@ -87,7 +87,17 @@ KsqlPlan plan(
   ConfiguredStatement<?> statement)
 ```
 
-`plan` requests the given `ConfiguredStatement` for the [Statement](parser/Statement.md).
+`plan` requests the given `ConfiguredStatement` for the [Statement](parser/Statement.md) and branches off based on the type of the statement:
+
+* [ExecutableDdlStatement](#plan-ExecutableDdlStatement)
+* [QueryContainer](#plan-QueryContainer)
+
+---
+
+`plan` is used when:
+
+* `KsqlEngine` is requested to [plan a statement](KsqlEngine.md#plan)
+* `SandboxedExecutionContext` is requested to [plan a statement](SandboxedExecutionContext.md#plan)
 
 ### <span id="plan-ExecutableDdlStatement"> ExecutableDdlStatement
 
@@ -137,13 +147,6 @@ KsqlPlan sourceTablePlan(
 `sourceTablePlan` assumes that the given `ConfiguredStatement` is for a [CreateTable](parser/CreateTable.md).
 
 `sourceTablePlan`...FIXME
-
-### <span id="plan-usage"> Usage
-
-`plan` is used when:
-
-* `KsqlEngine` is requested to [plan a query](KsqlEngine.md#plan)
-* `SandboxedExecutionContext` is requested to [plan a query](SandboxedExecutionContext.md#plan)
 
 ## <span id="execute"> Executing KsqlPlan (DdlCommand or Persistent Query)
 

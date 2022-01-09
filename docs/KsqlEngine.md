@@ -44,7 +44,7 @@ ExecuteResult execute(
 
 `execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
 
-## <span id="plan"> Query Planning (plan)
+## <span id="plan"> Statement Planning (plan)
 
 ```java
 KsqlPlan plan(

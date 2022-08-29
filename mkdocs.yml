@@ -85,9 +85,10 @@ extra:
   java:
     api: https://docs.oracle.com/en/java/javase/11/docs/api/java.base
   kafka:
-    version: 3.0.0
-    github: https://github.com/apache/kafka/tree/3.0.0
+    version: 3.2.1
+    github: https://github.com/apache/kafka/tree/3.2.1
   ksqldb:
+    version_major: 0.27
     version: 0.27.2
   social:
     - icon: fontawesome/brands/github
@@ -257,9 +258,12 @@ nav:
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutor: rest/StatementExecutor.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
-  - CLI:
+  - ksql CLI:
+    - cli/index.md
     - Cli: cli/Cli.md
     - Ksql: cli/Ksql.md
+    - KsqlClient: cli/KsqlClient.md
+    - KsqlRestClient: cli/KsqlRestClient.md
   - Embedded:
     - EmbeddedKsql: embedded/EmbeddedKsql.md
     - KsqlContext: embedded/KsqlContext.md

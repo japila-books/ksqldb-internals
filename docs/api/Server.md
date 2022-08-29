@@ -24,13 +24,17 @@ void start()
 
 `start`...FIXME
 
+`start` takes [ksql.verticle.instances](../rest/KsqlRestConfig.md#VERTICLE_INSTANCES) configuration property (from the [KsqlRestConfig](#config)).
+
 `start` prints out the following DEBUG message to the logs:
 
 ```text
 Deploying [instances] instances of server verticle
 ```
 
-`start` creates and deploys a [ServerVerticle](ServerVerticle.md) for every [listener URI](../rest/KsqlRestConfig.md#LISTENERS_CONFIG) and the [number of instances](../rest/KsqlRestConfig.md#VERTICLE_INSTANCES) configured.
+`start` creates and deploys a [ServerVerticle](ServerVerticle.md) for every [listener URI](../rest/KsqlRestConfig.md#LISTENERS_CONFIG) and [ksql.verticle.instances](../rest/KsqlRestConfig.md#VERTICLE_INSTANCES) configured.
+
+---
 
 `start` is used when:
 
@@ -54,3 +58,15 @@ In the end, `restart` [stops](#stop) and immediately [starts](#start) the API se
 `restart` is used when:
 
 * `Server` is requested to [configureTlsCertReload](#configureTlsCertReload)
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.api.server.Server` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.api.server.Server=ALL
+```
+
+Refer to [Logging](../logging.md).

@@ -74,7 +74,7 @@ Polling for new writes to command topic
 void fetchAndRunCommands()
 ```
 
-`fetchAndRunCommands` requests the [CommandQueue](#commandStore) for [new commands](CommandQueue.md#getNewCommands).
+`fetchAndRunCommands` requests the [CommandQueue](#commandStore) for [new queued commands](CommandQueue.md#getNewCommands).
 
 `fetchAndRunCommands` prints out the following DEBUG message to the logs:
 
@@ -82,7 +82,7 @@ void fetchAndRunCommands()
 Found [size] new writes to command topic
 ```
 
-For every `QueuedCommand`, `fetchAndRunCommands` [executes them](#executeStatement).
+`fetchAndRunCommands` [executes every QueuedCommand](#executeStatement).
 
 ### <span id="executeStatement"> Executing Statement
 

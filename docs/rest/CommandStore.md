@@ -33,6 +33,8 @@ CommandStore create(
 
 `create`...FIXME
 
+---
+
 `create` is used when:
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication instance](KsqlRestApplication.md#buildApplication)

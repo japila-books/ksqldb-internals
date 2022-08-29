@@ -1,10 +1,12 @@
 # KsqlServerEndpoints
 
+`KsqlServerEndpoints` is an [Endpoints](../api/Endpoints.md).
+
 ## Creating Instance
 
 `KsqlServerEndpoints` takes the following to be created:
 
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [KsqlEngine](#ksqlEngine)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="ksqlSecurityContextProvider"> `KsqlSecurityContextProvider`
 * <span id="ksqlResource"> [KsqlResource](KsqlResource.md)
@@ -19,10 +21,20 @@
 * <span id="wsQueryEndpoint"> `WSQueryEndpoint`
 * <span id="pullQueryMetrics"> `PullQueryExecutorMetrics`
 * <span id="queryExecutor"> [QueryExecutor](QueryExecutor.md)
+* <span id="authTokenProvider"> `KsqlAuthTokenProvider`
 
 `KsqlServerEndpoints` is created when:
 
 * `KsqlRestApplication` is requested to [startAsync](KsqlRestApplication.md#startAsync)
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`KsqlServerEndpoints` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is used when:
+
+* [createQueryPublisher](#createQueryPublisher) (to create a [QueryEndpoint](QueryEndpoint.md))
+* [createInsertsSubscriber](#createInsertsSubscriber) (to create a `InsertsStreamEndpoint`)
 
 ## <span id="createQueryPublisher"> Creating QueryPublisher
 
@@ -39,9 +51,13 @@ CompletableFuture<QueryPublisher> createQueryPublisher(
   Optional<Boolean> isInternalRequest)
 ```
 
-`createQueryPublisher`...FIXME
-
 `createQueryPublisher` is part of the [Endpoints](../api/Endpoints.md#createQueryPublisher) abstraction.
+
+---
+
+`createQueryPublisher` [executes the following](#executeOnWorker) on the given `WorkerExecutor`:
+
+* Create a [QueryEndpoint](QueryEndpoint.md) to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
 
 ## <span id="executeKsqlRequest"> Executing KsqlRequest
 
@@ -52,6 +68,8 @@ CompletableFuture<EndpointResponse> executeKsqlRequest(
   ApiSecurityContext apiSecurityContext)
 ```
 
-`executeKsqlRequest`...FIXME
-
 `executeKsqlRequest` is part of the [Endpoints](../api/Endpoints.md#executeKsqlRequest) abstraction.
+
+---
+
+`executeKsqlRequest`...FIXME

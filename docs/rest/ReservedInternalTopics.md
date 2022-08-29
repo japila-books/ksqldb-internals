@@ -26,6 +26,8 @@ String commandTopic(
 _confluent-ksql-[ksql.service.id]_command_topic
 ```
 
+---
+
 `commandTopic` is used when:
 
 * `HealthCheckAgent.KafkaBrokerCheck` is requested to `check`

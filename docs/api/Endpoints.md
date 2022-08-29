@@ -13,7 +13,7 @@ CompletableFuture<EndpointResponse> executeKsqlRequest(
   ApiSecurityContext apiSecurityContext)
 ```
 
-Part of _old API endpoints_
+See [KsqlServerEndpoints](../rest/KsqlServerEndpoints.md#executeKsqlRequest)
 
 Used when:
 

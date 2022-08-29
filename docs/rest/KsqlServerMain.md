@@ -1,6 +1,6 @@
 # KsqlServerMain
 
-`KsqlServerMain` is a [standalone application](#main) to [start an Executable](#createExecutable):
+`KsqlServerMain` is a [standalone command-line application](#main) to [start one of the Executables](#createExecutable):
 
 1. [StandaloneExecutor](StandaloneExecutor.md) for [queries file](ServerOptions.md#getQueriesFile)
 1. [KsqlRestApplication](KsqlRestApplication.md) unless [ksql.connect.worker.config](../KsqlConfig.md#CONNECT_WORKER_CONFIG_FILE_PROPERTY) configuration property is specified
@@ -8,44 +8,7 @@
 
 `KsqlServerMain` supports [command-line options](ServerOptions.md).
 
-`KsqlServerMain` can be launched on command line using [ksql-server-start](#ksql-server-start) shell script.
-
-## <span id="ksql-server-start"> ksql-server-start Shell Script
-
-`ksql-server-start` shell script (indirectly or `ksql-run-class` directly) is used to [launch KsqlServerMain on command line](#main).
-
-```text
-./bin/ksql-run-class io.confluent.ksql.rest.server.KsqlServerMain
-```
-
-```text
-$ ./bin/ksql-server-start --help
-NAME
-        server - KSQL Cluster
-
-SYNOPSIS
-        server [ {-h | --help} ] [ --queries-file <queriesFile> ] [--]
-                <config-file>
-
-OPTIONS
-        -h, --help
-            Display help information
-
-        --queries-file <queriesFile>
-            Path to the query file on the local machine.
-
-        --
-            This option can be used to separate command-line options from the
-            list of arguments (useful when arguments might be mistaken for
-            command-line options)
-
-        <config-file>
-            A file specifying configs for the KSQL Server, KSQL, and its
-            underlying Kafka Streams instance(s). Refer to KSQL documentation
-            for a list of available configs.
-
-            This option may occur a maximum of 1 times
-```
+`KsqlServerMain` can be launched on command line using [ksql-server-start](index.md) shell script.
 
 ## Creating Instance
 
@@ -56,9 +19,9 @@ OPTIONS
 
 `KsqlServerMain` is created when:
 
-* `KsqlServerMain` standalone application is [launched](#main)
+* `KsqlServerMain` application is [launched](#main)
 
-## <span id="main"> Launching KsqlServerMain (on Command Line)
+## <span id="main"> Launching Application
 
 `main` [parses the command-line options](ServerOptions.md#parse) and loads the required [properties file](ServerOptions.md#getPropertiesFile) (with the Java system properties applied overriding earlier values).
 

@@ -13,13 +13,19 @@
 * <span id="concurrencyLimiter"> `ConcurrencyLimiter`
 * <span id="pullBandRateLimiter"> `SlidingWindowRateLimiter`
 * <span id="scalablePushBandRateLimiter"> `SlidingWindowRateLimiter`
-* <span id="routing"> `HARouting`
+* [HARouting](#routing)
 * <span id="pushRouting"> `PushRouting`
 * <span id="localCommand"> `LocalCommands`
 
 `QueryExecutor` is created when:
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
+
+### <span id="routing"> HARouting
+
+`QueryExecutor` is given a [HARouting](../HARouting.md) when [created](#creating-instance).
+
+The `HARouting` is used to [handleTablePullQuery](#handleTablePullQuery) (for the [KsqlExecutionContext](#ksqlEngine) to [executeTablePullQuery](../KsqlExecutionContext.md#executeTablePullQuery)).
 
 ## <span id="handleStatement"> Handling Statement
 

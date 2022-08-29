@@ -4,6 +4,19 @@
 
 ## Contract (Subset)
 
+### <span id="getNewCommands"> getNewCommands
+
+```java
+List<QueuedCommand> getNewCommands(
+  Duration timeout)
+```
+
+Fetches `QueuedCommand`s
+
+Used when:
+
+* `CommandRunner` is requested to [fetchAndRunCommands](CommandRunner.md#fetchAndRunCommands)
+
 ### <span id="enqueueCommand"> enqueueCommand
 
 ```java

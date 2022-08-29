@@ -26,11 +26,13 @@ void start(
   Promise<Void> startPromise)
 ```
 
+`start` is part of the `Verticle` ([Vert.x]({{ vertx.api }}/io/vertx/core/Verticle.html#start-io.vertx.core.Promise-)) abstraction.
+
+---
+
 `start` creates a [ConnectionQueryManager](#connectionQueryManager).
 
 `start` creates an `HttpServer` ([Vert.x]({{ vertx.api }}/io/vertx/core/Vertx.html#createHttpServer-io.vertx.core.http.HttpServerOptions-)) (with the [HttpServerOptions](#httpServerOptions)) and registers the [request handlers](#setupRouter).
-
-`start` is part of the `Verticle` ([Vert.x]({{ vertx.api }}/io/vertx/core/Verticle.html#start-io.vertx.core.Promise-)) abstraction.
 
 ## <span id="setupRouter"> URIs
 

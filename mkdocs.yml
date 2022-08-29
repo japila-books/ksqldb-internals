@@ -113,15 +113,18 @@ nav:
     - ExecutionStepFactory: ExecutionStepFactory.md
     - Format: Format.md
     - FormatFactory: FormatFactory.md
+    - HARouting: HARouting.md
     - Injector: Injector.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
+    - KafkaTopicClientImpl: KafkaTopicClientImpl.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
+    - RouteQuery: RouteQuery.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
@@ -150,6 +153,9 @@ nav:
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - VersionCheckerAgent: VersionCheckerAgent.md
+  - Features:
+    - Persistent Queries: persistent-queries.md
+    - Pull Queries: pull-queries.md
   - Query Parsing:
     - parser/index.md
     - AstBuilder:
@@ -273,4 +279,4 @@ nav:
     - ServerVerticle: api/ServerVerticle.md
   - Misc:
     - Debugging ksqlDB: debugging.md
-    - Persistent Queries: persistent-queries.md
+    - Logging: logging.md

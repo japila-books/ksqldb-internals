@@ -148,10 +148,15 @@ KsqlPlan plan(
   ConfiguredStatement<?> statement)
 ```
 
+Plans a given DDL/DML statement (in the [ServiceContext](ServiceContext.md)) and creates a [KsqlPlan](KsqlPlan.md)
+
+See [KsqlEngine](KsqlEngine.md#plan) or [SandboxedExecutionContext](SandboxedExecutionContext.md#plan)
+
 Used when:
 
 * `KsqlEngine` is requested to [execute a statement](KsqlEngine.md#execute)
 * `SandboxedExecutionContext` is requested to [execute a statement](SandboxedExecutionContext.md#execute)
+* `DefaultSchemaInjector` is requested to `forCreateAsStatement`
 * `SchemaRegisterInjector` is requested to `registerForCreateAs`
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 

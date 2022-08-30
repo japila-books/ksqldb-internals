@@ -159,6 +159,7 @@ nav:
     - Pull Queries: pull-queries.md
   - Query Parsing:
     - parser/index.md
+    - AlterSystemProperty: parser/AlterSystemProperty.md
     - AstBuilder:
       - AstBuilder: parser/AstBuilder.md
       - Visitor: parser/AstBuilder_Visitor.md
@@ -191,6 +192,7 @@ nav:
       - QueryContainer: parser/QueryContainer.md
     - SourceAccumulator: parser/SourceAccumulator.md
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
+    - TerminateQuery: parser/TerminateQuery.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
   - Query Planning:
     - planner/index.md
@@ -203,6 +205,7 @@ nav:
       - Visitor: Analyzer_Visitor.md
     - AstSanitizer: AstSanitizer.md
     - CommandFactories: CommandFactories.md
+    - ConfiguredKsqlPlan: ConfiguredKsqlPlan.md
     - CreateSourceCommand: CreateSourceCommand.md
     - CreateSourceFactory: CreateSourceFactory.md
     - CreateStreamCommand: CreateStreamCommand.md

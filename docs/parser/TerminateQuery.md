@@ -1,0 +1,3 @@
+# TerminateQuery
+
+`TerminateQuery` is...FIXME

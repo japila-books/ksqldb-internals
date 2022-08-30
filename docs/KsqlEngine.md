@@ -52,9 +52,11 @@ KsqlPlan plan(
   ConfiguredStatement<?> statement)
 ```
 
-`plan` [creates an EngineExecutor](EngineExecutor.md#create) to [plan](EngineExecutor.md#plan) the given `ConfiguredStatement`.
-
 `plan` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#plan) abstraction.
+
+---
+
+`plan` [creates an EngineExecutor](EngineExecutor.md#create) to [plan](EngineExecutor.md#plan) the given `ConfiguredStatement`.
 
 ## <span id="getAllLiveQueries"> getAllLiveQueries
 

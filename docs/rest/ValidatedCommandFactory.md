@@ -18,6 +18,8 @@ Command create(
 
 `create`...FIXME
 
+---
+
 `create` is used when:
 
 * `DistributingExecutor` is requested to [execute a statement](DistributingExecutor.md#execute)
@@ -47,10 +49,6 @@ Command createForAlterSystemQuery(
 
 `createForAlterSystemQuery`...FIXME
 
-`createForAlterSystemQuery` is used when:
-
-* FIXME
-
 ### <span id="createForPlannedQuery"> createForPlannedQuery
 
 ```java
@@ -59,6 +57,10 @@ Command createForPlannedQuery(
   ServiceContext serviceContext,
   KsqlExecutionContext context)
 ```
+
+`createForPlannedQuery` requests the given [KsqlExecutionContext](../KsqlExecutionContext.md) to [plan a DDL/DML statement](../KsqlExecutionContext.md#plan) (that gives a [KsqlPlan](../KsqlPlan.md)).
+
+`createForPlannedQuery` [creates a ConfiguredKsqlPlan](../ConfiguredKsqlPlan.md#of).
 
 `createForPlannedQuery`...FIXME
 

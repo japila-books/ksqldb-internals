@@ -280,3 +280,4 @@ nav:
   - Misc:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
+    - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md

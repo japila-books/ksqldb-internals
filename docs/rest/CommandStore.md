@@ -17,9 +17,9 @@
 * <span id="commandIdDeserializer"> `Deserializer<CommandId>`
 * <span id="commandTopicBackup"> `CommandTopicBackup`
 
-`CommandStore` is created using [create](#create) utility.
+`CommandStore` is created using [Factory.create](#create) utility.
 
-### <span id="create"> create
+## <span id="create"><span id="Factory"> Factory.create
 
 ```java
 CommandStore create(
@@ -28,10 +28,31 @@ CommandStore create(
   Duration commandQueueCatchupTimeout,
   Map<String, Object> kafkaConsumerProperties,
   Map<String, Object> kafkaProducerProperties,
-  ServiceContext serviceContext)
+  KafkaTopicClient internalTopicClient)
 ```
 
-`create`...FIXME
+`create` adds the following configuration properties to the given `kafkaConsumerProperties` (possibly overriding the current value if set).
+
+Configuration Property | Value
+-----------------------|---------
+ `isolation.level` | `READ_COMMITTED`
+ `auto.offset.reset` | `none`
+
+`create` adds the following configuration properties to the given `kafkaProducerProperties` (possibly overriding the current value if set).
+
+Configuration Property | Value
+-----------------------|---------
+ `transactional.id` | [ksql.service.id](../KsqlConfig.md#KSQL_SERVICE_ID_CONFIG)
+ `acks` | `all`
+
+`create` creates a `CommandTopicBackup` (based on [ksql.metastore.backup.location](../KsqlConfig.md#KSQL_METASTORE_BACKUP_LOCATION)).
+
+In the end, `create` creates a [CommandStore](#creating-instance) with the following:
+
+* The given `commandTopicName`
+* A new `CommandTopic`
+* A new `SequenceNumberFutureStore`
+* _others_
 
 ---
 
@@ -48,6 +69,10 @@ QueuedCommandStatus enqueueCommand(
   Producer<CommandId, Command> transactionalProducer)
 ```
 
+`enqueueCommand` is part of the [CommandQueue](CommandQueue.md#enqueueCommand) abstraction.
+
+---
+
 `enqueueCommand` creates a `ProducerRecord` ([Apache Kafka]({{ book.kafka }}/clients/producer/ProducerRecord)) as follows:
 
 * Topic: [commandTopicName](#commandTopicName)
@@ -58,5 +83,3 @@ QueuedCommandStatus enqueueCommand(
 `enqueueCommand` requests the given `transactionalProducer` to send the record.
 
 `enqueueCommand` returns a `QueuedCommandStatus` with the record offset (and a `CommandStatusFuture`).
-
-`enqueueCommand` is part of the [CommandQueue](CommandQueue.md#enqueueCommand) abstraction.

@@ -1,13 +1,19 @@
 # Pull Queries
 
-**Pull Queries** are non-persistent `SELECT` queries that retrieve the latest result from a materialized view, a table, or a stream as of "now".
+**Pull Queries** are non-persistent `SELECT` queries to retrieve the latest result from a source (a materialized view, a table, or a stream) as of "now".
 
-Pull Queries are printed out only in the console.
+Pull queries are printed out only in the console.
+
+Pull queries follow a traditional request/response model. They retrieve a finite result from the ksqlDB server and terminate (like in traditional databases).
+
+Pull queries use an eventually consistent consistency model.
 
 !!! note
     Learn more in the official documentation of ksqlDB [here](https://docs.ksqldb.io/en/latest/developer-guide/ksqldb-reference/select-pull-query/) and [here](https://docs.ksqldb.io/en/latest/concepts/queries/#pull).
 
 ## Demo
+
+Create an input stream.
 
 ```sql
 CREATE STREAM riderLocations (profileId VARCHAR, latitude DOUBLE, longitude DOUBLE)
@@ -27,6 +33,8 @@ CREATE STREAM riderLocations (profileId VARCHAR, latitude DOUBLE, longitude DOUB
 ```text
 echo '{"profileId":0, "latitude":10.5, "longitude": 20.1}' | kcat -P -b :9092 -t locations
 ```
+
+Issue a pull query.
 
 ```text
 ksql> SELECT * FROM riderLocations;

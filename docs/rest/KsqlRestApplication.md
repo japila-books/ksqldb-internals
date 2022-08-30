@@ -189,4 +189,8 @@ void initialize(
 void registerCommandTopic()
 ```
 
-`registerCommandTopic`...FIXME
+`registerCommandTopic` requests the [CommandStore](#commandStore) for the [name of the command topic](CommandStore.md#getCommandTopicName).
+
+`registerCommandTopic` makes sure that the internal command topic is available in the Kafka cluster and in sync with backup (if configured).
+
+`registerCommandTopic` [creates the command topic if not exists](../KsqlInternalTopicUtils.md#ensureTopic).

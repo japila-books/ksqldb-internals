@@ -11,7 +11,9 @@ List<QueuedCommand> getNewCommands(
   Duration timeout)
 ```
 
-Fetches `QueuedCommand`s
+Fetches `QueuedCommand`s (e.g., from a [CommandTopic](CommandTopic.md))
+
+See [CommandStore](CommandStore.md#getNewCommands)
 
 Used when:
 

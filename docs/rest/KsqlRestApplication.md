@@ -174,14 +174,34 @@ void startKsql(
 
 `startKsql`...FIXME
 
-### <span id="initialize"> initialize
+### <span id="initialize"> Initializing
 
 ```java
 void initialize(
   KsqlConfig configWithApplicationServer)
 ```
 
-`initialize`...FIXME
+`initialize` executes the [rocksDBConfigSetterHandler](#rocksDBConfigSetterHandler) with the [ksqlConfigNoPort](#ksqlConfigNoPort).
+
+`initialize` [registerCommandTopic](#registerCommandTopic).
+
+`initialize` requests the [CommandStore](#commandStore) to [start](CommandStore.md#start).
+
+`initialize` [maybeCreateProcessingLogTopic](ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic) with the following:
+
+* [Shared KafkaTopicClient](../ServiceContext.md#getTopicClient)
+* [ProcessingLogConfig](../ProcessingLogContext.md#getConfig)
+* [ksqlConfigNoPort](#ksqlConfigNoPort)
+
+`initialize` requests the [CommandRunner](#commandRunner) to [processPriorCommands](CommandRunner.md#processPriorCommands) (with a new `PersistentQueryCleanupImpl`).
+
+`initialize` requests the [CommandRunner](#commandRunner) to [start](CommandRunner.md#start).
+
+`initialize` [maybeCreateProcessingLogStream](#maybeCreateProcessingLogStream).
+
+`initialize` starts the [heartbeatAgent](#heartbeatAgent) and the [lagReportingAgent](#lagReportingAgent) agents (if specified).
+
+In the end, `initialize` changes the [ServerState](#serverState) to `READY`.
 
 ### <span id="registerCommandTopic"> registerCommandTopic
 

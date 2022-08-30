@@ -87,6 +87,7 @@ extra:
   kafka:
     version: 3.2.1
     github: https://github.com/apache/kafka/tree/3.2.1
+    api: https://kafka.apache.org/32/javadoc/
   ksqldb:
     version_major: 0.27
     version: 0.27.2
@@ -238,6 +239,8 @@ nav:
     - CommandQueue: rest/CommandQueue.md
     - CommandRunner: rest/CommandRunner.md
     - CommandStore: rest/CommandStore.md
+    - CommandTopic: rest/CommandTopic.md
+    - CommandTopicBackup: rest/CommandTopicBackup.md
     - CustomExecutors: rest/CustomExecutors.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
@@ -281,3 +284,4 @@ nav:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
+    - ProcessingLogContext: ProcessingLogContext.md

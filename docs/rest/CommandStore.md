@@ -7,7 +7,7 @@
 `CommandStore` takes the following to be created:
 
 * <span id="commandTopicName"> Name of the Command Topic
-* <span id="commandTopic"> `CommandTopic`
+* [CommandTopic](#commandTopic)
 * <span id="sequenceNumberFutureStore"> `SequenceNumberFutureStore`
 * <span id="kafkaConsumerProperties"> Kafka Consumer Properties
 * <span id="kafkaProducerProperties"> Kafka Producer Properties
@@ -19,7 +19,22 @@
 
 `CommandStore` is created using [Factory.create](#create) utility.
 
-## <span id="create"><span id="Factory"> Factory.create
+### <span id="commandTopic"> CommandTopic
+
+`CommandStore` is given a [CommandTopic](CommandTopic.md) when [created](#creating-instance).
+
+The `CommandTopic` is [started](CommandTopic.md#start) in [start](#start) and runs until [close](#close).
+
+Used when:
+
+* [getNewCommands](#getNewCommands)
+* [getCommandTopicName](#getCommandTopicName)
+* [getRestoreCommands](#getRestoreCommands)
+* [isEmpty](#isEmpty)
+* [completeSatisfiedSequenceNumberFutures](#completeSatisfiedSequenceNumberFutures)
+* [wakeup](#wakeup)
+
+## <span id="create"><span id="Factory"> Creating CommandStore
 
 ```java
 CommandStore create(
@@ -60,6 +75,20 @@ In the end, `create` creates a [CommandStore](#creating-instance) with the follo
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication instance](KsqlRestApplication.md#buildApplication)
 
+## <span id="start"> Starting Up
+
+```java
+void start()
+```
+
+`start` requests the [CommandTopic](#commandTopic) to [start](CommandTopic.md#start).
+
+---
+
+`start` is used when:
+
+* `KsqlRestApplication` is requested to [initialize](KsqlRestApplication.md#initialize)
+
 ## <span id="enqueueCommand"> enqueueCommand
 
 ```java
@@ -83,3 +112,20 @@ QueuedCommandStatus enqueueCommand(
 `enqueueCommand` requests the given `transactionalProducer` to send the record.
 
 `enqueueCommand` returns a `QueuedCommandStatus` with the record offset (and a `CommandStatusFuture`).
+
+## <span id="getNewCommands"> Fetching New Commands
+
+```java
+List<QueuedCommand> getNewCommands(
+  Duration timeout)
+```
+
+`getNewCommands` is part of the [CommandQueue](CommandQueue.md#getNewCommands) abstraction.
+
+---
+
+`getNewCommands` requests the [CommandTopic](#commandTopic) for [new commands](CommandTopic.md#getNewCommands) (`ConsumerRecord<byte[], byte[]>`s).
+
+`getNewCommands` creates a `QueuedCommand` for every new command with a non-`null` value.
+
+`getNewCommands` returns the `QueuedCommand`s.

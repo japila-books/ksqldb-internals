@@ -266,6 +266,7 @@ nav:
       - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutor: rest/StatementExecutor.md
+    - StatementParser: rest/StatementParser.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
   - ksql CLI:
     - cli/index.md

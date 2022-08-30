@@ -56,13 +56,15 @@ The `Deserializer` is used in the following:
 void start()
 ```
 
-`start` creates and starts a Java thread (on a single-threaded thread pool) to continuously [fetchAndRunCommands](#fetchAndRunCommands).
+`start` creates and starts a Java thread (on a single-threaded thread pool) to continuously [fetch and run queued commands](#fetchAndRunCommands).
 
 Every time [fetchAndRunCommands](#fetchAndRunCommands) is executed, the thread prints out the following TRACE message to the logs:
 
 ```text
 Polling for new writes to command topic
 ```
+
+---
 
 `start` is used when:
 
@@ -74,7 +76,11 @@ Polling for new writes to command topic
 void fetchAndRunCommands()
 ```
 
-`fetchAndRunCommands` requests the [CommandQueue](#commandStore) for [new queued commands](CommandQueue.md#getNewCommands).
+`fetchAndRunCommands` requests the [CommandQueue](#commandStore) for [new commands](CommandQueue.md#getNewCommands) (with `5 second` timeout).
+
+If there are no commands, `fetchAndRunCommands` leaves early (also checks if the [commandTopicExists](#commandTopicExists)).
+
+`fetchAndRunCommands` [checks for incompatible commands](#checkForIncompatibleCommands) and then tries to [find TERMINATE CLUSTER command](#findTerminateCommand) (to [terminate the cluster](#terminateCluster) if found).
 
 `fetchAndRunCommands` prints out the following DEBUG message to the logs:
 
@@ -82,7 +88,7 @@ void fetchAndRunCommands()
 Found [size] new writes to command topic
 ```
 
-`fetchAndRunCommands` [executes every QueuedCommand](#executeStatement).
+`fetchAndRunCommands` [executes every command](#executeStatement) (one by one).
 
 ### <span id="executeStatement"> Executing Statement
 
@@ -91,17 +97,19 @@ void executeStatement(
   QueuedCommand queuedCommand)
 ```
 
-`executeStatement` takes the statement from the given `QueuedCommand` and prints out the following INFO message to the logs:
+`executeStatement` prints out the following INFO message to the logs:
 
 ```text
-Executing statement: [commandStatement]
+Executing statement [commandId]
 ```
 
-`executeStatement` creates a `Runnable` ([Java]({{ java.api }}/java/lang/Runnable.html)) which, when run, requests the [InteractiveStatementExecutor](#statementExecutor) to [handle the QueuedCommand](InteractiveStatementExecutor.md#handleStatement) and prints out the following INFO message to the logs:
+`executeStatement` creates a `Runnable` ([Java]({{ java.api }}/java/lang/Runnable.html)) that, when started, requests the [InteractiveStatementExecutor](#statementExecutor) to [execute the command](InteractiveStatementExecutor.md#handleStatement) and then prints out the following INFO message to the logs:
 
 ```text
-Executed statement: [commandStatement]
+Executed statement [commandId]
 ```
+
+`executeStatement` executes the command (with retries and backoff until successful).
 
 ## <span id="processPriorCommands"> processPriorCommands
 
@@ -115,3 +123,15 @@ void processPriorCommands(
 `processPriorCommands` is used when:
 
 * `KsqlRestApplication` is requested to [initialize](KsqlRestApplication.md#initialize)
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.rest.server.computation.CommandRunner` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.rest.server.computation.CommandRunner=ALL
+```
+
+Refer to [Logging](../logging.md).

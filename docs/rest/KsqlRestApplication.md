@@ -195,7 +195,7 @@ void initialize(
 
 `initialize` requests the [CommandRunner](#commandRunner) to [processPriorCommands](CommandRunner.md#processPriorCommands) (with a new `PersistentQueryCleanupImpl`).
 
-`initialize` requests the [CommandRunner](#commandRunner) to [start](CommandRunner.md#start).
+`initialize` requests the [CommandRunner](#commandRunner) to [start processing commands](CommandRunner.md#start).
 
 `initialize` [maybeCreateProcessingLogStream](#maybeCreateProcessingLogStream).
 

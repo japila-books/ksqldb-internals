@@ -11,9 +11,35 @@
 * <span id="parser"> [KsqlParser](parser/KsqlParser.md)
 * <span id="cleanupService"> `QueryCleanupService`
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
-* <span id="queryRegistry"> [QueryRegistry](QueryRegistry.md)
+* [QueryRegistry](#queryRegistry)
+* <span id="runtimeAssignor"> `RuntimeAssignor`
 
 `EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
+
+## <span id="queryRegistry"> QueryRegistry
+
+`EngineContext` is given a [QueryRegistry](QueryRegistry.md) when [created](#creating-instance).
+
+The `QueryRegistry` is used when:
+
+* [createSandbox](#createSandbox)
+* [maybeTerminateCreateAsQuery](#maybeTerminateCreateAsQuery)
+* [throwIfInsertQueriesExist](#throwIfInsertQueriesExist)
+
+### <span id="getQueryRegistry"> getQueryRegistry
+
+```java
+QueryRegistry getQueryRegistry()
+```
+
+`getQueryRegistry` is used when:
+
+* `EngineExecutor` is requested to [executeTransientQuery](EngineExecutor.md#executeTransientQuery), [executeStreamPullQuery](EngineExecutor.md#executeStreamPullQuery), [sourceTablePlan](EngineExecutor.md#sourceTablePlan), [plan a statement](EngineExecutor.md#plan), [planQuery](EngineExecutor.md#planQuery), [executePersistentQuery](EngineExecutor.md#executePersistentQuery)
+* `KsqlEngine` is requested to...FIXME
+* `PullQueryExecutionUtil` is requested to `findMaterializingQuery`
+* `QueryIdUtil` is requested to `buildId`
+* `SandboxedExecutionContext` is requested to...FIXME
+* `ScalablePushQueryExecutionUtil` is requested to...FIXME
 
 ## <span id="createQueryEngine"> Creating QueryEngine
 

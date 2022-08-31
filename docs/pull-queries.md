@@ -1,6 +1,8 @@
 # Pull Queries
 
-**Pull Queries** are non-persistent `SELECT` queries to retrieve the latest result from a source (a materialized view, a table, or a stream) as of "now".
+**Pull Queries** are non-persistent `SELECT` queries with no `EMIT CHANGES` clause (that would turn such queries into [push queries](push-queries.md)).
+
+Pull Queries retrieve the latest result from a source (a materialized view, a table, or a stream) instantly and as of "now".
 
 Pull queries are printed out only in the console.
 

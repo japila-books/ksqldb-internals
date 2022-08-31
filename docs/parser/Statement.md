@@ -4,32 +4,8 @@
 
 ## Implementations
 
-* `AlterSource`
-* `AlterSystemProperty`
 * [CreateAsSelect](CreateAsSelect.md)
-* `CreateConnector`
 * [CreateSource](CreateSource.md)
-* `DefineVariable`
-* `DescribeConnector`
-* `DescribeFunction`
-* `DropConnector`
-* `DropStatement`
-* `DropType`
-* `Explain`
 * [InsertInto](InsertInto.md)
-* `InsertValues`
-* `ListConnectorPlugins`
-* `ListConnectors`
-* `ListFunctions`
-* `ListProperties`
-* `ListTypes`
-* `ListVariables`
-* `PrintTopic`
 * [Query](Query.md)
-* `RegisterType`
-* `SetProperty`
-* `StatementWithExtendedClause`
-* `TerminateCluster`
-* `TerminateQuery`
-* `UndefineVariable`
-* `UnsetProperty`
+* _others_

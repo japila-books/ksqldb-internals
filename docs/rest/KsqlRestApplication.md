@@ -1,6 +1,6 @@
 # KsqlRestApplication
 
-`KsqlRestApplication` is a ksqlDB API server (that can be started using [ksql-server-start](KsqlServerMain.md#ksql-server-start) shell script).
+`KsqlRestApplication` is the ksqlDB API server (that can be started using [ksql-server-start](KsqlServerMain.md#ksql-server-start) shell script).
 
 ## Creating Instance
 
@@ -121,6 +121,8 @@ KsqlRestApplication buildApplication(
 `buildApplication` creates a [CommandRunner](CommandRunner.md) (with the [InteractiveStatementExecutor](#buildApplication-statementExecutor)).
 
 `buildApplication`...FIXME
+
+### <span id="buildApplication-KsqlRestApplication"> Step x. KsqlRestApplication
 
 In the end, `buildApplication` creates a [KsqlRestApplication](#creating-instance).
 

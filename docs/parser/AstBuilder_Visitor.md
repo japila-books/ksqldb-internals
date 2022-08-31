@@ -3,7 +3,7 @@
 `Visitor` is a `SqlBaseBaseVisitor` to build a [Node](Node.md) tree (that `AstBuilder` uses to [build a parsed tree](AstBuilder.md#build)).
 
 !!! warning "ANTLR"
-    `SqlBaseBaseVisitor` is generated from `SqlBase.g4` SQL grammar by ANTLR at build time.
+    `SqlBaseBaseVisitor` is generated from [SqlBase.g4]({{ ksqldb.github }}/ksqldb-parser/src/main/antlr4/io/confluent/ksql/parser/SqlBase.g4) SQL grammar by ANTLR at build time.
 
 ## Creating Instance
 
@@ -60,6 +60,22 @@ tableProperties
 
 `visitCreateStream` creates an [CreateStream](CreateStream.md).
 
+### <span id="visitCreateStreamAs"> CREATE STREAM AS
+
+```java
+Node visitCreateStreamAs(
+  SqlBaseParser.CreateStreamAsContext context)
+```
+
+`visitCreateStreamAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM AS` (CSAS) statements.
+
+```antlr
+CREATE (OR REPLACE)? STREAM (IF NOT EXISTS)? sourceName
+  (WITH tableProperties)? AS query
+```
+
+`visitCreateStreamAs` creates a [CreateStreamAsSelect](CreateStreamAsSelect.md).
+
 ### <span id="visitCreateTable"> CREATE TABLE
 
 ```java
@@ -76,6 +92,22 @@ CREATE (OR REPLACE)? (SOURCE)? TABLE (IF NOT EXISTS)? sourceName
 ```
 
 `visitCreateTable` creates a [CreateTable](CreateTable.md).
+
+### <span id="visitCreateTableAs"> CREATE TABLE AS
+
+```java
+Node visitCreateTableAs(
+  SqlBaseParser.CreateTableAsContext context)
+```
+
+`visitCreateTableAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE AS` (CTAS) statements.
+
+```antlr
+CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
+  (WITH tableProperties)? AS query
+```
+
+`visitCreateTableAs` creates a [CreateTableAsSelect](CreateTableAsSelect.md).
 
 ### <span id="visitExplain"> EXPLAIN
 
@@ -105,54 +137,22 @@ Node visitInsertInto(
 INSERT INTO sourceName (WITH tableProperties)? query
 ```
 
-`visitInsertInto` creates an [InsertInto](InsertInto.md).
-
-### <span id="visitCreateStreamAs"> visitCreateStreamAs
-
-```java
-Node visitCreateStreamAs(
-  SqlBaseParser.CreateStreamAsContext context)
-```
-
-`visitCreateStreamAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM AS` (CSAS) statements.
-
-```antlr
-CREATE (OR REPLACE)? STREAM (IF NOT EXISTS)? sourceName
-  (WITH tableProperties)? AS query
-```
-
-`visitCreateStreamAs` creates a [CreateStreamAsSelect](CreateStreamAsSelect.md).
-
-### <span id="visitCreateTableAs"> visitCreateTableAs
-
-```java
-Node visitCreateTableAs(
-  SqlBaseParser.CreateTableAsContext context)
-```
-
-`visitCreateTableAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE AS` (CTAS) statements.
-
-```antlr
-CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
-  (WITH tableProperties)? AS query
-```
-
-`visitCreateTableAs` creates a [CreateTableAsSelect](CreateTableAsSelect.md).
-
-### <span id="visitInsertInto"> visitInsertInto
-
-```java
-Node visitInsertInto(
-  SqlBaseParser.InsertIntoContext context)
-```
-
-`visitInsertInto` is part of the `SqlBaseBaseVisitor` abstraction to handle `INSERT INTO` statements.
-
-```antlr
-INSERT INTO sourceName (WITH tableProperties)? query
-```
-
 `visitInsertInto` creates a [InsertInto](InsertInto.md).
+
+### <span id="visitListStreams"> LIST STREAMS
+
+```java
+Node visitListStreams(
+  SqlBaseParser.ListStreamsContext context)
+```
+
+`visitListStreams` is part of the `SqlBaseBaseVisitor` abstraction to handle `LIST STREAMS` statements.
+
+```antlr
+(LIST | SHOW) STREAMS EXTENDED?
+```
+
+`visitListStreams` creates a [ListStreams](ListStreams.md).
 
 ### <span id="visitQuery"> SELECT
 

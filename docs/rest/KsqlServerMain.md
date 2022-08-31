@@ -1,20 +1,21 @@
 # KsqlServerMain
 
-`KsqlServerMain` is a [standalone command-line application](#main) to [start one of the Executables](#createExecutable):
+`KsqlServerMain` is the ksqlDB server that can be [started on command line](#main) using [ksql-server-start](index.md) shell script.
 
-1. [StandaloneExecutor](StandaloneExecutor.md) for [queries file](ServerOptions.md#getQueriesFile)
+`KsqlServerMain` [starts an Executable](#createExecutable):
+
+1. [StandaloneExecutor](StandaloneExecutor.md) with [queries file](ServerOptions.md#getQueriesFile) specified
 1. [KsqlRestApplication](KsqlRestApplication.md) unless [ksql.connect.worker.config](../KsqlConfig.md#CONNECT_WORKER_CONFIG_FILE_PROPERTY) configuration property is specified
-1. `MultiExecutable` with a `ConnectExecutable` and the `KsqlRestApplication`
+1. `MultiExecutable` with a `ConnectExecutable` and the [KsqlRestApplication](KsqlRestApplication.md)
 
 `KsqlServerMain` supports [command-line options](ServerOptions.md).
-
-`KsqlServerMain` can be launched on command line using [ksql-server-start](index.md) shell script.
 
 ## Creating Instance
 
 `KsqlServerMain` takes the following to be created:
 
-* <span id="executable"> [Executable](Executable.md)
+* <span id="preconditionChecker"> `PreconditionChecker`
+* <span id="executableFactory"> [Executable factory](#createExecutable)
 * <span id="shutdownHandler"> Shutdown Handler
 
 `KsqlServerMain` is created when:

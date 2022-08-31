@@ -22,7 +22,7 @@ Enum Name | Class | StatementExecutor
  `LIST_FUNCTIONS` | `ListFunctions` | `ListFunctionsExecutor::execute`
  `LIST_PROPERTIES` | `ListProperties` | `ListPropertiesExecutor::execute`
  `LIST_QUERIES` | `ListQueries` | `ListQueriesExecutor::execute`
- `LIST_STREAMS` | `ListStreams` | `ListSourceExecutor::streams`
+ `LIST_STREAMS` | `ListStreams` | [ListSourceExecutor](ListSourceExecutor.md#streams)
  `LIST_TABLES` | `ListTables` | `ListSourceExecutor::tables`
  `LIST_TOPICS` | `ListTopics` | `ListTopicsExecutor::execute`
  `LIST_TYPES` | `ListTypes` | `ListTypesExecutor::execute`

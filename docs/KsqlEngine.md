@@ -38,11 +38,13 @@ ExecuteResult execute(
   ConfiguredKsqlPlan plan)
 ```
 
+`execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
+
+---
+
 1. [Plans the statement](#plan) and creates a `ConfiguredKsqlPlan` for the other `execute`
 
 `execute` [creates an EngineExecutor](EngineExecutor.md#create) to [execute](EngineExecutor.md#execute) the [KsqlPlan](KsqlPlan.md) (of the given `ConfiguredKsqlPlan`).
-
-`execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
 
 ## <span id="plan"> Statement Planning (plan)
 
@@ -64,9 +66,11 @@ KsqlPlan plan(
 List<QueryMetadata> getAllLiveQueries()
 ```
 
-`getAllLiveQueries`...FIXME
-
 `getAllLiveQueries` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#getAllLiveQueries) abstraction.
+
+---
+
+`getAllLiveQueries` requests the [EngineContext](#primaryContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) that is then requested for [all live queries](QueryRegistry.md#getAllLiveQueries).
 
 ## <span id="parse"> Parsing SQL Statements
 
@@ -75,9 +79,11 @@ List<ParsedStatement> parse(
   String sql)
 ```
 
-`parse` requests the [EngineContext](#primaryContext) to [parse the given SQL statements](EngineContext.md#parse) (into a collection of `ParsedStatement`s).
-
 `parse` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#parse) abstraction.
+
+---
+
+`parse` requests the [EngineContext](#primaryContext) to [parse the given SQL statements](EngineContext.md#parse) (into a collection of `ParsedStatement`s).
 
 ## <span id="prepare"> Preparing Statement for Execution
 
@@ -87,9 +93,11 @@ PreparedStatement<?> prepare(
   Map<String, String> variablesMap)
 ```
 
-`prepare` requests the [EngineContext](#primaryContext) to [prepare the given ParsedStatement](EngineContext.md#prepare).
-
 `prepare` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#prepare) abstraction.
+
+---
+
+`prepare` requests the [EngineContext](#primaryContext) to [prepare the given ParsedStatement](EngineContext.md#prepare).
 
 ## <span id="executeScalablePushQuery"> Executing Scalable Push Query
 

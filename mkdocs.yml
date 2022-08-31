@@ -89,8 +89,9 @@ extra:
     github: https://github.com/apache/kafka/tree/3.2.1
     api: https://kafka.apache.org/32/javadoc/
   ksqldb:
-    version_major: 0.27
+    github: https://github.com/confluentinc/ksql/blob/v0.27.2
     version: 0.27.2
+    version_major: 0.27
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jaceklaskowski
@@ -157,6 +158,7 @@ nav:
   - Features:
     - Persistent Queries: persistent-queries.md
     - Pull Queries: pull-queries.md
+    - Push Queries: push-queries.md
   - Query Parsing:
     - parser/index.md
     - AlterSystemProperty: parser/AlterSystemProperty.md
@@ -186,6 +188,7 @@ nav:
       - Expression: parser/Expression.md
       - InsertInto: parser/InsertInto.md
       - KsqlWindowExpression: parser/KsqlWindowExpression.md
+      - ListStreams: parser/ListStreams.md
       - Node: parser/Node.md
       - Statement: parser/Statement.md
       - Query: parser/Query.md
@@ -268,7 +271,9 @@ nav:
       - StandaloneExecutor: rest/StandaloneExecutor.md
       - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md
     - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
-    - StatementExecutor: rest/StatementExecutor.md
+    - StatementExecutors:
+      - ListSourceExecutor: rest/ListSourceExecutor.md
+      - StatementExecutor: rest/StatementExecutor.md
     - StatementParser: rest/StatementParser.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
   - ksql CLI:
@@ -289,3 +294,5 @@ nav:
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
     - ProcessingLogContext: ProcessingLogContext.md
+  - Demos:
+    - SHOW STREAMS: demo/show-streams.md

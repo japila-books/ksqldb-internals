@@ -13,6 +13,25 @@
 <span class=w>    </span><span class=p>:</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>tableElement</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>tableElement</span><span class=o>)*</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
 <span class=w>    </span><span class=p>;</span><span class=w></span>
 
+<span class=nl>tableElement</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=nv>identifier</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=nv>columnConstraints</span><span class=o>?</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
+
+<span class=nl>type</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=no>ARRAY</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>ARRAY</span><span class=w> </span><span class=s1>&#39;&lt;&#39;</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=s1>&#39;&gt;&#39;</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>MAP</span><span class=w> </span><span class=s1>&#39;&lt;&#39;</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=s1>&#39;&gt;&#39;</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>STRUCT</span><span class=w> </span><span class=s1>&#39;&lt;&#39;</span><span class=w> </span><span class=o>(</span><span class=nv>identifier</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>identifier</span><span class=w> </span><span class=nv>type</span><span class=o>)*)?</span><span class=w> </span><span class=s1>&#39;&gt;&#39;</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>DECIMAL</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>number</span><span class=w> </span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>number</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=nv>baseType</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>typeParameter</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>typeParameter</span><span class=o>)*</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=o>)?</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
+
+<span class=nl>columnConstraints</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=o>((</span><span class=no>PRIMARY</span><span class=o>)?</span><span class=w> </span><span class=no>KEY</span><span class=o>)</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>HEADERS</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>HEADER</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>text</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
+
 <span class=nl>tableProperties</span><span class=w></span>
 <span class=w>    </span><span class=p>:</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>tableProperty</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>tableProperty</span><span class=o>)*</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
 <span class=w>    </span><span class=p>;</span><span class=w></span>

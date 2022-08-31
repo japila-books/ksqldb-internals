@@ -1,6 +1,8 @@
 # KsqlRestApplication
 
-`KsqlRestApplication` is the ksqlDB API server (that can be started using [ksql-server-start](KsqlServerMain.md#ksql-server-start) shell script).
+`KsqlRestApplication` is a ksqlDB REST API server.
+
+`KsqlRestApplication` can be started using [ksql-server-start](index.md) shell script.
 
 ## Creating Instance
 
@@ -14,7 +16,7 @@
 * <span id="commandStore"> [CommandStore](CommandStore.md)
 * <span id="statusResource"> `StatusResource`
 * <span id="streamedQueryResource"> `StreamedQueryResource`
-* <span id="ksqlResource"> [KsqlResource](KsqlResource.md)
+* [KsqlResource](#ksqlResource)
 * <span id="versionCheckerAgent"> [VersionCheckerAgent](../VersionCheckerAgent.md)
 * <span id="ksqlSecurityContextProvider"> `KsqlSecurityContextProvider`
 * <span id="securityExtension"> `KsqlSecurityExtension`
@@ -51,7 +53,15 @@ ksqlDB API server instance created
 
 `KsqlRestApplication` is created using [buildApplication](#buildApplication) utility.
 
-## <span id="commandRunner"> CommandRunner
+### <span id="ksqlResource"> KsqlResource
+
+`KsqlRestApplication` is given a [KsqlResource](KsqlResource.md) when [created](#creating-instance).
+
+`KsqlResource` is used to create a [KsqlServerEndpoints](KsqlServerEndpoints.md#ksqlResource) upon [starting](#startAsync).
+
+`KsqlResource` is also used to [maybeCreateProcessingLogStream](#maybeCreateProcessingLogStream) upon [initializing](#initialize).
+
+### <span id="commandRunner"> CommandRunner
 
 `KsqlRestApplication` is given a [CommandRunner](CommandRunner.md) when [created](#creating-instance).
 
@@ -59,7 +69,7 @@ The `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#proc
 
 The `CommandRunner` is used to create a [HealthCheckResource](#healthCheckResource) when `KsqlRestApplication` is [created](#creating-instance).
 
-## <span id="configurables"> KsqlConfigurables
+### <span id="configurables"> KsqlConfigurables
 
 `KsqlRestApplication` is given [KsqlConfigurable](KsqlConfigurable.md)s when [created](#creating-instance).
 
@@ -132,11 +142,23 @@ In the end, `buildApplication` creates a [KsqlRestApplication](#creating-instanc
 void startAsync()
 ```
 
+`startAsync` is part of the [Executable](Executable.md#startAsync) abstraction.
+
+---
+
 `startAsync` prints out the following DEBUG message to the logs:
 
 ```text
 Starting the ksqlDB API server
 ```
+
+`startAsync` [creates a ServerMetadataResource](#serverMetadataResource).
+
+`startAsync` creates a [StatementParser](StatementParser.md) (with the [KsqlEngine](#ksqlEngine)).
+
+`startAsync`...FIXME
+
+`startAsync` creates a [Server](../api/Server.md) and [starts it](../api/Server.md#start).
 
 `startAsync`...FIXME
 
@@ -145,10 +167,6 @@ In the end, `startAsync` prints out the following INFO message to the logs follo
 ```text
 ksqlDB API server listening on [comma-separated listeners]
 ```
-
----
-
-`startAsync` is part of the [Executable](Executable.md#startAsync) abstraction.
 
 ### <span id="displayWelcomeMessage"> displayWelcomeMessage
 
@@ -174,7 +192,7 @@ void startKsql(
   KsqlConfig ksqlConfigWithPort)
 ```
 
-`startKsql`...FIXME
+`startKsql` [cleanupOldState](#cleanupOldState) and then [initialize](#initialize) (with the given [KsqlConfig](../KsqlConfig.md)).
 
 ### <span id="initialize"> Initializing
 
@@ -216,3 +234,30 @@ void registerCommandTopic()
 `registerCommandTopic` makes sure that the internal command topic is available in the Kafka cluster and in sync with backup (if configured).
 
 `registerCommandTopic` [creates the command topic if not exists](../KsqlInternalTopicUtils.md#ensureTopic).
+
+## <span id="maybeCreateProcessingLogStream"> maybeCreateProcessingLogStream
+
+```java
+void maybeCreateProcessingLogStream(
+  ProcessingLogConfig processingLogConfig,
+  KsqlConfig ksqlConfig,
+  KsqlRestConfig restConfig,
+  KsqlResource ksqlResource,
+  ServiceContext serviceContext)
+```
+
+`maybeCreateProcessingLogStream` does nothing and returns immediately when [ksql.logging.processing.stream.auto.create](../ProcessingLogConfig.md#STREAM_AUTO_CREATE) is turned off (`false`).
+
+`maybeCreateProcessingLogStream`...FIXME
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.rest.server.KsqlRestApplication` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.rest.server.KsqlRestApplication=ALL
+```
+
+Refer to [Logging](../logging.md).

@@ -34,7 +34,7 @@ void start(
 
 `start` creates an `HttpServer` ([Vert.x]({{ vertx.api }}/io/vertx/core/Vertx.html#createHttpServer-io.vertx.core.http.HttpServerOptions-)) (with the [HttpServerOptions](#httpServerOptions)) and registers the [request handlers](#setupRouter).
 
-## <span id="setupRouter"> URIs
+## <span id="setupRouter"><span id="uris"> URIs
 
 ```java
 Router setupRouter()
@@ -49,7 +49,7 @@ URI      | HTTP Method | Handler
  `/clusterStatus` | `GET` | `this::handleClusterStatusRequest`
  `/healthcheck` | `GET` | `this::handleHealthcheckRequest`
  `/heartbeat` | `POST` | `this::handleHeartbeatRequest`
- `/info` | `GET` | `this::handleInfoRequest`
+ `/info` | `GET` | [handleInfoRequest](#handleInfoRequest)
  `/inserts-stream` | `POST` | `InsertsStreamHandler`
  `/is_valid_property/:property` | `GET` | `this::handleIsValidPropertyRequest`
  `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest)
@@ -58,12 +58,59 @@ URI      | HTTP Method | Handler
  `/query` | `POST` | `this::handleQueryRequest`
  `/query-stream` | `POST` | `QueryStreamHandler`
  `/status/:type/:entity/:action` | `GET` | `this::handleStatusRequest`
- `/status` | `GET` | `this::handleAllStatusesRequest`
+ `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest)
  `/v1/metadata` | `GET` | `this::handleServerMetadataRequest`
  `/v1/metadata/id` | `GET` | `this::handleServerMetadataClusterIdRequest`
  `/ws/query` | `GET` | `this::handleWebsocket`
 
-### <span id="handleKsqlRequest"> Handling KsqlRequest
+### <span id="handleAllStatusesRequest"> handleAllStatusesRequest
+
+```java
+void handleAllStatusesRequest(
+  RoutingContext routingContext)
+```
+
+`handleAllStatusesRequest` requests the [Endpoints](#endpoints) to [executeAllStatuses](Endpoints.md#executeAllStatuses).
+
+```console
+$ http http://localhost:8088/status
+HTTP/1.1 200 OK
+content-length: 69
+content-type: application/json
+
+{
+    "commandStatuses": {
+        "stream/`KSQL_PROCESSING_LOG`/create": "SUCCESS"
+    }
+}
+```
+
+### <span id="handleInfoRequest"> handleInfoRequest
+
+```java
+void handleInfoRequest(
+  RoutingContext routingContext)
+```
+
+`handleInfoRequest` requests the [Endpoints](#endpoints) to [executeInfo](Endpoints.md#executeInfo).
+
+```console
+$ http http://localhost:8088/info
+HTTP/1.1 200 OK
+content-length: 133
+content-type: application/json
+
+{
+    "KsqlServerInfo": {
+        "kafkaClusterId": "kI5f7xZWQaynAgoptiVXJw",
+        "ksqlServiceId": "default_",
+        "serverStatus": "RUNNING",
+        "version": "0.27.2"
+    }
+}
+```
+
+### <span id="handleKsqlRequest"> handleKsqlRequest
 
 ```java
 void handleKsqlRequest(
@@ -71,3 +118,28 @@ void handleKsqlRequest(
 ```
 
 `handleKsqlRequest` requests the [Endpoints](#endpoints) to [execute the KsqlRequest](Endpoints.md#executeKsqlRequest).
+
+```console
+$ http http://localhost:8088/ksql ksql="LIST STREAMS;"
+HTTP/1.1 200 OK
+content-length: 224
+content-type: application/json
+
+[
+    {
+        "@type": "streams",
+        "statementText": "LIST STREAMS;",
+        "streams": [
+            {
+                "isWindowed": false,
+                "keyFormat": "KAFKA",
+                "name": "KSQL_PROCESSING_LOG",
+                "topic": "default_ksql_processing_log",
+                "type": "STREAM",
+                "valueFormat": "JSON"
+            }
+        ],
+        "warnings": []
+    }
+]
+```

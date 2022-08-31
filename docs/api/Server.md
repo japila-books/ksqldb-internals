@@ -1,5 +1,7 @@
 # Server
 
+`Server` is a ksqlDB API server that [deploys ServerVerticles](#start) (on the [Vertx](#vertx) actor system).
+
 ## Creating Instance
 
 `Server` takes the following to be created:

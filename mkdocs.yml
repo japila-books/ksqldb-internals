@@ -293,6 +293,7 @@ nav:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
+    - ProcessingLogConfig: ProcessingLogConfig.md
     - ProcessingLogContext: ProcessingLogContext.md
   - Demos:
     - SHOW STREAMS: demo/show-streams.md

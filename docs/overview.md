@@ -2,7 +2,13 @@
 
 [ksqlDB](https://ksqldb.io/) is _"the database purpose-built for stream processing applications._"
 
+## How ksqlDB Works
+
 ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from the [command line](rest/ServerOptions.md#queries-file) or sent through a REST endpoint, e.g. using [ksql](cli/Ksql.md)).
+
+[KsqlResource](rest/KsqlResource.md) is used to...FIXME
+
+## Run It Yourself
 
 !!! note "Get standalone ksqlDB first"
     The following assumes the standalone ksqlDB version installed per [ksqlDB Quickstart](https://ksqldb.io/quickstart-standalone-tarball.html#quickstart-content).

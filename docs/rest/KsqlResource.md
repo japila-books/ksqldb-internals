@@ -1,5 +1,25 @@
 # KsqlResource
 
+`KsqlResource` is used by [KsqlRestApplication](KsqlRestApplication.md#ksqlResource) to execute statements (indirectly using [KsqlServerEndpoints](KsqlServerEndpoints.md#ksqlResource)).
+
+## Creating Instance
+
+`KsqlResource` takes the following to be created:
+
+* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* <span id="commandRunner"> [CommandRunner](CommandRunner.md)
+* <span id="distributedCmdResponseTimeout"> `distributedCmdResponse` Timeout
+* <span id="activenessRegistrar"> `ActivenessRegistrar`
+* <span id="injectorFactory"> [Injector](../Injector.md) factory
+* <span id="authorizationValidator"> `KsqlAuthorizationValidator`
+* <span id="errorHandler"> `Errors` Handlers
+* <span id="denyListPropertyValidator"> `DenyListPropertyValidator`
+* <span id="commandRunnerWarning"> CommandRunner warning message
+
+`KsqlResource` is created when:
+
+* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (and creates a [KsqlRestApplication](KsqlRestApplication.md#ksqlResource))
+
 ## <span id="configure"> configure
 
 ```java
@@ -7,9 +27,11 @@ void configure(
   KsqlConfig config)
 ```
 
-`configure`...FIXME
-
 `configure` is part of the [KsqlConfigurable](KsqlConfigurable.md#configure) abstraction.
+
+---
+
+`configure`...FIXME
 
 ## <span id="shouldSynchronize"> shouldSynchronize
 
@@ -22,6 +44,8 @@ boolean shouldSynchronize(
 
 1. Not in [SYNC_BLACKLIST](#SYNC_BLACKLIST)
 1. In [EXECUTOR_MAP](CustomExecutors.md#EXECUTOR_MAP)
+
+---
 
 `shouldSynchronize` is used when:
 
@@ -77,3 +101,15 @@ Processed successfully: [request]
 
 * `KsqlServerEndpoints` is requested to [execute a KsqlRequest](KsqlServerEndpoints.md#executeKsqlRequest)
 * `ServerInternalKsqlClient` is requested to `makeKsqlRequest`
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.rest.server.resources.KsqlResource` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.rest.server.resources.KsqlResource=ALL
+```
+
+Refer to [Logging](../logging.md).

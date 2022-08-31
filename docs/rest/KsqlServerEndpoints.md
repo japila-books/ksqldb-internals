@@ -9,7 +9,7 @@
 * [KsqlEngine](#ksqlEngine)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="ksqlSecurityContextProvider"> `KsqlSecurityContextProvider`
-* <span id="ksqlResource"> [KsqlResource](KsqlResource.md)
+* [KsqlResource](#ksqlResource)
 * <span id="streamedQueryResource"> `StreamedQueryResource`
 * <span id="serverInfoResource"> `ServerInfoResource`
 * <span id="heartbeatResource"> `HeartbeatResource`
@@ -36,6 +36,16 @@ The `KsqlEngine` is used when:
 * [createQueryPublisher](#createQueryPublisher) (to create a [QueryEndpoint](QueryEndpoint.md))
 * [createInsertsSubscriber](#createInsertsSubscriber) (to create a `InsertsStreamEndpoint`)
 
+### <span id="ksqlResource"> KsqlResource
+
+`KsqlServerEndpoints` is given a [KsqlResource](KsqlResource.md) when [created](#creating-instance).
+
+`KsqlResource` is used when:
+
+* [Executing ksqlRequest](#executeKsqlRequest)
+* [executeTerminate](#executeTerminate)
+* [executeIsValidProperty](#executeIsValidProperty)
+
 ## <span id="createQueryPublisher"> Creating QueryPublisher
 
 ```java
@@ -59,7 +69,22 @@ CompletableFuture<QueryPublisher> createQueryPublisher(
 
 * Create a [QueryEndpoint](QueryEndpoint.md) to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
 
-## <span id="executeKsqlRequest"> Executing KsqlRequest
+## <span id="executeIsValidProperty"> executeIsValidProperty
+
+```java
+CompletableFuture<EndpointResponse> executeIsValidProperty(
+  String property,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext)
+```
+
+`executeIsValidProperty` is part of the [Endpoints](../api/Endpoints.md#executeIsValidProperty) abstraction.
+
+---
+
+`executeIsValidProperty` requests the [KsqlResource](#ksqlResource) to [isValidProperty](KsqlResource.md#isValidProperty).
+
+## <span id="executeKsqlRequest"> executeKsqlRequest
 
 ```java
 CompletableFuture<EndpointResponse> executeKsqlRequest(
@@ -72,4 +97,19 @@ CompletableFuture<EndpointResponse> executeKsqlRequest(
 
 ---
 
-`executeKsqlRequest`...FIXME
+`executeKsqlRequest` requests the [KsqlResource](#ksqlResource) to [handle statements](KsqlResource.md#handleKsqlStatements).
+
+## <span id="executeTerminate"> executeTerminate
+
+```java
+CompletableFuture<EndpointResponse> executeTerminate(
+  ClusterTerminateRequest request,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext)
+```
+
+`executeTerminate` is part of the [Endpoints](../api/Endpoints.md#executeTerminate) abstraction.
+
+---
+
+`executeTerminate` requests the [KsqlResource](#ksqlResource) to [terminateCluster](KsqlResource.md#terminateCluster).

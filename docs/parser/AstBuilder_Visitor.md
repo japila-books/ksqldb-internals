@@ -53,6 +53,25 @@ tableElements
     : '(' tableElement (',' tableElement)* ')'
     ;
 
+tableElement
+    : identifier type columnConstraints?
+    ;
+
+type
+    : type ARRAY
+    | ARRAY '<' type '>'
+    | MAP '<' type ',' type '>'
+    | STRUCT '<' (identifier type (',' identifier type)*)? '>'
+    | DECIMAL '(' number ',' number ')'
+    | baseType ('(' typeParameter (',' typeParameter)* ')')?
+    ;
+
+columnConstraints
+    : ((PRIMARY)? KEY)
+    | HEADERS
+    | HEADER '(' text ')'
+    ;
+
 tableProperties
     : '(' tableProperty (',' tableProperty)* ')'
     ;

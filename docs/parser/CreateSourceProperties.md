@@ -24,6 +24,8 @@ CreateSourceProperties from(
 
 `from` creates a [CreateSourceProperties](#creating-instance) (with the given `literals` and the default `DurationParser`).
 
+---
+
 `from` is used when:
 
 * `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder_Visitor.md#visitCreateTable), [visitCreateStream](AstBuilder_Visitor.md#visitCreateStream), [visitAssertStream](AstBuilder_Visitor.md#visitAssertStream) and [visitAssertTable](AstBuilder_Visitor.md#visitAssertTable)

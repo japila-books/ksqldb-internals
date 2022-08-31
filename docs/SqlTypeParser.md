@@ -24,6 +24,8 @@ SqlTypeParser create(
 
 `create` creates a [SqlTypeParser](#creating-instance) with the given `TypeRegistry`.
 
+---
+
 `create` is used when:
 
 * `UserFunctionLoader` is created
@@ -31,3 +33,29 @@ SqlTypeParser create(
 * `SchemaParser` is requested to `parse` a schema
 * `SqlTypeDeserializer` is requested to `deserialize`
 * `KsqlTargetUtil` is requested to `createSchema`
+
+## <span id="getType"> getType
+
+```java
+Type getType(
+  SqlBaseParser.TypeContext type)
+```
+
+`getType` [getSqlType](#getSqlType) and creates a `Type`.
+
+---
+
+`getType` is used when:
+
+* `AstBuilder.Visitor` is requested to [visitAlterOption](parser/AstBuilder_Visitor.md#visitAlterOption), [visitCast](parser/AstBuilder_Visitor.md#visitCast), [visitTableElement](parser/AstBuilder_Visitor.md#visitTableElement), [visitRegisterType](parser/AstBuilder_Visitor.md#visitRegisterType)
+* `SchemaParser` is requested to parse a schema
+* `SqlTypeParser` is requested to [parse a schema](#parse)
+
+### <span id="getSqlType"> getSqlType
+
+```java
+SqlType getSqlType(
+  SqlBaseParser.TypeContext type)
+```
+
+`getSqlType`...FIXME

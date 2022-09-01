@@ -2,6 +2,13 @@
 
 `CommandTopic` manages a [KafkaConsumer](#commandConsumer) to [fetch new commands](#getNewCommands) (for [CommandStore](CommandStore.md#getNewCommands)) from the [internal command topic](#commandTopicPartition).
 
+<figure markdown>
+  ![CommandTopic and CommandStore](../images/CommandTopic-CommandStore.png)
+</figure>
+
+!!! note
+    [KsqlRestApplication](KsqlRestApplication.md) uses [commandTopic](ReservedInternalTopics.md#commandTopic) utility to build the name of the command topic.
+
 ## Creating Instance
 
 `CommandTopic` takes the following to be created:

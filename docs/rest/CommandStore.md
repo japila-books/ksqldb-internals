@@ -1,6 +1,16 @@
 # CommandStore
 
-`CommandStore` is a [CommandQueue](CommandQueue.md).
+`CommandStore` is a [CommandQueue](CommandQueue.md) that uses the [CommandTopic](#commandTopic) for [fetching commands](#getNewCommands).
+
+`CommandStore` is used to create the following services while [building a KsqlRestApplication](KsqlRestApplication.md#buildApplication):
+
+* [StreamedQueryResource](StreamedQueryResource.md#commandQueue)
+* [CommandRunner](CommandRunner.md#commandStore)
+* [KsqlRestApplication](KsqlRestApplication.md#commandStore)
+
+<figure markdown>
+  ![CommandStore](../images/CommandStore.png)
+</figure>
 
 ## Creating Instance
 
@@ -65,7 +75,7 @@ Configuration Property | Value
 In the end, `create` creates a [CommandStore](#creating-instance) with the following:
 
 * The given `commandTopicName`
-* A new `CommandTopic`
+* A new [CommandTopic](CommandTopic.md)
 * A new `SequenceNumberFutureStore`
 * _others_
 
@@ -129,3 +139,15 @@ List<QueuedCommand> getNewCommands(
 `getNewCommands` creates a `QueuedCommand` for every new command with a non-`null` value.
 
 `getNewCommands` returns the `QueuedCommand`s.
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.rest.server.computation.CommandStore` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.rest.server.computation.CommandStore=ALL
+```
+
+Refer to [Logging](../logging.md).

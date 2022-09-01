@@ -10,7 +10,7 @@
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="ksqlSecurityContextProvider"> `KsqlSecurityContextProvider`
 * [KsqlResource](#ksqlResource)
-* <span id="streamedQueryResource"> `StreamedQueryResource`
+* [StreamedQueryResource](#streamedQueryResource)
 * <span id="serverInfoResource"> `ServerInfoResource`
 * <span id="heartbeatResource"> `HeartbeatResource`
 * <span id="clusterStatusResource"> `ClusterStatusResource`
@@ -45,6 +45,12 @@ The `KsqlEngine` is used when:
 * [Executing ksqlRequest](#executeKsqlRequest)
 * [executeTerminate](#executeTerminate)
 * [executeIsValidProperty](#executeIsValidProperty)
+
+### <span id="streamedQueryResource"> StreamedQueryResource
+
+`KsqlServerEndpoints` is given a [StreamedQueryResource](StreamedQueryResource.md) when [created](#creating-instance).
+
+The `StreamedQueryResource` is used to [executeQueryRequest](#executeQueryRequest).
 
 ## <span id="createQueryPublisher"> Creating QueryPublisher
 
@@ -98,6 +104,26 @@ CompletableFuture<EndpointResponse> executeKsqlRequest(
 ---
 
 `executeKsqlRequest` requests the [KsqlResource](#ksqlResource) to [handle statements](KsqlResource.md#handleKsqlStatements).
+
+## <span id="executeQueryRequest"> executeQueryRequest
+
+```java
+CompletableFuture<EndpointResponse> executeQueryRequest(
+  KsqlRequest request,
+  WorkerExecutor workerExecutor,
+  CompletableFuture<Void> connectionClosedFuture,
+  ApiSecurityContext apiSecurityContext,
+  Optional<Boolean> isInternalRequest,
+  KsqlMediaType mediaType,
+  MetricsCallbackHolder metricsCallbackHolder,
+  Context context)
+```
+
+`executeQueryRequest` is part of the [Endpoints](../api/Endpoints.md#executeQueryRequest) abstraction.
+
+---
+
+`executeQueryRequest` requests the [StreamedQueryResource](#streamedQueryResource) to [streamQuery](KsqlResource.md#streamQuery).
 
 ## <span id="executeTerminate"> executeTerminate
 

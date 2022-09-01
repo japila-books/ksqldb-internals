@@ -43,8 +43,8 @@ theme:
 
 markdown_extensions:
   - admonition
-  - codehilite
   - footnotes
+  - md_in_html
   - toc:
       permalink: true
   - pymdownx.arithmatex
@@ -247,7 +247,9 @@ nav:
     - Command: rest/Command.md
     - CommandQueue: rest/CommandQueue.md
     - CommandRunner: rest/CommandRunner.md
-    - CommandStore: rest/CommandStore.md
+    - CommandStore:
+      - CommandStore: rest/CommandStore.md
+      - CommandStoreUtil: rest/CommandStoreUtil.md
     - CommandTopic: rest/CommandTopic.md
     - CommandTopicBackup: rest/CommandTopicBackup.md
     - CustomExecutors: rest/CustomExecutors.md
@@ -280,6 +282,7 @@ nav:
       - ListSourceExecutor: rest/ListSourceExecutor.md
       - StatementExecutor: rest/StatementExecutor.md
     - StatementParser: rest/StatementParser.md
+    - StreamedQueryResource: rest/StreamedQueryResource.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
   - ksql CLI:
     - cli/index.md

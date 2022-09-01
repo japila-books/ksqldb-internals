@@ -87,6 +87,20 @@ All the given [KsqlConfigurable](KsqlConfigurable.md)s are also given separately
 KsqlRestApplication buildApplication(
   KsqlRestConfig restConfig,
   MetricCollectors metricCollectors)
+KsqlRestApplication buildApplication(
+  String metricsPrefix,
+  KsqlRestConfig restConfig,
+  ServerState serverState,
+  Function<Supplier<Boolean>, VersionCheckerAgent> versionCheckerFactory,
+  int maxStatementRetries,
+  ServiceContext serviceContext,
+  Supplier<SchemaRegistryClient> schemaRegistryClientFactory,
+  ConnectClientFactory connectClientFactory,
+  Vertx vertx,
+  KsqlClient sharedClient,
+  DefaultServiceContextFactory defaultServiceContextFactory,
+  UserServiceContextFactory userServiceContextFactory,
+  MetricCollectors metricCollectors)
 ```
 
 `buildApplication` is used when:

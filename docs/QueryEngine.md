@@ -58,7 +58,11 @@ PhysicalPlan buildPhysicalPlan(
 
 `buildPhysicalPlan` creates a `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)).
 
-`buildPhysicalPlan` creates a [PhysicalPlanBuilder](PhysicalPlanBuilder.md) (with the `StreamsBuilder`) to [build a physical plan](PhysicalPlanBuilder.md#buildPhysicalPlan) of the given `LogicalPlanNode` (and the given `QueryId` and the `PlanInfo` of the query to be "replaced").
+`buildPhysicalPlan` creates a [PhysicalPlanBuilder](PhysicalPlanBuilder.md) (with the `StreamsBuilder`).
+
+In the end, `buildPhysicalPlan` requests the `PhysicalPlanBuilder` to [build a physical plan](PhysicalPlanBuilder.md#buildPhysicalPlan) for the given `LogicalPlanNode` (and the given `QueryId` and the current `PlanInfo` of the query to be "replaced").
+
+---
 
 `buildPhysicalPlan` is used when:
 

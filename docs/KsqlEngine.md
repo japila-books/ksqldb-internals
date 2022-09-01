@@ -192,7 +192,23 @@ StreamPullQueryMetadata createStreamPullQuery(
   boolean excludeTombstones)
 ```
 
+`createStreamPullQuery` uses [ksql.query.pull.stream.enabled](KsqlConfig.md#KSQL_QUERY_STREAM_PULL_QUERY_ENABLED) to ensure that pull queries on streams are enabled. If not, `createStreamPullQuery` throws a `KsqlStatementException`:
+
+```text
+Pull queries on streams are disabled.
+To create a push query on the stream, add EMIT CHANGES to the end.
+To enable pull queries on streams, set the ksql.query.pull.stream.enabled config to 'true'.
+```
+
 `createStreamPullQuery`...FIXME
+
+`createStreamPullQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [execute the stream pull query](EngineExecutor.md#executeStreamPullQuery).
+
+`createStreamPullQuery`...FIXME
+
+In the end, `createStreamPullQuery` returns a `StreamPullQueryMetadata` with the `TransientQueryMetadata` and the `endOffsets`.
+
+---
 
 `createStreamPullQuery` is used when:
 

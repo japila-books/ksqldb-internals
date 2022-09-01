@@ -4,6 +4,22 @@
 
 ## Contract (Subset)
 
+### <span id="createStreamPullQuery"> Creating Stream Pull Query
+
+```java
+StreamPullQueryMetadata createStreamPullQuery(
+  ServiceContext serviceContext,
+  ImmutableAnalysis analysis,
+  ConfiguredStatement<Query> statementOrig,
+  boolean excludeTombstones)
+```
+
+See [KsqlEngine](KsqlEngine.md#createStreamPullQuery)
+
+Used when:
+
+* `QueryExecutor` is requested to [handleStreamPullQuery](rest/QueryExecutor.md#handleStreamPullQuery)
+
 ### <span id="createSandbox"> Creating Sandboxed Execution Context (createSandbox)
 
 ```java

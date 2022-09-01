@@ -43,13 +43,15 @@ QueryMetadataHolder handleStatement(
 
 For a [Query](../parser/Query.md) statement, `handleStatement` [handles it](#handleQuery). Otherwise, `handleStatement` returns an empty `QueryMetadataHolder`.
 
+---
+
 `handleStatement` is used when:
 
 * `QueryEndpoint` is requested to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
 * `StreamedQueryResource` is requested to `handleStatement`
 * `WSQueryEndpoint` is requested to `handleStatement`
 
-## <span id="handleQuery"> Handling Query
+### <span id="handleQuery"> Handling Query
 
 ```java
 QueryMetadataHolder handleQuery(
@@ -63,11 +65,7 @@ QueryMetadataHolder handleQuery(
   boolean excludeTombstones)
 ```
 
-`handleQuery` is used when:
-
-* `QueryExecutor` is requested to [handle a statement](#handleStatement)
-
-### Pull Queries
+#### <span id="handleQuery-pull-query"> Pull Query
 
 For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
 
@@ -83,7 +81,7 @@ For a `KTABLE` data source (`FROM` clause), `handleQuery` [handleTablePullQuery]
 
 For a `KSTREAM` data source (`FROM` clause), `handleQuery` [handleStreamPullQuery](#handleStreamPullQuery).
 
-### <span id="handleQuery-scalable-push-query"> Scalable Push Queries
+#### <span id="handleQuery-scalable-push-query"> Scalable Push Query
 
 For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
 
@@ -95,7 +93,7 @@ Scalable push query created
 
 `handleQuery` [handleScalablePushQuery](#handleScalablePushQuery).
 
-### Transient Queries
+#### <span id="handleQuery-transient-query"> Transient Query
 
 Otherwise, `handleQuery` prints out the following INFO message to the logs and [handlePushQuery](#handlePushQuery).
 
@@ -115,7 +113,7 @@ QueryMetadataHolder handlePushQuery(
 
 `handlePushQuery`...FIXME
 
-### <span id="handleScalablePushQuery"> Executing Scalable Push Query (handleScalablePushQuery)
+### <span id="handleScalablePushQuery"> handleScalablePushQuery
 
 ```java
 QueryMetadataHolder handleScalablePushQuery(
@@ -152,7 +150,19 @@ QueryMetadataHolder handleStreamPullQuery(
   AtomicReference<Decrementer> refDecrementer)
 ```
 
-`handleStreamPullQuery`...FIXME
+Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [createStreamPullQuery](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata` to be returned inside a `QueryMetadataHolder`).
+
+---
+
+`handleStreamPullQuery` requests the [RateLimiter](#rateLimiter) to `checkLimit`.
+
+`handleStreamPullQuery` requests the [pullBandRateLimiter](#pullBandRateLimiter) to `allow` a `PULL` query.
+
+`handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [createStreamPullQuery](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata`).
+
+`handleStreamPullQuery` requests the [LocalCommands](#localCommands) (if defined) to `write` the `TransientQueryMetadata`.
+
+In the end, `handleStreamPullQuery` gives a `QueryMetadataHolder` with the `StreamPullQueryMetadata`.
 
 ### <span id="handleTablePullQuery"> handleTablePullQuery
 

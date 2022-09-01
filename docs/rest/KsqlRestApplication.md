@@ -210,7 +210,7 @@ void initialize(
 `initialize` [maybeCreateProcessingLogTopic](ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic) with the following:
 
 * [Shared KafkaTopicClient](../ServiceContext.md#getTopicClient)
-* [ProcessingLogConfig](../ProcessingLogContext.md#getConfig)
+* [ProcessingLogConfig](ProcessingLogContext.md#getConfig)
 * [ksqlConfigNoPort](#ksqlConfigNoPort)
 
 `initialize` requests the [CommandRunner](#commandRunner) to [processPriorCommands](CommandRunner.md#processPriorCommands) (with a new `PersistentQueryCleanupImpl`).
@@ -246,7 +246,7 @@ void maybeCreateProcessingLogStream(
   ServiceContext serviceContext)
 ```
 
-`maybeCreateProcessingLogStream` does nothing and returns immediately when [ksql.logging.processing.stream.auto.create](../ProcessingLogConfig.md#STREAM_AUTO_CREATE) is turned off (`false`).
+`maybeCreateProcessingLogStream` does nothing and returns immediately when [ksql.logging.processing.stream.auto.create](ProcessingLogConfig.md#STREAM_AUTO_CREATE) is turned off (`false`).
 
 `maybeCreateProcessingLogStream`...FIXME
 

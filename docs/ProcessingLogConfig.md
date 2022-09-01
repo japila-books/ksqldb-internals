@@ -1,3 +1,0 @@
-# ProcessingLogConfig
-
-`ProcessingLogConfig` is...FIXME

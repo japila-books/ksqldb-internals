@@ -1,6 +1,6 @@
 # StandaloneExecutor
 
-`StandaloneExecutor` is an [Executable](Executable.md).
+`StandaloneExecutor` is an [Executable](Executable.md) for _headless execution mode_.
 
 ## Creating Instance
 

@@ -89,6 +89,7 @@ extra:
     github: https://github.com/apache/kafka/tree/3.2.1
     api: https://kafka.apache.org/32/javadoc/
   ksqldb:
+    docs: https://docs.ksqldb.io/en/0.27.2-ksqldb/
     github: https://github.com/confluentinc/ksql/blob/v0.27.2
     version: 0.27.2
     version_major: 0.27
@@ -108,6 +109,7 @@ nav:
   - Home: index.md
   - Internals:
     - Overview: overview.md
+    - Server Properties: server-properties.md
     - DataSource: DataSource.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
@@ -157,6 +159,7 @@ nav:
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
     - Persistent Queries: persistent-queries.md
+    - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
     - Push Queries: push-queries.md
   - Query Parsing:
@@ -259,9 +262,11 @@ nav:
     - KsqlRestConfig: rest/KsqlRestConfig.md
     - KsqlServerEndpoints: rest/KsqlServerEndpoints.md
     - KsqlServerMain: rest/KsqlServerMain.md
-    - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - QueryEndpoint: rest/QueryEndpoint.md
     - QueryExecutor: rest/QueryExecutor.md
+    - ProcessingLogConfig: rest/ProcessingLogConfig.md
+    - ProcessingLogContext: rest/ProcessingLogContext.md
+    - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ReservedInternalTopics: rest/ReservedInternalTopics.md
@@ -293,7 +298,5 @@ nav:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
-    - ProcessingLogConfig: ProcessingLogConfig.md
-    - ProcessingLogContext: ProcessingLogContext.md
   - Demos:
     - SHOW STREAMS: demo/show-streams.md

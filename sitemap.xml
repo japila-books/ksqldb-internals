@@ -721,6 +721,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/CommandStoreUtil/</loc>
+         <lastmod>2022-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandTopic/</loc>
          <lastmod>2022-09-01</lastmod>
          <changefreq>daily</changefreq>
@@ -867,6 +872,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/StatementParser/</loc>
+         <lastmod>2022-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/StreamedQueryResource/</loc>
          <lastmod>2022-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>

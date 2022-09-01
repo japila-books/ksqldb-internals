@@ -164,7 +164,6 @@ nav:
     - Push Queries: push-queries.md
   - Query Parsing:
     - parser/index.md
-    - AlterSystemProperty: parser/AlterSystemProperty.md
     - AstBuilder:
       - AstBuilder: parser/AstBuilder.md
       - Visitor: parser/AstBuilder_Visitor.md
@@ -181,6 +180,7 @@ nav:
     - DefaultTraversalVisitor: parser/DefaultTraversalVisitor.md
     - KsqlParser: parser/KsqlParser.md
     - Tree Nodes:
+      - AlterSystemProperty: parser/AlterSystemProperty.md
       - AstNode: parser/AstNode.md
       - CreateAsSelect: parser/CreateAsSelect.md
       - CreateSourceAsProperties: parser/CreateSourceAsProperties.md

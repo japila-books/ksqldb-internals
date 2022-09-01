@@ -18,6 +18,24 @@
 
 ## Parsing Statements
 
+### <span id="visitAlterSystemProperty"> ALTER SYSTEM
+
+```java
+Node visitAlterSystemProperty(
+  SqlBaseParser.AlterSystemPropertyContext context)
+```
+
+`visitAlterSystemProperty` is part of the `SqlBaseBaseVisitor` abstraction to handle `ALTER SYSTEM` statements.
+
+```antlr
+ALTER SYSTEM name = value   #alterSystemProperty
+```
+
+`visitAlterSystemProperty` creates an [AlterSystemProperty](AlterSystemProperty.md).
+
+!!! note
+    "Cannot alter system configs when KSQL_SHARED_RUNTIME_ENABLED is turned off" exception is thrown by `ValidatedCommandFactory` is requested to [createForAlterSystemQuery](../rest/ValidatedCommandFactory.md#createForAlterSystemQuery).
+
 ### <span id="visitAssertTable"> ASSERT TABLE
 
 ```java

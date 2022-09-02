@@ -95,7 +95,7 @@ tableProperties
     ;
 ```
 
-`visitCreateStream` creates an [CreateStream](CreateStream.md).
+`visitCreateStream` creates a [CreateStream](CreateStream.md).
 
 ### <span id="visitCreateStreamAs"> CREATE STREAM AS
 

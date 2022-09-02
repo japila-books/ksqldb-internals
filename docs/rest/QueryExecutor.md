@@ -127,7 +127,11 @@ QueryMetadataHolder handleScalablePushQuery(
   AtomicReference<ScalablePushQueryMetadata> resultForMetrics)
 ```
 
+`handleScalablePushQuery`...FIXME
+
 `handleScalablePushQuery` requests the [KsqlEngine](#ksqlEngine) to [execute a scalable push query](../KsqlEngine.md#executeScalablePushQuery).
+
+`handleScalablePushQuery`...FIXME
 
 In the end, `handleScalablePushQuery` prints out the following INFO message to the logs:
 
@@ -135,9 +139,11 @@ In the end, `handleScalablePushQuery` prints out the following INFO message to t
 Streaming scalable push query
 ```
 
+---
+
 `handleScalablePushQuery` is used when:
 
-* `QueryExecutor` is requested to [handle a Query](#handleQuery-scalable-push-query)
+* `QueryExecutor` is requested to [handle a query](#handleQuery-scalable-push-query)
 
 ### <span id="handleStreamPullQuery"> handleStreamPullQuery
 

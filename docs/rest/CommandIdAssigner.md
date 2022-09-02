@@ -1,0 +1,3 @@
+# CommandIdAssigner
+
+`CommandIdAssigner` is...FIXME

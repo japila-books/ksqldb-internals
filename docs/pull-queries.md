@@ -1,6 +1,6 @@
 # Pull Queries
 
-**Pull Queries** are non-persistent `SELECT` queries with no `EMIT CHANGES` clause (that would turn such queries into [push queries](push-queries.md)).
+**Pull Queries** are non-persistent `SELECT` queries with no `EMIT CHANGES` clause (that is part of [push queries](push-queries.md)).
 
 Pull Queries retrieve the latest result from a source (a materialized view, a table, or a stream) instantly and as of "now".
 
@@ -15,26 +15,36 @@ Pull queries use an eventually consistent consistency model.
 
 ## Demo
 
-Create an input stream.
+### CREATE STREAM riderLocations
+
+Use [ksql](cli/index.md) to execute the following `CREATE STREAM` DDL statement to create an input stream.
 
 ```sql
-CREATE STREAM riderLocations (profileId VARCHAR, latitude DOUBLE, longitude DOUBLE)
+CREATE STREAM riderLocations (
+    profileId VARCHAR,
+    latitude DOUBLE,
+    longitude DOUBLE)
   WITH (
     kafka_topic='locations',
     value_format='json',
     partitions=1);
 ```
 
-```text
- Message
-----------------
- Stream created
-----------------
-```
+!!! note "CREATE STREAM Lifecycle"
+    `CREATE STREAM` statement is parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md#create-stream) (that creates a [CreateStream](parser/CreateStream.md)).
+
+    `CREATE STREAM` statement is planned for execution using [EngineExecutor](EngineExecutor.md#plan) and then executed by:
+
+    * [DistributingExecutor](rest/DistributingExecutor.md#execute)
+    * [StatementExecutor](rest/StatementExecutor.md#handleExecutableDdl)
+
+### Produce JSON Record
 
 ```text
 echo '{"profileId":0, "latitude":10.5, "longitude": 20.1}' | kcat -P -b :9092 -t locations
 ```
+
+### Execute Pull Query
 
 Issue a pull query.
 
@@ -47,6 +57,8 @@ ksql> SELECT * FROM riderLocations;
 Query Completed
 Query terminated
 ```
+
+### Explain Query
 
 ```text
 ksql> explain SELECT * FROM riderLocations;
@@ -91,8 +103,10 @@ Topologies:
       <-- Project
 ```
 
+### Describe Stream
+
 ```text
-ksql> DESCRIBE RIDERLOCATIONS EXTENDED;
+ksql> DESCRIBE riderlocations EXTENDED;
 
 Name                 : RIDERLOCATIONS
  Field     | Type
@@ -105,7 +119,7 @@ For runtime statistics and query details run: DESCRIBE <Stream,Table> EXTENDED;
 ```
 
 ```text
-ksql> DESCRIBE RIDERLOCATIONS EXTENDED;
+ksql> DESCRIBE riderlocations EXTENDED;
 
 Name                 : RIDERLOCATIONS
 Type                 : STREAM

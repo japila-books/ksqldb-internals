@@ -80,7 +80,7 @@ The optional `Sink` and query ID are only given when `EngineExecutor` is request
 
 In the end, `planQuery` creates an `ExecutorPlans` (with the `LogicalPlanNode` and the `PhysicalPlan`).
 
-## <span id="plan"> Planning ExecutableDdlStatement or QueryContainer (plan)
+## <span id="plan"> Statement Planning
 
 ```java
 KsqlPlan plan(

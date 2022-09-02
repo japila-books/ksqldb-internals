@@ -245,6 +245,7 @@ nav:
   - REST:
     - rest/index.md
     - Command: rest/Command.md
+    - CommandIdAssigner: rest/CommandIdAssigner.md
     - CommandQueue: rest/CommandQueue.md
     - CommandRunner: rest/CommandRunner.md
     - CommandStore:

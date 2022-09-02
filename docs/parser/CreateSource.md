@@ -12,6 +12,16 @@ CreateSource copyWith(
   CreateSourceProperties properties)
 ```
 
+Overrides `TableElements` and `CreateSourceProperties` of this `CreateSource`
+
+Used when:
+
+* `StatementRewriter.Rewriter` is requested to `visitCreateStream` and `visitCreateTable`
+* `DefaultFormatInjector` is requested to `injectForCreateStatement`
+* `DefaultSchemaInjector` is requested to `addSchemaFields`
+* `SourcePropertyInjector` is requested to `buildConfiguredStatement`
+* `TopicCreateInjector` is requested to `injectForCreateSource`
+
 ### <span id="getSourceType"> getSourceType
 
 ```java

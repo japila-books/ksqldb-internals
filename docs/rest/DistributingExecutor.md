@@ -44,6 +44,8 @@ For [InsertInto](../parser/InsertInto.md)s, `execute` [validateInsertIntoQueries
 
 `execute`...FIXME
 
+---
+
 `execute` is used when:
 
 * `RequestHandler` is requested to [execute a SQL statement](RequestHandler.md#executeStatement)

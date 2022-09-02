@@ -31,6 +31,8 @@ The `FACTORIES` is used in [create](#create).
 
 `create` is part of the [DdlCommandFactory](DdlCommandFactory.md#create) abstraction.
 
+`create` can create a [DdlCommand](DdlCommand.md) for a [DdlStatement](#create-DdlStatement) or a [KsqlStructuredDataOutputNode](#create-KsqlStructuredDataOutputNode).
+
 ### <span id="create-DdlStatement"> DdlStatement
 
 ```java
@@ -40,7 +42,7 @@ DdlCommand create(
   SessionConfig config)
 ```
 
-`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry to handle it (and produce a `DdlCommand`).
+`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry to handle it (and produce a [DdlCommand](DdlCommand.md)).
 
 Unless found, `create` throws a `KsqlException`:
 

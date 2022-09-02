@@ -87,7 +87,9 @@ KsqlPlan plan(
   ConfiguredStatement<?> statement)
 ```
 
-`plan` requests the given `ConfiguredStatement` for the [Statement](parser/Statement.md) and branches off based on the type of the statement:
+`plan` makes sure that the [Statement](parser/Statement.md) (of the given `ConfiguredStatement`) is [executable](KsqlEngine.md#isExecutableStatement) and [throws a KsqlStatementException if not](#throwOnNonExecutableStatement).
+
+`plan` branches off based on the type of the statement:
 
 * [ExecutableDdlStatement](#plan-ExecutableDdlStatement)
 * [QueryContainer](#plan-QueryContainer)
@@ -101,9 +103,11 @@ KsqlPlan plan(
 
 ### <span id="plan-ExecutableDdlStatement"> ExecutableDdlStatement
 
-For a [ExecutableDdlStatement](parser/ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](parser/CreateStream.md) or a [CreateTable](parser/CreateTable.md). They are both supposed to be a [source](parser/CreateSource.md#isSource).
+For an [ExecutableDdlStatement](parser/ExecutableDdlStatement.md), `plan` determines whether it is a [CreateStream](parser/CreateStream.md) or a [CreateTable](parser/CreateTable.md) (possibly [SOURCE](parser/CreateSource.md#isSource)s).
 
-For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan). Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [creates a KsqlPlanV1](KsqlPlan.md#ddlPlanCurrent).
+For a source `CreateTable`, `plan` [sourceTablePlan](#sourceTablePlan).
+
+Otherwise, `plan` requests the [EngineContext](#engineContext) to [create a DdlCommand](EngineContext.md#createDdlCommand) and then [plans it](KsqlPlan.md#ddlPlanCurrent).
 
 ### <span id="plan-QueryContainer"> QueryContainer
 
@@ -148,24 +152,20 @@ KsqlPlan sourceTablePlan(
 
 `sourceTablePlan`...FIXME
 
-## <span id="execute"> Executing KsqlPlan (DdlCommand or Persistent Query)
+## <span id="execute"> Executing KsqlPlan
 
 ```java
 ExecuteResult execute(
   KsqlPlan plan)
 ```
 
-!!! note "IllegalStateException"
-    It is an `IllegalStateException` when the given [KsqlPlan](KsqlPlan.md) has neither a [physical plan](KsqlPlan.md#getQueryPlan) nor a [DdlCommand](KsqlPlan.md#getDdlCommand).
+`execute` is made up of different "execution paths" to handle different variants of [KsqlPlan](KsqlPlan.md)s, but mainly whether a [DdlCommand is available](#execute-DdlCommand) or [not](#execute-QueryPlan)
 
-For the given [KsqlPlan](KsqlPlan.md) with no [physical plan](KsqlPlan.md#getQueryPlan), `execute` [executes the DDL command](#executeDdl) (of the [KsqlPlan](KsqlPlan.md#getDdlCommand) with the `withQuery` flag off) and returns.
+`execute` throws an `IllegalStateException` when the given [KsqlPlan](KsqlPlan.md) has neither [physical query plan](KsqlPlan.md#getQueryPlan) nor [DDL command](KsqlPlan.md#getDdlCommand):
 
----
-
-!!! note "Physical Plan with optional DdlCommand"
-    The given [KsqlPlan](KsqlPlan.md) may have a [physical plan](KsqlPlan.md#getQueryPlan) with or without a [DdlCommand](KsqlPlan.md#getDdlCommand).
-
-Otherwise, for the given [KsqlPlan](KsqlPlan.md) with a [physical plan](KsqlPlan.md#getQueryPlan), `execute` executes a [DDL command](#executeDdl) (if available) and then the [persistent query](#executePersistentQuery).
+```text
+DdlResult should be present if there is no physical plan.
+```
 
 ---
 
@@ -174,7 +174,18 @@ Otherwise, for the given [KsqlPlan](KsqlPlan.md) with a [physical plan](KsqlPlan
 * `KsqlEngine` is requested to [execute a query](KsqlEngine.md#execute)
 * `SandboxedExecutionContext` is requested to [execute a query](SandboxedExecutionContext.md#execute)
 
-### <span id="executePersistentQuery"> Executing Persistent Query
+### <span id="execute-DdlCommand"> DDL Command
+
+With a [KsqlPlan](KsqlPlan.md) with no [physical query plan](KsqlPlan.md#getQueryPlan), `execute` [executes the DDL command](#executeDdl) (of the [KsqlPlan](KsqlPlan.md#getDdlCommand) with the `withQuery` flag off) and returns an `ExecuteResult`.
+
+### <span id="execute-QueryPlan"> QueryPlan
+
+!!! note "Physical Plan with optional DdlCommand"
+    The given [KsqlPlan](KsqlPlan.md) may have a [physical plan](KsqlPlan.md#getQueryPlan) with or without a [DdlCommand](KsqlPlan.md#getDdlCommand).
+
+For a [KsqlPlan](KsqlPlan.md) with a [physical query plan](KsqlPlan.md#getQueryPlan), `execute` executes a [DDL command](#executeDdl) (if available) and then the [persistent query](#executePersistentQuery).
+
+## <span id="executePersistentQuery"> Executing Persistent Query
 
 ```java
 PersistentQueryMetadata executePersistentQuery(
@@ -302,3 +313,16 @@ In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the 
 `buildAndValidateLogicalPlan` is used when:
 
 * `EngineExecutor` is requested to execute [table pull](#executeTablePullQuery) or [scalable push](#executeScalablePushQuery) queries
+
+## <span id="executeDdl"> Executing DDL Command
+
+```java
+String executeDdl(
+  DdlCommand ddlCommand,
+  String statementText,
+  boolean withQuery,
+  Set<SourceName> withQuerySources,
+  boolean restoreInProgress)
+```
+
+`executeDdl` requests the [EngineContext](#engineContext) to [executeDdl](EngineContext.md#executeDdl).

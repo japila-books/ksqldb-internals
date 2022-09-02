@@ -149,10 +149,12 @@ boolean isExecutableStatement(
 * [QueryContainer](parser/QueryContainer.md)
 * [Query](parser/Query.md)
 
+---
+
 `isExecutableStatement` is used when:
 
-* `EngineExecutor` is requested to [throwOnNonExecutableStatement](EngineExecutor.md#throwOnNonExecutableStatement)
-* `RequestValidator` is requested to [validate](rest/RequestValidator.md#validate)
+* `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (and [throwOnNonExecutableStatement](EngineExecutor.md#throwOnNonExecutableStatement))
+* `RequestValidator` is requested to [validate a statement](rest/RequestValidator.md#validate)
 
 ## <span id="analyzeQueryWithNoOutputTopic"> analyzeQueryWithNoOutputTopic
 

@@ -8,6 +8,23 @@ ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from
 
 [KsqlResource](rest/KsqlResource.md) is used to...FIXME
 
+### Executing DDL Commands
+
+`CREATE STREAM` statement is parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md#create-stream) (that creates a [CreateStream](parser/CreateStream.md)).
+
+`CREATE STREAM` statement is planned for execution using [EngineExecutor](EngineExecutor.md#plan) (to an [CreateStreamCommand](CreateStreamCommand.md)) and then executed by:
+
+* [DistributingExecutor](rest/DistributingExecutor.md#execute)
+* [StatementExecutor](rest/StatementExecutor.md#handleExecutableDdl)
+
+`DistributingExecutor` uses a transactional Kafka producer to [enqueue the command](rest/CommandQueue.md#enqueueCommand) (to the [CommandQueue](#commandQueue)) that is then fetched by [CommandRunner](rest/CommandRunner.md#fetchAndRunCommands).
+
+[CommandRunner](rest/CommandRunner.md) uses [InteractiveStatementExecutor](rest/InteractiveStatementExecutor.md) to [execute queued commands](rest/CommandRunner.md#executeStatement).
+
+When requested to [handle a statement](rest/InteractiveStatementExecutor.md#handleStatement) (as part of an enqueued command), `InteractiveStatementExecutor` uses [KsqlEngine](KsqlEngine.md) to [execute a ksql plan](KsqlEngine.md#execute).
+
+For a `CREATE STREAM` statement (and other [DdlCommand](DdlCommand.md)s), [EngineExecutor](EngineExecutor.md) uses [EngineContext](EngineContext.md) to [execute it](EngineContext.md#executeDdl).
+
 ## Run It Yourself
 
 !!! note "Get standalone ksqlDB first"

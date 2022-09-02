@@ -1,12 +1,16 @@
 # Debugging ksqlDB
 
-Start [KsqlServerMain](rest/KsqlServerMain.md) with the following JPDA configuration as part of `KSQL_OPTS` environment variable:
+Start [KsqlServerMain](rest/KsqlServerMain.md) (directly or indirectly using [ksql-server-start](rest/index.md) shell script) with the following JPDA configuration as part of `KSQL_OPTS` environment variable.
 
 ```text
-KSQL_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005" \
-./bin/ksql-run-class io.confluent.ksql.rest.server.KsqlServerMain \
-  config/ksql-server.properties \
-  --queries-file create-stream.sql
+export KSQL_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005"
 ```
 
-Create a new Configuration for Remove JVM Debug to attach to `KsqlServerMain`. Enjoy!
+`suspend=y` will suspend the JVM process until you attach to the `address=*:5005`.
+
+```console
+$ ./bin/ksql-server-start config/ksql-server.properties
+Listening for transport dt_socket at address: 5005
+```
+
+Attach to the process (e.g., in IntelliJ IDEA) and step through the code. _Enjoy!_

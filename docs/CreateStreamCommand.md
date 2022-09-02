@@ -26,6 +26,8 @@ DdlCommandResult execute(
   Executor executor)
 ```
 
-`execute` requests the given [Executor](Executor.md) to [execute this CreateStreamCommand](Executor.md#executeCreateStream).
-
 `execute` is part of the [DdlCommand](DdlCommand.md#execute) abstraction.
+
+---
+
+`execute` requests the given [Executor](Executor.md) to [execute this CreateStreamCommand](Executor.md#executeCreateStream).

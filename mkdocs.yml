@@ -111,6 +111,7 @@ nav:
     - Overview: overview.md
     - Server Properties: server-properties.md
     - DataSource: DataSource.md
+    - DdlCommandExec: DdlCommandExec.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
@@ -303,4 +304,5 @@ nav:
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
   - Demos:
+    - Pull Queries: demo/pull-queries.md
     - SHOW STREAMS: demo/show-streams.md

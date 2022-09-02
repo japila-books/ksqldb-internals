@@ -166,6 +166,30 @@ DdlCommand createDdlCommand(
 
 `createDdlCommand` requests the [CommandFactories](#ddlCommandFactory) to [create a DdlCommand](CommandFactories.md#create).
 
+---
+
 `createDdlCommand` is used when:
 
 * `EngineExecutor` is requested to [plan an ExecutableDdlStatement](EngineExecutor.md#plan) and [maybeCreateSinkDdl](EngineExecutor.md#maybeCreateSinkDdl)
+
+## <span id="executeDdl"> Executing DDL Command
+
+```java
+String executeDdl(
+  String sqlExpression,
+  DdlCommand command,
+  boolean withQuery,
+  Set<SourceName> withQuerySources,
+  boolean restoreInProgress)
+```
+
+`executeDdl` requests the [DdlCommandExec](#ddlCommandExec) to [execute the DDL command](DdlCommandExec.md#execute).
+
+!!! FIXME "DropSourceCommand"
+    `executeDdl` cares about `DropSourceCommand` more.
+
+---
+
+`executeDdl` is used when:
+
+* `EngineExecutor` is requested to [execute a DDL Command](EngineExecutor.md#executeDdl)

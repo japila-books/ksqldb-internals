@@ -60,7 +60,7 @@ Node visitCreateStream(
   SqlBaseParser.CreateStreamContext context)
 ```
 
-`visitCreateStream` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM` statements:
+`visitCreateStream` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE STREAM` statements.
 
 ```antlr
 CREATE (OR REPLACE)? (SOURCE)? STREAM (IF NOT EXISTS)? sourceName

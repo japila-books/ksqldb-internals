@@ -1,5 +1,19 @@
 # InteractiveStatementExecutor
 
+## Creating Instance
+
+`InteractiveStatementExecutor` takes the following to be created:
+
+* <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
+* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* <span id="statementParser"> [StatementParser](StatementParser.md)
+* <span id="queryIdGenerator"> `SpecificQueryIdGenerator`
+* <span id="commandDeserializer"> Command Deserializer
+
+`InteractiveStatementExecutor` is created when:
+
+* `KsqlRestApplication` is requested to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (to create a [CommandRunner](CommandRunner.md#statementExecutor) and a `StatusResource`)
+
 ## <span id="handleStatement"> Executing Queued Command
 
 ```java
@@ -161,3 +175,15 @@ If the given `CommandStatusFuture` is available, `putFinalStatus` sets its final
 `putFinalStatus` is used when:
 
 * `InteractiveStatementExecutor` is requested to [execute a command](#handleStatementWithTerminatedQueries) ([KsqlPlan](#executePlan) or [Statement](#executeStatement))
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.rest.server.computation.InteractiveStatementExecutor` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.rest.server.computation.InteractiveStatementExecutor=ALL
+```
+
+Refer to [Logging](../logging.md).

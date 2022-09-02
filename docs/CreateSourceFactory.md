@@ -11,6 +11,8 @@
 
 ## <span id="createStreamCommand"> Creating CreateStreamCommand
 
+`createStreamCommand` can create a [CreateStreamCommand](CreateStreamCommand.md) for a [CreateStream](#createStreamCommand-CreateStream) statement or a [KsqlStructuredDataOutputNode](#createStreamCommand-KsqlStructuredDataOutputNode).
+
 ### <span id="createStreamCommand-CreateStream"> CreateStream
 
 ```java
@@ -19,11 +21,15 @@ CreateStreamCommand createStreamCommand(
   KsqlConfig ksqlConfig)
 ```
 
+`createStreamCommand` [ensureTopicExists](#ensureTopicExists), [buildSchema](#buildSchema) and [buildTimestampColumn](#buildTimestampColumn).
+
 `createStreamCommand` requests the [MetaStore](#metaStore) for the [DataSource](MetaStore.md#getSource) for the given [CreateStream](parser/CreateStream.md).
 
 `createStreamCommand` [throwIfCreateOrReplaceOnSourceStreamOrTable](#throwIfCreateOrReplaceOnSourceStreamOrTable).
 
 In the end, `createStreamCommand` creates a [CreateStreamCommand](CreateStreamCommand.md).
+
+---
 
 `createStreamCommand` is used when:
 

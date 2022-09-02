@@ -1,5 +1,7 @@
 # DistributingExecutor
 
+When requested to [execute a statement](#execute), `DistributingExecutor` uses a transactional Kafka producer to [enqueue the command](CommandQueue.md#enqueueCommand) (to the [CommandQueue](#commandQueue)).
+
 ## Creating Instance
 
 `DistributingExecutor` takes the following to be created:
@@ -7,7 +9,7 @@
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="commandQueue"> [CommandQueue](CommandQueue.md)
 * <span id="distributedCmdResponseTimeout"> Distributed Command Response Timeout
-* <span id="injectorFactory"> `BiFunction<KsqlExecutionContext, ServiceContext, Injector>`
+* <span id="injectorFactory"> [Injector](../Injector.md) factory (for a [KsqlExecutionContext](../KsqlExecutionContext.md) and [ServiceContext](../ServiceContext.md))
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`
 * <span id="validatedCommandFactory"> [ValidatedCommandFactory](ValidatedCommandFactory.md)
 * <span id="errorHandler"> Error Handler
@@ -30,19 +32,25 @@ StatementExecutorResponse execute(
 
 For [InsertInto](../parser/InsertInto.md)s, `execute` [validateInsertIntoQueries](#validateInsertIntoQueries).
 
-`execute` requests the [CommandQueue](#commandQueue) for a [transactional Kafka producer](CommandQueue.md#createTransactionalProducer) (`Producer<CommandId, Command>` to produce to the command topic).
+`execute` [checkIfNotExistsResponse](#checkIfNotExistsResponse).
+
+`execute` [checkAuthorization](#checkAuthorization).
+
+`execute` requests the [CommandQueue](#commandQueue) for a [transactional Kafka producer](CommandQueue.md#createTransactionalProducer) (`Producer<CommandId, Command>` to produce to the [command topic](CommandTopic.md)).
 
 `execute` initialize transactions (using Kafka's [Producer.initTransactions]({{ book.kafka }}/clients/producer/Producer#initTransactions)).
 
 `execute` starts a transaction (using Kafka's [Producer.beginTransaction]({{ book.kafka }}/clients/producer/Producer#beginTransaction)).
 
-`execute` requests the [CommandQueue](#commandQueue) to [waitForCommandConsumer](CommandQueue.md#waitForCommandConsumer).
+`execute` requests the [CommandQueue](#commandQueue) to [waitForCommandConsumer](CommandQueue.md#waitForCommandConsumer) (to let it process all available commands).
 
 `execute`...FIXME
 
 `execute` requests the [CommandQueue](#commandQueue) to [enqueue the command](CommandQueue.md#enqueueCommand) and commits the transaction (using Kafka's [Producer.commitTransaction]({{ book.kafka }}/clients/producer/Producer#commitTransaction)).
 
-`execute`...FIXME
+`execute` waits for the final status (of executing the command) [distributedCmdResponseTimeout](#distributedCmdResponseTimeout) time.
+
+In the end, `execute` creates a `StatementExecutorResponse` (as handled) and closes the transactional Kafka producer.
 
 ---
 

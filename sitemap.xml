@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/DdlCommandExec/</loc>
+         <lastmod>2022-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommandFactory/</loc>
          <lastmod>2022-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -462,6 +467,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/KsqlRestClient/</loc>
+         <lastmod>2022-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/demo/pull-queries/</loc>
          <lastmod>2022-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>

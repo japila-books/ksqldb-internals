@@ -1,0 +1,3 @@
+# RegisterTypeCommand
+
+`RegisterTypeCommand` is...FIXME

@@ -1,0 +1,3 @@
+# DropTypeCommand
+
+`DropTypeCommand` is...FIXME

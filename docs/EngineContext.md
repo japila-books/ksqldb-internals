@@ -16,6 +16,12 @@
 
 `EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
 
+## <span id="ddlCommandExec"> DdlCommandExec
+
+`EngineContext` creates a [DdlCommandExec](DdlCommandExec.md) when [created](#creating-instance).
+
+The `DdlCommandExec` is used to [execute DDL commands](#executeDdl).
+
 ## <span id="queryRegistry"> QueryRegistry
 
 `EngineContext` is given a [QueryRegistry](QueryRegistry.md) when [created](#creating-instance).

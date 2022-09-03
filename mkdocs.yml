@@ -111,7 +111,9 @@ nav:
     - Overview: overview.md
     - Server Properties: server-properties.md
     - DataSource: DataSource.md
-    - DdlCommandExec: DdlCommandExec.md
+    - DdlCommandExec:
+      - DdlCommandExec: DdlCommandExec.md
+      - DdlCommandExec.Executor: DdlCommandExec.Executor.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionStep: ExecutionStep.md
@@ -127,6 +129,7 @@ nav:
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
+    - MutableMetaStore: MutableMetaStore.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
     - RouteQuery: RouteQuery.md
@@ -215,9 +218,15 @@ nav:
     - ConfiguredKsqlPlan: ConfiguredKsqlPlan.md
     - CreateSourceCommand: CreateSourceCommand.md
     - CreateSourceFactory: CreateSourceFactory.md
-    - CreateStreamCommand: CreateStreamCommand.md
     - DataSourceExtractor: DataSourceExtractor.md
-    - DdlCommand: DdlCommand.md
+    - DdlCommands:
+      - AlterSourceCommand: AlterSourceCommand.md
+      - CreateStreamCommand: CreateStreamCommand.md
+      - CreateTableCommand: CreateTableCommand.md
+      - DdlCommand: DdlCommand.md
+      - DropSourceCommand: DropSourceCommand.md
+      - DropTypeCommand: DropTypeCommand.md
+      - RegisterTypeCommand: RegisterTypeCommand.md
     - DdlCommandFactory: DdlCommandFactory.md
     - Executor: Executor.md
     - ExpressionRewriterPlugin: ExpressionRewriterPlugin.md

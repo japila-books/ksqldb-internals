@@ -10,20 +10,20 @@ ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from
 
 ### Executing DDL Commands
 
-`CREATE STREAM` statement is parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md#create-stream) (that creates a [CreateStream](parser/CreateStream.md)).
+[DdlCommand](DdlCommand.md)s (e.g. `CREATE STREAM`) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) in [Statement](parser/Statement.md)s.
 
-`CREATE STREAM` statement is planned for execution using [EngineExecutor](EngineExecutor.md#plan) (to an [CreateStreamCommand](CreateStreamCommand.md)) and then executed by:
+DDL commands are then planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
 
 * [DistributingExecutor](rest/DistributingExecutor.md#execute)
 * [StatementExecutor](rest/StatementExecutor.md#handleExecutableDdl)
 
 `DistributingExecutor` uses a transactional Kafka producer to [enqueue the command](rest/CommandQueue.md#enqueueCommand) (to the [CommandQueue](#commandQueue)) that is then fetched by [CommandRunner](rest/CommandRunner.md#fetchAndRunCommands).
 
-[CommandRunner](rest/CommandRunner.md) uses [InteractiveStatementExecutor](rest/InteractiveStatementExecutor.md) to [execute queued commands](rest/CommandRunner.md#executeStatement).
+[CommandRunner](rest/CommandRunner.md) uses [InteractiveStatementExecutor](rest/InteractiveStatementExecutor.md) to [execute commands](rest/CommandRunner.md#executeStatement).
 
 When requested to [handle a statement](rest/InteractiveStatementExecutor.md#handleStatement) (as part of an enqueued command), `InteractiveStatementExecutor` uses [KsqlEngine](KsqlEngine.md) to [execute a ksql plan](KsqlEngine.md#execute).
 
-For a `CREATE STREAM` statement (and other [DdlCommand](DdlCommand.md)s), [EngineExecutor](EngineExecutor.md) uses [EngineContext](EngineContext.md) to [execute it](EngineContext.md#executeDdl).
+For [DdlCommand](DdlCommand.md)s, [EngineExecutor](EngineExecutor.md) uses [EngineContext](EngineContext.md) to [execute it](EngineContext.md#executeDdl) (using [DdlCommandExec](DdlCommandExec.md#execute)).
 
 ## Run It Yourself
 

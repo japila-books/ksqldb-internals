@@ -129,7 +129,10 @@ nav:
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
-    - MutableMetaStore: MutableMetaStore.md
+    - MetaStore:
+      - MetaStore: MetaStore.md
+      - MetaStoreImpl: MetaStoreImpl.md
+      - MutableMetaStore: MutableMetaStore.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
     - RouteQuery: RouteQuery.md
@@ -233,7 +236,6 @@ nav:
     - KsqlPlan: KsqlPlan.md
     - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: planner/LogicalPlanner.md
-    - MetaStore: MetaStore.md
     - PhysicalPlan: PhysicalPlan.md
     - PhysicalPlanBuilder: PhysicalPlanBuilder.md
     - Plan Tree Nodes:

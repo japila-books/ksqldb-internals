@@ -10,7 +10,7 @@ ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from
 
 ### Executing DDL Commands
 
-[DdlCommand](DdlCommand.md)s (e.g. `CREATE STREAM`) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) in [Statement](parser/Statement.md)s.
+[DdlCommand](DdlCommand.md)s (e.g. `CREATE STREAM`) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
 
 DDL commands are then planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
 

@@ -9,29 +9,13 @@
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
 * <span id="metaStore"> [MetaStore](MetaStore.md)
 
-`CommandFactories` is created alongside an [EngineContext](EngineContext.md#ddlCommandFactory)
-
-## <span id="FACTORIES"> Command Factories
-
-`CommandFactories` creates `FACTORIES` collection of handlers (_functions_) for [DdlStatement](parser/DdlStatement.md)s to produce `DdlCommand`s.
-
-DdlStatement    | Handler
-----------------|---------------------
- [CreateStream](parser/CreateStream.md) | [handleCreateStream](#handleCreateStream)
- [CreateTable](parser/CreateTable.md)   | [handleCreateTable](#handleCreateTable)
- `DropStream`   | `handleDropStream`
- `DropTable`    | `handleDropTable`
- `RegisterType` | `handleRegisterType`
- `DropType`     | `handleDropType`
- `AlterSource`  | `handleAlterSource`
-
-The `FACTORIES` is used in [create](#create).
+`CommandFactories` is created alongside [EngineContext](EngineContext.md#ddlCommandFactory)
 
 ## <span id="create"> Creating DdlCommand
 
 `create` is part of the [DdlCommandFactory](DdlCommandFactory.md#create) abstraction.
 
-`create` can create a [DdlCommand](DdlCommand.md) for a [DdlStatement](#create-DdlStatement) or a [KsqlStructuredDataOutputNode](#create-KsqlStructuredDataOutputNode).
+`create` creates a [DdlCommand](DdlCommand.md) for a [DdlStatement](#create-DdlStatement) or a [KsqlStructuredDataOutputNode](#create-KsqlStructuredDataOutputNode).
 
 ### <span id="create-DdlStatement"> DdlStatement
 
@@ -42,7 +26,7 @@ DdlCommand create(
   SessionConfig config)
 ```
 
-`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) in the [FACTORIES](#FACTORIES) registry to handle it (and produce a [DdlCommand](DdlCommand.md)).
+`create` looks up (the class of) the given [DdlStatement](parser/DdlStatement.md) (in [FACTORIES](#FACTORIES)) to handle it and produce a [DdlCommand](DdlCommand.md).
 
 Unless found, `create` throws a `KsqlException`:
 
@@ -61,7 +45,21 @@ For a `KSTREAM` node output type (of the given `KsqlStructuredDataOutputNode`), 
 
 Otherwise, `create` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateTableCommand](CreateSourceFactory.md#createTableCommand).
 
-## <span id="handleCreateStream"> handleCreateStream
+## <span id="FACTORIES"> FACTORIES
+
+`CommandFactories` creates `FACTORIES` lookup table (of handlers) to [create DdlCommands from DdlStatements](#create).
+
+DdlStatement    | Handler | DdlCommand
+----------------|---------|-----------
+ `AlterSource`  | `handleAlterSource` | [AlterSourceCommand](AlterSourceCommand.md)
+ [CreateStream](parser/CreateStream.md) | [handleCreateStream](#handleCreateStream) | [CreateStreamCommand](CreateStreamCommand.md)
+ [CreateTable](parser/CreateTable.md)   | [handleCreateTable](#handleCreateTable) | [CreateTableCommand](CreateTableCommand.md)
+ `DropStream`   | `handleDropStream` |
+ `DropTable`    | `handleDropTable` |
+ `DropType`     | `handleDropType` | [DropTypeCommand](DropTypeCommand.md)
+ `RegisterType` | `handleRegisterType` | [RegisterTypeCommand](RegisterTypeCommand.md)
+
+### <span id="handleCreateStream"> handleCreateStream
 
 ```java
 CreateStreamCommand handleCreateStream(
@@ -69,9 +67,9 @@ CreateStreamCommand handleCreateStream(
   CreateStream statement)
 ```
 
-`handleCreateStream` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand) (for the given [CreateStream](parser/CreateStream.md) statement).
+`handleCreateStream` requests the [CreateSourceFactory](#createSourceFactory) for a [CreateStreamCommand](CreateSourceFactory.md#createStreamCommand-CreateStream) (for the given [CreateStream](parser/CreateStream.md) statement).
 
-## <span id="handleCreateTable"> handleCreateTable
+### <span id="handleCreateTable"> handleCreateTable
 
 ```java
 CreateTableCommand handleCreateTable(

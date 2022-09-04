@@ -8,8 +8,8 @@
 
 * <span id="serviceContext"> ServiceContext
 * <span id="processingLogContext"> ProcessingLogContext
-* <span id="serviceId"> Service ID
-* <span id="metaStore"> MutableMetaStore
+* [Service ID](#serviceId)
+* [MutableMetaStore](#metaStore)
 * <span id="engineMetricsFactory"> `Function<KsqlEngine, KsqlEngineMetrics>`
 * <span id="queryIdGenerator"> QueryIdGenerator
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
@@ -21,11 +21,21 @@
 * `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication)
 * `StandaloneExecutorFactory` is requested to [create](rest/StandaloneExecutorFactory.md#create)
 
-## <span id="primaryContext"> EngineContext
+### <span id="serviceId"> Service ID
+
+`KsqlEngine` can be given a **Service ID** when [created](#creating-instance). Unless defined, the Service ID is from [ServiceInfo](ServiceInfo.md#serviceId) based on [ksql.service.id](KsqlConfig.md#KSQL_SERVICE_ID_CONFIG) configuration property.
+
+### <span id="metaStore"> MutableMetaStore
+
+`KsqlEngine` can be given a [MutableMetaStore](MutableMetaStore.md) when [created](#creating-instance).
+
+The `MutableMetaStore` is used to create the [EngineContext](#primaryContext).
+
+### <span id="primaryContext"> EngineContext
 
 `KsqlEngine` [creates an EngineContext](EngineContext.md#create) when [created](#creating-instance).
 
-`KsqlEngine` is (pretty much) a facade of the `EngineContext`.
+`KsqlEngine` delegates most of its processing to the `EngineContext` (directly or indirectly using[EngineExecutor](EngineExecutor.md#create)) and is (pretty much) their facade.
 
 ## <span id="execute"> Executing Statement
 

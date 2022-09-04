@@ -16,6 +16,28 @@
 
 ## <span id="KSQL_SERVICE_ID_CONFIG"><span id="ksql.service.id"> ksql.service.id
 
+The ID of the ksql service.
+
+It is used as prefix for all implicitly named resources created by this instance in Kafka.
+By convention, the id should end in a separator character of some form (e.g. a dash or underscore) as this makes identifiers easier to read.
+
+Default: `default_`
+
+Used when:
+
+* `MetricCollectors` is requested to `addConfigurableReporter`
+* `DenyListPropertyValidator` is created
+* `QueryApplicationId` is requested to [buildInternalTopicPrefix](QueryApplicationId.md#buildInternalTopicPrefix)
+* `ReservedInternalTopics` is requested to [processingLogTopic](rest/ReservedInternalTopics.md#processingLogTopic) and [toKsqlInternalTopic](rest/ReservedInternalTopics.md#toKsqlInternalTopic)
+* `ServiceInfo` is [created](ServiceInfo.md#create)
+* `CleanupListener` is requested to `onClose`
+* `OrphanedTransientQueryCleaner` is requested to `cleanupOrphanedInternalTopics`
+* `QueryLogger` is requested to [configure](QueryLogger.md#configure)
+* `QueryBuilder` is requested to [buildStreamsProperties](QueryBuilder.md#buildStreamsProperties)
+* `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication), [setUpHttpMetrics](rest/KsqlRestApplication.md#setUpHttpMetrics)
+* `StandaloneExecutorFactory` is [created](rest/StandaloneExecutorFactory.md#create)
+* _others_
+
 ## <span id="KSQL_SOURCE_TABLE_MATERIALIZATION_ENABLED"><span id="ksql.source.table.materialization.enabled"> ksql.source.table.materialization.enabled
 
 ## <span id="KSQL_VARIABLE_SUBSTITUTION_ENABLE"><span id="ksql.variable.substitution.enable"> ksql.variable.substitution.enable

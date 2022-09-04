@@ -1,0 +1,3 @@
+# FunctionRegistry
+
+`FunctionRegistry` is...FIXME

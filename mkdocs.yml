@@ -120,6 +120,7 @@ nav:
     - ExecutionStepFactory: ExecutionStepFactory.md
     - Format: Format.md
     - FormatFactory: FormatFactory.md
+    - FunctionRegistry: FunctionRegistry.md
     - HARouting: HARouting.md
     - Injector: Injector.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
@@ -152,6 +153,7 @@ nav:
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
     - ServiceContext: ServiceContext.md
+    - ServiceInfo: ServiceInfo.md
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
     - SharedKafkaStreamsRuntimeImpl: SharedKafkaStreamsRuntimeImpl.md
@@ -163,6 +165,7 @@ nav:
     - SqlTypeParser: SqlTypeParser.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
+    - TypeRegistry: TypeRegistry.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
     - Persistent Queries: persistent-queries.md

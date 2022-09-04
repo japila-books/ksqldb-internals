@@ -1,0 +1,3 @@
+# TypeRegistry
+
+`TypeRegistry` is...FIXME

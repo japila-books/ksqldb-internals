@@ -431,6 +431,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/StreamSelect/</loc>
+         <lastmod>2022-09-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/StreamSelectBuilder/</loc>
+         <lastmod>2022-09-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/StreamSource/</loc>
          <lastmod>2022-09-04</lastmod>
          <changefreq>daily</changefreq>

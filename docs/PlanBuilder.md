@@ -4,6 +4,22 @@
 
 ## Contract (Subset)
 
+### <span id="visitStreamSelect"> Visiting StreamSelect
+
+```java
+KStreamHolder<K> visitStreamSelect(
+  StreamSelect<K> streamSelect,
+  PlanInfo planInfo)
+```
+
+Visits a [StreamSelect](StreamSelect.md)
+
+See [KSPlanBuilder](KSPlanBuilder.md#visitStreamSelect)
+
+Used when:
+
+* `StreamSelect` is requested to [build a KStreamHolder](StreamSelect.md#build)
+
 ### <span id="visitStreamSource"> Visiting StreamSource
 
 ```java

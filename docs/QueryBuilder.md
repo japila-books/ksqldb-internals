@@ -45,11 +45,6 @@ TransientQueryMetadata buildTransientQuery(
   Optional<ImmutableMap<TopicPartition, Long>> endOffsets)
 ```
 
-!!! warning "Kafka Streams"
-    `buildTransientQuery` is given a new `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) that is used to build a [RuntimeBuildContext](#buildContext) and then a `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology)).
-
-    That means that the Kafka Streams topology can only be created while [building the RuntimeBuildContext](#buildContext).
-
 `buildTransientQuery` requests the [SessionConfig](#config) for the [KsqlConfig](SessionConfig.md#getConfig) (with overrides applied).
 
 `buildTransientQuery` builds the following:

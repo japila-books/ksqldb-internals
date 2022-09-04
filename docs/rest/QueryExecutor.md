@@ -156,7 +156,7 @@ QueryMetadataHolder handleStreamPullQuery(
   AtomicReference<Decrementer> refDecrementer)
 ```
 
-Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [createStreamPullQuery](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata` to be returned inside a `QueryMetadataHolder`).
+Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [create a stream pull query](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata` to be returned inside a `QueryMetadataHolder`).
 
 ---
 

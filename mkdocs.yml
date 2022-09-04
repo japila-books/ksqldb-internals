@@ -116,7 +116,10 @@ nav:
       - DdlCommandExec.Executor: DdlCommandExec.Executor.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
-    - ExecutionStep: ExecutionStep.md
+    - ExecutionSteps:
+      - ExecutionStep: ExecutionStep.md
+      - SourceStep: SourceStep.md
+      - StreamSelect: StreamSelect.md
     - ExecutionStepFactory: ExecutionStepFactory.md
     - Format: Format.md
     - FormatFactory: FormatFactory.md
@@ -160,9 +163,9 @@ nav:
     - SourceBuilder: SourceBuilder.md
     - SourceBuilderBase: SourceBuilderBase.md
     - SourceBuilderV1: SourceBuilderV1.md
-    - SourceStep: SourceStep.md
     - SqlPrimitiveType: SqlPrimitiveType.md
     - SqlTypeParser: SqlTypeParser.md
+    - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md

@@ -16,6 +16,36 @@
 
 `QueryRegistryImpl` is given a [QueryBuilderFactory](QueryBuilderFactory.md) or defines a function to create a [QueryBuilder](QueryBuilder.md) when [created](#creating-instance).
 
+## <span id="createStreamPullQuery"> Creating Stream Pull Query
+
+```java
+TransientQueryMetadata createStreamPullQuery(
+  SessionConfig config,
+  ServiceContext serviceContext,
+  ProcessingLogContext processingLogContext,
+  MetaStore metaStore,
+  String statementText,
+  QueryId queryId,
+  Set<SourceName> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  LogicalSchema schema,
+  OptionalInt limit,
+  Optional<WindowInfo> windowInfo,
+  boolean excludeTombstones,
+  ImmutableMap<TopicPartition, Long> endOffsets)
+```
+
+`createStreamPullQuery` is part of the [QueryRegistry](QueryRegistry.md#createStreamPullQuery) abstraction.
+
+---
+
+`createStreamPullQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create) to [buildTransientQuery](QueryBuilder.md#buildTransientQuery) (with a new Kafka Streams' `StreamsBuilder`).
+
+`createStreamPullQuery` requests the [TransientQueryMetadata](TransientQueryMetadata.md) to [initialize](QueryMetadataImpl.md#initialize).
+
+`createStreamPullQuery` [notifies the QueryEventListeners](#notifyCreate).
+
 ## <span id="createTransientQuery"> Creating Transient Query
 
 ```java
@@ -35,6 +65,10 @@ TransientQueryMetadata createTransientQuery(
   boolean excludeTombstones)
 ```
 
+`createTransientQuery` is part of the [QueryRegistry](QueryRegistry.md#createTransientQuery) abstraction.
+
+---
+
 `createTransientQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create).
 
 `createTransientQuery` requests the `QueryBuilder` to [build a transient query](QueryBuilder.md#buildTransientQuery) (with a new `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) that gives a [TransientQueryMetadata](TransientQueryMetadata.md)).
@@ -42,10 +76,6 @@ TransientQueryMetadata createTransientQuery(
 `createTransientQuery` requests the `TransientQueryMetadata` to [initialize](QueryMetadataImpl.md#initialize).
 
 `createTransientQuery` [registerTransientQuery](#registerTransientQuery) and returns the `TransientQueryMetadata`.
-
----
-
-`createTransientQuery` is part of the [QueryRegistry](QueryRegistry.md#createTransientQuery) abstraction.
 
 ## <span id="createOrReplacePersistentQuery"> Creating or Replacing Persistent Query
 

@@ -227,11 +227,11 @@ TransientQueryMetadata executeStreamPullQuery(
   ImmutableMap<TopicPartition, Long> endOffsets)
 ```
 
-`executeStreamPullQuery` [plan the Query](#planQuery) (with an empty sink and query ID).
+`executeStreamPullQuery` [plans the query](#planQuery) (with an empty sink and query ID).
 
 `executeStreamPullQuery` requests the [EngineContext](#engineContext) to [create a QueryValidator](EngineContext.md#createQueryValidator) to [validateQuery](QueryValidator.md#validateQuery) (with the [SessionConfig](#config) and the `ExecutionPlan` with [ExecutionStep](ExecutionStep.md)s).
 
-`executeStreamPullQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [createStreamPullQuery](QueryRegistry.md#createStreamPullQuery).
+`executeStreamPullQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a stream pull query](QueryRegistry.md#createStreamPullQuery).
 
 ---
 

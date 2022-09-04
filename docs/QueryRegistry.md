@@ -28,6 +28,32 @@ Used when:
 
 * `EngineExecutor` is requested to [execute a persistent query](EngineExecutor.md#executePersistentQuery)
 
+### <span id="createStreamPullQuery"> Creating Stream Pull Query
+
+```java
+TransientQueryMetadata createStreamPullQuery(
+  SessionConfig config,
+  ServiceContext serviceContext,
+  ProcessingLogContext processingLogContext,
+  MetaStore metaStore,
+  String statementText,
+  QueryId queryId,
+  Set<SourceName> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  LogicalSchema schema,
+  OptionalInt limit,
+  Optional<WindowInfo> windowInfo,
+  boolean excludeTombstones,
+  ImmutableMap<TopicPartition, Long> endOffsets)
+```
+
+[QueryRegistryImpl.createStreamPullQuery](QueryRegistryImpl.md#createStreamPullQuery)
+
+Used when:
+
+* `EngineExecutor` is requested to [executeStreamPullQuery](EngineExecutor.md#executeStreamPullQuery)
+
 ### <span id="createTransientQuery"> createTransientQuery
 
 ```java

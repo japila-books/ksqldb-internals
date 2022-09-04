@@ -2,6 +2,74 @@
 
 `Query` is a [Statement](Statement.md).
 
+## Demo
+
+### Create KsqlEngine
+
+Create [KsqlEngine](../KsqlEngine.md#demo) with `bootstrap.servers` configuration property (to let the [Injector](../Injector.md) resolve a stream source for a query).
+
+```scala
+import io.confluent.ksql.util.KsqlConfig
+import scala.jdk.CollectionConverters._
+val props = Map("bootstrap.servers" -> ":9092").asJava
+val ksqlConfig = new KsqlConfig(props)
+
+val ksqlEngine = ???
+```
+
+### Create Stream
+
+```scala
+val ksql = """
+  CREATE STREAM orders (
+    id bigint KEY,
+    item varchar)
+  WITH (
+    kafka_topic = 'orders_topic',
+    value_format = 'json',
+    partitions = 2);
+"""
+
+val statements = ksqlEngine.parse(ksql)
+val parsed = statements.asScala.head
+val prepared = ksqlEngine.prepare(parsed)
+```
+
+```scala
+import io.confluent.ksql.statement.Injectors
+val serviceContext = ksqlEngine.getServiceContext
+val injector = Injectors.DEFAULT(ksqlEngine, serviceContext)
+val executionOverrides = Map.empty[String, String].asJava;
+
+import io.confluent.ksql.statement.ConfiguredStatement
+import io.confluent.ksql.config.SessionConfig
+val preconfigured = ConfiguredStatement.of(
+  prepared,
+  SessionConfig.of(ksqlConfig, executionOverrides))
+val configured = injector.inject(preconfigured)
+
+ksqlEngine.execute(serviceContext, configured)
+```
+
+### Pull Query
+
+```scala
+val ksql = "SELECT * FROM orders;"
+
+val statements = ksqlEngine.parse(ksql)
+val parsed = statements.asScala.head
+val prepared = ksqlEngine.prepare(parsed)
+
+val preconfigured = ConfiguredStatement.of(
+  prepared,
+  SessionConfig.of(ksqlConfig, executionOverrides))
+val configured = injector.inject(preconfigured)
+
+import io.confluent.ksql.parser.tree.Query
+val query = configured.getStatement.asInstanceOf[Query]
+assert(query.isPullQuery)
+```
+
 ## Creating Instance
 
 `Query` takes the following to be created:

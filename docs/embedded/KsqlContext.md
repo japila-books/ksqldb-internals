@@ -1,5 +1,26 @@
 # KsqlContext
 
+## Demo
+
+```scala
+import io.confluent.ksql.util.KsqlConfig
+import scala.jdk.CollectionConverters._
+val props = Map("bootstrap.servers" -> ":9092").asJava
+val ksqlConfig = new KsqlConfig(props)
+
+import io.confluent.ksql.logging.processing.ProcessingLogContext
+val processingLogContext = ProcessingLogContext.create()
+
+import io.confluent.ksql.metrics.MetricCollectors
+val metricCollectors = new MetricCollectors()
+
+import io.confluent.ksql.embedded.KsqlContext
+val ksqlContext = KsqlContext.create(
+  ksqlConfig,
+  processingLogContext,
+  metricCollectors)
+```
+
 ## Creating Instance
 
 `KsqlContext` takes the following to be created:

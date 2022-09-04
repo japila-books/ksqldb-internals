@@ -6,7 +6,7 @@
 
 `AstBuilder` takes the following to be created:
 
-* <span id="typeRegistry"> `TypeRegistry`
+* <span id="typeRegistry"> [TypeRegistry](../TypeRegistry.md)
 
 `AstBuilder` is created when:
 
@@ -22,6 +22,8 @@ Statement buildStatement(
 ```
 
 `buildStatement` [collects the source names](#getSources) (in a SQL statement) and [builds a Statement](#build).
+
+---
 
 `buildStatement` is used when:
 
@@ -47,6 +49,8 @@ Set<SourceName> getSources(
 1. Only given when `AstBuilder` is requested to build a [Statement](#buildStatement)
 
 `build` creates a [Visitor](AstBuilder_Visitor.md) to build a [node tree](Node.md) (for a given `ParserRuleContext` that represents a parsed SQL text).
+
+---
 
 `build` is used when:
 

@@ -2,6 +2,20 @@
 
 `DefaultKsqlParser` is a [KsqlParser](KsqlParser.md).
 
+## Demo
+
+```scala
+import io.confluent.ksql.parser.DefaultKsqlParser
+val parser = new DefaultKsqlParser()
+
+val ksql = "SELECT * FROM my_stream;"
+val statements = parser.parse(ksql)
+
+import scala.jdk.CollectionConverters._
+val pstmt = statements.asScala.head
+assert(pstmt.isInstanceOf[io.confluent.ksql.parser.KsqlParser.ParsedStatement])
+```
+
 ## Creating Instance
 
 `DefaultKsqlParser` takes no arguments to be created.
@@ -42,10 +56,10 @@ PreparedStatement<?> prepare(
   TypeRegistry typeRegistry)
 ```
 
-`prepare` creates an [AstBuilder](AstBuilder.md) (with the given `TypeRegistry`) to [build a Statement](AstBuilder.md#buildStatement).
-
-In the end, `prepare` creates a `PreparedStatement` (with the SQL query in text format and as the [Statement](Statement.md)).
+`prepare` is part of the [KsqlParser](KsqlParser.md#prepare) abstraction.
 
 ---
 
-`prepare` is part of the [KsqlParser](KsqlParser.md#prepare) abstraction.
+`prepare` creates an [AstBuilder](AstBuilder.md) (with the given `TypeRegistry`) to [build a Statement](AstBuilder.md#buildStatement).
+
+In the end, `prepare` creates a `PreparedStatement` (with the SQL query in text format and as the [Statement](Statement.md)).

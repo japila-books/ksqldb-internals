@@ -317,6 +317,8 @@ nav:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
+    - KsqlQueryType: KsqlQueryType.md
+    - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
   - Demos:
     - Pull Queries: demo/pull-queries.md
     - SHOW STREAMS: demo/show-streams.md

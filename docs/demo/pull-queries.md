@@ -40,7 +40,7 @@ Query terminated
 ## Explain Query
 
 ```text
-ksql> explain SELECT * FROM riderLocations;
+ksql> EXPLAIN SELECT * FROM riderLocations;
 
 ID                   : transient_RIDERLOCATIONS_5838976163364029274
 Query Type           : PUSH
@@ -85,7 +85,7 @@ Topologies:
 ## Describe Stream
 
 ```text
-ksql> DESCRIBE riderlocations EXTENDED;
+ksql> DESCRIBE riderlocations;
 
 Name                 : RIDERLOCATIONS
  Field     | Type

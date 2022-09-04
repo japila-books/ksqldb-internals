@@ -2,6 +2,48 @@
 
 `KsqlEngine` is a facade of [EngineContext](#primaryContext).
 
+## Demo: Creating KsqlEngine
+
+```scala
+import io.confluent.ksql.util.KsqlConfig
+val ksqlConfig = KsqlConfig.empty
+
+import io.confluent.ksql.services._
+val serviceContext = ServiceContextFactory.create(ksqlConfig, () => DisabledKsqlClient.instance)
+
+import io.confluent.ksql.logging.processing.ProcessingLogContext
+val processingLogContext = ProcessingLogContext.create()
+
+import io.confluent.ksql.function.InternalFunctionRegistry
+val functionRegistry = new InternalFunctionRegistry()
+
+import io.confluent.ksql.ServiceInfo
+val serviceInfo = ServiceInfo.create(ksqlConfig)
+
+import io.confluent.ksql.query.id.SequentialQueryIdGenerator
+val queryIdGenerator = new SequentialQueryIdGenerator()
+
+import io.confluent.ksql.engine.QueryEventListener
+import scala.jdk.CollectionConverters._
+val queryEventListeners = Seq.empty[QueryEventListener].asJava
+
+import io.confluent.ksql.metrics.MetricCollectors
+val metricCollectors = new MetricCollectors()
+```
+
+```scala
+import io.confluent.ksql.engine.KsqlEngine
+val ksqlEngine = new KsqlEngine(
+  serviceContext,
+  processingLogContext,
+  functionRegistry,
+  serviceInfo,
+  queryIdGenerator,
+  ksqlConfig,
+  queryEventListeners,
+  metricCollectors)
+```
+
 ## Creating Instance
 
 `KsqlEngine` takes the following to be created:

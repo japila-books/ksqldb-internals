@@ -65,7 +65,7 @@ QueryMetadataHolder handleQuery(
   boolean excludeTombstones)
 ```
 
-#### <span id="handleQuery-pull-query"> Pull Query
+#### <span id="handleQuery-pull-query"><span id="handleQuery-pull-query-stream"><span id="handleQuery-pull-query-table"> Pull Query
 
 For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
 
@@ -162,13 +162,17 @@ Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#k
 
 `handleStreamPullQuery` requests the [RateLimiter](#rateLimiter) to `checkLimit`.
 
-`handleStreamPullQuery` requests the [pullBandRateLimiter](#pullBandRateLimiter) to `allow` a `PULL` query.
+`handleStreamPullQuery` requests the [pullBandRateLimiter](#pullBandRateLimiter) to [allow](../SlidingWindowRateLimiter.md#allow) a [PULL](../KsqlQueryType.md#PULL) query.
 
 `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [createStreamPullQuery](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata`).
 
 `handleStreamPullQuery` requests the [LocalCommands](#localCommands) (if defined) to `write` the `TransientQueryMetadata`.
 
 In the end, `handleStreamPullQuery` gives a `QueryMetadataHolder` with the `StreamPullQueryMetadata`.
+
+---
+
+`handleStreamPullQuery` is used to [handle a stream pull query](#handleQuery-pull-query-stream).
 
 ### <span id="handleTablePullQuery"> handleTablePullQuery
 

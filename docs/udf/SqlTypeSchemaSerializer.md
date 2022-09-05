@@ -1,0 +1,3 @@
+# SqlTypeSchemaSerializer
+
+`SqlTypeSchemaSerializer` is...FIXME

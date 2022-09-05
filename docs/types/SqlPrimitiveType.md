@@ -1,6 +1,6 @@
 # SqlPrimitiveType
 
-`SqlPrimitiveType` is a `SqlType`.
+`SqlPrimitiveType` is a [SqlType](SqlType.md).
 
 ## <span id="PRIMITIVE_TYPE_NAMES"> Primitive Types
 
@@ -19,3 +19,11 @@
 * `TIMESTAMP`
 * `TIME`
 * `VARCHAR`
+
+## Demo
+
+```scala
+import io.confluent.ksql.schema.ksql.types._
+val string = SqlPrimitiveType.of(SqlBaseType.STRING)
+assert(string.toString == "STRING")
+```

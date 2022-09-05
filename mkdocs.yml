@@ -89,7 +89,7 @@ extra:
     github: https://github.com/apache/kafka/tree/3.2.1
     api: https://kafka.apache.org/32/javadoc/
   ksqldb:
-    docs: https://docs.ksqldb.io/en/0.27.2-ksqldb/
+    docs: https://docs.ksqldb.io/en/0.27.2-ksqldb
     github: https://github.com/confluentinc/ksql/blob/v0.27.2
     version: 0.27.2
     version_major: 0.27
@@ -133,6 +133,7 @@ nav:
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
+    - KsqlQueryType: KsqlQueryType.md
     - MetaStore:
       - MetaStore: MetaStore.md
       - MetaStoreImpl: MetaStoreImpl.md
@@ -163,7 +164,6 @@ nav:
     - SourceBuilder: SourceBuilder.md
     - SourceBuilderBase: SourceBuilderBase.md
     - SourceBuilderV1: SourceBuilderV1.md
-    - SqlPrimitiveType: SqlPrimitiveType.md
     - SqlTypeParser: SqlTypeParser.md
     - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSource: StreamSource.md
@@ -175,6 +175,13 @@ nav:
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
     - Push Queries: push-queries.md
+    - Data Types:
+      - SqlBaseType: types/SqlBaseType.md
+      - SqlPrimitiveType: types/SqlPrimitiveType.md
+      - SqlType: types/SqlType.md
+    - UDFs:
+      - Column: udf/Column.md
+      - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
   - Query Parsing:
     - parser/index.md
     - AstBuilder:
@@ -320,7 +327,6 @@ nav:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
-    - KsqlQueryType: KsqlQueryType.md
     - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
   - Demos:
     - Pull Queries: demo/pull-queries.md

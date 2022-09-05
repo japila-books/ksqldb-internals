@@ -1,0 +1,3 @@
+# PushQueryMetadata
+
+`PushQueryMetadata` is...FIXME

@@ -4,7 +4,7 @@
 
 * `PERSISTENT`
 * [PULL](#PULL)
-* `PUSH`
+* [PUSH](#PUSH)
 
 ## <span id="PULL"> PULL
 
@@ -12,3 +12,11 @@
 
 * [handleStreamPullQuery](rest/QueryExecutor.md#handleStreamPullQuery)
 * [handleTablePullQuery](rest/QueryExecutor.md#handleTablePullQuery)
+
+## <span id="PUSH"> PUSH
+
+`KsqlQueryType.PULL` is used to request the [SlidingWindowRateLimiter](rest/QueryExecutor.md#pullBandRateLimiter) to [allow](SlidingWindowRateLimiter.md#allow) the following:
+
+* [handleScalablePushQuery](rest/QueryExecutor.md#handleScalablePushQuery)
+
+`KsqlQueryType.PUSH` is the [query type](TransientQueryMetadata.md#getQueryType) of [TransientQueryMetadata](TransientQueryMetadata.md).

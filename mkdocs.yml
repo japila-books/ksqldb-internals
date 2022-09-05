@@ -153,6 +153,7 @@ nav:
     - QueryRegistryImpl: QueryRegistryImpl.md
     - PersistentQueryMetadata: PersistentQueryMetadata.md
     - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
+    - PushQueryMetadata: PushQueryMetadata.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md

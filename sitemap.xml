@@ -266,6 +266,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/PushQueryMetadata/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryAnalyzer/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>

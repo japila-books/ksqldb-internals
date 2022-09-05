@@ -121,3 +121,26 @@ Local runtime statistics
 
 (Statistics of the local KSQL server interaction with the Kafka topic locations)
 ```
+
+## Disable Stream Pull Queries
+
+The above steps worked just fine because pull queries on streams are enabled by default (based on [ksql.query.pull.stream.enabled](../KsqlConfig.md#ksql.query.pull.stream.enabled)).
+
+Let's turn it off and see the result. In the `ksql` CLI execute the following command:
+
+```sql
+SET 'ksql.query.pull.stream.enabled' = 'false';
+```
+
+This time executing the following query will inevitably lead to an exception.
+
+=== "KSQL"
+
+    ```sql
+    SELECT * FROM riderLocations;
+    ```
+
+```text
+Pull queries on streams are disabled. To create a push query on the stream, add EMIT CHANGES to the end. To enable pull queries on streams, set the ksql.query.pull.stream.enabled config to 'true'.
+Statement: SELECT * FROM riderLocations;: SELECT * FROM riderLocations;
+```

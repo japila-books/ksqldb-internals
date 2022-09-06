@@ -216,6 +216,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlSchemaRegistryClientFactory/</loc>
+         <lastmod>2022-09-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/MetaStore/</loc>
          <lastmod>2022-09-06</lastmod>
          <changefreq>daily</changefreq>
@@ -377,6 +382,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceContext/</loc>
+         <lastmod>2022-09-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/ServiceContextFactory/</loc>
          <lastmod>2022-09-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -927,6 +937,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ReservedInternalTopics/</loc>
+         <lastmod>2022-09-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/RestServiceContextFactory/</loc>
          <lastmod>2022-09-06</lastmod>
          <changefreq>daily</changefreq>
     </url>

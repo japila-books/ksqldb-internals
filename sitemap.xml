@@ -561,6 +561,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/demo/schema-registry/</loc>
+         <lastmod>2022-09-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/show-streams/</loc>
          <lastmod>2022-09-06</lastmod>
          <changefreq>daily</changefreq>

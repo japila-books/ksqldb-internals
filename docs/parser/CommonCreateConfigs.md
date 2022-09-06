@@ -33,6 +33,10 @@ Used when:
 
 ## <span id="VALUE_AVRO_SCHEMA_FULL_NAME"> VALUE_AVRO_SCHEMA_FULL_NAME
 
+The fully qualified name of the Avro schema to use for values
+
+Default: (undefined)
+
 ## <span id="VALUE_DELIMITER_PROPERTY"> VALUE_DELIMITER_PROPERTY
 
 ## <span id="VALUE_FORMAT_PROPERTY"><span id="VALUE_FORMAT"> VALUE_FORMAT

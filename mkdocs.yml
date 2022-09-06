@@ -334,4 +334,5 @@ nav:
     - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
   - Demos:
     - Pull Queries: demo/pull-queries.md
+    - Schema Registry: demo/schema-registry.md
     - SHOW STREAMS: demo/show-streams.md

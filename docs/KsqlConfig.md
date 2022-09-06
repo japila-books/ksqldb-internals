@@ -26,7 +26,7 @@ Used when:
 
 ## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url
 
-The URL of a schema registry (e.g. [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html), [Apicurio Schema Registry](https://www.apicur.io/registry/))
+The URL of the REST endpoint of a schema registry (e.g. [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/), [Apicurio Schema Registry](https://www.apicur.io/registry/))
 
 Default: (empty)
 

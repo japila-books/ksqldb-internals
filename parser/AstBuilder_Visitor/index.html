@@ -47,6 +47,20 @@
 </code></pre></div> <p><code>visitCreateTable</code> is part of the <code>SqlBaseBaseVisitor</code> abstraction to handle <code>CREATE TABLE</code> statements.</p> <div class=highlight><pre><span></span><code><span class=nl>CREATE</span><span class=w> </span><span class=err>(OR</span><span class=w> </span><span class=err>REPLACE)?</span><span class=w> </span><span class=err>(SOURCE)?</span><span class=w> </span><span class=err>TABLE</span><span class=w> </span><span class=err>(IF</span><span class=w> </span><span class=err>NOT</span><span class=w> </span><span class=err>EXISTS)?</span><span class=w> </span><span class=err>sourceName</span><span class=w></span>
 <span class=err>(tableElements)?</span><span class=w></span>
 <span class=err>(WITH</span><span class=w> </span><span class=err>tableProperties)?</span><span class=w></span>
+
+<span class=err>tableElements</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=nv>tableElement</span><span class=w> </span><span class=o>(</span><span class=s1>&#39;,&#39;</span><span class=w> </span><span class=nv>tableElement</span><span class=o>)*</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
+
+<span class=nl>tableElement</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=nv>identifier</span><span class=w> </span><span class=nv>type</span><span class=w> </span><span class=nv>columnConstraints</span><span class=o>?</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
+
+<span class=nl>columnConstraints</span><span class=w></span>
+<span class=w>    </span><span class=p>:</span><span class=w> </span><span class=o>((</span><span class=no>PRIMARY</span><span class=o>)?</span><span class=w> </span><span class=no>KEY</span><span class=o>)</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>HEADERS</span><span class=w></span>
+<span class=w>    </span><span class=o>|</span><span class=w> </span><span class=no>HEADER</span><span class=w> </span><span class=s1>&#39;(&#39;</span><span class=w> </span><span class=no>STRING</span><span class=w> </span><span class=s1>&#39;)&#39;</span><span class=w></span>
+<span class=w>    </span><span class=p>;</span><span class=w></span>
 </code></pre></div> <p><code>visitCreateTable</code> creates a <a href=../CreateTable/ >CreateTable</a>.</p> <h3 id=create-table-as><span id=visitCreateTableAs> CREATE TABLE AS<a class=headerlink href=#create-table-as title="Permanent link">&para;</a></h3> <div class=highlight><pre><span></span><code><span class=n>Node</span><span class=w> </span><span class=nf>visitCreateTableAs</span><span class=p>(</span><span class=w></span>
 <span class=w>  </span><span class=n>SqlBaseParser</span><span class=p>.</span><span class=na>CreateTableAsContext</span><span class=w> </span><span class=n>context</span><span class=p>)</span><span class=w></span>
 </code></pre></div> <p><code>visitCreateTableAs</code> is part of the <code>SqlBaseBaseVisitor</code> abstraction to handle <code>CREATE TABLE AS</code> (CTAS) statements.</p> <div class=highlight><pre><span></span><code><span class=nl>CREATE</span><span class=w> </span><span class=err>(OR</span><span class=w> </span><span class=err>REPLACE)?</span><span class=w> </span><span class=err>TABLE</span><span class=w> </span><span class=err>(IF</span><span class=w> </span><span class=err>NOT</span><span class=w> </span><span class=err>EXISTS)?</span><span class=w> </span><span class=err>sourceName</span><span class=w></span>

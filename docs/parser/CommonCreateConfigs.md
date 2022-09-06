@@ -8,7 +8,32 @@ The topic that stores the data of the source
 
 Default: (undefined)
 
+## <span id="KEY_DELIMITER_PROPERTY"> KEY_DELIMITER_PROPERTY
+
+## <span id="KEY_FORMAT_PROPERTY"> KEY_FORMAT_PROPERTY
+
+## <span id="KEY_SCHEMA_FULL_NAME"> KEY_SCHEMA_FULL_NAME
+
+## <span id="KEY_SCHEMA_ID"> KEY_SCHEMA_ID
+
+Default: (undefined)
+
+Used when:
+
+* `DefaultSchemaInjector` is requested to `forCreateAsStatement`, `forCreateStatement`, `shouldInferSchema`
+* `SchemaRegisterInjector` is requested to `stripSchemaIdConfig`, `registerForCreateSource`, `registerForCreateAs`, `sanityCheck`, `registerRawSchema`
+* `CreateSourceAsProperties` is requested to [getKeySchemaId](CreateSourceAsProperties.md#getKeySchemaId)
+* `CreateSourceProperties` is requested to [getKeySchemaId](CreateSourceProperties.md#getKeySchemaId)
+
+## <span id="SOURCE_NUMBER_OF_REPLICAS"> SOURCE_NUMBER_OF_REPLICAS
+
+## <span id="TIMESTAMP_NAME_PROPERTY"> TIMESTAMP_NAME_PROPERTY
+
 ## <span id="TIMESTAMP_FORMAT_PROPERTY"><span id="TIMESTAMP_FORMAT"> TIMESTAMP_FORMAT
+
+## <span id="VALUE_AVRO_SCHEMA_FULL_NAME"> VALUE_AVRO_SCHEMA_FULL_NAME
+
+## <span id="VALUE_DELIMITER_PROPERTY"> VALUE_DELIMITER_PROPERTY
 
 ## <span id="VALUE_FORMAT_PROPERTY"><span id="VALUE_FORMAT"> VALUE_FORMAT
 
@@ -25,6 +50,12 @@ Used when:
 * `DefaultSchemaInjector` is requested to `shouldInferSchema`
 * `CreateSourceAsProperties` is requested for the [value_format](CreateSourceAsProperties.md#getValueFormat)
 * `CreateSourceProperties` is requested for the [value_format](CreateSourceProperties.md#getValueFormat) and to [withFormats](CreateSourceProperties.md#withFormats)
+
+## <span id="VALUE_SCHEMA_FULL_NAME"> VALUE_SCHEMA_FULL_NAME
+
+## <span id="VALUE_SCHEMA_ID"> VALUE_SCHEMA_ID
+
+## <span id="WRAP_SINGLE_VALUE"> WRAP_SINGLE_VALUE
 
 ## <span id="SOURCE_NUMBER_OF_PARTITIONS"><span id="PARTITIONS"> PARTITIONS
 

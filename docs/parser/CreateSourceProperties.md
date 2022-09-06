@@ -32,7 +32,7 @@ CreateSourceProperties from(
 
 ## <span id="props"> PropertiesConfig
 
-When [created](#creating-instance), `CreateSourceProperties` creates a `PropertiesConfig` with the following configuration properties.
+When [created](#creating-instance), `CreateSourceProperties` creates a `PropertiesConfig` with the following table-specific configuration properties (in addition to [CommonCreateConfigs](CommonCreateConfigs.md)).
 
 ### <span id="SOURCE_CONNECTOR"> SOURCE_CONNECTOR
 
@@ -70,3 +70,44 @@ If defined (using either configuration property), the value format is converted 
 
 * `DefaultFormatInjector` is requested to `injectForCreateStatement`
 * `SourcePropertiesUtil` is requested to [getValueFormat](SourcePropertiesUtil.md#getValueFormat)
+
+## <span id="getKeyFormat"> getKeyFormat
+
+```java
+Optional<FormatInfo> getKeyFormat(
+  SourceName name)
+```
+
+`getKeyFormat`...FIXME
+
+---
+
+`getKeyFormat` is used when:
+
+* `DefaultFormatInjector` is requested for `injectForCreateStatement`
+* `SourcePropertiesUtil` is requested to [getKeyFormat](SourcePropertiesUtil.md#getKeyFormat)
+
+### <span id="getKeyFormatProperties"> getKeyFormatProperties
+
+```java
+Map<String, String> getKeyFormatProperties(
+  String keyFormat,
+  String name)
+```
+
+`getKeyFormatProperties`...FIXME
+
+## <span id="getKeySchemaId"> getKeySchemaId
+
+```java
+Optional<Integer> getKeySchemaId()
+```
+
+`getKeySchemaId` is the value of [KEY_SCHEMA_ID](CommonCreateConfigs.md#KEY_SCHEMA_ID) property.
+
+---
+
+`getKeySchemaId` is used when:
+
+* `DefaultSchemaInjector` is requested to `forCreateStatement`, `getKeySchema`, `addSchemaFields`
+* `CreateSourceProperties` is requested to [getKeyFormatProperties](#getKeyFormatProperties)

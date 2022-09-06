@@ -126,6 +126,20 @@ Node visitCreateTable(
 CREATE (OR REPLACE)? (SOURCE)? TABLE (IF NOT EXISTS)? sourceName
 (tableElements)?
 (WITH tableProperties)?
+
+tableElements
+    : '(' tableElement (',' tableElement)* ')'
+    ;
+
+tableElement
+    : identifier type columnConstraints?
+    ;
+
+columnConstraints
+    : ((PRIMARY)? KEY)
+    | HEADERS
+    | HEADER '(' STRING ')'
+    ;
 ```
 
 `visitCreateTable` creates a [CreateTable](CreateTable.md).

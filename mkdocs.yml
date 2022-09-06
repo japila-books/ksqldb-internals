@@ -133,6 +133,7 @@ nav:
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine: KsqlEngine.md
     - KsqlExecutionContext: KsqlExecutionContext.md
+    - KsqlSchemaRegistryClientFactory: KsqlSchemaRegistryClientFactory.md
     - KsqlQueryType: KsqlQueryType.md
     - MetaStore:
       - MetaStore: MetaStore.md
@@ -158,6 +159,7 @@ nav:
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
     - ServiceContext: ServiceContext.md
+    - ServiceContextFactory: ServiceContextFactory.md
     - ServiceInfo: ServiceInfo.md
     - SessionConfig: SessionConfig.md
     - SharedKafkaStreamsRuntime: SharedKafkaStreamsRuntime.md
@@ -299,6 +301,7 @@ nav:
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ReservedInternalTopics: rest/ReservedInternalTopics.md
+    - RestServiceContextFactory: rest/RestServiceContextFactory.md
     - ScalablePushUtil: rest/ScalablePushUtil.md
     - ServerOptions: rest/ServerOptions.md
     - StandaloneExecutor:

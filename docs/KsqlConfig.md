@@ -24,6 +24,22 @@ Used when:
 
 ## <span id="KSQL_ROWPARTITION_ROWOFFSET_ENABLED"><span id="ksql.rowpartition.rowoffset.enabled"> ksql.rowpartition.rowoffset.enabled
 
+## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url
+
+The URL of a schema registry (e.g. [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html), [Apicurio Schema Registry](https://www.apicur.io/registry/))
+
+Default: (empty)
+
+Used when:
+
+* `SchemaRegisterInjector` is requested to `canRegister`
+* `DefaultSchemaRegistryClient` is requested for `SCHEMA_REGISTRY_CONFIG_NOT_SET`
+* `KsqlSchemaRegistryClientFactory` is [created](KsqlSchemaRegistryClientFactory.md#creating-instance)
+* `KsqlAvroSerdeFactory` is requested to `getAvroConverter`
+* `KsqlJsonSerdeFactory` is requested to `getSchemaConverter`
+* `ProtobufSerdeFactory` is requested to `getConverter`
+* `SourceBuilderUtils` is requested to `getRegisterCallback`
+
 ## <span id="KSQL_SERVICE_ID_CONFIG"><span id="ksql.service.id"> ksql.service.id
 
 The ID of the ksql service.

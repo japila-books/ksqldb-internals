@@ -56,29 +56,16 @@ Supported values:
 
 Default: `null`
 
-## <span id="getValueFormat"> value_format
-
-```java
-Optional<FormatInfo> getValueFormat()
-```
-
-`getValueFormat` takes [FORMAT](#getFormatName) (if defined) or defaults to [VALUE_FORMAT](CommonCreateConfigs.md#VALUE_FORMAT_PROPERTY) property (using the [PropertiesConfig](#props)).
-
-If defined (using either configuration property), the value format is converted to `FormatInfo` (with [getValueFormatProperties](#getValueFormatProperties)).
-
-`getValueFormat` is used when:
-
-* `DefaultFormatInjector` is requested to `injectForCreateStatement`
-* `SourcePropertiesUtil` is requested to [getValueFormat](SourcePropertiesUtil.md#getValueFormat)
-
-## <span id="getKeyFormat"> getKeyFormat
+## <span id="getKeyFormat"> Key Format
 
 ```java
 Optional<FormatInfo> getKeyFormat(
   SourceName name)
 ```
 
-`getKeyFormat`...FIXME
+`getKeyFormat` determines the name of the format based on the value of [FORMAT](#getFormatName) property (if specified) or defaults to [KEY_FORMAT](CommonCreateConfigs.md#KEY_FORMAT_PROPERTY) property (from the [PropertiesConfig](#props)).
+
+In the end, `getKeyFormat` creates a `FormatInfo` with the format name and the [key format properties](#getKeyFormatProperties) (if specified).
 
 ---
 
@@ -87,7 +74,7 @@ Optional<FormatInfo> getKeyFormat(
 * `DefaultFormatInjector` is requested for `injectForCreateStatement`
 * `SourcePropertiesUtil` is requested to [getKeyFormat](SourcePropertiesUtil.md#getKeyFormat)
 
-### <span id="getKeyFormatProperties"> getKeyFormatProperties
+### <span id="getKeyFormatProperties"> Key Format Properties
 
 ```java
 Map<String, String> getKeyFormatProperties(
@@ -97,7 +84,7 @@ Map<String, String> getKeyFormatProperties(
 
 `getKeyFormatProperties`...FIXME
 
-## <span id="getKeySchemaId"> getKeySchemaId
+### <span id="getKeySchemaId"> KEY_SCHEMA_ID
 
 ```java
 Optional<Integer> getKeySchemaId()
@@ -111,3 +98,52 @@ Optional<Integer> getKeySchemaId()
 
 * `DefaultSchemaInjector` is requested to `forCreateStatement`, `getKeySchema`, `addSchemaFields`
 * `CreateSourceProperties` is requested to [getKeyFormatProperties](#getKeyFormatProperties)
+
+## <span id="getValueFormat"> Value Format
+
+```java
+Optional<FormatInfo> getValueFormat()
+```
+
+`getValueFormat` determines the name of the format based on the value of [FORMAT](#getFormatName) property (if specified) or defaults to [VALUE_FORMAT](CommonCreateConfigs.md#VALUE_FORMAT_PROPERTY) property (from the [PropertiesConfig](#props)).
+
+In the end, `getKeyFormat` creates a `FormatInfo` with the format name and the [value format properties](#getValueFormatProperties) (if specified).
+
+---
+
+`getValueFormat` is used when:
+
+* `DefaultFormatInjector` is requested to `injectForCreateStatement`
+* `SourcePropertiesUtil` is requested to [getValueFormat](SourcePropertiesUtil.md#getValueFormat)
+
+### <span id="getValueFormatProperties"> Value Format Properties
+
+```java
+Map<String, String> getValueFormatProperties(
+  String valueFormat)
+```
+
+`getValueFormatProperties` defines the value format properties for various formats (in one go).
+
+Property | Value
+---------|------
+ `delimiter` | [VALUE_DELIMITER](CommonCreateConfigs.md#VALUE_DELIMITER_PROPERTY) property if specified
+ `fullSchemaName` | [VALUE_AVRO_SCHEMA_FULL_NAME](CommonCreateConfigs.md#VALUE_AVRO_SCHEMA_FULL_NAME) or [VALUE_SCHEMA_FULL_NAME](CommonCreateConfigs.md#VALUE_SCHEMA_FULL_NAME) if either is specified
+ `schemaId` | [VALUE_SCHEMA_ID](#getValueSchemaId) if specified
+ `unwrapPrimitives` | `true` (only if the given `valueFormat` is `PROTOBUF` and the [unwrapProtobufPrimitives](#unwrapProtobufPrimitives) flag is enabled)
+
+### <span id="getValueSchemaId"> VALUE_SCHEMA_ID
+
+```java
+Optional<Integer> getValueSchemaId()
+```
+
+`getValueSchemaId` is the value of [VALUE_SCHEMA_ID](CommonCreateConfigs.md#VALUE_SCHEMA_ID) property.
+
+---
+
+`getValueSchemaId` is used when:
+
+* `CreateSourceFactory` is requested to [createTableCommand](../CreateSourceFactory.md#createTableCommand)
+* `CreateSourceProperties` is requested to [getValueFormatProperties](#getValueFormatProperties)
+* `DefaultSchemaInjector` is requested to `forCreateStatement`, `getValueSchema`, `addSchemaFields`

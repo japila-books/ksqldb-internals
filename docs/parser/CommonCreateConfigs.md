@@ -10,7 +10,7 @@ Default: (undefined)
 
 ## <span id="KEY_DELIMITER_PROPERTY"> KEY_DELIMITER_PROPERTY
 
-## <span id="KEY_FORMAT_PROPERTY"> KEY_FORMAT_PROPERTY
+## <span id="KEY_FORMAT_PROPERTY"><span id="KEY_FORMAT"> KEY_FORMAT
 
 ## <span id="KEY_SCHEMA_FULL_NAME"> KEY_SCHEMA_FULL_NAME
 
@@ -52,12 +52,21 @@ Must not be specified with [FORMAT](#FORMAT)
 Used when:
 
 * `DefaultSchemaInjector` is requested to `shouldInferSchema`
-* `CreateSourceAsProperties` is requested for the [value_format](CreateSourceAsProperties.md#getValueFormat)
-* `CreateSourceProperties` is requested for the [value_format](CreateSourceProperties.md#getValueFormat) and to [withFormats](CreateSourceProperties.md#withFormats)
+* `CreateSourceAsProperties` is requested for the [VALUE_FORMAT](CreateSourceAsProperties.md#getValueFormat)
+* `CreateSourceProperties` is requested for the [VALUE_FORMAT](CreateSourceProperties.md#getValueFormat) and to [withFormats](CreateSourceProperties.md#withFormats)
 
 ## <span id="VALUE_SCHEMA_FULL_NAME"> VALUE_SCHEMA_FULL_NAME
 
 ## <span id="VALUE_SCHEMA_ID"> VALUE_SCHEMA_ID
+
+Default: (undefined)
+
+Used when:
+
+* `CreateSourceAsProperties` is requested for the [VALUE_SCHEMA_ID](CreateSourceAsProperties.md#getValueSchemaId)
+* `CreateSourceProperties` is requested for the [VALUE_SCHEMA_ID](CreateSourceProperties.md#getValueSchemaId)
+* `DefaultSchemaInjector` is requested to `forCreateAsStatement`, `forCreateStatement`, `shouldInferSchema`
+* `SchemaRegisterInjector` is requested to `stripSchemaIdConfig`, `registerForCreateSource`, `tryGetFormat`, `registerForCreateAs`, `sanityCheck`, `registerRawSchema`
 
 ## <span id="WRAP_SINGLE_VALUE"> WRAP_SINGLE_VALUE
 

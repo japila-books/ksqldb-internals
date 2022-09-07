@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/DefaultSchemaInjector/</loc>
+         <lastmod>2022-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/DropSourceCommand/</loc>
          <lastmod>2022-09-07</lastmod>
          <changefreq>daily</changefreq>

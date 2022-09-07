@@ -333,6 +333,7 @@ nav:
     - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
     - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
   - Demos:
-    - Pull Queries: demo/pull-queries.md
     - Confluent Schema Registry: demo/confluent-schema-registry.md
+    - Multi-Node ksqlDB Deployment: demo/multi-node-ksqldb-deployment.md
+    - Pull Queries: demo/pull-queries.md
     - SHOW STREAMS: demo/show-streams.md

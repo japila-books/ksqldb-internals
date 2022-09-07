@@ -1,5 +1,9 @@
 # Server Properties
 
+Server configuration can be applied on a running cluster using the `SET` command (for individual queries) or using `ALTER SYSTEM` command (for the whole cluster and so for all queries).
+
+Use `SHOW PROPERTIES` command to for the current list of configuration settings.
+
 ## <span id="ksql.logging.processing.topic.auto.create"> ksql.logging.processing.topic.auto.create
 
 Enables creating the processing log topic if not exists

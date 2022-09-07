@@ -1,4 +1,4 @@
-# Demo: Schema Registry
+# Demo: Confluent Schema Registry
 
 This demo shows ksqlDB with [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/) (for Avro schemas).
 

@@ -125,7 +125,9 @@ nav:
     - FormatFactory: FormatFactory.md
     - FunctionRegistry: FunctionRegistry.md
     - HARouting: HARouting.md
-    - Injector: Injector.md
+    - Injectors:
+      - DefaultSchemaInjector: DefaultSchemaInjector.md
+      - Injector: Injector.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md

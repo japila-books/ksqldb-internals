@@ -41,7 +41,7 @@ Default: (undefined)
 
 ## <span id="VALUE_FORMAT_PROPERTY"><span id="VALUE_FORMAT"> VALUE_FORMAT
 
-The format of the serialized value
+The format of serialized values
 
 Default: (undefined)
 
@@ -56,6 +56,18 @@ Used when:
 * `CreateSourceProperties` is requested for the [VALUE_FORMAT](CreateSourceProperties.md#getValueFormat) and to [withFormats](CreateSourceProperties.md#withFormats)
 
 ## <span id="VALUE_SCHEMA_FULL_NAME"> VALUE_SCHEMA_FULL_NAME
+
+The fully-qualified name of the schema of serialized values (e.g. `com.mycorp.mynamespace.sampleRecord`, `io.confluent.ksql.avro_schemas`)
+
+Default: (undefined)
+
+[Must not be specified](#validateKeyValueFormats) together with [VALUE_AVRO_SCHEMA_FULL_NAME](#VALUE_AVRO_SCHEMA_FULL_NAME)
+
+Used when:
+
+* `DefaultSchemaInjector` is requested to [throwOnMultiSchemaDefinitions](../DefaultSchemaInjector.md#throwOnMultiSchemaDefinitions)
+* `CreateSourceAsProperties` is requested to [getValueFormatProperties](CreateSourceAsProperties.md#getValueFormatProperties), [withKeyValueSchemaName](CreateSourceAsProperties.md#withKeyValueSchemaName)
+* `CreateSourceProperties` is requested to [getValueSchemaFullName](CreateSourceProperties.md#getValueSchemaFullName), [getValueFormatProperties](CreateSourceProperties.md#getValueFormatProperties), [withKeyValueSchemaName](CreateSourceProperties.md#withKeyValueSchemaName)
 
 ## <span id="VALUE_SCHEMA_ID"> VALUE_SCHEMA_ID
 

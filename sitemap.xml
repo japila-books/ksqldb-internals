@@ -831,6 +831,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/CommandRunnerMetrics/</loc>
+         <lastmod>2022-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandStore/</loc>
          <lastmod>2022-09-08</lastmod>
          <changefreq>daily</changefreq>

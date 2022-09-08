@@ -284,6 +284,7 @@ nav:
     - CommandTopic: rest/CommandTopic.md
     - CommandTopicBackup: rest/CommandTopicBackup.md
     - CustomExecutors: rest/CustomExecutors.md
+    - DefaultCommandQueueSync: rest/DefaultCommandQueueSync.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
     - ExplainExecutor: rest/ExplainExecutor.md

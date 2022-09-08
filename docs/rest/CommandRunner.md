@@ -1,5 +1,11 @@
 # CommandRunner
 
+`CommandRunner` is responsible for [command execution](#start) for [KsqlRestApplication](KsqlRestApplication.md#commandRunner) (on a separate Java thread using [CommandQueue](#commandStore)).
+
+<figure markdown>
+  ![CommandRunner](../images/CommandRunner.png)
+</figure>
+
 ## Creating Instance
 
 `CommandRunner` takes the following to be created:
@@ -20,7 +26,7 @@
 
 `CommandRunner` is created when:
 
-* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner)
+* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner) (to create [KsqlResource](KsqlResource.md#commandRunner) and [KsqlRestApplication](KsqlRestApplication.md#commandRunner) itself)
 
 ## <span id="commandStore"> CommandQueue
 

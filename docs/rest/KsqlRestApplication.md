@@ -65,7 +65,7 @@ ksqlDB API server instance created
 
 `KsqlRestApplication` is given a [CommandRunner](CommandRunner.md) when [created](#creating-instance).
 
-The `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands) followed by [starting command execution](CommandRunner.md#start) in [initialize](#initialize). The `CommandRunner` is up and running until [shutdown](#shutdown) (when it is requested to [close](CommandRunner.md#close)).
+The `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands) before [starting command execution](CommandRunner.md#start) in [initialize](#initialize). The `CommandRunner` is up and running until [shutdown](#shutdown) (when it is requested to [close](CommandRunner.md#close)).
 
 The `CommandRunner` is used to create a [HealthCheckResource](#healthCheckResource) when `KsqlRestApplication` is [created](#creating-instance).
 
@@ -206,7 +206,7 @@ void startKsql(
   KsqlConfig ksqlConfigWithPort)
 ```
 
-`startKsql` [cleanupOldState](#cleanupOldState) and then [initialize](#initialize) (with the given [KsqlConfig](../KsqlConfig.md)).
+`startKsql` [cleanupOldState](#cleanupOldState) before [initialization](#initialize) (with the given [KsqlConfig](../KsqlConfig.md)).
 
 ### <span id="initialize"> Initializing
 

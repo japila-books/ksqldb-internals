@@ -7,7 +7,7 @@
 `KsqlResource` takes the following to be created:
 
 * <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
-* <span id="commandRunner"> [CommandRunner](CommandRunner.md)
+* [CommandRunner](#commandRunner)
 * <span id="distributedCmdResponseTimeout"> `distributedCmdResponse` Timeout
 * <span id="activenessRegistrar"> `ActivenessRegistrar`
 * <span id="injectorFactory"> [Injector](../Injector.md) factory
@@ -19,6 +19,15 @@
 `KsqlResource` is created when:
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (and creates a [KsqlRestApplication](KsqlRestApplication.md#ksqlResource))
+
+### <span id="commandRunner"> CommandRunner
+
+`KsqlResource` is given a [CommandRunner](CommandRunner.md) when [created](#creating-instance).
+
+The `CommandRunner` is used only to access the [CommandQueue](CommandRunner.md#getCommandQueue) when:
+
+* [configure](#configure) (to create a [DistributingExecutor](DistributingExecutor.md) and a [DefaultCommandQueueSync](DefaultCommandQueueSync.md) for [RequestHandler](RequestHandler.md))
+* [handleKsqlStatements](#handleKsqlStatements) (to [httpWaitForCommandSequenceNumber](CommandStoreUtil.md#httpWaitForCommandSequenceNumber))
 
 ## <span id="configure"> configure
 

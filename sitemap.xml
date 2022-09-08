@@ -856,6 +856,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/DefaultCommandQueueSync/</loc>
+         <lastmod>2022-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/DistributingExecutor/</loc>
          <lastmod>2022-09-08</lastmod>
          <changefreq>daily</changefreq>

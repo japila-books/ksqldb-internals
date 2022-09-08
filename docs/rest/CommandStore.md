@@ -16,11 +16,11 @@
 
 `CommandStore` takes the following to be created:
 
-* <span id="commandTopicName"> Name of the Command Topic
+* [Name of the Command Topic](#commandTopicName)
 * [CommandTopic](#commandTopic)
 * <span id="sequenceNumberFutureStore"> `SequenceNumberFutureStore`
-* <span id="kafkaConsumerProperties"> Kafka Consumer Properties
-* <span id="kafkaProducerProperties"> Kafka Producer Properties
+* [Kafka Consumer Properties](#kafkaConsumerProperties)
+* [Kafka Producer properties](#kafkaProducerProperties)
 * <span id="commandQueueCatchupTimeout"> Command Queue Catchup Timeout
 * <span id="commandIdSerializer"> `Serializer<CommandId>`
 * <span id="commandSerializer"> `Serializer<Command>`
@@ -28,6 +28,26 @@
 * <span id="commandTopicBackup"> `CommandTopicBackup`
 
 `CommandStore` is created using [Factory.create](#create) utility.
+
+### <span id="kafkaConsumerProperties"> Kafka Consumer Properties
+
+```java
+Map<String, Object> kafkaConsumerProperties
+```
+
+`CommandStore` is given `kafkaConsumerProperties` when [created](#creating-instance).
+
+The properties are used to create a `KafkaConsumer` ([Apache Kafka]({{ book.kafka }}/clients/consumer/KafkaConsumer/)) for the [end offset in the command topic](#getCommandTopicOffset).
+
+### <span id="kafkaProducerProperties"> Kafka Producer properties
+
+```java
+Map<String, Object> kafkaProducerProperties
+```
+
+`CommandStore` is given `kafkaProducerProperties` when [created](#creating-instance).
+
+The properties are used to create a `KafkaProducer` ([Apache Kafka]({{ book.kafka }}/clients/producer/KafkaProducer/)) at [createTransactionalProducer](#createTransactionalProducer).
 
 ### <span id="commandTopic"> CommandTopic
 
@@ -44,6 +64,20 @@ Used when:
 * [completeSatisfiedSequenceNumberFutures](#completeSatisfiedSequenceNumberFutures)
 * [wakeup](#wakeup)
 
+### <span id="commandTopicName"> Command Topic Name
+
+`CommandStore` is given the name of the command topic when [created](#creating-instance).
+
+The topic name is used when:
+
+* [enqueueCommand](#enqueueCommand) (to send commands to)
+* [getNewCommands](#getNewCommands) (to fetch commands from)
+* [getCommandTopicOffset](#getCommandTopicOffset) (to fetch command offsets from)
+
+## <span id="COMMAND_TOPIC_PARTITION"> Partition 0
+
+`CommandStore` uses just a single partition (`0`) for [enqueueCommand](#enqueueCommand) onto and [getCommandTopicOffset](#getCommandTopicOffset) from the [commandTopicName](#commandTopicName).
+
 ## <span id="create"><span id="Factory"> Creating CommandStore
 
 ```java
@@ -56,14 +90,14 @@ CommandStore create(
   KafkaTopicClient internalTopicClient)
 ```
 
-`create` adds the following configuration properties to the given `kafkaConsumerProperties` (possibly overriding the current value if set).
+`create` adds the following configuration properties to the given `kafkaConsumerProperties` (possibly overriding the current values if set).
 
 Configuration Property | Value
 -----------------------|---------
  `isolation.level` | `READ_COMMITTED`
  `auto.offset.reset` | `none`
 
-`create` adds the following configuration properties to the given `kafkaProducerProperties` (possibly overriding the current value if set).
+`create` adds the following configuration properties to the given `kafkaProducerProperties` (possibly overriding the current values if set).
 
 Configuration Property | Value
 -----------------------|---------
@@ -139,6 +173,60 @@ List<QueuedCommand> getNewCommands(
 `getNewCommands` creates a `QueuedCommand` for every new command with a non-`null` value.
 
 `getNewCommands` returns the `QueuedCommand`s.
+
+## <span id="createTransactionalProducer"> Creating Transactional Kafka Producer
+
+```java
+Producer<CommandId, Command> createTransactionalProducer()
+```
+
+`createTransactionalProducer` is part of the [CommandQueue](CommandQueue.md#createTransactionalProducer) abstraction.
+
+---
+
+`createTransactionalProducer` creates a `KafkaProducer` ([Apache Kafka]({{ book.kafka }}/clients/producer/KafkaProducer/)) with the following:
+
+* [kafkaProducerProperties](#kafkaProducerProperties)
+* [commandIdSerializer](#commandIdSerializer) as the key serializer
+* [commandSerializer](#commandSerializer) as the value serializer
+
+## <span id="ensureConsumedPast"> ensureConsumedPast
+
+```java
+void ensureConsumedPast(
+  long seqNum,
+  Duration timeout)
+```
+
+`ensureConsumedPast` is part of the [CommandQueue](CommandQueue.md#ensureConsumedPast) abstraction.
+
+---
+
+`ensureConsumedPast`...FIXME
+
+## <span id="waitForCommandConsumer"> waitForCommandConsumer
+
+```java
+void waitForCommandConsumer()
+```
+
+`waitForCommandConsumer` is part of the [CommandQueue](CommandQueue.md#waitForCommandConsumer) abstraction.
+
+---
+
+`waitForCommandConsumer` [ensureConsumedPast](#ensureConsumedPast) (with the [end offset in the command topic](#getCommandTopicOffset) and [commandQueueCatchupTimeout](#commandQueueCatchupTimeout)).
+
+### <span id="getCommandTopicOffset"> End Offset in Command Topic
+
+```java
+long getCommandTopicOffset()
+```
+
+`getCommandTopicOffset` creates a `TopicPartition` for the command topic (with the [name](#commandTopicName) and [partition 0](#COMMAND_TOPIC_PARTITION)).
+
+`getCommandTopicOffset` creates a `KafkaConsumer` ([Apache Kafka]({{ book.kafka }}/clients/consumer/KafkaConsumer/)) with the [consumer properties](#kafkaConsumerProperties) (and `ByteArrayDeserializer`s for the keys and values).
+
+`getCommandTopicOffset` requests the `KafkaConsumer` to `KafkaConsumer.assign` itself to consume records from the `TopicPartition` only and then `KafkaConsumer.endOffsets`.
 
 ## Logging
 

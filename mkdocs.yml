@@ -316,6 +316,7 @@ nav:
     - StatementParser: rest/StatementParser.md
     - StreamedQueryResource: rest/StreamedQueryResource.md
     - ValidatedCommandFactory: rest/ValidatedCommandFactory.md
+    - WSQueryEndpoint: rest/WSQueryEndpoint.md
   - ksql CLI:
     - cli/index.md
     - Cli: cli/Cli.md

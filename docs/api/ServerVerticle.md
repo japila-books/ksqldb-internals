@@ -42,26 +42,26 @@ Router setupRouter()
 
 `setupRouter` registers the query handlers.
 
-URI      | HTTP Method | Handler
----------|-------------|---------
- `/` | `GET` | `ServerVerticle::handleInfoRedirect`
- `/close-query` | `POST` | `CloseQueryHandler`
- `/clusterStatus` | `GET` | `this::handleClusterStatusRequest`
- `/healthcheck` | `GET` | `this::handleHealthcheckRequest`
- `/heartbeat` | `POST` | `this::handleHeartbeatRequest`
- `/info` | `GET` | [handleInfoRequest](#handleInfoRequest)
- `/inserts-stream` | `POST` | `InsertsStreamHandler`
- `/is_valid_property/:property` | `GET` | `this::handleIsValidPropertyRequest`
- `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest)
- `/ksql/terminate` | `POST` | `this::handleTerminateRequest`
- `/lag` | `POST` | `this::handleLagReportRequest`
- `/query` | `POST` | `this::handleQueryRequest`
- `/query-stream` | `POST` | `QueryStreamHandler`
- `/status/:type/:entity/:action` | `GET` | `this::handleStatusRequest`
- `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest)
- `/v1/metadata` | `GET` | `this::handleServerMetadataRequest`
- `/v1/metadata/id` | `GET` | `this::handleServerMetadataClusterIdRequest`
- `/ws/query` | `GET` | `this::handleWebsocket`
+URI      | HTTP Method | Handler | Produces
+---------|-------------|---------|---------
+ `/` | `GET` | `ServerVerticle::handleInfoRedirect` |
+ `/close-query` | `POST` | `CloseQueryHandler` |
+ `/clusterStatus` | `GET` | `handleClusterStatusRequest` |
+ `/healthcheck` | `GET` | `handleHealthcheckRequest` |
+ `/heartbeat` | `POST` | `handleHeartbeatRequest` |
+ `/info` | `GET` | [handleInfoRequest](#handleInfoRequest) |
+ `/inserts-stream` | `POST` | `InsertsStreamHandler` |
+ `/is_valid_property/:property` | `GET` | `handleIsValidPropertyRequest` |
+ `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest) |
+ `/ksql/terminate` | `POST` | `handleTerminateRequest` |
+ `/lag` | `POST` | `handleLagReportRequest` |
+ `/query` | `POST` | `handleQueryRequest` |
+ `/query-stream` | `POST` | `QueryStreamHandler` |
+ `/status/:type/:entity/:action` | `GET` | `handleStatusRequest` |
+ `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest) |
+ `/v1/metadata` | `GET` | `handleServerMetadataRequest` |
+ `/v1/metadata/id` | `GET` | `handleServerMetadataClusterIdRequest` |
+ `/ws/query` | `GET` | [handleWebsocket](#handleWebsocket) | <li>`application/vnd.ksql.v1+json`</li><li>`application/json`</li>
 
 ### <span id="handleAllStatusesRequest"> handleAllStatusesRequest
 
@@ -143,3 +143,16 @@ content-type: application/json
     }
 ]
 ```
+
+### <span id="handleWebsocket"> handleWebsocket
+
+```java
+void handleWebsocket(
+  RoutingContext routingContext)
+```
+
+`handleWebsocket` requests the [Endpoints](#endpoints) to [executeWebsocketStream](Endpoints.md#executeWebsocketStream).
+
+---
+
+`handleWebsocket` is used to handle [GET /ws/query](#setupRouter) HTTP requests.

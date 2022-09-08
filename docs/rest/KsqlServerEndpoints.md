@@ -139,3 +139,20 @@ CompletableFuture<EndpointResponse> executeTerminate(
 ---
 
 `executeTerminate` requests the [KsqlResource](#ksqlResource) to [terminateCluster](KsqlResource.md#terminateCluster).
+
+## <span id="executeWebsocketStream"> executeWebsocketStream
+
+```java
+void executeWebsocketStream(
+  ServerWebSocket webSocket,
+  MultiMap requestParams,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext,
+  Context context)
+```
+
+`executeWebsocketStream` is part of the [Endpoints](../api/Endpoints.md#executeWebsocketStream) abstraction.
+
+---
+
+`executeWebsocketStream` requests the [WSQueryEndpoint](#wsQueryEndpoint) to [executeStreamQuery](WSQueryEndpoint.md#executeStreamQuery).

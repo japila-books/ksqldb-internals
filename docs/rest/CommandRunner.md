@@ -15,9 +15,9 @@
 * <span id="maxRetries"> `maxRetries`
 * <span id="clusterTerminator"> `ClusterTerminator`
 * <span id="serverState"> `ServerState`
-* <span id="ksqlServiceId"> ksql Service ID
+* <span id="ksqlServiceId"> [ksql.service.id](../KsqlConfig.md#KSQL_SERVICE_ID_CONFIG)
 * <span id="commandRunnerHealthTimeout"> commandRunnerHealth Timeout
-* <span id="metricsGroupPrefix"> metricsGroup Prefix
+* [Metrics group prefix](#metricsGroupPrefix)
 * [Command Deserializer](#commandDeserializer)
 * <span id="errorHandler"> Error Handler
 * <span id="kafkaTopicClient"> `KafkaTopicClient`
@@ -27,6 +27,22 @@
 `CommandRunner` is created when:
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner) (to create [KsqlResource](KsqlResource.md#commandRunner) and [KsqlRestApplication](KsqlRestApplication.md#commandRunner) itself)
+
+### <span id="metricsGroupPrefix"> Metrics Group Prefix
+
+`CommandRunner` is given a metrics group prefix when [created](#creating-instance) (when [building a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner)) and is an empty string.
+
+The prefix is used to create a [CommandRunnerMetrics](#commandRunnerMetric).
+
+## <span id="commandRunnerMetric"> CommandRunnerMetrics
+
+`CommandRunner` creates a [CommandRunnerMetrics](CommandRunnerMetrics.md) when [created](#creating-instance) with the following:
+
+* [ksql.service.id](#ksqlServiceId)
+* [Metrics group prefix](#metricsGroupPrefix)
+* [Metrics](#metrics)
+
+The `CommandRunnerMetrics` is [closed](CommandRunnerMetrics.md#close) when [close](#close).
 
 ## <span id="commandStore"> CommandQueue
 

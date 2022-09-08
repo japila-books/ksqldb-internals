@@ -277,7 +277,9 @@ nav:
     - Command: rest/Command.md
     - CommandIdAssigner: rest/CommandIdAssigner.md
     - CommandQueue: rest/CommandQueue.md
-    - CommandRunner: rest/CommandRunner.md
+    - CommandRunner:
+      - CommandRunner: rest/CommandRunner.md
+      - CommandRunnerMetrics: rest/CommandRunnerMetrics.md
     - CommandStore:
       - CommandStore: rest/CommandStore.md
       - CommandStoreUtil: rest/CommandStoreUtil.md

@@ -966,6 +966,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/SequenceNumberFutureStore/</loc>
+         <lastmod>2022-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ServerOptions/</loc>
          <lastmod>2022-09-08</lastmod>
          <changefreq>daily</changefreq>

@@ -306,6 +306,7 @@ nav:
     - RestServiceContextFactory: rest/RestServiceContextFactory.md
     - ScalablePushUtil: rest/ScalablePushUtil.md
     - ServerOptions: rest/ServerOptions.md
+    - SequenceNumberFutureStore: rest/SequenceNumberFutureStore.md
     - StandaloneExecutor:
       - StandaloneExecutor: rest/StandaloneExecutor.md
       - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md

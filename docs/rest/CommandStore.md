@@ -18,7 +18,7 @@
 
 * [Name of the Command Topic](#commandTopicName)
 * [CommandTopic](#commandTopic)
-* <span id="sequenceNumberFutureStore"> `SequenceNumberFutureStore`
+* [SequenceNumberFutureStore](#sequenceNumberFutureStore)
 * [Kafka Consumer Properties](#kafkaConsumerProperties)
 * [Kafka Producer properties](#kafkaProducerProperties)
 * <span id="commandQueueCatchupTimeout"> Command Queue Catchup Timeout
@@ -28,6 +28,15 @@
 * <span id="commandTopicBackup"> `CommandTopicBackup`
 
 `CommandStore` is created using [Factory.create](#create) utility.
+
+### <span id="sequenceNumberFutureStore"> SequenceNumberFutureStore
+
+`CommandStore` is given a [SequenceNumberFutureStore](SequenceNumberFutureStore.md) when [created](#creating-instance).
+
+The `SequenceNumberFutureStore` is used when:
+
+* [ensureConsumedPast](#ensureConsumedPast) (to pause until earlier commands are completed)
+* [completeSatisfiedSequenceNumberFutures](#completeSatisfiedSequenceNumberFutures) (to mark commands completed)
 
 ### <span id="kafkaConsumerProperties"> Kafka Consumer Properties
 
@@ -168,11 +177,21 @@ List<QueuedCommand> getNewCommands(
 
 ---
 
+`getNewCommands` [completeSatisfiedSequenceNumberFutures](#completeSatisfiedSequenceNumberFutures).
+
 `getNewCommands` requests the [CommandTopic](#commandTopic) for [new commands](CommandTopic.md#getNewCommands) (`ConsumerRecord<byte[], byte[]>`s).
 
 `getNewCommands` creates a `QueuedCommand` for every new command with a non-`null` value.
 
 `getNewCommands` returns the `QueuedCommand`s.
+
+### <span id="completeSatisfiedSequenceNumberFutures"> completeSatisfiedSequenceNumberFutures
+
+```java
+void completeSatisfiedSequenceNumberFutures()
+```
+
+`completeSatisfiedSequenceNumberFutures` requests the [CommandTopic](#commandTopic) for the [current consumer position](CommandTopic.md#getCommandTopicConsumerPosition) that is then used to request the [SequenceNumberFutureStore](#sequenceNumberFutureStore) to [complete futures up to this position](SequenceNumberFutureStore.md#completeFuturesUpToAndIncludingSequenceNumber).
 
 ## <span id="createTransactionalProducer"> Creating Transactional Kafka Producer
 
@@ -202,7 +221,12 @@ void ensureConsumedPast(
 
 ---
 
-`ensureConsumedPast`...FIXME
+`ensureConsumedPast` requests the [SequenceNumberFutureStore](#sequenceNumberFutureStore) for a [CompletableFuture for the given sequence number](SequenceNumberFutureStore.md#getFutureForSequenceNumber).
+
+In the end, `ensureConsumedPast` waits for this future to complete (if necessary) for at most given `timeout` seconds.
+
+!!! note "Completing CompletableFuture"
+    `CompletableFuture`s are completed in [completeSatisfiedSequenceNumberFutures](#completeSatisfiedSequenceNumberFutures).
 
 ## <span id="waitForCommandConsumer"> waitForCommandConsumer
 

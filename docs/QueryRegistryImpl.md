@@ -144,3 +144,28 @@ void notifyCreate(
 `notifyCreate` is used when:
 
 * `QueryRegistryImpl` is requested to [create a StreamPullQuery](#createStreamPullQuery) and register [persistent](#registerPersistentQuery) or [transient](#registerTransientQuery) queries
+
+## <span id="updateStreamsPropertiesAndRestartRuntime"> updateStreamsPropertiesAndRestartRuntime
+
+```java
+void updateStreamsPropertiesAndRestartRuntime(
+  KsqlConfig config,
+  ProcessingLogContext logContext)
+```
+
+`updateStreamsPropertiesAndRestartRuntime` is part of the [QueryRegistry](QueryRegistry.md#updateStreamsPropertiesAndRestartRuntime) abstraction.
+
+---
+
+`updateStreamsPropertiesAndRestartRuntime`...FIXME
+
+### <span id="updateStreamsProperties"> updateStreamsProperties
+
+```java
+void updateStreamsProperties(
+  SharedKafkaStreamsRuntime stream,
+  KsqlConfig config,
+  ProcessingLogContext logContext)
+```
+
+`updateStreamsProperties`...FIXME

@@ -22,6 +22,30 @@ Used when:
 
 * `KsqlEngine` is requested to [create a stream pull query](KsqlEngine.md#createStreamPullQuery)
 
+## <span id="KSQL_SHARED_RUNTIME_ENABLED"><span id="ksql.runtime.feature.shared.enabled"> ksql.runtime.feature.shared.enabled
+
+Enables shared Kafka Streams runtimes
+
+* `false` - persistent queries will use separate runtimes
+* `true` - new queries may share streams instances
+
+Default: `false`
+
+* [ALTER SYSTEM](parser/AlterSystemProperty.md) commands are not supported when turned off ([createForAlterSystemQuery](rest/ValidatedCommandFactory.md#createForAlterSystemQuery))
+
+Used when:
+
+* `EngineExecutor` is requested to [getApplicationId](EngineExecutor.md#getApplicationId)
+* `CleanupListener` is requested to `onClose`
+* `SandboxedExecutionContext` is requested to [execute a KsqlPlan](SandboxedExecutionContext.md#execute)
+* `KafkaStreamsQueryValidator` is requested to `validateCacheBytesUsage`
+* `QueryBuilder` is requested to [buildStreamsProperties](QueryBuilder.md#buildStreamsProperties)
+* `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery)
+* `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
+* `KsqlResource` is requested to [isValidProperty](rest/KsqlResource.md#isValidProperty)
+* `KsqlRestoreCommandTopic` is requested to `maybeCleanUpQuery`
+* `KsMaterializationFactory` is requested to `create` a `KsMaterialization`
+
 ## <span id="KSQL_ROWPARTITION_ROWOFFSET_ENABLED"><span id="ksql.rowpartition.rowoffset.enabled"> ksql.rowpartition.rowoffset.enabled
 
 ## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url

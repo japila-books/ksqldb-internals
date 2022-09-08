@@ -33,8 +33,8 @@ ALTER SYSTEM name = value   #alterSystemProperty
 
 `visitAlterSystemProperty` creates an [AlterSystemProperty](AlterSystemProperty.md).
 
-!!! note
-    "Cannot alter system configs when KSQL_SHARED_RUNTIME_ENABLED is turned off" exception is thrown by `ValidatedCommandFactory` is requested to [createForAlterSystemQuery](../rest/ValidatedCommandFactory.md#createForAlterSystemQuery).
+!!! warning "Not supported"
+    Not supported with [ksql.runtime.feature.shared.enabled](../KsqlConfig.md#ksql.runtime.feature.shared.enabled) turned off ([createForAlterSystemQuery](../rest/ValidatedCommandFactory.md#createForAlterSystemQuery)).
 
 ### <span id="visitAssertTable"> ASSERT TABLE
 

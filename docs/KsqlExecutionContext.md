@@ -199,6 +199,16 @@ Used when:
 * `StandaloneExecutor.StatementExecutor` is requested to [prepare a statement](rest/StandaloneExecutor_StatementExecutor.md#prepare)
 * `StatementParser` is requested to `parseSingleStatement`
 
+### <span id="updateStreamsPropertiesAndRestartRuntime"> updateStreamsPropertiesAndRestartRuntime
+
+```java
+void updateStreamsPropertiesAndRestartRuntime()
+```
+
+Used when:
+
+* `InteractiveStatementExecutor` is requested to [execute an ALTER SYSTEM command](rest/InteractiveStatementExecutor.md#executeStatement)
+
 ## Implementations
 
 * [KsqlEngine](KsqlEngine.md)

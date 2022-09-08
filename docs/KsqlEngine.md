@@ -267,3 +267,15 @@ In the end, `createStreamPullQuery` returns a `StreamPullQueryMetadata` with the
 `createStreamPullQuery` is used when:
 
 * `QueryExecutor` is requested to [handle a stream pull query](rest/QueryExecutor.md#handleStreamPullQuery)
+
+## <span id="updateStreamsPropertiesAndRestartRuntime"> updateStreamsPropertiesAndRestartRuntime
+
+```java
+void updateStreamsPropertiesAndRestartRuntime()
+```
+
+`updateStreamsPropertiesAndRestartRuntime` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#updateStreamsPropertiesAndRestartRuntime) abstraction.
+
+---
+
+`updateStreamsPropertiesAndRestartRuntime`...FIXME

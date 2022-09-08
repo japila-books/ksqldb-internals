@@ -48,7 +48,7 @@ TransientQueryMetadata createStreamPullQuery(
   ImmutableMap<TopicPartition, Long> endOffsets)
 ```
 
-[QueryRegistryImpl.createStreamPullQuery](QueryRegistryImpl.md#createStreamPullQuery)
+See [QueryRegistryImpl.createStreamPullQuery](QueryRegistryImpl.md#createStreamPullQuery)
 
 Used when:
 
@@ -73,7 +73,7 @@ TransientQueryMetadata createTransientQuery(
   boolean excludeTombstones)
 ```
 
-[QueryRegistryImpl.createTransientQuery](QueryRegistryImpl.md#createTransientQuery)
+See [QueryRegistryImpl.createTransientQuery](QueryRegistryImpl.md#createTransientQuery)
 
 Used when:
 
@@ -87,7 +87,7 @@ List<QueryMetadata> getAllLiveQueries()
 
 All active queries ([QueryMetadata](QueryMetadata.md))
 
-[QueryRegistryImpl.getAllLiveQueries](QueryRegistryImpl.md#getAllLiveQueries)
+See [QueryRegistryImpl.getAllLiveQueries](QueryRegistryImpl.md#getAllLiveQueries)
 
 Used when:
 
@@ -96,6 +96,20 @@ Used when:
 * `SandboxedExecutionContext` is requested to [getAllLiveQueries](SandboxedExecutionContext.md#getAllLiveQueries)
 * `TransientQueryCleanupService` is requested to `isCorrespondingQueryTerminated`
 * `QueryRegistryImpl` is requested to [close live queries](QueryRegistryImpl.md#close)
+
+### <span id="updateStreamsPropertiesAndRestartRuntime"> updateStreamsPropertiesAndRestartRuntime
+
+```java
+void updateStreamsPropertiesAndRestartRuntime(
+  KsqlConfig config,
+  ProcessingLogContext logContext)
+```
+
+See [QueryRegistryImpl.updateStreamsPropertiesAndRestartRuntime](QueryRegistryImpl.md#updateStreamsPropertiesAndRestartRuntime)
+
+Used when:
+
+* `KsqlEngine` is requested to [updateStreamsPropertiesAndRestartRuntime](KsqlEngine.md#updateStreamsPropertiesAndRestartRuntime)
 
 ## Implementations
 

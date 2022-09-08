@@ -4,18 +4,27 @@
 
 `QueryBuilder` takes the following to be created:
 
-* <span id="config"> `SessionConfig`
-* <span id="processingLogContext"> `ProcessingLogContext`
+* <span id="config"> [SessionConfig](SessionConfig.md)
+* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="functionRegistry"> `FunctionRegistry`
+* <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * [KafkaStreamsBuilder](#kafkaStreamsBuilder)
 * <span id="materializationProviderBuilderFactory"> `MaterializationProviderBuilderFactory`
 * <span id="streams"> [SharedKafkaStreamsRuntime](SharedKafkaStreamsRuntime.md)s
-* <span id="real"> `real` flag
+* [real Flag](#real)
 
 `QueryBuilder` is created when:
 
 * `QueryRegistryImpl` is [created](QueryRegistryImpl.md#queryBuilderFactory)
+
+### <span id="real"> real Flag
+
+`QueryBuilder` is given `real` flag when [created](#creating-instance).
+
+The flag is used to indicate whether executed in a non-sandboxed (_real_) environment or not (_sandbox_) when:
+
+* [buildPersistentQueryInSharedRuntime](#buildPersistentQueryInSharedRuntime) (to decide what [PersistentQueryMetadata](PersistentQueryMetadata.md) to use)
+* [getKafkaStreamsInstance](#getKafkaStreamsInstance) (to decide what [SharedKafkaStreamsRuntime](SharedKafkaStreamsRuntime.md) to use)
 
 ## <span id="kafkaStreamsBuilder"> KafkaStreamsBuilder
 
@@ -65,6 +74,8 @@ TransientQueryMetadata buildTransientQuery(
 
 In the end, `buildTransientQuery` creates a [TransientQueryMetadata](TransientQueryMetadata.md).
 
+---
+
 `buildTransientQuery` is used when:
 
 * `QueryRegistryImpl` is requested to [createTransientQuery](QueryRegistryImpl.md#createTransientQuery) and [createStreamPullQuery](QueryRegistryImpl.md#createStreamPullQuery)
@@ -79,6 +90,8 @@ RuntimeBuildContext buildContext(
 ```
 
 `buildContext` [creates a RuntimeBuildContext](RuntimeBuildContext.md#of).
+
+---
 
 `buildContext` is used when:
 
@@ -98,6 +111,8 @@ Object buildQueryImplementation(
 `buildQueryImplementation` creates a [KSPlanBuilder](KSPlanBuilder.md) with the given [RuntimeBuildContext](RuntimeBuildContext.md).
 
 In the end, `buildQueryImplementation` requests the given [physical plan](ExecutionStep.md) to [build a Kafka Streams application](ExecutionStep.md#build) (with the `KSPlanBuilder`).
+
+---
 
 `buildQueryImplementation` is used when `QueryBuilder` is requested to build the following:
 
@@ -132,6 +147,8 @@ PersistentQueryMetadata buildPersistentQueryInSharedRuntime(
 `buildPersistentQueryInSharedRuntime` requests the `NamedTopologyBuilder` to build a `NamedTopology` (Kafka Streams).
 
 `buildPersistentQueryInSharedRuntime`...FIXME
+
+---
 
 `buildPersistentQueryInSharedRuntime` is used when:
 
@@ -185,6 +202,28 @@ PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(
 
 `buildPersistentQueryInDedicatedRuntime`...FIXME
 
+---
+
 `buildPersistentQueryInDedicatedRuntime` is used when:
 
 * `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery) (with a shared runtime ID)
+
+## <span id="buildStreamsProperties"> buildStreamsProperties
+
+```java
+Map<String, Object> buildStreamsProperties(
+  String applicationId,
+  Optional<QueryId> queryId,
+  MetricCollectors metricCollectors,
+  KsqlConfig config,
+  ProcessingLogContext processingLogContext)
+```
+
+`buildStreamsProperties`...FIXME
+
+---
+
+`buildStreamsProperties` is used when:
+
+* `QueryBuilder` is requested to build a [transient query](#buildTransientQuery) and a persistent query in [dedicated](#buildPersistentQueryInDedicatedRuntime) or [shared](#buildPersistentQueryInSharedRuntime) runtime (and [getKafkaStreamsInstance](#getKafkaStreamsInstance))
+* `QueryRegistryImpl` is requested to [updateStreamsPropertiesAndRestartRuntime](QueryRegistryImpl.md#updateStreamsPropertiesAndRestartRuntime) (and [updateStreamsProperties](QueryRegistryImpl.md#updateStreamsProperties))

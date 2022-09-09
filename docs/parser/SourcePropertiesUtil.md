@@ -20,7 +20,7 @@ Key format not present
 
 * `CreateSourceFactory` is requested to [buildFormats](../CreateSourceFactory.md#buildFormats)
 * `DefaultSchemaInjector` is requested to `getKeySchema`, `addSchemaFields`
-* `SchemaRegisterInjector` is requested to `registerForCreateSource`
+* `SchemaRegisterInjector` is requested to [registerForCreateSource](../SchemaRegisterInjector.md#registerForCreateSource)
 
 ## <span id="getValueFormat"> getValueFormat
 
@@ -41,4 +41,4 @@ Value format not present
 
 * `CreateSourceFactory` is requested to [buildFormats](../CreateSourceFactory.md#buildFormats)
 * `DefaultSchemaInjector` is requested to `getValueSchema`, `addSchemaFields`
-* `SchemaRegisterInjector` is requested to `registerForCreateSource`
+* `SchemaRegisterInjector` is requested to [registerForCreateSource](../SchemaRegisterInjector.md#registerForCreateSource)

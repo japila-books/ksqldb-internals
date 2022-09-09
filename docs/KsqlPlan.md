@@ -16,7 +16,7 @@ Used when:
 
 * `EngineExecutor` is requested to [execute a query](EngineExecutor.md#execute)
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`
-* `SchemaRegisterInjector` is requested to `registerForCreateAs`
+* `SchemaRegisterInjector` is requested to [registerForCreateAs](SchemaRegisterInjector.md#registerForCreateAs)
 * `RestoreCommandsCompactor` is requested to `compact`
 * `RestoreCommandsCompactor.CompactedNode` is requested to `maybeAppend`
 

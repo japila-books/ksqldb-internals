@@ -128,6 +128,8 @@ nav:
     - Injectors:
       - DefaultSchemaInjector: DefaultSchemaInjector.md
       - Injector: Injector.md
+      - Injectors: Injectors.md
+      - SchemaRegisterInjector: SchemaRegisterInjector.md
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md

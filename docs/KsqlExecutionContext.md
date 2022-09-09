@@ -31,7 +31,7 @@ Used when:
 
 * `KsqlContext` is requested to [execute a SQL text](embedded/KsqlContext.md#sql)
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`
-* `SchemaRegisterInjector` is requested to `registerForCreateAs`
+* `SchemaRegisterInjector` is requested to [registerForCreateAs](SchemaRegisterInjector.md#registerForCreateAs)
 * `StandaloneExecutor` is requested to [validateStatements](rest/StandaloneExecutor.md#validateStatements)
 * `DistributingExecutor` is requested to [execute](rest/DistributingExecutor.md#execute)
 * `ExplainExecutor` is requested to `explainStatement`
@@ -173,7 +173,7 @@ Used when:
 * `KsqlEngine` is requested to [execute a statement](KsqlEngine.md#execute)
 * `SandboxedExecutionContext` is requested to [execute a statement](SandboxedExecutionContext.md#execute)
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`
-* `SchemaRegisterInjector` is requested to `registerForCreateAs`
+* `SchemaRegisterInjector` is requested to [registerForCreateAs](SchemaRegisterInjector.md#registerForCreateAs)
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
 
 ### <span id="prepare"> Preparing Statement for Execution

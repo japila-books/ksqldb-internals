@@ -21,7 +21,7 @@ Default: (undefined)
 Used when:
 
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`, `forCreateStatement`, `shouldInferSchema`
-* `SchemaRegisterInjector` is requested to `stripSchemaIdConfig`, `registerForCreateSource`, `registerForCreateAs`, `sanityCheck`, `registerRawSchema`
+* `SchemaRegisterInjector` is requested to [stripSchemaIdConfig](../SchemaRegisterInjector.md#stripSchemaIdConfig), [registerForCreateSource](../SchemaRegisterInjector.md#registerForCreateSource), [registerForCreateAs](../SchemaRegisterInjector.md#registerForCreateAs), [sanityCheck](../SchemaRegisterInjector.md#sanityCheck), [registerRawSchema](../SchemaRegisterInjector.md#registerRawSchema)
 * `CreateSourceAsProperties` is requested to [getKeySchemaId](CreateSourceAsProperties.md#getKeySchemaId)
 * `CreateSourceProperties` is requested to [getKeySchemaId](CreateSourceProperties.md#getKeySchemaId)
 
@@ -78,7 +78,7 @@ Used when:
 * `CreateSourceAsProperties` is requested for the [VALUE_SCHEMA_ID](CreateSourceAsProperties.md#getValueSchemaId)
 * `CreateSourceProperties` is requested for the [VALUE_SCHEMA_ID](CreateSourceProperties.md#getValueSchemaId)
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`, `forCreateStatement`, `shouldInferSchema`
-* `SchemaRegisterInjector` is requested to `stripSchemaIdConfig`, `registerForCreateSource`, `tryGetFormat`, `registerForCreateAs`, `sanityCheck`, `registerRawSchema`
+* `SchemaRegisterInjector` is requested to [stripSchemaIdConfig](../SchemaRegisterInjector.md#stripSchemaIdConfig), [registerForCreateSource](../SchemaRegisterInjector.md#registerForCreateSource), [tryGetFormat](../SchemaRegisterInjector.md#tryGetFormat), [registerForCreateAs](../SchemaRegisterInjector.md#registerForCreateAs), [sanityCheck](../SchemaRegisterInjector.md#sanityCheck), [registerRawSchema](../SchemaRegisterInjector.md#registerRawSchema)
 
 ## <span id="WRAP_SINGLE_VALUE"> WRAP_SINGLE_VALUE
 

@@ -56,7 +56,7 @@ Default: (empty)
 
 Used when:
 
-* `SchemaRegisterInjector` is requested to `canRegister`
+* `SchemaRegisterInjector` is requested to [canRegister](SchemaRegisterInjector.md#canRegister)
 * `DefaultSchemaRegistryClient` is requested for `SCHEMA_REGISTRY_CONFIG_NOT_SET`
 * `KsqlSchemaRegistryClientFactory` is [created](KsqlSchemaRegistryClientFactory.md#creating-instance)
 * `KsqlAvroSerdeFactory` is requested to `getAvroConverter`

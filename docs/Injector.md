@@ -4,7 +4,7 @@
 
 ## Contract
 
-### <span id="inject"> inject
+### <span id="inject"> Injecting Metadata
 
 ```java
 <T extends Statement> ConfiguredStatement<T> inject(
@@ -23,7 +23,7 @@ Used when:
 * `DefaultFormatInjector`
 * [DefaultSchemaInjector](DefaultSchemaInjector.md)
 * `InjectorChain`
-* `SchemaRegisterInjector`
+* [SchemaRegisterInjector](SchemaRegisterInjector.md)
 * `SourcePropertyInjector`
 * `TopicCreateInjector`
 * `TopicDeleteInjector`

@@ -201,6 +201,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlEngineMetrics/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlExecutionContext/</loc>
          <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
@@ -596,7 +601,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/embedded/EmbeddedKsql/</loc>
+         <loc>https://books.japila.pl/ksqldb-internals/embedded/</loc>
          <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -166,6 +166,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/Injectors/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/KSPlanBuilder/</loc>
          <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
@@ -387,6 +392,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaKStream/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SchemaRegisterInjector/</loc>
          <lastmod>2022-09-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

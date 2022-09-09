@@ -143,6 +143,7 @@ nav:
       - MutableMetaStore: MutableMetaStore.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
+    - PushRouting: PushRouting.md
     - RouteQuery: RouteQuery.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md

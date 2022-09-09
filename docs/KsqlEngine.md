@@ -2,58 +2,16 @@
 
 `KsqlEngine` is a facade of [EngineContext](#primaryContext).
 
-## Demo: Creating KsqlEngine
-
-```scala
-import io.confluent.ksql.util.KsqlConfig
-val ksqlConfig = KsqlConfig.empty
-
-import io.confluent.ksql.services._
-val serviceContext = ServiceContextFactory.create(ksqlConfig, () => DisabledKsqlClient.instance)
-
-import io.confluent.ksql.logging.processing.ProcessingLogContext
-val processingLogContext = ProcessingLogContext.create()
-
-import io.confluent.ksql.function.InternalFunctionRegistry
-val functionRegistry = new InternalFunctionRegistry()
-
-import io.confluent.ksql.ServiceInfo
-val serviceInfo = ServiceInfo.create(ksqlConfig)
-
-import io.confluent.ksql.query.id.SequentialQueryIdGenerator
-val queryIdGenerator = new SequentialQueryIdGenerator()
-
-import io.confluent.ksql.engine.QueryEventListener
-import scala.jdk.CollectionConverters._
-val queryEventListeners = Seq.empty[QueryEventListener].asJava
-
-import io.confluent.ksql.metrics.MetricCollectors
-val metricCollectors = new MetricCollectors()
-```
-
-```scala
-import io.confluent.ksql.engine.KsqlEngine
-val ksqlEngine = new KsqlEngine(
-  serviceContext,
-  processingLogContext,
-  functionRegistry,
-  serviceInfo,
-  queryIdGenerator,
-  ksqlConfig,
-  queryEventListeners,
-  metricCollectors)
-```
-
 ## Creating Instance
 
 `KsqlEngine` takes the following to be created:
 
-* <span id="serviceContext"> ServiceContext
-* <span id="processingLogContext"> ProcessingLogContext
+* <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
 * [Service ID](#serviceId)
 * [MutableMetaStore](#metaStore)
-* <span id="engineMetricsFactory"> `Function<KsqlEngine, KsqlEngineMetrics>`
-* <span id="queryIdGenerator"> QueryIdGenerator
+* <span id="engineMetricsFactory"> Function to create a [KsqlEngineMetrics](KsqlEngineMetrics.md) for this `KsqlEngine`
+* <span id="queryIdGenerator"> `QueryIdGenerator`
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="queryEventListeners"> `QueryEventListener`s
 
@@ -63,9 +21,14 @@ val ksqlEngine = new KsqlEngine(
 * `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication)
 * `StandaloneExecutorFactory` is requested to [create](rest/StandaloneExecutorFactory.md#create)
 
-### <span id="serviceId"> Service ID
+### <span id="serviceId"><span id="getServiceId"> Service ID
 
 `KsqlEngine` can be given a **Service ID** when [created](#creating-instance). Unless defined, the Service ID is from [ServiceInfo](ServiceInfo.md#serviceId) based on [ksql.service.id](KsqlConfig.md#KSQL_SERVICE_ID_CONFIG) configuration property.
+
+The service ID is used (via `getServiceId` getter) to create the following:
+
+* [KsqlEngineMetrics](KsqlEngineMetrics.md#newCustomMetricsTags)
+* [KsqlRestApplication](rest/KsqlRestApplication.md#buildApplication)
 
 ### <span id="metaStore"> MutableMetaStore
 
@@ -279,3 +242,57 @@ void updateStreamsPropertiesAndRestartRuntime()
 ---
 
 `updateStreamsPropertiesAndRestartRuntime`...FIXME
+
+## Demo: Creating KsqlEngine
+
+```scala
+import io.confluent.ksql.util.KsqlConfig
+val ksqlConfig = KsqlConfig.empty
+
+import io.confluent.ksql.services._
+val serviceContext = ServiceContextFactory.create(ksqlConfig, () => DisabledKsqlClient.instance)
+
+import io.confluent.ksql.logging.processing.ProcessingLogContext
+val processingLogContext = ProcessingLogContext.create()
+
+import io.confluent.ksql.function.InternalFunctionRegistry
+val functionRegistry = new InternalFunctionRegistry()
+
+import io.confluent.ksql.ServiceInfo
+val serviceInfo = ServiceInfo.create(ksqlConfig)
+
+import io.confluent.ksql.query.id.SequentialQueryIdGenerator
+val queryIdGenerator = new SequentialQueryIdGenerator()
+
+import io.confluent.ksql.engine.QueryEventListener
+import scala.jdk.CollectionConverters._
+val queryEventListeners = Seq.empty[QueryEventListener].asJava
+
+import io.confluent.ksql.metrics.MetricCollectors
+val metricCollectors = new MetricCollectors()
+```
+
+```scala
+import io.confluent.ksql.engine.KsqlEngine
+val ksqlEngine = new KsqlEngine(
+  serviceContext,
+  processingLogContext,
+  functionRegistry,
+  serviceInfo,
+  queryIdGenerator,
+  ksqlConfig,
+  queryEventListeners,
+  metricCollectors)
+```
+
+## Logging
+
+Enable `ALL` logging level for `io.confluent.ksql.engine.KsqlEngine` logger to see what happens inside.
+
+Add the following line to `log4j.properties`:
+
+```text
+log4j.logger.io.confluent.ksql.engine.KsqlEngine=ALL
+```
+
+Refer to [Logging](logging.md).

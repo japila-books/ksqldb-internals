@@ -1,10 +1,10 @@
 # Injectors
 
-`Injectors` is a collection of [Injector](Injector.md) ordered chains.
+`Injectors` is a collection of the ordered chains of [Injector](Injector.md)s.
 
 ## <span id="DEFAULT"> DEFAULT
 
-`DEFAULT` chain is the following:
+`DEFAULT` injectors are the following:
 
 1. [NO_TOPIC_DELETE](#NO_TOPIC_DELETE)
 1. `TopicDeleteInjector`
@@ -16,7 +16,7 @@ Used when:
 
 ## <span id="NO_TOPIC_DELETE"> NO_TOPIC_DELETE
 
-`NO_TOPIC_DELETE` chain is the following:
+`NO_TOPIC_DELETE` injectors are the following:
 
 1. `DefaultFormatInjector`
 1. `SourcePropertyInjector`

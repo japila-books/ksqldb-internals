@@ -135,7 +135,9 @@ nav:
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
-    - KsqlEngine: KsqlEngine.md
+    - KsqlEngine:
+      - KsqlEngine: KsqlEngine.md
+      - KsqlEngineMetrics: KsqlEngineMetrics.md
     - KsqlExecutionContext: KsqlExecutionContext.md
     - KsqlSchemaRegistryClientFactory: KsqlSchemaRegistryClientFactory.md
     - KsqlQueryType: KsqlQueryType.md
@@ -179,6 +181,9 @@ nav:
     - TypeRegistry: TypeRegistry.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
+    - Embedded Execution Mode:
+      - embedded/index.md
+      - KsqlContext: embedded/KsqlContext.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
@@ -330,9 +335,6 @@ nav:
     - Ksql: cli/Ksql.md
     - KsqlClient: cli/KsqlClient.md
     - KsqlRestClient: cli/KsqlRestClient.md
-  - Embedded:
-    - EmbeddedKsql: embedded/EmbeddedKsql.md
-    - KsqlContext: embedded/KsqlContext.md
   - API:
     - Endpoints: api/Endpoints.md
     - Server: api/Server.md

@@ -1,6 +1,20 @@
 # KsqlEngine
 
-`KsqlEngine` is a facade of [EngineContext](#primaryContext).
+`KsqlEngine` is the ksqlDB execution engine in all the available execution modes:
+
+* [Embedded](embedded/index.md) (for [KsqlContext](embedded/KsqlContext.md#ksqlEngine))
+* [Headless](headless/index.md) (for [StandaloneExecutor](headless/StandaloneExecutor.md#ksqlEngine))
+* [REST](rest/index.md) (for [KsqlRestApplication](rest/KsqlRestApplication.md#ksqlEngine))
+
+`KsqlEngine` is a facade (_frontend_) of the [EngineContext](#primaryContext).
+
+`KsqlEngine` is used to [parse](#parse), validate (_executed_ in a [sandbox](#createSandbox)) and execute ksql statements (with starting [persistent queries](#getPersistentQueries)).
+
+Phase | Embedded | Headless | REST
+------|----------|----------|------
+[Parsing](#parse) | [KsqlContext](embedded/KsqlContext.md#sql) | [StandaloneExecutor](headless/StandaloneExecutor.md#processesQueryFile) | _FIXME_
+Validation | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor](headless/StandaloneExecutor.md#validateStatements) | _FIXME_
+Execution | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor](headless/StandaloneExecutor.md#executeStatements) | _FIXME_
 
 ## Creating Instance
 
@@ -19,7 +33,7 @@
 
 * `KsqlContext` is requested to [create](embedded/KsqlContext.md#create)
 * `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication)
-* `StandaloneExecutorFactory` is requested to [create](rest/StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` is requested to [create](headless/StandaloneExecutorFactory.md#create)
 
 ### <span id="serviceId"><span id="getServiceId"> Service ID
 
@@ -53,11 +67,11 @@ ExecuteResult execute(
   ConfiguredKsqlPlan plan)
 ```
 
+1. [Plans the statement](#plan) and creates a `ConfiguredKsqlPlan` for the other `execute`
+
 `execute` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#execute) abstraction.
 
 ---
-
-1. [Plans the statement](#plan) and creates a `ConfiguredKsqlPlan` for the other `execute`
 
 `execute` [creates an EngineExecutor](EngineExecutor.md#create) to [execute](EngineExecutor.md#execute) the [KsqlPlan](KsqlPlan.md) (of the given `ConfiguredKsqlPlan`).
 
@@ -242,6 +256,30 @@ void updateStreamsPropertiesAndRestartRuntime()
 ---
 
 `updateStreamsPropertiesAndRestartRuntime`...FIXME
+
+## <span id="getMetaStore"> getMetaStore
+
+```java
+MetaStore getMetaStore()
+```
+
+`getMetaStore` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#getMetaStore) abstraction.
+
+---
+
+`getMetaStore` requests the [EngineContext](#primaryContext) for the [MetaStore](EngineContext.md#getMetaStore)
+
+## <span id="getPersistentQueries"> getPersistentQueries
+
+```java
+List<PersistentQueryMetadata> getPersistentQueries()
+```
+
+`getPersistentQueries` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#getPersistentQueries) abstraction.
+
+---
+
+`getPersistentQueries` requests the [EngineContext](#primaryContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) for the [persistent queries](QueryRegistry.md#getPersistentQueries).
 
 ## Demo: Creating KsqlEngine
 

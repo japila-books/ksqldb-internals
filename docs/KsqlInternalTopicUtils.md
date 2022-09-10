@@ -16,5 +16,5 @@ void ensureTopic(
 `ensureTopic` is used when:
 
 * `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
-* `StandaloneExecutorFactory` is requested to [create a StandaloneExecutor](rest/StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` is requested to [create a StandaloneExecutor](headless/StandaloneExecutorFactory.md#create)
 * `KsqlRestoreCommandTopic` is requested to `restore`

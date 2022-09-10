@@ -85,7 +85,7 @@ Used when:
 * `QueryLogger` is requested to [configure](QueryLogger.md#configure)
 * `QueryBuilder` is requested to [buildStreamsProperties](QueryBuilder.md#buildStreamsProperties)
 * `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication), [setUpHttpMetrics](rest/KsqlRestApplication.md#setUpHttpMetrics)
-* `StandaloneExecutorFactory` is [created](rest/StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` is [created](headless/StandaloneExecutorFactory.md#create)
 * _others_
 
 ## <span id="KSQL_SOURCE_TABLE_MATERIALIZATION_ENABLED"><span id="ksql.source.table.materialization.enabled"> ksql.source.table.materialization.enabled

@@ -1,5 +1,31 @@
 # WSQueryEndpoint
 
+## Creating Instance
+
+`WSQueryEndpoint` takes the following to be created:
+
+* <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
+* <span id="statementParser"> [StatementParser](StatementParser.md)
+* [KsqlEngine](#ksqlEngine)
+* <span id="commandQueue"> [CommandQueue](CommandQueue.md)
+* <span id="exec"> `ListeningScheduledExecutorService`
+* <span id="activenessRegistrar"> `ActivenessRegistrar`
+* <span id="commandQueueCatchupTimeout"> `commandQueueCatchup` timeout
+* <span id="authorizationValidator"> `KsqlAuthorizationValidator`
+* <span id="errorHandler"> `Errors`
+* <span id="denyListPropertyValidator"> `DenyListPropertyValidator`
+* <span id="queryExecutor"> [QueryExecutor](QueryExecutor.md)
+
+`WSQueryEndpoint` is created when:
+
+* `KsqlRestApplication` is requested to [start](KsqlRestApplication.md#startAsync) (and initialize [wsQueryEndpoint](KsqlRestApplication.md#wsQueryEndpoint))
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`WSQueryEndpoint` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is used to [executeStreamQuery](#executeStreamQuery) (to [access the MetaStore](../KsqlEngine.md#getMetaStore)) for authorization (only when [KsqlAuthorizationValidator](#authorizationValidator) is given).
+
 ## <span id="executeStreamQuery"> executeStreamQuery
 
 ```java

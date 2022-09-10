@@ -50,7 +50,7 @@ Used when:
 
 ## Implementations
 
-* [StandaloneExecutor](StandaloneExecutor.md)
+* [StandaloneExecutor](../headless/StandaloneExecutor.md)
 * `MultiExecutable`
 * `ConnectExecutable`
 * [KsqlRestApplication](KsqlRestApplication.md)

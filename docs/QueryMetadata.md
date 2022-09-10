@@ -58,7 +58,7 @@ Starts this query
 Used when:
 
 * `KsqlContext` is requested to [sql](embedded/KsqlContext.md#sql)
-* `StandaloneExecutor` is requested to [processesQueryFile](rest/StandaloneExecutor.md#processesQueryFile)
+* `StandaloneExecutor` is requested to [processesQueryFile](headless/StandaloneExecutor.md#processesQueryFile)
 * `CommandRunner` is requested to [processPriorCommands](rest/CommandRunner.md#processPriorCommands)
 * `InteractiveStatementExecutor` is requested to [executePlan](rest/InteractiveStatementExecutor.md#executePlan)
 

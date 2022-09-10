@@ -9,7 +9,7 @@
 `KsqlRestApplication` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [KsqlEngine](#ksqlEngine)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="restConfig"> [KsqlRestConfig](KsqlRestConfig.md)
 * [CommandRunner](#commandRunner)
@@ -52,6 +52,17 @@ ksqlDB API server instance created
 ---
 
 `KsqlRestApplication` is created using [buildApplication](#buildApplication) utility.
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`KsqlRestApplication` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is active until [shutdown](#shutdown).
+
+The `KsqlEngine` is used in [startAsync](#startAsync) to create the REST API endpoints:
+
+* Create [WSQueryEndpoint](WSQueryEndpoint.md#ksqlEngine) (along with [StatementParser](StatementParser.md))
+* Create [KsqlServerEndpoints](KsqlServerEndpoints.md#ksqlEngine) for [API server](#apiServer)
 
 ### <span id="ksqlResource"> KsqlResource
 

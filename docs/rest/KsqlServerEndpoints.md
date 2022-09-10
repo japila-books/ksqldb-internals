@@ -18,7 +18,7 @@
 * <span id="lagReportingResource"> `LagReportingResource`
 * <span id="healthCheckResource"> `HealthCheckResource`
 * <span id="serverMetadataResource"> `ServerMetadataResource`
-* <span id="wsQueryEndpoint"> `WSQueryEndpoint`
+* <span id="wsQueryEndpoint"> [WSQueryEndpoint](WSQueryEndpoint.md)
 * <span id="pullQueryMetrics"> `PullQueryExecutorMetrics`
 * <span id="queryExecutor"> [QueryExecutor](QueryExecutor.md)
 * <span id="authTokenProvider"> `KsqlAuthTokenProvider`
@@ -33,8 +33,8 @@
 
 The `KsqlEngine` is used when:
 
-* [createQueryPublisher](#createQueryPublisher) (to create a [QueryEndpoint](QueryEndpoint.md))
-* [createInsertsSubscriber](#createInsertsSubscriber) (to create a `InsertsStreamEndpoint`)
+* [createQueryPublisher](#createQueryPublisher) (to create a [QueryEndpoint](QueryEndpoint.md#ksqlEngine))
+* [createInsertsSubscriber](#createInsertsSubscriber) (to create a [InsertsStreamEndpoint](InsertsStreamEndpoint.md#ksqlEngine))
 
 ### <span id="ksqlResource"> KsqlResource
 
@@ -51,6 +51,26 @@ The `KsqlEngine` is used when:
 `KsqlServerEndpoints` is given a [StreamedQueryResource](StreamedQueryResource.md) when [created](#creating-instance).
 
 The `StreamedQueryResource` is used to [executeQueryRequest](#executeQueryRequest).
+
+## <span id="createInsertsSubscriber"> Creating InsertsStreamSubscriber
+
+```java
+CompletableFuture<InsertsStreamSubscriber> createInsertsSubscriber(
+  String target,
+  JsonObject properties,
+  Subscriber<InsertResult> acksSubscriber,
+  Context context,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext)
+```
+
+`createInsertsSubscriber` is part of the [Endpoints](../api/Endpoints.md#createInsertsSubscriber) abstraction.
+
+---
+
+`createInsertsSubscriber` [executes the following](#executeOnWorker) on the given `WorkerExecutor`:
+
+* Create an [InsertsStreamEndpoint](InsertsStreamEndpoint.md) to [createInsertsSubscriber](InsertsStreamEndpoint.md#createInsertsSubscriber)
 
 ## <span id="createQueryPublisher"> Creating QueryPublisher
 

@@ -29,4 +29,4 @@ ServiceInfo create(
 
 * `KsqlRestApplication` is requested to [build a KsqlRestApplication](rest/KsqlRestApplication.md#buildApplication)
 * `KsqlContext` is [created](embedded/KsqlContext.md#create)
-* `StandaloneExecutorFactory` is [created](rest/StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` is [created](headless/StandaloneExecutorFactory.md#create)

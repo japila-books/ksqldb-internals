@@ -45,7 +45,7 @@ KsqlPlan plan(
 ```java
 ExecuteResult execute(
   ServiceContext serviceContext,
-  ConfiguredStatement<?> statement) // (1)
+  ConfiguredStatement<?> statement) // (1)!
 ExecuteResult execute(
   ServiceContext serviceContext,
   ConfiguredKsqlPlan plan)

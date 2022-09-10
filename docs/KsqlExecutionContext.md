@@ -32,7 +32,7 @@ Used when:
 * `KsqlContext` is requested to [execute a SQL text](embedded/KsqlContext.md#sql)
 * `DefaultSchemaInjector` is requested to `forCreateAsStatement`
 * `SchemaRegisterInjector` is requested to [registerForCreateAs](SchemaRegisterInjector.md#registerForCreateAs)
-* `StandaloneExecutor` is requested to [validateStatements](rest/StandaloneExecutor.md#validateStatements)
+* `StandaloneExecutor` is requested to [validateStatements](headless/StandaloneExecutor.md#validateStatements)
 * `DistributingExecutor` is requested to [execute](rest/DistributingExecutor.md#execute)
 * `ExplainExecutor` is requested to `explainStatement`
 * `KsqlResource` is requested to [configure](rest/KsqlResource.md#configure)
@@ -54,7 +54,7 @@ Used when:
 
 * `InteractiveStatementExecutor` is requested to [execute a KsqlPlan](rest/InteractiveStatementExecutor.md#executePlan)
 * `KsqlContext` is requested to [execute a statement](embedded/KsqlContext.md#execute)
-* `StandaloneExecutor.StatementExecutor` is requested to [handleExecutableDdl](rest/StandaloneExecutor_StatementExecutor.md#handleExecutableDdl) and [handlePersistentQuery](rest/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery)
+* `StandaloneExecutor.StatementExecutor` is requested to [handleExecutableDdl](headless/StandaloneExecutor_StatementExecutor.md#handleExecutableDdl) and [handlePersistentQuery](headless/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery)
 * `ExplainExecutor` is requested to [explain a Statement](rest/ExplainExecutor.md#explainStatement)
 * `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
 * `ValidatedCommandFactory` is requested to [createForPlannedQuery](rest/ValidatedCommandFactory.md#createForPlannedQuery)
@@ -135,7 +135,7 @@ Used when:
 * `PersistentQuerySaturationMetrics` is requested to `run`
 * `DiscoverClusterService` is requested to `runOneIteration`
 * `SendLagService` is requested to `runOneIteration`
-* `StandaloneExecutor` is requested to [processesQueryFile](rest/StandaloneExecutor.md#processesQueryFile)
+* `StandaloneExecutor` is requested to [processesQueryFile](headless/StandaloneExecutor.md#processesQueryFile)
 * `CommandRunner` is requested to [processPriorCommands](rest/CommandRunner.md#processPriorCommands)
 * _others_
 
@@ -152,7 +152,7 @@ Used when:
 * `SqlFormatInjector` is requested to `inject`
 * `QueryEndpoint` is requested to [createStatement](rest/QueryEndpoint.md#createStatement)
 * `KsqlRestApplication` is requested to [registerCommandTopic](rest/KsqlRestApplication.md#registerCommandTopic)
-* `StandaloneExecutor` is requested to [processesQueryFile](rest/StandaloneExecutor.md#processesQueryFile)
+* `StandaloneExecutor` is requested to [processesQueryFile](headless/StandaloneExecutor.md#processesQueryFile)
 * `StatementParser` is requested to `parseSingleStatement`
 * `KsqlResource` is requested to [handleKsqlStatements](rest/KsqlResource.md#handleKsqlStatements)
 
@@ -196,7 +196,7 @@ Used when:
 * `RequestHandler` is requested to [execute](rest/RequestHandler.md#execute)
 * `RequestValidator` is requested to [validate](rest/RequestValidator.md#validate)
 * `SqlFormatInjector` is requested to `inject`
-* `StandaloneExecutor.StatementExecutor` is requested to [prepare a statement](rest/StandaloneExecutor_StatementExecutor.md#prepare)
+* `StandaloneExecutor.StatementExecutor` is requested to [prepare a statement](headless/StandaloneExecutor_StatementExecutor.md#prepare)
 * `StatementParser` is requested to `parseSingleStatement`
 
 ### <span id="updateStreamsPropertiesAndRestartRuntime"> updateStreamsPropertiesAndRestartRuntime

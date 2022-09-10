@@ -39,11 +39,11 @@ KStreamHolder<GenericKey> visitStreamSource(
   PlanInfo planInfo) // (1)!
 ```
 
+1. The given `PlanInfo` is not used.
+
 `visitStreamSource` is part of the [PlanBuilder](PlanBuilder.md#visitStreamSource) abstraction.
 
 ---
-
-1. The given `PlanInfo` is not used.
 
 `visitStreamSource` uses the [SourceBuilderV1](SourceBuilderV1.md#instance) to [build a KStream](SourceBuilderV1.md#buildStream) (for the [RuntimeBuildContext](#buildContext), the given [StreamSource](StreamSource.md) and the `ConsumedFactory` from the [StreamsFactories](#streamsFactories)).
 

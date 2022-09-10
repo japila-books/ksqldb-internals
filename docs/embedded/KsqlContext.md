@@ -8,10 +8,23 @@
 
 * <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [KsqlEngine](#ksqlEngine)
 * <span id="injectorFactory"> [DEFAULT injectors](../Injectors.md#DEFAULT)
 
 `KsqlContext` is created using [create](#create) utility.
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`KsqlContext` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is active until [close](#close).
+
+The `KsqlEngine` is used when:
+
+* [getMetaStore](#getMetaStore)
+* [sql](#sql)
+* [getRunningQueries](#getRunningQueries) and [getPersistentQueries](#getPersistentQueries)
+* [terminateQuery](#terminateQuery)
 
 ## <span id="create"> Creating KsqlContext
 

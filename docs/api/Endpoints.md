@@ -4,6 +4,44 @@
 
 ## Contract (Subset)
 
+### <span id="createQueryPublisher"> Creating QueryPublisher
+
+```java
+CompletableFuture<QueryPublisher> createQueryPublisher(
+  String sql,
+  Map<String, Object> properties,
+  Map<String, Object> sessionVariables,
+  Map<String, Object> requestProperties,
+  Context context, WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext,
+  MetricsCallbackHolder metricsCallbackHolder,
+  Optional<Boolean> isInternalRequest)
+```
+
+See [KsqlServerEndpoints](../rest/KsqlServerEndpoints.md#createQueryPublisher)
+
+Used when:
+
+* `ServerVerticle` is requested to [handle /query-stream and /query REST endpoints](ServerVerticle.md#setupRouter)
+
+### <span id="createInsertsSubscriber"> Creating InsertsStreamSubscriber
+
+```java
+CompletableFuture<InsertsStreamSubscriber> createInsertsSubscriber(
+  String target,
+  JsonObject properties,
+  Subscriber<InsertResult> acksSubscriber,
+  Context context,
+  WorkerExecutor workerExecutor,
+  ApiSecurityContext apiSecurityContext)
+```
+
+See [KsqlServerEndpoints](../rest/KsqlServerEndpoints.md#createInsertsSubscriber)
+
+Used when:
+
+* `ServerVerticle` is requested to [handle /inserts-stream REST endpoint](ServerVerticle.md#setupRouter)
+
 ### <span id="executeKsqlRequest"> Executing KsqlRequest
 
 ```java

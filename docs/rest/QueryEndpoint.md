@@ -1,21 +1,33 @@
 # QueryEndpoint
 
-`QueryEndpoint` is [created](#creating-instance) and requested to [createQueryPublisher](#createQueryPublisher) for [KsqlServerEndpoints](KsqlServerEndpoints.md) (when requested to [createQueryPublisher](KsqlServerEndpoints.md#createQueryPublisher)).
+`QueryEndpoint` is used to [create a QueryPublisher](#createQueryPublisher) for [KsqlServerEndpoints](KsqlServerEndpoints.md#createQueryPublisher).
 
 ## Creating Instance
 
 `QueryEndpoint` takes the following to be created:
 
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [KsqlEngine](#ksqlEngine)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="pullQueryMetrics"> `PullQueryExecutorMetrics`
-* <span id="queryExecutor"> [QueryExecutor](QueryExecutor.md)
+* [QueryExecutor](#queryExecutor)
 
 `QueryEndpoint` is created when:
 
 * `KsqlServerEndpoints` is requested to [createQueryPublisher](KsqlServerEndpoints.md#createQueryPublisher)
 
-## <span id="createQueryPublisher"> createQueryPublisher
+### <span id="ksqlEngine"> KsqlEngine
+
+`QueryEndpoint` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is used when [configuring a query statement](#createStatement) (to [parse](../KsqlExecutionContext.md#parse) and [prepare](../KsqlExecutionContext.md#prepare) a KSQL query statement).
+
+### <span id="queryExecutor"> QueryExecutor
+
+`QueryEndpoint` is given a [QueryExecutor](QueryExecutor.md) when [created](#creating-instance).
+
+The `QueryExecutor` is used for [createQueryPublisher](#createQueryPublisher) (to [handle a configured KSQL query statement](QueryExecutor.md#handleStatement)).
+
+## <span id="createQueryPublisher"> Creating QueryPublisher
 
 ```java
 QueryPublisher createQueryPublisher(

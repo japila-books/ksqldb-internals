@@ -1,25 +1,36 @@
 # StandaloneExecutor
 
-`StandaloneExecutor` is an [Executable](Executable.md) for _headless execution mode_.
+`StandaloneExecutor` is the [Executable](../rest/Executable.md) for [Headless Execution Mode](index.md).
 
 ## Creating Instance
 
 `StandaloneExecutor` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
-* <span id="processingLogConfig"> `ProcessingLogConfig`
+* <span id="processingLogConfig"> [ProcessingLogConfig](../rest/ProcessingLogConfig.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
-* <span id="queriesFile"> Queries File
+* [KsqlEngine](#ksqlEngine)
+* <span id="queriesFile"> Query File
 * <span id="udfLoader"> [UserFunctionLoader](../UserFunctionLoader.md)
 * <span id="failOnNoQueries"> `failOnNoQueries` flag
 * <span id="versionChecker"> [VersionCheckerAgent](../VersionCheckerAgent.md)
-* <span id="injectorFactory"> `injectorFactory` function `BiFunction<KsqlExecutionContext, ServiceContext, Injector>`
-* <span id="metricCollectors"> `MetricCollectors`
+* <span id="injectorFactory"> Factory to build an [Injector](../Injector.md) (based on [KsqlExecutionContext](../KsqlExecutionContext.md) and [ServiceContext](../ServiceContext.md))
+* <span id="metricCollectors"> [MetricCollectors](../MetricCollectors.md)
 
 `StandaloneExecutor` is created when:
 
 * `StandaloneExecutorFactory` utility is used to [create a StandaloneExecutor](StandaloneExecutorFactory.md#create)
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`StandaloneExecutor` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is active until [shutdown](#shutdown).
+
+The `KsqlEngine` is used when:
+
+* [validateStatements](#validateStatements)
+* [processesQueryFile](#processesQueryFile)
 
 ## <span id="startAsync"> startAsync
 
@@ -29,7 +40,7 @@ void startAsync()
 
 `startAsync` requests the [UserFunctionLoader](#udfLoader) to [load](../UserFunctionLoader.md#load).
 
-`startAsync` [maybeCreateProcessingLogTopic](ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic).
+`startAsync` [maybeCreateProcessingLogTopic](../rest/ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic).
 
 With `stream.auto.create` enabled, `startAsync` prints out the following WARN message to the logs:
 
@@ -45,7 +56,7 @@ In the end, `startAsync` requests the [VersionCheckerAgent](#versionChecker) to 
 
 ---
 
-`startAsync` is part of the [Executable](Executable.md#startAsync) abstraction.
+`startAsync` is part of the [Executable](../rest/Executable.md#startAsync) abstraction.
 
 ### <span id="readQueriesFile"> Loading Queries File
 
@@ -71,7 +82,7 @@ void processesQueryFile(
 
 `processesQueryFile`...FIXME
 
-### <span id="validateStatements"> Validating ParsedStatements
+### <span id="validateStatements"> Validating Statements
 
 ```java
 void validateStatements(
@@ -82,7 +93,7 @@ void validateStatements(
 
 `validateStatements` uses the [injectorFactory](#injectorFactory) to create an `Injector` (with the [SandboxedExecutionContext](../SandboxedExecutionContext.md) and its [ServiceContext](../SandboxedExecutionContext.md#getServiceContext)).
 
-`validateStatements` creates a [StatementExecutor](StatementExecutor.md) to [execute the ParsedStatements](#executeStatements).
+`validateStatements` creates a [StatementExecutor](../rest/StatementExecutor.md) to [execute the ParsedStatements](#executeStatements).
 
 In the end, if [failOnNoQueries](#failOnNoQueries) and there was no [QueryContainer](../parser/QueryContainer.md), `validateStatements` throws a `KsqlException`:
 
@@ -100,7 +111,7 @@ boolean executeStatements(
   StatementExecutor executor)
 ```
 
-`executeStatements` requests the given [StatementExecutor](StatementExecutor.md) to [execute](StatementExecutor.md#execute) the given `ParsedStatement`s one by one.
+`executeStatements` requests the given [StatementExecutor](../rest/StatementExecutor.md) to [execute](../rest/StatementExecutor.md#execute) the given `ParsedStatement`s one by one.
 
 In the end, `executeStatements` returns whether there was a `ParsedStatement` with a query.
 

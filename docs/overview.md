@@ -4,13 +4,17 @@
 
 ## How ksqlDB Works
 
+The primary ksqlDB services are [KsqlEngine](KsqlEngine.md) and [ServiceContext](ServiceContext.md).
+
 ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from the [command line](rest/ServerOptions.md#queries-file) or sent through a REST endpoint, e.g. using [ksql](cli/Ksql.md)).
+
+ksqlDB can also be used [embedded](embedded/index.md).
 
 [KsqlResource](rest/KsqlResource.md) is used to...FIXME
 
 ### Executing DDL Commands
 
-[DdlCommand](DdlCommand.md)s (e.g. `CREATE STREAM`) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
+[DdlCommand](DdlCommand.md)s (e.g. [CREATE STREAM](parser/CreateStream.md)) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
 
 DDL commands are then planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
 

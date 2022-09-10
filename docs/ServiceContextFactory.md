@@ -25,4 +25,4 @@ ServiceContext create(
 
 * `KsqlContext` utility is requested for a [KsqlContext](embedded/KsqlContext.md#create)
 * `RestServiceContextFactory` is requested to [create a ServiceContext](rest/RestServiceContextFactory.md#create)
-* `StandaloneExecutorFactory` utility is requested for a [StandaloneExecutor](rest/StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` utility is requested for a [StandaloneExecutor](headless/StandaloneExecutorFactory.md#create)

@@ -4,7 +4,7 @@
 
 `KsqlServerMain` [starts an Executable](#createExecutable):
 
-1. [StandaloneExecutor](StandaloneExecutor.md) with [queries file](ServerOptions.md#getQueriesFile) specified
+1. [StandaloneExecutor](../headless/StandaloneExecutor.md) with [queries file](ServerOptions.md#getQueriesFile) specified
 1. [KsqlRestApplication](KsqlRestApplication.md) unless [ksql.connect.worker.config](../KsqlConfig.md#CONNECT_WORKER_CONFIG_FILE_PROPERTY) configuration property is specified
 1. `MultiExecutable` with a `ConnectExecutable` and the [KsqlRestApplication](KsqlRestApplication.md)
 
@@ -54,7 +54,7 @@ Executable createExecutable(
   MetricCollectors metricCollectors)
 ```
 
-With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` returns a new [StandaloneExecutor](StandaloneExecutorFactory.md#create).
+With [queries file](ServerOptions.md#getQueriesFile) specified, `createExecutable` returns a new [StandaloneExecutor](../headless/StandaloneExecutorFactory.md#create).
 
 Otherwise, `createExecutable` creates a [KsqlRestConfig](KsqlRestConfig.md) (with the given `properties`) to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (with the `KsqlRestConfig` and the given `MetricCollectors`).
 

@@ -145,6 +145,7 @@ nav:
       - MetaStore: MetaStore.md
       - MetaStoreImpl: MetaStoreImpl.md
       - MutableMetaStore: MutableMetaStore.md
+    - MetricCollectors: MetricCollectors.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
     - PushRouting: PushRouting.md
@@ -181,9 +182,16 @@ nav:
     - TypeRegistry: TypeRegistry.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
-    - Embedded Execution Mode:
-      - embedded/index.md
-      - KsqlContext: embedded/KsqlContext.md
+    - Execution Modes:
+      - Embedded:
+        - embedded/index.md
+        - KsqlContext: embedded/KsqlContext.md
+      - Headless:
+        - headless/index.md
+        - KafkaConfigStore: headless/KafkaConfigStore.md
+        - StandaloneExecutor: headless/StandaloneExecutor.md
+        - StandaloneExecutorFactory: headless/StandaloneExecutorFactory.md
+        - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
@@ -298,6 +306,7 @@ nav:
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
     - ExplainExecutor: rest/ExplainExecutor.md
+    - InsertsStreamEndpoint: rest/InsertsStreamEndpoint.md
     - InteractiveStatementExecutor: rest/InteractiveStatementExecutor.md
     - InternalKsqlClientFactory: rest/InternalKsqlClientFactory.md
     - KsqlConfigurable: rest/KsqlConfigurable.md
@@ -318,10 +327,6 @@ nav:
     - ScalablePushUtil: rest/ScalablePushUtil.md
     - ServerOptions: rest/ServerOptions.md
     - SequenceNumberFutureStore: rest/SequenceNumberFutureStore.md
-    - StandaloneExecutor:
-      - StandaloneExecutor: rest/StandaloneExecutor.md
-      - StatementExecutor: rest/StandaloneExecutor_StatementExecutor.md
-    - StandaloneExecutorFactory: rest/StandaloneExecutorFactory.md
     - StatementExecutors:
       - ListSourceExecutor: rest/ListSourceExecutor.md
       - StatementExecutor: rest/StatementExecutor.md

@@ -49,7 +49,7 @@ _confluent-ksql-[ksql.service.id]_configs
 
 `configsTopic` is used when:
 
-* `StandaloneExecutorFactory` utility is used to [create a StandaloneExecutor](StandaloneExecutorFactory.md#create)
+* `StandaloneExecutorFactory` utility is used to [create a StandaloneExecutor](../headless/StandaloneExecutorFactory.md#create)
 
 ## <span id="toKsqlInternalTopic"> toKsqlInternalTopic
 

@@ -16,4 +16,4 @@ Optional<String> maybeCreateProcessingLogTopic(
 `maybeCreateProcessingLogTopic` is used when:
 
 * `KsqlRestApplication` is requested to [initialize](KsqlRestApplication.md#initialize)
-* `StandaloneExecutor` is requested to [startAsync](StandaloneExecutor.md#startAsync)
+* `StandaloneExecutor` is requested to [startAsync](../headless/StandaloneExecutor.md#startAsync)

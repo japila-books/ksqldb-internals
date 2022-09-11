@@ -2,1092 +2,1112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/AlterSourceCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/AlterSourceFactory/</loc>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Analysis/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Analyzer/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Analyzer_Visitor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/AstSanitizer/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/CommandFactories/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ConfiguredKsqlPlan/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateSourceCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateSourceFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateStreamCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/CreateTableCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DataSource/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DataSourceExtractor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommandExec.Executor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommandExec/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DdlCommandFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DefaultSchemaInjector/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DropSourceCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/DropTypeCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/EngineContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/EngineExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ExecutionStep/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ExecutionStepFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Executor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ExpressionRewriterPlugin/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Format/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/FormatFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/FunctionRegistry/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/HARouting/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ImmutableAnalysis/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Injector/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/Injectors/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KSPlanBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KafkaStreamsBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KafkaStreamsBuilderImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KafkaTopicClientImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlConfig/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlEngine/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlEngineMetrics/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlExecutionContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlInternalTopicUtils/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlPlan/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlPlanV1/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlQueryType/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlSchemaRegistryClientFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlStream/</loc>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/MetaStore/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/MetaStoreImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/MetricCollectors/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/MutableMetaStore/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PersistentQueryMetadata/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PersistentQueryMetadataImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PhysicalPlan/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PhysicalPlanBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PlanBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PlanInfoExtractor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PullQueryValidator/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PushQueryMetadata/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PushRouting/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryAnalyzer/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryApplicationId/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryBuilderFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryEngine/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryEventListener/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryLogger/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryMetadata/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryMetadataImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryPlan/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryRegistry/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryRegistryImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryValidator/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/RegisterTypeCommand/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/RewriterPlugin/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/RewrittenAnalysis/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/RouteQuery/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/RuntimeBuildContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SandboxedExecutionContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaKSourceFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaKStream/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaRegisterInjector/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceContextFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceInfo/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SessionConfig/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SharedKafkaStreamsRuntime/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SharedKafkaStreamsRuntimeImpl/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SlidingWindowRateLimiter/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SourceBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SourceBuilderBase/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SourceBuilderV1/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SourceStep/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/SqlTypeParser/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/StreamSelect/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/StreamSelectBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/StreamSource/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/StructuredDataSource/</loc>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/TransientQueryMetadata/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/TypeRegistry/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/UserFunctionLoader/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/VersionCheckerAgent/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/debugging/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/logging/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/overview/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/persistent-queries/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/processing-log/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/pull-queries/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/push-queries/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/server-properties/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/api/Endpoints/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/api/Server/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/api/ServerVerticle/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/Cli/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/Ksql/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/KsqlClient/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/cli/KsqlRestClient/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/confluent-schema-registry/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/multi-node-ksqldb-deployment/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/pull-queries/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/show-streams/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/embedded/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/embedded/KsqlContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/KafkaConfigStore/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/StandaloneExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/StandaloneExecutorFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/StandaloneExecutor_StatementExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/AlterSource/</loc>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AlterSystemProperty/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder_Visitor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AstNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AstVisitor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CommonCreateConfigs/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateAsSelect/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateSource/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateSourceAsProperties/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateSourceProperties/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateStream/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateStreamAsSelect/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateTable/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/CreateTableAsSelect/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/DdlStatement/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/DefaultKsqlParser/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/DefaultTraversalVisitor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/ExecutableDdlStatement/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Explain/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Expression/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/InsertInto/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/KsqlParser/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/KsqlWindowExpression/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/ListStreams/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Node/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Query/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/QueryContainer/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/SourceAccumulator/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/SourcePropertiesUtil/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Statement/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/TerminateQuery/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/VariableSubstitutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/DataSourceNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/FlatMapNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/JoinNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/KsqlStructuredDataOutputNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/LogicalPlanner/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/OutputNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/PlanNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/QueryPlannerOptions/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/SingleSourcePlanNode/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/Command/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandIdAssigner/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandQueue/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandRunner/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandRunnerMetrics/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandStore/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandStoreUtil/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandTopic/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CommandTopicBackup/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/CustomExecutors/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/DefaultCommandQueueSync/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/DistributingExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/Executable/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ExplainExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/InsertsStreamEndpoint/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/InteractiveStatementExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/InternalKsqlClientFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlConfigurable/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlResource/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlRestApplication/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlRestConfig/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlServerEndpoints/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/KsqlServerMain/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ListSourceExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ProcessingLogConfig/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ProcessingLogContext/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ProcessingLogServerUtils/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/QueryEndpoint/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/QueryExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/RequestHandler/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/RequestValidator/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ReservedInternalTopics/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/RestServiceContextFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ScalablePushUtil/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/SequenceNumberFutureStore/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ServerOptions/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/StatementExecutor/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/StatementParser/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/StreamedQueryResource/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ValidatedCommandFactory/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/WSQueryEndpoint/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/types/SqlBaseType/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/types/SqlPrimitiveType/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/types/SqlType/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/udf/Column/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/udf/SqlTypeSchemaSerializer/</loc>
-         <lastmod>2022-09-10</lastmod>
+         <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

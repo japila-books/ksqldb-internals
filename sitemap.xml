@@ -606,6 +606,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/demo/create-table-as-select/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/multi-node-ksqldb-deployment/</loc>
          <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>

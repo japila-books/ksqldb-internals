@@ -8,7 +8,7 @@
 
 * <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
 * <span id="executionContext"> [KsqlExecutionContext](../KsqlExecutionContext.md)
-* <span id="injector"> `Injector`
+* <span id="injector"> [Injector](../Injector.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 
 `StatementExecutor` is created when:
@@ -24,10 +24,10 @@ SQL | Statement Class | Handler
  <span id="SetProperty"> SET | `SetProperty` | `StatementExecutor::handleSetProperty`
  UNSET | `UnsetProperty` | `StatementExecutor::handleUnsetProperty`
  CREATE STREAM | [CreateStream](../parser/CreateStream.md) | `StatementExecutor::handleExecutableDdl`
- CREATE TABLE | `CreateTable` | `StatementExecutor::handleExecutableDdl`
+ CREATE TABLE | [CreateTable](../parser/CreateTable.md) | `StatementExecutor::handleExecutableDdl`
  REGISTER TYPE | `RegisterType` | `StatementExecutor::handleExecutableDdl`
- <span id="CreateStreamAsSelect"> CREATE STREAM AS SELECT | `CreateStreamAsSelect` | [handlePersistentQuery](#handlePersistentQuery)
- <span id="CreateTableAsSelect"> CREATE TABLE AS SELECT | `CreateTableAsSelect` | [handlePersistentQuery](#handlePersistentQuery)
+ <span id="CreateStreamAsSelect"> CREATE STREAM AS SELECT | [CreateStreamAsSelect](../parser/CreateStreamAsSelect.md) | [handlePersistentQuery](#handlePersistentQuery)
+ <span id="CreateTableAsSelect"> CREATE TABLE AS SELECT | [CreateTableAsSelect](../parser/CreateTableAsSelect.md) | [handlePersistentQuery](#handlePersistentQuery)
  <span id="InsertInto"> INSERT INTO | [InsertInto](../parser/InsertInto.md) | [handlePersistentQuery](#handlePersistentQuery)
 
 The `HANDLERS` is used in [execute](#execute) and [generateSupportedMessage](#generateSupportedMessage).
@@ -39,6 +39,8 @@ void handlePersistentQuery(
   ConfiguredStatement<?> statement)
 ```
 
+`handlePersistentQuery` handles [persistent queries](../persistent-queries.md) only.
+
 `handlePersistentQuery` requests the [KsqlExecutionContext](#executionContext) to [execute the given statement](../KsqlExecutionContext.md#execute) (in the [ServiceContext](#serviceContext)) to produce a [QueryMetadata](../QueryMetadata.md).
 
 `handlePersistentQuery` makes sure that the `QueryMetadata` is a `PersistentQueryMetadata` or throws a `KsqlStatementException`:
@@ -47,6 +49,8 @@ void handlePersistentQuery(
 Could not build the query
 ```
 
+---
+
 `handlePersistentQuery` is used when:
 
-* `StatementExecutor` is requested to handle [CREATE STREAM AS SELECT](#CreateStreamAsSelect), [CREATE TABLE AS SELECT](#CreateTableAsSelect) and [INSERT INTO](#InsertInto) SQL statements
+* `StatementExecutor` is requested for the [HANDLERS](#HANDLERS) (to handle [CREATE STREAM AS SELECT](#CreateStreamAsSelect), [CREATE TABLE AS SELECT](#CreateTableAsSelect) and [INSERT INTO](#InsertInto) statements)

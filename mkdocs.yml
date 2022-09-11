@@ -359,3 +359,4 @@ nav:
     - Multi-Node ksqlDB Deployment: demo/multi-node-ksqldb-deployment.md
     - Pull Queries: demo/pull-queries.md
     - SHOW STREAMS: demo/show-streams.md
+    - CREATE TABLE AS SELECT: demo/create-table-as-select.md

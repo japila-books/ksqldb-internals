@@ -2,10 +2,6 @@
 
 `AlterSource` is a [Statement](Statement.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [ALTER SOURCE](AstBuilder_Visitor.md#visitAlterSource) KSQL command.
 
-```text
-ALTER (STREAM | TABLE) sourceName alterOption (',' alterOption)*
-```
-
 `AlterSource` is converted into [AlterSourceCommand](../AlterSourceCommand.md) (using [CommandFactories](../CommandFactories.md#handleAlterSource) and [AlterSourceFactory](../AlterSourceFactory.md)).
 
 ## Creating Instance

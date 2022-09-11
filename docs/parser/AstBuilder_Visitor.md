@@ -116,7 +116,7 @@ tableProperties
 
 `visitCreateStream` creates a [CreateStream](CreateStream.md).
 
-### <span id="visitCreateStreamAs"> CREATE STREAM AS
+### <span id="visitCreateStreamAs"> CREATE STREAM AS SELECT
 
 ```java
 Node visitCreateStreamAs(
@@ -127,7 +127,8 @@ Node visitCreateStreamAs(
 
 ```antlr
 CREATE (OR REPLACE)? STREAM (IF NOT EXISTS)? sourceName
-  (WITH tableProperties)? AS query
+  (WITH tableProperties)?
+  AS query
 ```
 
 `visitCreateStreamAs` creates a [CreateStreamAsSelect](CreateStreamAsSelect.md).
@@ -163,18 +164,19 @@ columnConstraints
 
 `visitCreateTable` creates a [CreateTable](CreateTable.md).
 
-### <span id="visitCreateTableAs"> CREATE TABLE AS
+### <span id="visitCreateTableAs"> CREATE TABLE AS SELECT
 
 ```java
 Node visitCreateTableAs(
   SqlBaseParser.CreateTableAsContext context)
 ```
 
-`visitCreateTableAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE AS` (CTAS) statements.
+`visitCreateTableAs` is part of the `SqlBaseBaseVisitor` abstraction to handle `CREATE TABLE AS SELECT` (CTAS) statements.
 
 ```antlr
 CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
-  (WITH tableProperties)? AS query
+  (WITH tableProperties)?
+  AS query
 ```
 
 `visitCreateTableAs` creates a [CreateTableAsSelect](CreateTableAsSelect.md).

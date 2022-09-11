@@ -3,9 +3,9 @@
 **Persistent Queries** (per `PersistentQueryType`) can be the following queries:
 
 * [CREATE_SOURCE](#CREATE_SOURCE)
-* `CREATE STREAM AS SELECT`
-* `CREATE TABLE AS SELECT`
-* `INSERT INTO`
+* [CREATE STREAM AS SELECT](parser/AstBuilder_Visitor.md#visitCreateStreamAs)
+* [CREATE TABLE AS SELECT](parser/AstBuilder_Visitor.md#visitCreateTableAs)
+* [INSERT INTO](parser/AstBuilder_Visitor.md#visitInsertInto)
 
 When [Analyzer](Analyzer.md) is requested to [analyze a query](Analyzer.md#analyze) it creates a [Visitor](Analyzer.md#Visitor) with a flag to indicate whether the sink is defined or not for persistent queries.
 

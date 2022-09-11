@@ -78,7 +78,7 @@ boolean shouldSynchronize(
 * [terminateCluster](#terminateCluster)
 * [handleKsqlStatements](#handleKsqlStatements)
 
-## <span id="handleKsqlStatements"> Handling Statements
+## <span id="handleKsqlStatements"> Handling KSQL Statements
 
 ```java
 EndpointResponse handleKsqlStatements(
@@ -92,11 +92,11 @@ EndpointResponse handleKsqlStatements(
 Received: [request]
 ```
 
-`handleKsqlStatements` requests the [KsqlEngine](#ksqlEngine) to [parse the SQL text](../KsqlEngine.md#parse) (from the given `KsqlRequest`).
+`handleKsqlStatements` requests the [KsqlEngine](#ksqlEngine) to [parse the KSQL text](../KsqlEngine.md#parse) (from the given `KsqlRequest`).
 
 `handleKsqlStatements` requests the [RequestValidator](#validator) to [validate](RequestValidator.md#validate) the statements (in a `SandboxedServiceContext`).
 
-`handleKsqlStatements` requests the [RequestHandler](#handler) to [execute the SQL statements](RequestHandler.md#execute).
+`handleKsqlStatements` requests the [RequestHandler](#handler) to [execute the KSQL statements](RequestHandler.md#execute).
 
 In the end, `handleKsqlStatements` prints out the following INFO message to the logs:
 

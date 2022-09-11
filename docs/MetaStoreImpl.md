@@ -16,6 +16,16 @@
 * `EngineExecutor` is requested to [sourceTablePlan](EngineExecutor.md#sourceTablePlan)
 * `KsqlEngine` is [created](KsqlEngine.md#metaStore)
 
+## <span id="dataSources"> dataSources
+
+```java
+Map<SourceName, SourceInfo> dataSources
+```
+
+`MetaStoreImpl` starts with an empty `dataSources` registry when [created](#creating-instance).
+
+A new entry is added in [putSource](#putSource).
+
 ## <span id="putSource"> Registering DataSource
 
 ```java

@@ -4,9 +4,11 @@
 
 ## Implementations
 
+* [AlterSource](AlterSource.md)
 * [AlterSystemProperty](AlterSystemProperty.md)
 * [CreateAsSelect](CreateAsSelect.md)
 * [CreateSource](CreateSource.md)
+* [Explain](Explain.md)
 * [InsertInto](InsertInto.md)
 * [Query](Query.md)
 * _others_

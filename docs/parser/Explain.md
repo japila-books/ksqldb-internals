@@ -1,4 +1,4 @@
-# Explain Statement
+# Explain
 
 `Explain` is a [Statement](Statement.md).
 
@@ -12,8 +12,8 @@
 
 `Explain` is created when:
 
+* `AstBuilder.Visitor` is requested to [parse EXPLAIN statement](AstBuilder_Visitor.md#visitExplain)
 * `StatementRewriter.Rewriter` is requested to `visitExplain`
-* `AstBuilder.Visitor` is requested to [visitExplain](AstBuilder_Visitor.md#visitExplain)
 
 ## <span id="accept"> accept
 

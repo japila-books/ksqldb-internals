@@ -110,7 +110,11 @@ nav:
   - Internals:
     - Overview: overview.md
     - Server Properties: server-properties.md
-    - DataSource: DataSource.md
+    - AlterSourceFactory: AlterSourceFactory.md
+    - Data Sources:
+      - DataSource: DataSource.md
+      - StructuredDataSource: StructuredDataSource.md
+      - KsqlStream: KsqlStream.md
     - DdlCommandExec:
       - DdlCommandExec: DdlCommandExec.md
       - DdlCommandExec.Executor: DdlCommandExec.Executor.md
@@ -221,6 +225,7 @@ nav:
     - DefaultTraversalVisitor: parser/DefaultTraversalVisitor.md
     - KsqlParser: parser/KsqlParser.md
     - Tree Nodes:
+      - AlterSource: parser/AlterSource.md
       - AlterSystemProperty: parser/AlterSystemProperty.md
       - AstNode: parser/AstNode.md
       - CreateAsSelect: parser/CreateAsSelect.md

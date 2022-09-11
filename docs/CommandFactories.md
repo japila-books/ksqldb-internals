@@ -51,13 +51,22 @@ Otherwise, `create` requests the [CreateSourceFactory](#createSourceFactory) for
 
 DdlStatement    | Handler | DdlCommand
 ----------------|---------|-----------
- `AlterSource`  | `handleAlterSource` | [AlterSourceCommand](AlterSourceCommand.md)
+ `AlterSource`  | [handleAlterSource](#handleAlterSource) | [AlterSourceCommand](AlterSourceCommand.md)
  [CreateStream](parser/CreateStream.md) | [handleCreateStream](#handleCreateStream) | [CreateStreamCommand](CreateStreamCommand.md)
  [CreateTable](parser/CreateTable.md)   | [handleCreateTable](#handleCreateTable) | [CreateTableCommand](CreateTableCommand.md)
  `DropStream`   | `handleDropStream` |
  `DropTable`    | `handleDropTable` |
  `DropType`     | `handleDropType` | [DropTypeCommand](DropTypeCommand.md)
  `RegisterType` | `handleRegisterType` | [RegisterTypeCommand](RegisterTypeCommand.md)
+
+### <span id="handleAlterSource"> handleAlterSource
+
+```java
+AlterSourceCommand handleAlterSource(
+  AlterSource statement)
+```
+
+`handleAlterSource` requests the [AlterSourceFactory](#alterSourceFactory) for an [AlterSourceCommand](AlterSourceFactory.md#create) (for the given [AlterSource](parser/AlterSource.md) statement).
 
 ### <span id="handleCreateStream"> handleCreateStream
 

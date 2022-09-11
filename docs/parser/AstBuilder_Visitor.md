@@ -18,6 +18,25 @@
 
 ## Parsing Statements
 
+### <span id="visitAlterSource"> ALTER SOURCE
+
+```java
+Node visitAlterSource(
+  AlterSourceContext ctx)
+```
+
+`visitAlterSource` is part of the `SqlBaseBaseVisitor` abstraction to handle `ALTER SYSTEM` statements.
+
+```antlr
+ALTER (STREAM | TABLE) sourceName alterOption (',' alterOption)*
+
+alterOption
+    : ADD (COLUMN)? identifier type
+    ;
+```
+
+`visitAlterSource` creates an [AlterSource](AlterSource.md).
+
 ### <span id="visitAlterSystemProperty"> ALTER SYSTEM
 
 ```java

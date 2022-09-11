@@ -48,7 +48,7 @@ See [MetaStoreImpl](MetaStoreImpl.md#putSource)
 
 Used when:
 
-* `DdlCommandExec.Executor` is requested to [execute a CreateStreamCommand](DdlCommandExec.Executor.md#executeCreateStream), [executeCreateTable](DdlCommandExec.Executor.md#executeCreateTable), [executeAlterSource](DdlCommandExec.Executor.md#executeAlterSource)
+* `DdlCommandExec.Executor` is requested to execute [CreateStreamCommand](DdlCommandExec.Executor.md#executeCreateStream), [CreateTable](DdlCommandExec.Executor.md#executeCreateTable), [AlterSourceCommand](DdlCommandExec.Executor.md#executeAlterSource)
 * `EngineExecutor` is requested to [sourceTablePlan](EngineExecutor.md#sourceTablePlan)
 
 ## Implementations

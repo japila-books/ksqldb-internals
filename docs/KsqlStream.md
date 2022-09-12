@@ -7,7 +7,7 @@
 `KsqlStream` takes the following to be created:
 
 * <span id="sqlExpression"> SQL expression
-* <span id="datasourceName"> `SourceName`
+* <span id="datasourceName"> Source name
 * <span id="schema"> `LogicalSchema`
 * <span id="timestampExtractionPolicy"> `TimestampColumn`
 * <span id="isKsqlSink"> `isKsqlSink` flag
@@ -16,7 +16,7 @@
 
 `KsqlStream` is created when:
 
-* `DdlCommandExec.Executor` is requested to [executeCreateStream](DdlCommandExec.Executor.md#executeCreateStream)
+* `DdlCommandExec.Executor` is requested to [execute CreateStreamCommand](DdlCommandExec.Executor.md#executeCreateStream)
 * `KsqlStream` is requested to [with](#with)
 
 ## <span id="with"> with

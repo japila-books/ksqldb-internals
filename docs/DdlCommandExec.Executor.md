@@ -28,7 +28,7 @@ DdlCommandResult executeAlterSource(
 
 ---
 
-`executeAlterSource` looks up the [DataSource](DataSource.md) by [name](AlterSourceCommand.md#getSourceName) in the [MetaStore](DdlCommandExec.md#metaStore).
+`executeAlterSource` uses the [name](AlterSourceCommand.md#getSourceName) of the given [AlterSourceCommand](AlterSourceCommand.md) to look up the [DataSource](DataSource.md) in the [MetaStore](DdlCommandExec.md#metaStore).
 
 `executeAlterSource` adds new columns to the [LogicalSchema](DataSource.md#getSchema) of the data source.
 
@@ -65,3 +65,22 @@ ALTER command is not supported for CREATE ... AS statements.
 ```text
 Cannot add column [name] to schema. A column with the same name already exists.
 ```
+
+## <span id="executeCreateStream"> Executing CreateStreamCommand
+
+```java
+DdlCommandResult executeCreateStream(
+  CreateStreamCommand createStream)
+```
+
+`executeCreateStream` is part of the [Executor](Executor.md#executeCreateStream) abstraction.
+
+---
+
+`executeCreateStream` uses the [name](CreateSourceCommand.md#getSourceName) of the given [CreateStreamCommand](CreateStreamCommand.md) to look up the [DataSource](DataSource.md) in the [MetaStore](DdlCommandExec.md#metaStore).
+
+`executeCreateStream` creates a [KsqlStream](KsqlStream.md).
+
+`executeCreateStream` [registers the KsqlStream](MutableMetaStore.md#putSource) (as a new data source) in the [MetaStore](DdlCommandExec.md#metaStore).
+
+`executeCreateStream` [addSourceReferences](MutableMetaStore.md#addSourceReferences) for the `KsqlStream` with the [withQuerySources](#withQuerySources) in the [MetaStore](DdlCommandExec.md#metaStore).

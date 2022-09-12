@@ -2,6 +2,8 @@
 
 `KsqlRestApplication` is a ksqlDB REST API server.
 
+`KsqlRestApplication` uses [CommandRunner](#commandRunner) to [process prior commands](CommandRunner.md#processPriorCommands) and then [run new commands](CommandRunner.md#fetchAndRunCommands) continuously (off a [CommandQueue](CommandRunner.md#commandStore)).
+
 `KsqlRestApplication` can be started using [ksql-server-start](index.md) shell script.
 
 ## Creating Instance

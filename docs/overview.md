@@ -4,13 +4,15 @@
 
 ## How ksqlDB Works
 
+ksqlDB can be used in the following execution modes:
+
+* [Embedded](embedded/index.md)
+* [Headless](headless/index.md)
+* [REST](rest/index.md)
+
 The primary ksqlDB services are [KsqlEngine](KsqlEngine.md) and [ServiceContext](ServiceContext.md).
 
 ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from the [command line](rest/ServerOptions.md#queries-file) or sent through a REST endpoint, e.g. using [ksql](cli/Ksql.md)).
-
-ksqlDB can also be used [embedded](embedded/index.md).
-
-[KsqlResource](rest/KsqlResource.md) is used to...FIXME
 
 ### Executing DDL Commands
 

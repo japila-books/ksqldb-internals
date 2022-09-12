@@ -1,4 +1,8 @@
-# REST
+# REST Execution Mode
+
+In **REST execution mode**, ksqlDB uses [KsqlRestApplication](KsqlRestApplication.md) as the ksqlDB REST API server (and expose REST endpoints to HTTP clients, e.g. [ksql](../cli/Ksql.md) shell script).
+
+## ksql-server-start Shell Script
 
 `ksql-server-start` shell script is used to launch [KsqlServerMain](KsqlServerMain.md).
 
@@ -34,5 +38,3 @@ OPTIONS
 
             This option may occur a maximum of 1 times
 ```
-
-[KsqlRestApplication](KsqlRestApplication.md) creates a [CommandRunner](KsqlRestApplication.md#commandRunner) to [process prior commands](CommandRunner.md#processPriorCommands) and then [run new commands](CommandRunner.md#fetchAndRunCommands) continuously (off a [CommandQueue](CommandRunner.md#commandStore)).

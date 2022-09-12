@@ -1,11 +1,13 @@
 # InteractiveStatementExecutor
 
+`InteractiveStatementExecutor` is used by [CommandRunner](CommandRunner.md#statementExecutor) to handle commands while in [restore](#handleRestore) and then [regular](#handleStatement) operation modes.
+
 ## Creating Instance
 
 `InteractiveStatementExecutor` takes the following to be created:
 
-* <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
-* <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
+* [ServiceContext](#serviceContext)
+* [KsqlEngine](#ksqlEngine)
 * <span id="statementParser"> [StatementParser](StatementParser.md)
 * <span id="queryIdGenerator"> `SpecificQueryIdGenerator`
 * <span id="commandDeserializer"> Command Deserializer
@@ -13,6 +15,27 @@
 `InteractiveStatementExecutor` is created when:
 
 * `KsqlRestApplication` is requested to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication) (to create a [CommandRunner](CommandRunner.md#statementExecutor) and a `StatusResource`)
+
+### <span id="ksqlEngine"> KsqlEngine
+
+`InteractiveStatementExecutor` is given a [KsqlEngine](../KsqlEngine.md) when [created](#creating-instance).
+
+The `KsqlEngine` is used mainly for the following:
+
+* [Executing KsqlPlan](#executePlan) (and [buildMergedConfig](#buildMergedConfig))
+* [Executing AlterSystemProperty](#executeStatement)
+* [Executing TerminateQuery](#terminateQuery)
+
+The `KsqlEngine` is also used when:
+
+* [getKsqlEngine](#getKsqlEngine)
+* [throwIfNotConfigured](#throwIfNotConfigured)
+
+### <span id="serviceContext"> ServiceContext
+
+`InteractiveStatementExecutor` is given a [ServiceContext](../ServiceContext.md) when [created](#creating-instance).
+
+The `ServiceContext` is used to [execute a KsqlPlan](#executePlan) (using the [KsqlExecutionContext](#ksqlEngine)).
 
 ## <span id="handleStatement"> Executing Queued Command
 
@@ -29,20 +52,7 @@ void handleStatement(
 
 * `CommandRunner` is requested to [execute a statement](CommandRunner.md#executeStatement)
 
-## <span id="handleRestore"> handleRestore
-
-```java
-void handleRestore(
-  QueuedCommand queuedCommand)
-```
-
-`handleRestore`...FIXME
-
-`handleRestore` is used when:
-
-* `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands)
-
-## <span id="handleStatementWithTerminatedQueries"> Executing Command
+## <span id="handleStatementWithTerminatedQueries"> Handling Command
 
 ```java
 void handleStatementWithTerminatedQueries(
@@ -175,6 +185,53 @@ If the given `CommandStatusFuture` is available, `putFinalStatus` sets its final
 `putFinalStatus` is used when:
 
 * `InteractiveStatementExecutor` is requested to [execute a command](#handleStatementWithTerminatedQueries) ([KsqlPlan](#executePlan) or [Statement](#executeStatement))
+
+## <span id="getKsqlEngine"> Accessing KsqlEngine
+
+```java
+KsqlExecutionContext getKsqlEngine()
+```
+
+`getKsqlEngine` gives the [KsqlEngine](#ksqlEngine).
+
+---
+
+`getKsqlEngine` is used when:
+
+* `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands)
+
+## <span id="throwIfNotConfigured"> Throwing IllegalStateException (IfNotConfigured)
+
+```java
+void throwIfNotConfigured()
+```
+
+`throwIfNotConfigured` throws an `IllegalStateException` when there is no `application.server` ([Kafka Streams]({{ book.kafka_streams }}/StreamsConfig/#application.server)) configuration property among the [getKsqlStreamConfigProps](../KsqlConfig.md#getKsqlStreamConfigProps) (of the [KsqlConfig](../KsqlExecutionContext.md#getKsqlConfig) of the [KsqlEngine](#ksqlEngine)):
+
+```text
+No initialized
+```
+
+---
+
+`throwIfNotConfigured` is used when:
+
+* `InteractiveStatementExecutor` is requested to [handleStatement](#handleStatement) and [handleRestore](#handleRestore)
+
+## <span id="handleRestore"> handleRestore
+
+```java
+void handleRestore(
+  QueuedCommand queuedCommand)
+```
+
+`handleRestore`...FIXME
+
+---
+
+`handleRestore` is used when:
+
+* `CommandRunner` is requested to [processPriorCommands](CommandRunner.md#processPriorCommands)
 
 ## Logging
 

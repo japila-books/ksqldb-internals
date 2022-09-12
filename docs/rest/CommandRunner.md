@@ -1,6 +1,8 @@
 # CommandRunner
 
-`CommandRunner` is responsible for [command execution](#start) for [KsqlRestApplication](KsqlRestApplication.md#commandRunner) (on a separate Java thread using [CommandQueue](#commandStore)).
+`CommandRunner` is responsible for [command processing](#start) for [KsqlRestApplication](KsqlRestApplication.md#commandRunner).
+
+Commands with KSQL statements are consumed from [CommandQueue](#commandStore) and processed on a separate Java thread using [InteractiveStatementExecutor](#statementExecutor).
 
 <figure markdown>
   ![CommandRunner](../images/CommandRunner.png)
@@ -10,7 +12,7 @@
 
 `CommandRunner` takes the following to be created:
 
-* <span id="statementExecutor"> [InteractiveStatementExecutor](InteractiveStatementExecutor.md)
+* [InteractiveStatementExecutor](#statementExecutor)
 * [CommandQueue](#commandStore)
 * <span id="maxRetries"> `maxRetries`
 * <span id="clusterTerminator"> `ClusterTerminator`
@@ -27,6 +29,12 @@
 `CommandRunner` is created when:
 
 * `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication-commandRunner) (to create [KsqlResource](KsqlResource.md#commandRunner) and [KsqlRestApplication](KsqlRestApplication.md#commandRunner) itself)
+
+### <span id="statementExecutor"> InteractiveStatementExecutor
+
+`CommandRunner` is given an [InteractiveStatementExecutor](InteractiveStatementExecutor.md) when [created](#creating-instance).
+
+The `InteractiveStatementExecutor` is used when [processing prior commands](#processPriorCommands) (to [handleRestore](InteractiveStatementExecutor.md#handleRestore)) and [executing QueuedCommands](#executeStatement) (while [fetchAndRunCommands](#fetchAndRunCommands) to [handleStatement](InteractiveStatementExecutor.md#handleStatement)).
 
 ### <span id="metricsGroupPrefix"> Metrics Group Prefix
 

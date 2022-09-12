@@ -196,6 +196,8 @@ nav:
         - StandaloneExecutor: headless/StandaloneExecutor.md
         - StandaloneExecutorFactory: headless/StandaloneExecutorFactory.md
         - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
+      - REST:
+        - rest/index.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md

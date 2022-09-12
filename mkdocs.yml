@@ -111,10 +111,10 @@ nav:
     - Overview: overview.md
     - Server Properties: server-properties.md
     - AlterSourceFactory: AlterSourceFactory.md
-    - Data Sources:
+    - DataSource:
       - DataSource: DataSource.md
-      - StructuredDataSource: StructuredDataSource.md
       - KsqlStream: KsqlStream.md
+      - StructuredDataSource: StructuredDataSource.md
     - DdlCommandExec:
       - DdlCommandExec: DdlCommandExec.md
       - DdlCommandExec.Executor: DdlCommandExec.Executor.md
@@ -150,10 +150,12 @@ nav:
       - MetaStoreImpl: MetaStoreImpl.md
       - MutableMetaStore: MutableMetaStore.md
     - MetricCollectors: MetricCollectors.md
+    - PersistentQueryMetadata: PersistentQueryMetadata.md
+    - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
+    - PushQueryMetadata: PushQueryMetadata.md
     - PushRouting: PushRouting.md
-    - RouteQuery: RouteQuery.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
     - QueryBuilderFactory: QueryBuilderFactory.md
@@ -164,9 +166,7 @@ nav:
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
-    - PersistentQueryMetadata: PersistentQueryMetadata.md
-    - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
-    - PushQueryMetadata: PushQueryMetadata.md
+    - RouteQuery: RouteQuery.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md

@@ -15,7 +15,10 @@
 
 ## <span id="analysis"> ImmutableAnalysis and RewrittenAnalysis
 
-`LogicalPlanner` creates a `RewrittenAnalysis` for the given [ImmutableAnalysis](../ImmutableAnalysis.md) when [created](#creating-instance).
+`LogicalPlanner` creates a [RewrittenAnalysis](../RewrittenAnalysis.md) with the following when [created](#creating-instance):
+
+* [ImmutableAnalysis](../ImmutableAnalysis.md)
+* `ColumnReferenceRewriter.process` as the rewriter
 
 The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the following:
 
@@ -102,13 +105,13 @@ OutputNode buildQueryLogicalPlan(
 
 For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildQueryLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md). Otherwise, `buildQueryLogicalPlan` throws a `KsqlException` for a missing `WHERE` clause unless [getTableScansEnabled](QueryPlannerOptions.md#getTableScansEnabled) is enabled.
 
-### <span id="buildQueryLogicalPlan-where"> Step 3. Limit Node
+### <span id="buildQueryLogicalPlan-limit"> Step 3. Limit Node
 
 For a non-`isScalablePush` query with `LIMIT` clause, `buildQueryLogicalPlan` [builds a limit PlanNode](#buildLimitNode) to be the current [PlanNode](PlanNode.md).
 
 ### <span id="buildQueryLogicalPlan-project"> Step 4. Project Node
 
-In the end, `buildQueryLogicalPlan` creates a `QueryProjectNode` (to be the current [PlanNode](PlanNode.md)) and [builds an output node](#buildOutputNode).
+In the end, `buildQueryLogicalPlan` [builds an output node](#buildOutputNode) with a [QueryProjectNode](QueryProjectNode.md).
 
 ## <span id="buildSourceNode"> Building DataSourceNode or JoinNode (buildSourceNode)
 
@@ -117,9 +120,11 @@ PlanNode buildSourceNode(
   boolean isWindowed)
 ```
 
-`buildSourceNode` [buildNonJoinNode](#buildNonJoinNode) when the [RewrittenAnalysis](#analysis) is not for a join.
+`buildSourceNode` [buildNonJoinNode](#buildNonJoinNode) when the [RewrittenAnalysis](#analysis) is not a join.
 
 Otherwise, `buildSourceNode`...FIXME
+
+---
 
 `buildSourceNode` is used when:
 
@@ -155,6 +160,8 @@ OutputNode buildOutputNode(
 ```
 
 `buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](../parser/QueryContainer.md) or not (with a `Sink` to write into defined or not), respectively.
+
+---
 
 `buildOutputNode` is used when:
 

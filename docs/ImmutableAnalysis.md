@@ -54,6 +54,13 @@ List<SelectItem> getSelectItems()
 
 See [Analysis](Analysis.md#getSelectItems)
 
+Used when:
+
+* `Analyzer.Visitor` is requested to [throwOnUnknownColumnReference](Analyzer_Visitor.md#throwOnUnknownColumnReference)
+* `PullQueryValidator` is requested to [disallowedColumnNameInSelectClause](PullQueryValidator.md#disallowedColumnNameInSelectClause)
+* `LogicalPlanner` is requested to [buildQueryLogicalPlan](planner/LogicalPlanner.md#buildQueryLogicalPlan), [buildAggregateNode](planner/LogicalPlanner.md#buildAggregateNode), [buildUserProjectNode](planner/LogicalPlanner.md#buildUserProjectNode), [buildJoinKey](planner/LogicalPlanner.md#buildJoinKey)
+* `FlatMapNode` is requested to [buildColumnMappings](planner/FlatMapNode.md#buildColumnMappings)
+
 ### <span id="isJoin"> isJoin
 
 ```java

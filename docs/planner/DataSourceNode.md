@@ -1,5 +1,7 @@
 # DataSourceNode
 
+`DataSourceNode` is a [PlanNode](PlanNode.md).
+
 ## Creating Instance
 
 `DataSourceNode` takes the following to be created:
@@ -15,7 +17,7 @@
 
 * `LogicalPlanner` is requested to build a [join](LogicalPlanner.md#buildJoin) or a [non-join](LogicalPlanner.md#buildNonJoinNode) node
 
-## <span id="schemaKStreamFactory"> SchemaKStreamFactory
+### <span id="schemaKStreamFactory"> SchemaKStreamFactory
 
 `DataSourceNode` can be given a `SchemaKStreamFactory` when [created](#creating-instance). Unless given, `DataSourceNode` uses [SchemaKSourceFactory](../SchemaKSourceFactory.md#buildSource).
 
@@ -31,10 +33,10 @@ SchemaKStream<?> buildStream(
   PlanBuildContext buildContext)
 ```
 
-`buildStream` requests the given `PlanBuildContext` to `buildNodeContext`.
-
-In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) for a [SchemaKStream](../SchemaKSourceFactory.md#buildSource).
+`buildStream` is part of the [PlanNode](PlanNode.md#buildStream) abstraction.
 
 ---
 
-`buildStream` is part of the [PlanNode](PlanNode.md#buildStream) abstraction.
+`buildStream` requests the given `PlanBuildContext` to `buildNodeContext`.
+
+In the end, requests the [SchemaKStreamFactory](#schemaKStreamFactory) for a [SchemaKStream](../SchemaKSourceFactory.md#buildSource).

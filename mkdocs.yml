@@ -287,6 +287,7 @@ nav:
       - KsqlStructuredDataOutputNode: planner/KsqlStructuredDataOutputNode.md
       - OutputNode: planner/OutputNode.md
       - PlanNode: planner/PlanNode.md
+      - QueryProjectNode: planner/QueryProjectNode.md
       - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
     - PullQueryValidator: PullQueryValidator.md
     - RewriterPlugin: RewriterPlugin.md

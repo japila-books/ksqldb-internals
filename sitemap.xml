@@ -881,6 +881,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/planner/QueryProjectNode/</loc>
+         <lastmod>2022-09-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/SingleSourcePlanNode/</loc>
          <lastmod>2022-09-13</lastmod>
          <changefreq>daily</changefreq>

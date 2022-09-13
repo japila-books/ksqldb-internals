@@ -192,6 +192,7 @@ nav:
         - KsqlContext: embedded/KsqlContext.md
       - Headless:
         - headless/index.md
+        - ConfigStore: headless/ConfigStore.md
         - KafkaConfigStore: headless/KafkaConfigStore.md
         - StandaloneExecutor: headless/StandaloneExecutor.md
         - StandaloneExecutorFactory: headless/StandaloneExecutorFactory.md

@@ -12,13 +12,16 @@ ksqlDB can be used in the following execution modes:
 
 The primary ksqlDB services are [KsqlEngine](KsqlEngine.md) and [ServiceContext](ServiceContext.md).
 
-ksqlDB uses [KsqlServerMain](rest/KsqlServerMain.md) to handle SQL queries (from the [command line](rest/ServerOptions.md#queries-file) or sent through a REST endpoint, e.g. using [ksql](cli/Ksql.md)).
+KSQL statements (e.g., DDL commands and queries) can be executed from the following:
 
-### Executing DDL Commands
+* [Query file](rest/ServerOptions.md#queries-file) ([headless](headless/index.md) mode)
+* [ksql](cli/Ksql.md) ([REST](rest/index.md) mode)
 
-[DdlCommand](DdlCommand.md)s (e.g. [CREATE STREAM](parser/CreateStream.md)) are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
+KSQL statements are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
 
-DDL commands are then planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
+## Executing DDL Commands
+
+[DdlCommand](DdlCommand.md)s (e.g. [CREATE STREAM](parser/CreateStream.md)) are planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
 
 * [DistributingExecutor](rest/DistributingExecutor.md#execute)
 * [StatementExecutor](rest/StatementExecutor.md#handleExecutableDdl)

@@ -19,6 +19,6 @@ Used when:
 
 ## Implementations
 
-* `InteractiveStatementExecutor`
+* [InteractiveStatementExecutor](InteractiveStatementExecutor.md)
 * [KsqlResource](KsqlResource.md)
-* `StreamedQueryResource`
+* [StreamedQueryResource](StreamedQueryResource.md)

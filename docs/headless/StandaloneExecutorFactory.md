@@ -1,6 +1,6 @@
 # StandaloneExecutorFactory
 
-`StandaloneExecutorFactory` is used to [create a StandaloneExecutor](#create) when `KsqlServerMain` is [executed](../rest/KsqlServerMain.md#createExecutable) with a [query file](index.md#query-file).
+`StandaloneExecutorFactory` is used to [create a StandaloneExecutor](#create) in [headless](index.md) mode.
 
 ## <span id="create"> Creating StandaloneExecutor
 

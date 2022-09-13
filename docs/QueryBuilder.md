@@ -110,7 +110,7 @@ Object buildQueryImplementation(
 
 `buildQueryImplementation` creates a [KSPlanBuilder](KSPlanBuilder.md) with the given [RuntimeBuildContext](RuntimeBuildContext.md).
 
-In the end, `buildQueryImplementation` requests the given [physical plan](ExecutionStep.md) to [build a Kafka Streams application](ExecutionStep.md#build) (with the `KSPlanBuilder`).
+In the end, `buildQueryImplementation` requests the given [ExecutionStep physical plan](ExecutionStep.md) to [build a Kafka Streams application](ExecutionStep.md#build) (with the `KSPlanBuilder`).
 
 ---
 
@@ -119,6 +119,47 @@ In the end, `buildQueryImplementation` requests the given [physical plan](Execut
 * [Transient query](#buildTransientQuery)
 * [Persistent query in a dedicated](#buildPersistentQueryInDedicatedRuntime) or [shared](#buildPersistentQueryInSharedRuntime) runtime
 * [getNamedTopology](#getNamedTopology)
+
+## <span id="buildPersistentQueryInDedicatedRuntime"> Building Persistent Query (Dedicated Runtime)
+
+```java
+PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(
+  KsqlConfig ksqlConfig,
+  KsqlConstants.PersistentQueryType persistentQueryType,
+  String statementText,
+  QueryId queryId,
+  Optional<DataSource> sinkDataSource,
+  Set<DataSource> sources,
+  ExecutionStep<?> physicalPlan,
+  String planSummary,
+  QueryMetadata.Listener listener,
+  Supplier<List<PersistentQueryMetadata>> allPersistentQueries,
+  StreamsBuilder streamsBuilder,
+  MetricCollectors metricCollectors)
+```
+
+`buildPersistentQueryInDedicatedRuntime` [builds an application ID](QueryApplicationId.md#build) (with the `persistent` flag enabled).
+
+`buildPersistentQueryInDedicatedRuntime` [builds streams properties](#buildStreamsProperties).
+
+`buildPersistentQueryInDedicatedRuntime` builds a physical schema.
+
+`buildPersistentQueryInDedicatedRuntime` [buildContext](#buildContext) (with the application ID, the given `QueryId` and `StreamsBuilder`).
+
+!!! warning "Kafka Streams"
+    This is the moment where ksqlDB relies on Kafka Streams.
+
+`buildPersistentQueryInDedicatedRuntime` [buildQueryImplementation](#buildQueryImplementation) (with the given [ExecutionStep physical plan](ExecutionStep.md) and the [RuntimeBuildContext](RuntimeBuildContext.md)).
+
+`buildPersistentQueryInDedicatedRuntime` requests the given `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)) to build a topology (with the streams properties).
+
+In the end, `buildPersistentQueryInDedicatedRuntime` creates a [PersistentQueryMetadataImpl](PersistentQueryMetadataImpl.md).
+
+---
+
+`buildPersistentQueryInDedicatedRuntime` is used when:
+
+* `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery) (with no shared runtime ID or [ksql.runtime.feature.shared.enabled](KsqlConfig.md#KSQL_SHARED_RUNTIME_ENABLED) disabled)
 
 ## <span id="buildPersistentQueryInSharedRuntime"> Building Persistent Query (Shared Runtime)
 
@@ -177,36 +218,6 @@ SharedKafkaStreamsRuntime getKafkaStreamsInstance(
 ```
 
 `getKafkaStreamsInstance`...FIXME
-
-## <span id="buildPersistentQueryInDedicatedRuntime"> Building Persistent Query (Dedicated Runtime)
-
-```java
-PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(
-  KsqlConfig ksqlConfig,
-  KsqlConstants.PersistentQueryType persistentQueryType,
-  String statementText,
-  QueryId queryId,
-  Optional<DataSource> sinkDataSource,
-  Set<DataSource> sources,
-  ExecutionStep<?> physicalPlan,
-  String planSummary,
-  QueryMetadata.Listener listener,
-  Supplier<List<PersistentQueryMetadata>> allPersistentQueries,
-  StreamsBuilder streamsBuilder,
-  MetricCollectors metricCollectors)
-```
-
-`buildPersistentQueryInDedicatedRuntime` [builds an application ID](QueryApplicationId.md#build) (with the `persistent` flag enabled).
-
-`buildPersistentQueryInDedicatedRuntime` [buildStreamsProperties](#buildStreamsProperties).
-
-`buildPersistentQueryInDedicatedRuntime`...FIXME
-
----
-
-`buildPersistentQueryInDedicatedRuntime` is used when:
-
-* `QueryRegistryImpl` is requested to [createOrReplacePersistentQuery](QueryRegistryImpl.md#createOrReplacePersistentQuery) (with a shared runtime ID)
 
 ## <span id="buildStreamsProperties"> buildStreamsProperties
 

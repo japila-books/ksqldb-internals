@@ -34,6 +34,10 @@ When requested to [handle a statement](rest/InteractiveStatementExecutor.md#hand
 
 For [DdlCommand](DdlCommand.md)s, [EngineExecutor](EngineExecutor.md) uses [EngineContext](EngineContext.md) to [execute it](EngineContext.md#executeDdl) (using [DdlCommandExec](DdlCommandExec.md#execute)).
 
+## Kafka Streams
+
+ksqlDB uses [Kafka Streams]({{ book.kafka_streams }}) for [query implementation](QueryBuilder.md#buildQueryImplementation).
+
 ## Run It Yourself
 
 !!! note "Get standalone ksqlDB first"

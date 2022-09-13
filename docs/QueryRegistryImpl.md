@@ -95,13 +95,13 @@ PersistentQueryMetadata createOrReplacePersistentQuery(
   Optional<String> sharedRuntimeId)
 ```
 
-`createOrReplacePersistentQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create) to build a persistent query in [shared](QueryBuilder.md#buildPersistentQueryInSharedRuntime) or [dedicated](QueryBuilder.md#buildPersistentQueryInDedicatedRuntime) runtime based on the given `sharedRuntimeId` (available or not, respectively).
-
-In the end, `createOrReplacePersistentQuery` [registers the persistent query](#registerPersistentQuery).
+`createOrReplacePersistentQuery` is part of the [QueryRegistry](QueryRegistry.md#createOrReplacePersistentQuery) abstraction.
 
 ---
 
-`createOrReplacePersistentQuery` is part of the [QueryRegistry](QueryRegistry.md#createOrReplacePersistentQuery) abstraction.
+`createOrReplacePersistentQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create) to build a persistent query in [shared](QueryBuilder.md#buildPersistentQueryInSharedRuntime) or [dedicated](QueryBuilder.md#buildPersistentQueryInDedicatedRuntime) runtime based on the given `sharedRuntimeId` (available or not, respectively).
+
+In the end, `createOrReplacePersistentQuery` [registers the persistent query](#registerPersistentQuery).
 
 ### <span id="registerPersistentQuery"> registerPersistentQuery
 

@@ -12,8 +12,8 @@
 
 Phase | Embedded | Headless | REST
 ------|----------|----------|------
-[Parsing](#parse) | [KsqlContext](embedded/KsqlContext.md#sql) | [StandaloneExecutor](headless/StandaloneExecutor.md#processesQueryFile) | _FIXME_
-Validation | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor](headless/StandaloneExecutor.md#validateStatements) | _FIXME_
+[Parsing](#parse) | [KsqlContext](embedded/KsqlContext.md#sql) | [StandaloneExecutor](headless/StandaloneExecutor.md#processesQueryFile) | [StatementParser](rest/StatementParser.md#parseSingleStatement)
+Validation | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor](headless/StandaloneExecutor.md#validateStatements) |
 Execution | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor](headless/StandaloneExecutor.md#executeStatements) | [InteractiveStatementExecutor](rest/InteractiveStatementExecutor.md#handleStatementWithTerminatedQueries)
 
 ## Creating Instance

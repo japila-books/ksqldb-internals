@@ -6,7 +6,7 @@
 
 * <span id="ksqlEngine"> [KsqlExecutionContext](../KsqlExecutionContext.md)
 * <span id="ksqlRestConfig"> [KsqlRestConfig](KsqlRestConfig.md)
-* <span id="statementParser"> [StatementParser](StatementParser.md)
+* [StatementParser](#statementParser)
 * [CommandQueue](#commandQueue)
 * <span id="disconnectCheckInterval"> `disconnectCheckInterval`
 * <span id="commandQueueCatchupTimeout"> `commandQueueCatchupTimeout`
@@ -25,6 +25,12 @@
 `StreamedQueryResource` is given a [CommandQueue](CommandQueue.md) when [created](#creating-instance).
 
 The `CommandQueue` is used to [httpWaitForCommandSequenceNumber](CommandStoreUtil.md#httpWaitForCommandSequenceNumber) when [streamQuery](#streamQuery).
+
+### <span id="statementParser"> StatementParser
+
+`StreamedQueryResource` is given a [StatementParser](StatementParser.md) when [created](#creating-instance).
+
+The `StatementParser` is used in [parseStatement](#parseStatement) (to [parse a KSQL statement](StatementParser.md#parseSingleStatement)).
 
 ## <span id="streamQuery"> streamQuery
 

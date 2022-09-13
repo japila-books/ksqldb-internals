@@ -5,7 +5,7 @@
 `WSQueryEndpoint` takes the following to be created:
 
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
-* <span id="statementParser"> [StatementParser](StatementParser.md)
+* [StatementParser](#statementParser)
 * [KsqlEngine](#ksqlEngine)
 * <span id="commandQueue"> [CommandQueue](CommandQueue.md)
 * <span id="exec"> `ListeningScheduledExecutorService`
@@ -19,6 +19,12 @@
 `WSQueryEndpoint` is created when:
 
 * `KsqlRestApplication` is requested to [start](KsqlRestApplication.md#startAsync) (and initialize [wsQueryEndpoint](KsqlRestApplication.md#wsQueryEndpoint))
+
+### <span id="statementParser"> StatementParser
+
+`WSQueryEndpoint` is given a [StatementParser](StatementParser.md) when [created](#creating-instance).
+
+The `StatementParser` is used in [parseStatement](#parseStatement) (to [parse a KSQL statement](StatementParser.md#parseSingleStatement)).
 
 ### <span id="ksqlEngine"> KsqlEngine
 

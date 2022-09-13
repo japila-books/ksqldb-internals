@@ -1,6 +1,6 @@
 # InteractiveStatementExecutor
 
-`InteractiveStatementExecutor` is used by [CommandRunner](CommandRunner.md#statementExecutor) to handle commands while in [restore](#handleRestore) and then [regular](#handleStatement) operation modes.
+`InteractiveStatementExecutor` is used by [CommandRunner](CommandRunner.md#statementExecutor) to handle commands (in [restore](#handleRestore) and [regular](#handleStatement) operation modes).
 
 ## Creating Instance
 
@@ -8,9 +8,9 @@
 
 * [ServiceContext](#serviceContext)
 * [KsqlEngine](#ksqlEngine)
-* <span id="statementParser"> [StatementParser](StatementParser.md)
+* [StatementParser](#statementParser)
 * <span id="queryIdGenerator"> `SpecificQueryIdGenerator`
-* <span id="commandDeserializer"> Command Deserializer
+* <span id="commandDeserializer"> Kafka Deserializer for [Command](Command.md)s
 
 `InteractiveStatementExecutor` is created when:
 
@@ -36,6 +36,12 @@ The `KsqlEngine` is also used when:
 `InteractiveStatementExecutor` is given a [ServiceContext](../ServiceContext.md) when [created](#creating-instance).
 
 The `ServiceContext` is used to [execute a KsqlPlan](#executePlan) (using the [KsqlExecutionContext](#ksqlEngine)).
+
+### <span id="statementParser"> StatementParser
+
+`InteractiveStatementExecutor` is given a [StatementParser](StatementParser.md) when [created](#creating-instance).
+
+The `StatementParser` is used in [handleStatementWithTerminatedQueries](#handleStatementWithTerminatedQueries) (to [parse a KSQL statement](StatementParser.md#parseSingleStatement)).
 
 ## <span id="handleStatement"> Executing Queued Command
 

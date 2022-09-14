@@ -55,7 +55,7 @@ URI      | HTTP Method | Handler | Produces
  `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest) |
  `/ksql/terminate` | `POST` | `handleTerminateRequest` |
  `/lag` | `POST` | `handleLagReportRequest` |
- `/query` | `POST` | `handleQueryRequest`<br>[QueryStreamHandler](QueryStreamHandler.md) |
+ `/query` | `POST` | [handleQueryRequest](#handleQueryRequest) or [QueryStreamHandler](QueryStreamHandler.md) based on [ksql.endpoint.migrate.query](../KsqlConfig.md#KSQL_ENDPOINT_MIGRATE_QUERY_CONFIG) |
  `/query-stream` | `POST` | [QueryStreamHandler](QueryStreamHandler.md) |
  `/status/:type/:entity/:action` | `GET` | `handleStatusRequest` |
  `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest) |
@@ -143,6 +143,19 @@ content-type: application/json
     }
 ]
 ```
+
+### <span id="handleQueryRequest"> handleQueryRequest
+
+```java
+void handleQueryRequest(
+  RoutingContext routingContext)
+```
+
+`handleQueryRequest` [handleOldApiRequest](#handleOldApiRequest) and requests the [Endpoints](#endpoints) to [executeQueryRequest](Endpoints.md#executeQueryRequest).
+
+---
+
+`handleQueryRequest` is used to handle [POST /query](#setupRouter) HTTP requests.
 
 ### <span id="handleWebsocket"> handleWebsocket
 

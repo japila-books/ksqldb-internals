@@ -10,6 +10,12 @@ Pull queries follow a traditional request/response model. They retrieve a finite
 
 Pull queries use an eventually consistent consistency model.
 
+## Configuration Properties
+
+All pull queries can be disabled (on a specific ksqlDB server) using [ksql.pull.queries.enable](KsqlConfig.md#KSQL_PULL_QUERIES_ENABLE_CONFIG).
+
+Stream pull queries can be disabled using [ksql.query.pull.stream.enabled](KsqlConfig.md#KSQL_QUERY_STREAM_PULL_QUERY_ENABLED).
+
 ## Stream Pull Queries
 
 **Stream Pull Queries** (_pull queries over stream_) are pull queries over streams and are executed using [QueryExecutor](rest/QueryExecutor.md#handleStreamPullQuery).

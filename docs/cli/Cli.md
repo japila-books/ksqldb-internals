@@ -6,10 +6,51 @@
 
 * <span id="streamedQueryRowLimit"> streamedQueryRowLimit (based on `query-row-limit` option)
 * <span id="streamedQueryTimeoutMs"> streamedQueryTimeoutMs (based on `query-timeout` option)
-* <span id="restClient"> [KsqlRestClient](KsqlRestClient.md)
+* [KsqlRestClient](#restClient)
 * <span id="terminal"> `Console`
 
 `Cli` is created using [build](#build) utility.
+
+### <span id="restClient"> KsqlRestClient
+
+`Cli` is given a [KsqlRestClient](KsqlRestClient.md) when [created](#creating-instance).
+
+The `KsqlRestClient` is used when:
+
+* [makeKsqlRequest](#makeKsqlRequest)
+* [runScript](#runScript)
+* [runCommand](#runCommand)
+* [runInteractively](#runInteractively)
+* [handleConnectorRequest](#handleConnectorRequest)
+* [handleQuery](#handleQuery)
+* [handlePrintedTopic](#handlePrintedTopic)
+* [setProperty](#setProperty) and [unsetProperty](#unsetProperty)
+* `QueryStreamSubscriber.handleValue`
+* [displayWelcomeMessage](#displayWelcomeMessage)
+* [isVariableSubstitutionEnabled](#isVariableSubstitutionEnabled)
+* [validateConnectorRequest](#validateConnectorRequest)
+
+## <span id="STATEMENT_HANDLERS"> STATEMENT_HANDLERS
+
+`Cli` creates `STATEMENT_HANDLERS` internal map when [created](#creating-instance) to [handle KSQL statements](#handleStatements).
+
+Statement | Handler
+-----------------|---------
+ `QueryStatementContext` | [handleQuery](#handleQuery)
+ `PrintTopicContext` | [handlePrintedTopic](#handlePrintedTopic)
+ `SetPropertyContext` | [setPropertyFromCtxt](#setPropertyFromCtxt)
+ `UnsetPropertyContext` | [unsetPropertyFromCtxt](#unsetPropertyFromCtxt)
+ `DefineVariableContext` | [defineVariableFromCtxt](#defineVariableFromCtxt)
+ `UndefineVariableContext` | [undefineVariableFromCtxt](#undefineVariableFromCtxt)
+ `ListVariablesContext` | [listVariablesFromCtxt](#listVariablesFromCtxt)
+ `CreateConnectorContext` | [handleConnectorRequest](#handleConnectorRequest)
+ `DropConnectorContext` | [handleConnectorRequest](#handleConnectorRequest)
+ `DescribeConnectorContext` | [handleConnectorRequest](#handleConnectorRequest)
+ `ListConnectorsContext` | [handleConnectorRequest](#handleConnectorRequest)
+ `ListConnectorPluginsContext` | [handleConnectorRequest](#handleConnectorRequest)
+
+!!! note
+    `STATEMENT_HANDLERS` is a `static final` value so it is initialized when `Cli` is loaded by the JVM.
 
 ## <span id="build"> Building Cli Instance
 
@@ -78,7 +119,7 @@ void handleLine(
 
 * `Cli` is requested to [runScript](#runScript), [runCommand](#runCommand), [runInteractively](#runInteractively)
 
-### <span id="handleStatements"> handleStatements
+### <span id="handleStatements"> Handling KSQL Statements
 
 ```java
 void handleStatements(
@@ -148,3 +189,21 @@ RestResponse<R> makeKsqlRequest(
 `makeKsqlRequest` is used when:
 
 * `Cli` is requested to [makeKsqlRequest](#makeKsqlRequest), [handleConnectorRequest](#handleConnectorRequest), [handleQuery](#handleQuery), [handlePrintedTopic](#handlePrintedTopic)
+
+## <span id="handleQuery"> handleQuery
+
+```java
+void handleQuery(
+  String statement,
+  SqlBaseParser.QueryStatementContext query)
+```
+
+`handleQuery` [makeKsqlRequest](#makeKsqlRequest) (to [/query](../api/ServerVerticle.md#uris) endpoint).
+
+In the end, `handleQuery` prints an error message (if the request was unsuccessful) or prints out the response until `CTRL-C` or the query terminated.
+
+---
+
+`handleQuery` is used when:
+
+* `Cli` is requested for [STATEMENT_HANDLERS](#STATEMENT_HANDLERS) (to handle a `QueryStatementContext`)

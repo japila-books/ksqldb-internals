@@ -46,11 +46,11 @@ EndpointResponse streamQuery(
 
 `streamQuery` requests the [ActivenessRegistrar](#activenessRegistrar) to `updateLastRequestTime`.
 
-`streamQuery` [parseStatement](#parseStatement) the given `KsqlRequest` (into a `PreparedStatement`).
+`streamQuery` [parses](#parseStatement) the given `KsqlRequest` (into a `PreparedStatement`).
 
 `streamQuery` [httpWaitForCommandSequenceNumber](CommandStoreUtil.md#httpWaitForCommandSequenceNumber) (with the [commandQueue](#commandQueue), the given `KsqlRequest`, and the [commandQueueCatchupTimeout](#commandQueueCatchupTimeout)).
 
-In the end, `streamQuery` [handles the ksql statement](#handleStatement).
+In the end, `streamQuery` [handles the KSQL statement](#handleStatement).
 
 ---
 
@@ -90,7 +90,7 @@ EndpointResponse handleStatement(
 
 #### <span id="handleStatement-Query"> Query
 
-For a [Query](../parser/Query.md) statement, `handleStatement` requests the [QueryExecutor](#queryExecutor) to [handle the statement](QueryExecutor.md#handleStatement) and then [handleQuery](#handleQuery).
+For a [Query](../parser/Query.md) statement, `handleStatement` [shouldMigrateToQueryStream](#shouldMigrateToQueryStream) or (if migration did not happen) requests the [QueryExecutor](#queryExecutor) to [handle the statement](QueryExecutor.md#handleStatement) and then [handleQuery](#handleQuery).
 
 #### <span id="handleStatement-PrintTopic"> PrintTopic
 
@@ -116,3 +116,18 @@ For other types, `handleQuery` responds with `400 Bad Request` error code and th
 ```text
 Statement type `className' not supported for this resource
 ```
+
+## <span id="shouldMigrateToQueryStream"> shouldMigrateToQueryStream
+
+```java
+boolean shouldMigrateToQueryStream(
+  Map<String, Object> overrides)
+```
+
+`shouldMigrateToQueryStream` takes the value of [ksql.endpoint.migrate.query](../KsqlConfig.md#KSQL_ENDPOINT_MIGRATE_QUERY_CONFIG) from the given `overrides` (if defined) or the [system KsqlConfig](../KsqlExecutionContext.md#getKsqlConfig).
+
+---
+
+`shouldMigrateToQueryStream` is used when:
+
+* `StreamedQueryResource` is requested to [handle a query statement](#handleStatement-Query)

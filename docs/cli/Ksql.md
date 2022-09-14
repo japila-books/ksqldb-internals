@@ -1,6 +1,12 @@
 # Ksql
 
-`Ksql` is a [standalone command-line application](#main) (that is executed using [ksql](index.md) shell script).
+`Ksql` is a [standalone command-line application](#main) that can be executed using [ksql](index.md) shell script.
+
+`Ksql` uses [KsqlRestClient](#KsqlRestClient) to [build a Cli](Cli.md#build) to run the following:
+
+* [Command](Cli.md#runCommand) for `--execute` or `-e`
+* [Script](Cli.md#runScript) for `--file` or `-f`
+* [Interactively](Cli.md#runInteractively) otherwise
 
 ## <span id="main"> Launching Application
 
@@ -14,12 +20,18 @@ In the end, `main` creates a [Ksql](Ksql.md) (with the options, the system prope
 
 * <span id="options"> `Options`
 * <span id="systemProps"> System Properties
-* <span id="clientBuilder"> [KsqlClientBuilder](KsqlRestClient.md#create)
+* [KsqlClientBuilder](#clientBuilder)
 * <span id="cliBuilder"> [Cli builder](Cli.md#build)
 
 `Ksql` is created when:
 
 * `Ksql` application is [launched](#main)
+
+### <span id="clientBuilder"><span id="KsqlRestClient"> KsqlClientBuilder
+
+`Ksql` is given a [KsqlRestClient builder](KsqlRestClient.md#create) when [created](#creating-instance).
+
+The builder is used to [build a KsqlRestClient](#buildClient) (that is then used in [run](#run) to [build a Cli](Cli.md#build)).
 
 ## <span id="run"> Executing Statements
 

@@ -57,6 +57,24 @@ Used when:
 
 * `ServerVerticle` is requested to [handle a KsqlRequest](ServerVerticle.md#handleKsqlRequest)
 
+### <span id="executeQueryRequest"> Executing Query Request
+
+```java
+CompletableFuture<EndpointResponse> executeQueryRequest(
+  KsqlRequest request, WorkerExecutor workerExecutor,
+  CompletableFuture<Void> connectionClosedFuture, ApiSecurityContext apiSecurityContext,
+  Optional<Boolean> isInternalRequest,
+  KsqlMediaType mediaType,
+  MetricsCallbackHolder metricsCallbackHolder,
+  Context context)
+```
+
+See [KsqlServerEndpoints](../rest/KsqlServerEndpoints.md#executeQueryRequest)
+
+Used when:
+
+* `ServerVerticle` is requested to [handle a query request](ServerVerticle.md#handleQueryRequest)
+
 ### <span id="executeWebsocketStream"> executeWebsocketStream
 
 ```java

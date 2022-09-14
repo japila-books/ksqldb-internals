@@ -143,7 +143,7 @@ CompletableFuture<EndpointResponse> executeQueryRequest(
 
 ---
 
-`executeQueryRequest` requests the [StreamedQueryResource](#streamedQueryResource) to [streamQuery](KsqlResource.md#streamQuery).
+`executeQueryRequest` requests the [StreamedQueryResource](#streamedQueryResource) to [streamQuery](StreamedQueryResource.md#streamQuery).
 
 ## <span id="executeTerminate"> executeTerminate
 

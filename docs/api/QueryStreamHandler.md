@@ -1,9 +1,9 @@
 # QueryStreamHandler
 
-`QueryStreamHandler` is a `Handler` ([Vert.x]({{ vertx.api }}/io/vertx/core/Handler.html)) to handle the following REST endpoints:
+`QueryStreamHandler` is a `Handler` ([Vert.x]({{ vertx.api }}/io/vertx/core/Handler.html)) to [handle HTTP requests](#handle) to the following REST endpoints:
 
-* `/query`
-* `/query-stream`
+* [/query](ServerVerticle.md#uris)
+* [/query-stream](ServerVerticle.md#uris)
 
 ## Creating Instance
 
@@ -48,7 +48,7 @@ For a scalable push query, `handleQueryPublisher`...FIXME
 
 Otherwise, `handleQueryPublisher`...FIXME
 
-In the end, `handleQueryPublisher` requests the given `QueryPublisher` to `subscribe` to a new `QuerySubscriber`.
+In the end, `handleQueryPublisher` requests the given [QueryPublisher](QueryPublisher.md) to `subscribe` to a new `QuerySubscriber`.
 
 ## Logging
 

@@ -1,5 +1,11 @@
 # KsqlConfig
 
+## <span id="KSQL_ENDPOINT_MIGRATE_QUERY_CONFIG"><span id="ksql.endpoint.migrate.query"> ksql.endpoint.migrate.query
+
+Enables [query request migration](rest/StreamedQueryResource.md#shouldMigrateToQueryStream) (from the [/query](api/ServerVerticle.md#uris) endpoint to use the same handler as [/query-stream](api/ServerVerticle.md#uris))
+
+Default: `true`
+
 ## <span id="KSQL_LAMBDAS_ENABLED"><span id="ksql.lambdas.enabled"> ksql.lambdas.enabled
 
 ## <span id="KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG"><span id="ksql.output.topic.name.prefix"> ksql.output.topic.name.prefix
@@ -7,6 +13,15 @@
 ## <span id="KSQL_DEFAULT_VALUE_FORMAT_CONFIG"><span id="ksql.persistence.default.format.value"> ksql.persistence.default.format.value
 
 ## <span id="KSQL_PULL_QUERIES_ENABLE_CONFIG"><span id="ksql.pull.queries.enable"> ksql.pull.queries.enable
+
+Enables [pull queries](pull-queries.md) on a ksqlDB server
+
+Default: `true`
+
+Used when:
+
+* `ImmutableProperties` is requested for `IMMUTABLE_PROPERTIES`
+* `QueryExecutor` is requested to [handle a pull query](rest/QueryExecutor.md#handleQuery)
 
 ## <span id="KSQL_QUERY_PULL_CONSISTENCY_OFFSET_VECTOR_ENABLED"><span id="ksql.query.pull.consistency.token.enabled"> ksql.query.pull.consistency.token.enabled
 

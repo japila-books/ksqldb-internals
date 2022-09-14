@@ -350,7 +350,9 @@ nav:
     - KsqlClient: cli/KsqlClient.md
     - KsqlRestClient: cli/KsqlRestClient.md
   - API:
+    - BlockingQueryPublisher: api/BlockingQueryPublisher.md
     - Endpoints: api/Endpoints.md
+    - QueryPublisher: api/QueryPublisher.md
     - QueryStreamHandler: api/QueryStreamHandler.md
     - Server: api/Server.md
     - ServerVerticle: api/ServerVerticle.md

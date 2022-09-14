@@ -1,6 +1,6 @@
 # ksql CLI
 
-`ksql` uses [Ksql](Ksql.md) to post ksql statements (over HTTP 2.0) to a [ksqlDB API server](../rest/KsqlRestApplication.md) cluster for execution (on [KsqlEngine](../KsqlEngine.md)).
+`ksql` uses [Ksql](Ksql.md) to post KSQL statements (over HTTP 2.0) to a [ksqlDB API server](../rest/KsqlRestApplication.md) for execution (on [KsqlEngine](../KsqlEngine.md)).
 
 `ksql` is a REST client that communicates with the [REST URIs](../api/ServerVerticle.md#uris).
 

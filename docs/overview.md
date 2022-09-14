@@ -19,6 +19,12 @@ KSQL statements (e.g., DDL commands and queries) can be executed from the follow
 
 KSQL statements are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
 
+## Executing Queries
+
+[Query statements](parser/Query.md) are handled by [QueryExecutor](rest/QueryExecutor.md#handleQuery) (in [REST](rest/index.md) mode).
+
+In the end, [EngineExecutor](EngineExecutor.md) is requested to [planQuery](EngineExecutor.md#planQuery).
+
 ## Executing DDL Commands
 
 [DdlCommand](DdlCommand.md)s (e.g. [CREATE STREAM](parser/CreateStream.md)) are planned for execution using [EngineExecutor](EngineExecutor.md#plan) and executed by (per command-line options):
@@ -36,7 +42,11 @@ For [DdlCommand](DdlCommand.md)s, [EngineExecutor](EngineExecutor.md) uses [Engi
 
 ## Kafka Streams
 
-ksqlDB uses [Kafka Streams]({{ book.kafka_streams }}) for [query implementation](QueryBuilder.md#buildQueryImplementation).
+ksqlDB uses [Kafka Streams]({{ book.kafka_streams }}) to [build a physical query plan](QueryEngine.md#buildPhysicalPlan) and for [query implementation](QueryBuilder.md#buildQueryImplementation).
+
+## Vert.x
+
+[ksqlDB API server](api/Server.md) uses [Vert.x](https://vertx.io/) for HTTP communication using [ServerVerticle](api/ServerVerticle.md).
 
 ## Run It Yourself
 

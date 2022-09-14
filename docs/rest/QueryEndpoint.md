@@ -42,11 +42,19 @@ QueryPublisher createQueryPublisher(
   Optional<Boolean> isInternalRequest)
 ```
 
-`createQueryPublisher` [createStatement](#createStatement).
+`createQueryPublisher` [creates a ConfiguredStatement](#createStatement) (of a [Query](../parser/Query.md)).
 
-`createQueryPublisher` requests the [QueryExecutor](#queryExecutor) to [handleStatement](QueryExecutor.md#handleStatement).
+`createQueryPublisher` requests the [QueryExecutor](#queryExecutor) to [handle the query statement](QueryExecutor.md#handleStatement).
 
-`createQueryPublisher`...FIXME
+For a pull query result, `createQueryPublisher`...FIXME
+
+For a push query result, `createQueryPublisher` creates a [BlockingQueryPublisher](../api/BlockingQueryPublisher.md) to [setQueryHandle](../api/BlockingQueryPublisher.md#setQueryHandle) (with `isPullQuery` flag off).
+
+Otherwise, `createQueryPublisher` throws an `KsqlStatementException`:
+
+```text
+Unexpected metadata for query
+```
 
 ---
 

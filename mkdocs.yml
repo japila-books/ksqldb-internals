@@ -351,6 +351,7 @@ nav:
     - KsqlRestClient: cli/KsqlRestClient.md
   - API:
     - Endpoints: api/Endpoints.md
+    - QueryStreamHandler: api/QueryStreamHandler.md
     - Server: api/Server.md
     - ServerVerticle: api/ServerVerticle.md
   - Misc:

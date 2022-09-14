@@ -161,9 +161,11 @@ PullQueryResult executeTablePullQuery(
   Optional<ConsistencyOffsetVector> consistencyOffsetVector)
 ```
 
-`executeTablePullQuery`...FIXME
-
 `executeTablePullQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTablePullQuery) abstraction.
+
+---
+
+`executeTablePullQuery`...FIXME
 
 ## <span id="isExecutableStatement"> isExecutableStatement
 

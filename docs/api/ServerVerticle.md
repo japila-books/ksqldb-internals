@@ -55,13 +55,13 @@ URI      | HTTP Method | Handler | Produces
  `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest) |
  `/ksql/terminate` | `POST` | `handleTerminateRequest` |
  `/lag` | `POST` | `handleLagReportRequest` |
- `/query` | `POST` | `handleQueryRequest` |
- `/query-stream` | `POST` | `QueryStreamHandler` |
+ `/query` | `POST` | `handleQueryRequest`<br>[QueryStreamHandler](QueryStreamHandler.md) |
+ `/query-stream` | `POST` | [QueryStreamHandler](QueryStreamHandler.md) |
  `/status/:type/:entity/:action` | `GET` | `handleStatusRequest` |
  `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest) |
  `/v1/metadata` | `GET` | `handleServerMetadataRequest` |
  `/v1/metadata/id` | `GET` | `handleServerMetadataClusterIdRequest` |
- `/ws/query` | `GET` | [handleWebsocket](#handleWebsocket) | <li>`application/vnd.ksql.v1+json`</li><li>`application/json`</li>
+ `/ws/query` | `GET` | [handleWebsocket](#handleWebsocket) | `application/vnd.ksql.v1+json`<br>`application/json`
 
 ### <span id="handleAllStatusesRequest"> handleAllStatusesRequest
 

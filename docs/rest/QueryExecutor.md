@@ -41,15 +41,15 @@ QueryMetadataHolder handleStatement(
   boolean excludeTombstones)
 ```
 
-For a [Query](../parser/Query.md) statement, `handleStatement` [handles it](#handleQuery). Otherwise, `handleStatement` returns an empty `QueryMetadataHolder`.
+For the given `PreparedStatement` for a [Query](../parser/Query.md), `handleStatement` [handles it](#handleQuery). Otherwise, `handleStatement` returns an empty `QueryMetadataHolder`.
 
 ---
 
 `handleStatement` is used when:
 
 * `QueryEndpoint` is requested to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
-* `StreamedQueryResource` is requested to `handleStatement`
-* `WSQueryEndpoint` is requested to `handleStatement`
+* `StreamedQueryResource` is requested to [handleStatement](StreamedQueryResource.md#handleStatement)
+* `WSQueryEndpoint` is requested to [handleStatement](WSQueryEndpoint.md#handleStatement)
 
 ### <span id="handleQuery"> Handling Query
 

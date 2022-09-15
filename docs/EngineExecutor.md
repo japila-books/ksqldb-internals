@@ -70,7 +70,7 @@ The optional `Sink` and query ID are only given when `EngineExecutor` is request
 
 `planQuery` [builds a logical query plan](QueryEngine.md#buildQueryLogicalPlan) (an [OutputNode](planner/OutputNode.md)).
 
-`planQuery` creates a `LogicalPlanNode` (for the query statement text and the `OutputNode`), a `QueryId` and looks up a `PersistentQueryMetadata` (in [QueryRegistry](EngineContext.md#getQueryRegistry)) for the `QueryId` (if one exists).
+`planQuery` creates a `LogicalPlanNode` (for the query statement text and the `OutputNode`), a `QueryId` and looks up a [PersistentQueryMetadata](PersistentQueryMetadata.md) (in the [QueryRegistry](EngineContext.md#getQueryRegistry)) for the `QueryId` (if one exists).
 
 ### <span id="planQuery-PhysicalPlan"> Step 3. Building Physical Plan
 
@@ -229,7 +229,7 @@ TransientQueryMetadata executeStreamPullQuery(
 
 `executeStreamPullQuery` [plans the query](#planQuery) (with an empty sink and query ID).
 
-`executeStreamPullQuery` requests the [EngineContext](#engineContext) to [create a QueryValidator](EngineContext.md#createQueryValidator) to [validateQuery](QueryValidator.md#validateQuery) (with the [SessionConfig](#config) and the `ExecutionPlan` with [ExecutionStep](ExecutionStep.md)s).
+`executeStreamPullQuery` requests the [EngineContext](#engineContext) to [create a QueryValidator](EngineContext.md#createQueryValidator) to [validateQuery](analyzer/QueryValidator.md#validateQuery) (with the [SessionConfig](#config) and the `ExecutionPlan` with [ExecutionStep](ExecutionStep.md)s).
 
 `executeStreamPullQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a stream pull query](QueryRegistry.md#createStreamPullQuery).
 
@@ -292,7 +292,7 @@ LogicalPlanNode buildAndValidateLogicalPlan(
   boolean isScalablePush)
 ```
 
-`buildAndValidateLogicalPlan` is given a statement (along with the [analysis](ImmutableAnalysis.md)) and the `isScalablePush` flag as follows:
+`buildAndValidateLogicalPlan` is given a statement (along with the [analysis](analyzer/ImmutableAnalysis.md)) and the `isScalablePush` flag as follows:
 
 * `true` when [executing a scalable push query](#executeScalablePushQuery)
 * `false` when [executing a table pull query](#executeTablePullQuery)

@@ -38,8 +38,8 @@ boolean isPullQuery()
 
 `isPullQuery` is used when:
 
-* `Analyzer.Visitor` is requested to [visitQuery](../Analyzer_Visitor.md#visitQuery)
-* `QueryAnalyzer` is requested to [analyze](../QueryAnalyzer.md#analyze)
+* `Analyzer.Visitor` is requested to [visitQuery](../analyzer/Analyzer.Visitor.md#visitQuery)
+* `QueryAnalyzer` is requested to [analyze](../analyzer/QueryAnalyzer.md#analyze)
 * `EngineExecutor` is requested to [executeTablePullQuery](../EngineExecutor.md#executeTablePullQuery)
 * `StatementRewriter.Rewriter` is requested to `visitQuery`
 * `SqlFormatter.Formatter` is requested to `visitQuery`

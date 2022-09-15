@@ -30,12 +30,12 @@ The optional `Sink` can only be defined when `EngineExecutor` is requested to [p
 
 ---
 
-`buildQueryLogicalPlan` creates a [QueryAnalyzer](QueryAnalyzer.md) with the [MetaStore](MetaStore.md) and the values of the following configuration properties (from the given [KsqlConfig](KsqlConfig.md)):
+`buildQueryLogicalPlan` creates a [QueryAnalyzer](analyzer/QueryAnalyzer.md) with the [MetaStore](MetaStore.md) and the values of the following configuration properties (from the given [KsqlConfig](KsqlConfig.md)):
 
 * [KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG](KsqlConfig.md#KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG)
 * [KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED](KsqlConfig.md#KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED)
 
-`buildQueryLogicalPlan` requests the `QueryAnalyzer` to [analyze the given query](QueryAnalyzer.md#analyze).
+`buildQueryLogicalPlan` requests the `QueryAnalyzer` to [analyze the given query](analyzer/QueryAnalyzer.md#analyze).
 
 In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](planner/LogicalPlanner.md) to [buildPersistentLogicalPlan](planner/LogicalPlanner.md#buildPersistentLogicalPlan).
 

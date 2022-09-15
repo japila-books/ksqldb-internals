@@ -67,7 +67,7 @@ QueryMetadataHolder handleQuery(
 
 #### <span id="handleQuery-pull-query"><span id="handleQuery-pull-query-stream"><span id="handleQuery-pull-query-table"> Pull Query
 
-For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
+For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
 
 With [ksql.pull.queries.enable](../KsqlConfig.md#KSQL_PULL_QUERIES_ENABLE_CONFIG) disabled, `handleQuery` throws a `KsqlStatementException`:
 
@@ -83,7 +83,7 @@ For a `KSTREAM` data source (`FROM` clause), `handleQuery` [handleStreamPullQuer
 
 #### <span id="handleQuery-scalable-push-query"> Scalable Push Query
 
-For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../ImmutableAnalysis.md)).
+For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
 
 `handleQuery` prints out the following INFO message to the logs:
 

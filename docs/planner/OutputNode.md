@@ -20,7 +20,7 @@ Used when:
 
 ## Implementations
 
-* `KsqlBareOutputNode`
+* [KsqlBareOutputNode](KsqlBareOutputNode.md)
 * [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md)
 
 ## Creating Instance

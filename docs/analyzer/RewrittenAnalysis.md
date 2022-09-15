@@ -11,8 +11,8 @@
 
 `RewrittenAnalysis` is created when:
 
-* `KsqlEngine` is requested to [analyzeQueryWithNoOutputTopic](KsqlEngine.md#analyzeQueryWithNoOutputTopic)
-* `LogicalPlanner` is [created](planner/LogicalPlanner.md#analysis)
+* `KsqlEngine` is requested to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic)
+* `LogicalPlanner` is [created](../planner/LogicalPlanner.md#analysis)
 
 ### <span id="rewriter"> Rewriter Function
 
@@ -35,6 +35,18 @@ List<SelectItem> getSelectItems()
 ---
 
 `getSelectItems`...FIXME
+
+## <span id="getInto"> getInto
+
+```java
+Optional<Into> getInto()
+```
+
+`getInto` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getInto) abstraction.
+
+---
+
+`getInto` requests the [original ImmutableAnalysis](#original) for the [getInto](ImmutableAnalysis.md#getInto).
 
 ## <span id="rewrite"> rewrite
 

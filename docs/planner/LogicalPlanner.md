@@ -15,9 +15,9 @@
 
 ## <span id="analysis"> ImmutableAnalysis and RewrittenAnalysis
 
-`LogicalPlanner` creates a [RewrittenAnalysis](../RewrittenAnalysis.md) with the following when [created](#creating-instance):
+`LogicalPlanner` creates a [RewrittenAnalysis](../analyzer/RewrittenAnalysis.md) with the following when [created](#creating-instance):
 
-* [ImmutableAnalysis](../ImmutableAnalysis.md)
+* [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)
 * `ColumnReferenceRewriter.process` as the rewriter
 
 The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the following:
@@ -159,7 +159,10 @@ OutputNode buildOutputNode(
   PlanNode sourcePlanNode)
 ```
 
-`buildOutputNode` creates a [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md) or a `KsqlBareOutputNode` based on whether this is a [QueryContainer](../parser/QueryContainer.md) or not (with a `Sink` to write into defined or not), respectively.
+`buildOutputNode` creates one of the two possible [OutputNode](OutputNode.md)s:
+
+* [KsqlBareOutputNode](KsqlBareOutputNode.md) when the [RewrittenAnalysis](#analysis) has no [Into](../analyzer/RewrittenAnalysis.md#getInto) sink
+* [KsqlStructuredDataOutputNode](KsqlStructuredDataOutputNode.md), otherwise
 
 ---
 

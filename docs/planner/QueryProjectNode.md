@@ -11,7 +11,7 @@
 * <span id="selectItems"> `SelectItem`s
 * <span id="metaStore"> [MetaStore](../MetaStore.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
-* <span id="analysis"> [RewrittenAnalysis](../RewrittenAnalysis.md)
+* <span id="analysis"> [RewrittenAnalysis](../analyzer/RewrittenAnalysis.md)
 * <span id="isWindowed"> `isWindowed` flag
 * <span id="queryPlannerOptions"> [QueryPlannerOptions](QueryPlannerOptions.md)
 * <span id="isScalablePush"> `isScalablePush` flag

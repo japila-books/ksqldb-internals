@@ -9,7 +9,7 @@
 * <span id="id"> `PlanNodeId`
 * <span id="source"> Parent [PlanNode](PlanNode.md)
 * <span id="functionRegistry"> `FunctionRegistry`
-* <span id="analysis"> [ImmutableAnalysis](../ImmutableAnalysis.md)
+* <span id="analysis"> [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)
 
 `FlatMapNode` is created when:
 

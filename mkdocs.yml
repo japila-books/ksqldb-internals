@@ -186,6 +186,7 @@ nav:
     - TypeRegistry: TypeRegistry.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
+    - features.md
     - Execution Modes:
       - Embedded:
         - embedded/index.md
@@ -249,15 +250,19 @@ nav:
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
     - TerminateQuery: parser/TerminateQuery.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
+  - Query Analysis:
+    - analyzer/index.md
+    - Analysis: analyzer/Analysis.md
+    - Analyzer:
+      - Analyzer: analyzer/Analyzer.md
+      - Analyzer.Visitor: analyzer/Analyzer.Visitor.md
+    - ImmutableAnalysis: analyzer/ImmutableAnalysis.md
+    - PullQueryValidator: analyzer/PullQueryValidator.md
+    - QueryAnalyzer: analyzer/QueryAnalyzer.md
+    - QueryValidator: analyzer/QueryValidator.md
+    - RewrittenAnalysis: analyzer/RewrittenAnalysis.md
   - Query Planning:
     - planner/index.md
-    - Analysis:
-      - Analysis: Analysis.md
-      - ImmutableAnalysis: ImmutableAnalysis.md
-      - RewrittenAnalysis: RewrittenAnalysis.md
-    - Analyzer:
-      - Analyzer: Analyzer.md
-      - Visitor: Analyzer_Visitor.md
     - AstSanitizer: AstSanitizer.md
     - CommandFactories: CommandFactories.md
     - ConfiguredKsqlPlan: ConfiguredKsqlPlan.md
@@ -284,17 +289,15 @@ nav:
       - DataSourceNode: planner/DataSourceNode.md
       - FlatMapNode: planner/FlatMapNode.md
       - JoinNode: planner/JoinNode.md
+      - KsqlBareOutputNode: planner/KsqlBareOutputNode.md
       - KsqlStructuredDataOutputNode: planner/KsqlStructuredDataOutputNode.md
       - OutputNode: planner/OutputNode.md
       - PlanNode: planner/PlanNode.md
       - QueryProjectNode: planner/QueryProjectNode.md
       - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
-    - PullQueryValidator: PullQueryValidator.md
     - RewriterPlugin: RewriterPlugin.md
-    - QueryAnalyzer: QueryAnalyzer.md
     - QueryPlan: QueryPlan.md
     - QueryPlannerOptions: planner/QueryPlannerOptions.md
-    - QueryValidator: QueryValidator.md
     - RuntimeBuildContext: RuntimeBuildContext.md
     - UserFunctionLoader: UserFunctionLoader.md
   - REST:

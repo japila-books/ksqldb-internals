@@ -64,9 +64,11 @@ void addSelectItem(
 List<SelectItem> getSelectItems()
 ```
 
-`getSelectItems` returns the [selectItems](#selectItems).
-
 `getSelectItems` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getSelectItems) abstraction.
+
+---
+
+`getSelectItems` returns the [selectItems](#selectItems).
 
 ## <span id="joinInfo"> JoinInfos
 
@@ -81,6 +83,8 @@ void addJoin(
 
 `addJoin` adds the given `JoinInfo` to the [joinInfo](#joinInfo) registry.
 
+---
+
 `addJoin` is used when:
 
 * `Analyzer.Visitor` is requested to [visitJoinedSource](Analyzer.md#visitJoinedSource)
@@ -91,9 +95,11 @@ void addJoin(
 boolean isJoin()
 ```
 
-`isJoin` is `true` when there is a `JoinInfo` in the [joinInfo](#joinInfo) registry.
-
 `isJoin` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#isJoin) abstraction.
+
+---
+
+`isJoin` is `true` when there is a `JoinInfo` in the [joinInfo](#joinInfo) registry.
 
 ## <span id="addDataSource"> addDataSource
 
@@ -108,3 +114,40 @@ void addDataSource(
 `addDataSource` is used when:
 
 * `Analyzer.Visitor` is requested to [visitAliasedRelation](Analyzer.md#visitAliasedRelation)
+
+## <span id="into"> into
+
+```java
+Optional<Into> into
+```
+
+`Analysis` defines `into` registry for an `Into` that is empty by default.
+
+`Into` holds the name of a source and the associated topic (to be created or existing).
+
+### <span id="getInto"> getInto
+
+```java
+Optional<Into> getInto()
+```
+
+`getInto` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getInto) abstraction.
+
+---
+
+`getInto` returns the [Into](#into).
+
+### <span id="setInto"> setInto
+
+```java
+void setInto(
+  Into into)
+```
+
+`setInto` sets the [Into](#into).
+
+---
+
+`setInto` is used when:
+
+* `Analyzer.Visitor` is requested to [analyzeNonStdOutSink](Analyzer.Visitor.md#analyzeNonStdOutSink)

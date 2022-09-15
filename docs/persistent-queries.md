@@ -7,7 +7,7 @@
 * [CREATE TABLE AS SELECT](parser/AstBuilder_Visitor.md#visitCreateTableAs)
 * [INSERT INTO](parser/AstBuilder_Visitor.md#visitInsertInto)
 
-When [Analyzer](Analyzer.md) is requested to [analyze a query](Analyzer.md#analyze) it creates a [Visitor](Analyzer.md#Visitor) with a flag to indicate whether the sink is defined or not for persistent queries.
+When [Analyzer](analyzer/Analyzer.md) is requested to [analyze a query](analyzer/Analyzer.md#analyze) it creates a [Visitor](analyzer/Analyzer.md#Visitor) with a flag to indicate whether the sink is defined or not for persistent queries.
 
 ## <span id="CREATE_SOURCE"> CREATE_SOURCE
 

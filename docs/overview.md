@@ -23,7 +23,7 @@ KSQL statements are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md)
 
 [Query statements](parser/Query.md) are handled by [QueryExecutor](rest/QueryExecutor.md#handleQuery) (in [REST](rest/index.md) mode).
 
-In the end, [EngineExecutor](EngineExecutor.md) is requested to [planQuery](EngineExecutor.md#planQuery).
+In the end, [EngineExecutor](EngineExecutor.md) is requested to [plan a query for execution](EngineExecutor.md#planQuery) (that gives an [ExecutionStep](ExecutionStep.md) and an [OutputNode](planner/OutputNode.md)).
 
 ## Executing DDL Commands
 

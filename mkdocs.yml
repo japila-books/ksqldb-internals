@@ -243,6 +243,7 @@ nav:
       - KsqlWindowExpression: parser/KsqlWindowExpression.md
       - ListStreams: parser/ListStreams.md
       - Node: parser/Node.md
+      - Sink: parser/Sink.md
       - Statement: parser/Statement.md
       - Query: parser/Query.md
       - QueryContainer: parser/QueryContainer.md

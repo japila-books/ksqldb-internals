@@ -35,6 +35,8 @@ Used when:
 Sink getSink()
 ```
 
+[Sink](Sink.md) to write the result of this query to
+
 Used when:
 
 * `EngineExecutor` is requested to [plan a statement](../EngineExecutor.md#plan)

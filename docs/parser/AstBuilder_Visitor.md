@@ -206,7 +206,9 @@ Node visitInsertInto(
 `visitInsertInto` is part of the `SqlBaseBaseVisitor` abstraction to handle `INSERT INTO` statements.
 
 ```antlr
-INSERT INTO sourceName (WITH tableProperties)? query
+INSERT INTO sourceName
+  (WITH tableProperties)?
+  query
 ```
 
 `visitInsertInto` creates a [InsertInto](InsertInto.md).

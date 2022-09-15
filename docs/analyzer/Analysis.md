@@ -12,7 +12,7 @@
 
 `Analysis` is created when:
 
-* `Analyzer.Visitor` is [created](Analyzer.md#analysis)
+* `Analyzer.Visitor` is [created](Analyzer.Visitor.md#analysis)
 
 ## <span id="tableFunctions"> TableFunctions
 
@@ -70,6 +70,40 @@ List<SelectItem> getSelectItems()
 
 `getSelectItems` returns the [selectItems](#selectItems).
 
+## <span id="into"><span id="setInto"> Into
+
+```java
+Optional<Into> into
+```
+
+`Analysis` defines `into` registry for an `Into` that is empty by default.
+
+!!! note "Into"
+    `Into` holds the name of a source and the associated topic (to be created or existing).
+
+`into` is set when `Analyzer.Visitor` is requested to [analyzeNonStdOutSink](Analyzer.Visitor.md#analyzeNonStdOutSink).
+
+### <span id="getInto"> getInto
+
+```java
+Optional<Into> getInto()
+```
+
+`getInto` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getInto) abstraction.
+
+---
+
+`getInto` returns the [Into](#into).
+
+### <span id="setInto"> setInto
+
+```java
+void setInto(
+  Into into)
+```
+
+`setInto` sets the [Into](#into).
+
 ## <span id="joinInfo"> JoinInfos
 
 `Analysis` defines `joinInfo` registry of `JoinInfo`s that are added in [addJoin](#addJoin).
@@ -114,40 +148,3 @@ void addDataSource(
 `addDataSource` is used when:
 
 * `Analyzer.Visitor` is requested to [visitAliasedRelation](Analyzer.md#visitAliasedRelation)
-
-## <span id="into"> into
-
-```java
-Optional<Into> into
-```
-
-`Analysis` defines `into` registry for an `Into` that is empty by default.
-
-`Into` holds the name of a source and the associated topic (to be created or existing).
-
-### <span id="getInto"> getInto
-
-```java
-Optional<Into> getInto()
-```
-
-`getInto` is part of the [ImmutableAnalysis](ImmutableAnalysis.md#getInto) abstraction.
-
----
-
-`getInto` returns the [Into](#into).
-
-### <span id="setInto"> setInto
-
-```java
-void setInto(
-  Into into)
-```
-
-`setInto` sets the [Into](#into).
-
----
-
-`setInto` is used when:
-
-* `Analyzer.Visitor` is requested to [analyzeNonStdOutSink](Analyzer.Visitor.md#analyzeNonStdOutSink)

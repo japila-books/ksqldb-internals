@@ -1,6 +1,6 @@
 # InsertInto
 
-`InsertInto` is a [Statement](Statement.md) and a [QueryContainer](QueryContainer.md).
+`InsertInto` is a [Statement](Statement.md) and a [QueryContainer](QueryContainer.md) that represents [INSERT INTO](AstBuilder_Visitor.md#visitInsertInto) statement.
 
 ## Creating Instance
 
@@ -15,3 +15,15 @@
 
 * `AstBuilder.Visitor` is requested to [parse INSERT INTO statement](AstBuilder_Visitor.md#visitInsertInto)
 * `StatementRewriter.Rewriter` is requested to `visitInsertInto`
+
+## <span id="getSink"> getSink
+
+```java
+Sink getSink()
+```
+
+`getSink` is part of the [QueryContainer](QueryContainer.md#getSink) abstraction.
+
+---
+
+`getSink` [creates a Sink](Sink.md#of) (with [createSink](Sink.md#createSink) flag disabled).

@@ -17,6 +17,5 @@ In [headless](../headless/index.md) execution mode, `CreateTableAsSelect` is exe
 
 `CreateTableAsSelect` is created when:
 
-* `CreateTableAsSelect` is requested to [copyWith](#copyWith)
 * `StatementRewriter.Rewriter` is requested to `visitCreateTableAsSelect`
 * `AstBuilder.Visitor` is requested to [parse CREATE TABLE AS SELECT statement](AstBuilder_Visitor.md#visitCreateTableAs)

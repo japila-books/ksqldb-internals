@@ -29,6 +29,16 @@ R defaultResult
 
 `defaultResult` is the default result of [visitNode](#visitNode).
 
+## <span id="process"> process
+
+```java
+R process(
+  AstNode node,
+  C context)
+```
+
+`process` requests the given `AstNode` to `accept` this `AstVisitor` (and the `context`).
+
 ## <span id="visitQuery"> visitQuery
 
 ```java

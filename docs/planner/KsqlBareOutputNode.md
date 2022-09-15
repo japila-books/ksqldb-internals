@@ -1,6 +1,6 @@
 # KsqlBareOutputNode
 
-`KsqlBareOutputNode` is an [OutputNode](OutputNode.md) for queries with no sink.
+`KsqlBareOutputNode` is an [OutputNode](OutputNode.md) for [queries with no sink](../parser/Query.md).
 
 ## Creating Instance
 

@@ -47,7 +47,7 @@ Type getType(
 
 `getType` is used when:
 
-* `AstBuilder.Visitor` is requested to [visitAlterOption](parser/AstBuilder_Visitor.md#visitAlterOption), [visitCast](parser/AstBuilder_Visitor.md#visitCast), [visitTableElement](parser/AstBuilder_Visitor.md#visitTableElement), [visitRegisterType](parser/AstBuilder_Visitor.md#visitRegisterType)
+* `AstBuilder.Visitor` is requested to [visitAlterOption](parser/AstBuilder.Visitor.md#visitAlterOption), [visitCast](parser/AstBuilder.Visitor.md#visitCast), [visitTableElement](parser/AstBuilder.Visitor.md#visitTableElement), [visitRegisterType](parser/AstBuilder.Visitor.md#visitRegisterType)
 * `SchemaParser` is requested to parse a schema
 * `SqlTypeParser` is requested to [parse a schema](#parse)
 

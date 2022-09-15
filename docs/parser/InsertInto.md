@@ -1,6 +1,6 @@
 # InsertInto
 
-`InsertInto` is a [Statement](Statement.md) and a [QueryContainer](QueryContainer.md) that represents [INSERT INTO](AstBuilder_Visitor.md#visitInsertInto) statement.
+`InsertInto` is a [Statement](Statement.md) and a [QueryContainer](QueryContainer.md) that represents [INSERT INTO](AstBuilder.Visitor.md#visitInsertInto) statement.
 
 ## Creating Instance
 
@@ -13,7 +13,7 @@
 
 `InsertInto` is created when:
 
-* `AstBuilder.Visitor` is requested to [parse INSERT INTO statement](AstBuilder_Visitor.md#visitInsertInto)
+* `AstBuilder.Visitor` is requested to [parse INSERT INTO statement](AstBuilder.Visitor.md#visitInsertInto)
 * `StatementRewriter.Rewriter` is requested to `visitInsertInto`
 
 ## <span id="getSink"> getSink

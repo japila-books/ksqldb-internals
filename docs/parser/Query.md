@@ -22,13 +22,13 @@
 
 * `EngineExecutor` is requested to [sourceTablePlan](../EngineExecutor.md#sourceTablePlan)
 * `StatementRewriter.Rewriter` is requested to `visitQuery`
-* `AstBuilder.Visitor` is requested to [visitQuery](AstBuilder_Visitor.md#visitQuery)
+* `AstBuilder.Visitor` is requested to [visitQuery](AstBuilder.Visitor.md#visitQuery)
 
 ## <span id="pullQuery"> pullQuery Flag
 
-`Query` is given a `pullQuery` flag when [created](#creating-instance) (which is most importantly when `AstBuilder.Visitor` is requested to [visitQuery](AstBuilder_Visitor.md#visitQuery)).
+`Query` is given a `pullQuery` flag when [created](#creating-instance) (which is most importantly when `AstBuilder.Visitor` is requested to [visitQuery](AstBuilder.Visitor.md#visitQuery)).
 
-`AstBuilder.Visitor` turns the `pullQuery` flag on (`true`) when the `Query` has no `EMIT` clause (and the [buildingPersistentQuery](AstBuilder_Visitor.md#buildingPersistentQuery) internal flag is off).
+`AstBuilder.Visitor` turns the `pullQuery` flag on (`true`) when the `Query` has no `EMIT` clause (and the [buildingPersistentQuery](AstBuilder.Visitor.md#buildingPersistentQuery) internal flag is off).
 
 ### <span id="isPullQuery"> isPullQuery
 

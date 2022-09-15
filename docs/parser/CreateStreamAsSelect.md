@@ -1,6 +1,6 @@
 # CreateStreamAsSelect
 
-`CreateStreamAsSelect` is a [CreateAsSelect](CreateAsSelect.md) that represents [CREATE STREAM AS SELECT](AstBuilder_Visitor.md#visitCreateStreamAs) KSQL command.
+`CreateStreamAsSelect` is a [CreateAsSelect](CreateAsSelect.md) that represents [CREATE STREAM AS SELECT](AstBuilder.Visitor.md#visitCreateStreamAs) KSQL command.
 
 ## Creating Instance
 
@@ -16,4 +16,4 @@
 `CreateStreamAsSelect` is created when:
 
 * `StatementRewriter.Rewriter` is requested to `visitCreateStreamAsSelect`
-* `AstBuilder.Visitor` is requested to [parse CREATE STREAM AS SELECT statement](AstBuilder_Visitor.md#visitCreateStreamAs)
+* `AstBuilder.Visitor` is requested to [parse CREATE STREAM AS SELECT statement](AstBuilder.Visitor.md#visitCreateStreamAs)

@@ -13,7 +13,7 @@ ksql> SHOW STREAMS;
 ------------------------------------------------------------------------------------------
 ```
 
-`SHOW STREAMS` is parsed using [AstBuilder.Visitor](../parser/AstBuilder_Visitor.md#visitListStreams) into a [ListStreams](../parser/ListStreams.md) that is in turn executed using [ListSourceExecutor](../rest/ListSourceExecutor.md#streams).
+`SHOW STREAMS` is parsed using [AstBuilder.Visitor](../parser/AstBuilder.Visitor.md#visitListStreams) into a [ListStreams](../parser/ListStreams.md) that is in turn executed using [ListSourceExecutor](../rest/ListSourceExecutor.md#streams).
 
 ## Create New Stream
 

@@ -17,4 +17,4 @@
 
 `ListStreams` is created when:
 
-* `AstBuilder.Visitor` is requested to [parse LIST STREAMS statement](AstBuilder_Visitor.md#visitListStreams)
+* `AstBuilder.Visitor` is requested to [parse LIST STREAMS statement](AstBuilder.Visitor.md#visitListStreams)

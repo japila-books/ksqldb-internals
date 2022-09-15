@@ -4,7 +4,7 @@ This demo shows a [pull query](../pull-queries.md) in action.
 
 ## CREATE STREAM riderLocations
 
-Use [ksql](../cli/index.md) to execute the following [CREATE STREAM](../parser/AstBuilder_Visitor.md#create-stream) DDL statement.
+Use [ksql](../cli/index.md) to execute the following [CREATE STREAM](../parser/AstBuilder.Visitor.md#create-stream) DDL statement.
 
 ```sql
 CREATE STREAM riderLocations (

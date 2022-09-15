@@ -1,6 +1,6 @@
 # AlterSystemProperty
 
-`AlterSystemProperty` is a [Statement](Statement.md) for [ALTER SYSTEM](AstBuilder_Visitor.md#visitAlterSystemProperty) statements.
+`AlterSystemProperty` is a [Statement](Statement.md) for [ALTER SYSTEM](AstBuilder.Visitor.md#visitAlterSystemProperty) statements.
 
 ## Creating Instance
 
@@ -12,4 +12,4 @@
 
 `AlterSystemProperty` is created when:
 
-* `AstBuilder.Visitor` is requested to [visitAlterSystemProperty](AstBuilder_Visitor.md#visitAlterSystemProperty)
+* `AstBuilder.Visitor` is requested to [visitAlterSystemProperty](AstBuilder.Visitor.md#visitAlterSystemProperty)

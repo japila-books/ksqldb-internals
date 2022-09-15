@@ -28,7 +28,7 @@ CreateSourceProperties from(
 
 `from` is used when:
 
-* `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder_Visitor.md#visitCreateTable), [visitCreateStream](AstBuilder_Visitor.md#visitCreateStream), [visitAssertStream](AstBuilder_Visitor.md#visitAssertStream) and [visitAssertTable](AstBuilder_Visitor.md#visitAssertTable)
+* `AstBuilder.Visitor` is requested to [visitCreateTable](AstBuilder.Visitor.md#visitCreateTable), [visitCreateStream](AstBuilder.Visitor.md#visitCreateStream), [visitAssertStream](AstBuilder.Visitor.md#visitAssertStream) and [visitAssertTable](AstBuilder.Visitor.md#visitAssertTable)
 
 ## <span id="props"> PropertiesConfig
 

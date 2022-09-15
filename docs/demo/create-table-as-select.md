@@ -1,6 +1,6 @@
 # Demo: CREATE TABLE AS SELECT
 
-This demo shows the internals of [CREATE TABLE AS SELECT](../parser/AstBuilder_Visitor.md#visitCreateTableAs) (_CTAS_).
+This demo shows the internals of [CREATE TABLE AS SELECT](../parser/AstBuilder.Visitor.md#visitCreateTableAs) (_CTAS_).
 
 ```text
 CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
@@ -8,7 +8,7 @@ CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
   AS query
 ```
 
-`CREATE TABLE AS SELECT` DDL command is parsed by [AstBuilder](../parser/AstBuilder_Visitor.md#visitCreateTableAs) into [CreateTableAsSelect](../parser/CreateTableAsSelect.md).
+`CREATE TABLE AS SELECT` DDL command is parsed by [AstBuilder](../parser/AstBuilder.Visitor.md#visitCreateTableAs) into [CreateTableAsSelect](../parser/CreateTableAsSelect.md).
 
 `CREATE TABLE AS SELECT` is a [persistent query](../persistent-queries.md).
 

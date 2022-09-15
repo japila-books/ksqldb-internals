@@ -1,6 +1,6 @@
 # CreateTable
 
-`CreateTable` is a [CreateSource](CreateSource.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [CREATE TABLE](AstBuilder_Visitor.md#visitCreateTable) and [ASSERT TABLE](AstBuilder_Visitor.md#visitAssertTable) statements.
+`CreateTable` is a [CreateSource](CreateSource.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [CREATE TABLE](AstBuilder.Visitor.md#visitCreateTable) and [ASSERT TABLE](AstBuilder.Visitor.md#visitAssertTable) statements.
 
 ## Creating Instance
 
@@ -16,4 +16,4 @@
 
 `CreateTable` is created when:
 
-* `AstBuilder.Visitor` is requested to parse [CREATE TABLE](AstBuilder_Visitor.md#visitCreateTable) and [ASSERT TABLE](AstBuilder_Visitor.md#visitAssertTable) statements
+* `AstBuilder.Visitor` is requested to parse [CREATE TABLE](AstBuilder.Visitor.md#visitCreateTable) and [ASSERT TABLE](AstBuilder.Visitor.md#visitAssertTable) statements

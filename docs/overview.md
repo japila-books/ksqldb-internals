@@ -17,7 +17,7 @@ KSQL statements (e.g., DDL commands and queries) can be executed from the follow
 * [Query file](rest/ServerOptions.md#queries-file) ([headless](headless/index.md) mode)
 * [ksql](cli/Ksql.md) ([REST](rest/index.md) mode)
 
-KSQL statements are parsed by [AstBuilder.Visitor](parser/AstBuilder_Visitor.md) to [Statement](parser/Statement.md)s.
+KSQL statements are parsed by [AstBuilder.Visitor](parser/AstBuilder.Visitor.md) to [Statement](parser/Statement.md)s.
 
 ## Executing Queries
 

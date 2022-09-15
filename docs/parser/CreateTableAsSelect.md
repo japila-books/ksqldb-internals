@@ -1,6 +1,6 @@
 # CreateTableAsSelect
 
-`CreateTableAsSelect` is a [CreateAsSelect](CreateAsSelect.md) that represents [CREATE TABLE AS SELECT](AstBuilder_Visitor.md#visitCreateTableAs) KSQL command.
+`CreateTableAsSelect` is a [CreateAsSelect](CreateAsSelect.md) that represents [CREATE TABLE AS SELECT](AstBuilder.Visitor.md#visitCreateTableAs) KSQL command.
 
 In [headless](../headless/index.md) execution mode, `CreateTableAsSelect` is executed using [StatementExecutor](../headless/StandaloneExecutor_StatementExecutor.md#handlePersistentQuery).
 
@@ -18,4 +18,4 @@ In [headless](../headless/index.md) execution mode, `CreateTableAsSelect` is exe
 `CreateTableAsSelect` is created when:
 
 * `StatementRewriter.Rewriter` is requested to `visitCreateTableAsSelect`
-* `AstBuilder.Visitor` is requested to [parse CREATE TABLE AS SELECT statement](AstBuilder_Visitor.md#visitCreateTableAs)
+* `AstBuilder.Visitor` is requested to [parse CREATE TABLE AS SELECT statement](AstBuilder.Visitor.md#visitCreateTableAs)

@@ -215,7 +215,7 @@ nav:
     - parser/index.md
     - AstBuilder:
       - AstBuilder: parser/AstBuilder.md
-      - Visitor: parser/AstBuilder_Visitor.md
+      - AstBuilder.Visitor: parser/AstBuilder.Visitor.md
     - AstVisitor: parser/AstVisitor.md
     - CommonCreateConfigs: parser/CommonCreateConfigs.md
     - CreateSource:

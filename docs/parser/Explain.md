@@ -12,7 +12,7 @@
 
 `Explain` is created when:
 
-* `AstBuilder.Visitor` is requested to [parse EXPLAIN statement](AstBuilder_Visitor.md#visitExplain)
+* `AstBuilder.Visitor` is requested to [parse EXPLAIN statement](AstBuilder.Visitor.md#visitExplain)
 * `StatementRewriter.Rewriter` is requested to `visitExplain`
 
 ## <span id="accept"> accept

@@ -1,6 +1,6 @@
 # AlterSource
 
-`AlterSource` is a [Statement](Statement.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [ALTER SOURCE](AstBuilder_Visitor.md#visitAlterSource) KSQL command.
+`AlterSource` is a [Statement](Statement.md) and a [ExecutableDdlStatement](ExecutableDdlStatement.md) that represents [ALTER SOURCE](AstBuilder.Visitor.md#visitAlterSource) KSQL command.
 
 `AlterSource` is converted into [AlterSourceCommand](../AlterSourceCommand.md) (using [CommandFactories](../CommandFactories.md#handleAlterSource) and [AlterSourceFactory](../AlterSourceFactory.md)).
 
@@ -15,4 +15,4 @@
 
 `AlterSource` is created when:
 
-* `AstBuilder.Visitor` is requested to [parse ALTER SOURCE statement](AstBuilder_Visitor.md#visitAlterSource)
+* `AstBuilder.Visitor` is requested to [parse ALTER SOURCE statement](AstBuilder.Visitor.md#visitAlterSource)

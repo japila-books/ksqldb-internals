@@ -2,9 +2,9 @@
 
 `Sink` represents the output (`sourceName`) of the following KSQL statements:
 
-* [CREATE STREAM AS SELECT](AstBuilder_Visitor.md#visitCreateStreamAs)
-* [CREATE TABLE AS SELECT](AstBuilder_Visitor.md#visitCreateTableAs)
-* [INSERT INTO](AstBuilder_Visitor.md#visitInsertInto)
+* [CREATE STREAM AS SELECT](AstBuilder.Visitor.md#visitCreateStreamAs)
+* [CREATE TABLE AS SELECT](AstBuilder.Visitor.md#visitCreateTableAs)
+* [INSERT INTO](AstBuilder.Visitor.md#visitInsertInto)
 
 !!! note "Naming Convention"
     The part of these statements to denote the output name of a sink to write results to is called `sourceName` in ANTLR definition file.

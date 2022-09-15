@@ -1,6 +1,6 @@
 # AstBuilder
 
-`AstBuilder` uses [Visitor](AstBuilder_Visitor.md) to parse SQL statements (using ANTLR).
+`AstBuilder` uses [Visitor](AstBuilder.Visitor.md) to parse SQL statements (using ANTLR).
 
 ## Creating Instance
 
@@ -48,7 +48,7 @@ Set<SourceName> getSources(
 
 1. Only given when `AstBuilder` is requested to build a [Statement](#buildStatement)
 
-`build` creates a [Visitor](AstBuilder_Visitor.md) to build a [node tree](Node.md) (for a given `ParserRuleContext` that represents a parsed SQL text).
+`build` creates a [Visitor](AstBuilder.Visitor.md) to build a [node tree](Node.md) (for a given `ParserRuleContext` that represents a parsed SQL text).
 
 ---
 

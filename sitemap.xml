@@ -706,12 +706,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder/</loc>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder.Visitor/</loc>
          <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder_Visitor/</loc>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/AstBuilder/</loc>
          <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

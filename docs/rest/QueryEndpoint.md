@@ -42,13 +42,19 @@ QueryPublisher createQueryPublisher(
   Optional<Boolean> isInternalRequest)
 ```
 
-`createQueryPublisher` [creates a ConfiguredStatement](#createStatement) (of a [Query](../parser/Query.md)).
+`createQueryPublisher` [creates a ConfiguredStatement](#createStatement) for the given `sql` (that is expected to be a [Query](../parser/Query.md) statement).
 
 `createQueryPublisher` requests the [QueryExecutor](#queryExecutor) to [handle the query statement](QueryExecutor.md#handleStatement).
 
-For a pull query result, `createQueryPublisher`...FIXME
+For a pull query result, `createQueryPublisher` creates a [BlockingQueryPublisher](../api/BlockingQueryPublisher.md) to [setQueryHandle](../api/BlockingQueryPublisher.md#setQueryHandle) with a new `KsqlPullQueryHandle` and the flags:
 
-For a push query result, `createQueryPublisher` creates a [BlockingQueryPublisher](../api/BlockingQueryPublisher.md) to [setQueryHandle](../api/BlockingQueryPublisher.md#setQueryHandle) (with `isPullQuery` flag off).
+* `isPullQuery` enabled
+* `isScalablePushQuery` disabled
+
+For a push query result, `createQueryPublisher` creates a [BlockingQueryPublisher](../api/BlockingQueryPublisher.md) to [setQueryHandle](../api/BlockingQueryPublisher.md#setQueryHandle) with a new `KsqlQueryHandle` and the flags:
+
+* `isPullQuery` disabled
+* `isScalablePushQuery` based on whether `QueryMetadataHolder` holds a `ScalablePushQueryMetadata` or not
 
 Otherwise, `createQueryPublisher` throws an `KsqlStatementException`:
 

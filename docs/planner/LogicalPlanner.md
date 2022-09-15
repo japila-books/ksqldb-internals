@@ -42,7 +42,9 @@ The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the follo
 OutputNode buildPersistentLogicalPlan()
 ```
 
-`buildPersistentLogicalPlan` creates an [OutputNode](OutputNode.md).
+In summary, `buildPersistentLogicalPlan` creates an [OutputNode](OutputNode.md) for the [RewrittenAnalysis](#analysis) (of a [Query](../parser/Query.md) statement).
+
+---
 
 `buildPersistentLogicalPlan` is used when:
 

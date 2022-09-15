@@ -187,7 +187,7 @@ boolean isExecutableStatement(
 * `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (and [throwOnNonExecutableStatement](EngineExecutor.md#throwOnNonExecutableStatement))
 * `RequestValidator` is requested to [validate a statement](rest/RequestValidator.md#validate)
 
-## <span id="analyzeQueryWithNoOutputTopic"> analyzeQueryWithNoOutputTopic
+## <span id="analyzeQueryWithNoOutputTopic"> Analyzing Query Statement With No Sink
 
 ```java
 ImmutableAnalysis analyzeQueryWithNoOutputTopic(
@@ -196,11 +196,30 @@ ImmutableAnalysis analyzeQueryWithNoOutputTopic(
   Map<String, Object> configOverrides)
 ```
 
-`analyzeQueryWithNoOutputTopic`...FIXME
+`analyzeQueryWithNoOutputTopic` creates a [QueryAnalyzer](analyzer/QueryAnalyzer.md) with the following:
+
+* [ksql.rowpartition.rowoffset.enabled](#getRowpartitionRowoffsetEnabled)
+* [ksql.query.pull.limit.clause.enabled](KsqlConfig.md#KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED)
+
+`analyzeQueryWithNoOutputTopic` requests the `QueryAnalyzer` to [analyze](analyzer/QueryAnalyzer.md#analyze) the given [Query](parser/Query.md) statement (and no [Sink](parser/Sink.md)).
+
+In the end, `analyzeQueryWithNoOutputTopic` creates a [RewrittenAnalysis](analyzer/RewrittenAnalysis.md) (with the [Analysis](analyzer/Analysis.md) and `QueryExecutionUtil.ColumnReferenceRewriter`)
+
+---
 
 `analyzeQueryWithNoOutputTopic` is used when:
 
 * `QueryExecutor` is requested to [handle pull or push queries](rest/QueryExecutor.md#handleQuery)
+
+### <span id="getRowpartitionRowoffsetEnabled"> getRowpartitionRowoffsetEnabled
+
+```java
+boolean getRowpartitionRowoffsetEnabled(
+  KsqlConfig ksqlConfig,
+  Map<String, Object> configOverrides)
+```
+
+`getRowpartitionRowoffsetEnabled` takes the value of [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED) from `configOverrides` (if available) or the given [KsqlConfig](KsqlConfig.md).
 
 ## <span id="executeTransientQuery"> Executing Transient Query
 
@@ -211,9 +230,11 @@ TransientQueryMetadata executeTransientQuery(
   boolean excludeTombstones)
 ```
 
-`executeTransientQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [executeTransientQuery](EngineExecutor.md#executeTransientQuery).
-
 `executeTransientQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeTransientQuery) abstraction.
+
+---
+
+`executeTransientQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [executeTransientQuery](EngineExecutor.md#executeTransientQuery).
 
 ## <span id="createStreamPullQuery"> Creating Stream Pull Query
 

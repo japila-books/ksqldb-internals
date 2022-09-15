@@ -18,7 +18,7 @@ See [KsqlEngine](KsqlEngine.md#createStreamPullQuery)
 
 Used when:
 
-* `QueryExecutor` is requested to [handleStreamPullQuery](rest/QueryExecutor.md#handleStreamPullQuery)
+* `QueryExecutor` is requested to [handle a stream pull query](rest/QueryExecutor.md#handleStreamPullQuery)
 
 ### <span id="createSandbox"> Creating Sandboxed Execution Context (createSandbox)
 

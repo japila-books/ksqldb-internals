@@ -61,7 +61,7 @@ Used when:
 
 * [StructuredDataSource](StructuredDataSource.md)
 
-## DataSourceType
+## <span id="DataSourceType"> DataSourceType
 
 ### <span id="KSTREAM"><span id="STREAM"> KSTREAM
 

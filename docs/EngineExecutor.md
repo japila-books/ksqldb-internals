@@ -49,9 +49,11 @@ ExecutorPlans planQuery(
   MetaStore metaStore)
 ```
 
-`planQuery` takes a [Query](parser/Query.md) and [creates an ExecutorPlans](#planQuery-PhysicalPlan).
+In summary, `planQuery` takes a [Query](parser/Query.md) and [creates an ExecutorPlans](#planQuery-PhysicalPlan).
 
-The optional `Sink` and query ID are only given when `EngineExecutor` is requested to [plan a QueryContainer](#plan). Otherwise, they are both undefined.
+---
+
+The optional [Sink](parser/Sink.md) and query ID are only given when `EngineExecutor` is requested to [plan a QueryContainer](#plan). Otherwise, they are both undefined.
 
 ---
 

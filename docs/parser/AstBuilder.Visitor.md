@@ -10,7 +10,7 @@
 `Visitor` takes the following to be created:
 
 * <span id="sources"> Source Names
-* <span id="typeRegistry"> `TypeRegistry`
+* <span id="typeRegistry"> [TypeRegistry](../TypeRegistry.md)
 
 `Visitor` is created when:
 

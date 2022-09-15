@@ -2,7 +2,7 @@
 
 `PlanNode` is an [abstraction](#contract) of [nodes](#implementations) of a query plan.
 
-## Contract (Abstract Methods)
+## Contract
 
 ### <span id="buildStream"> Building SchemaKStream
 

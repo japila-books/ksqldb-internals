@@ -93,7 +93,7 @@ CompletableFuture<QueryPublisher> createQueryPublisher(
 
 `createQueryPublisher` [executes the following](#executeOnWorker) on the given `WorkerExecutor`:
 
-* Create a [QueryEndpoint](QueryEndpoint.md) to [createQueryPublisher](QueryEndpoint.md#createQueryPublisher)
+* Create a [QueryEndpoint](QueryEndpoint.md) to [create a QueryPublisher](QueryEndpoint.md#createQueryPublisher)
 
 ## <span id="executeIsValidProperty"> executeIsValidProperty
 

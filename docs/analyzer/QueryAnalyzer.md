@@ -5,9 +5,9 @@
 `QueryAnalyzer` takes the following to be created:
 
 * <span id="metaStore"> [MetaStore](../MetaStore.md)
-* <span id="outputTopicPrefix"> Output Topic Prefix
-* <span id="rowpartitionRowoffsetEnabled"> `rowpartitionRowoffsetEnabled` flag
-* <span id="pullLimitClauseEnabled"> `pullLimitClauseEnabled` flag
+* <span id="outputTopicPrefix"> [ksql.output.topic.name.prefix](../KsqlConfig.md#KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG)
+* <span id="rowpartitionRowoffsetEnabled"> [ksql.rowpartition.rowoffset.enabled](../KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED)
+* <span id="pullLimitClauseEnabled"> [ksql.query.pull.limit.clause.enabled](../KsqlConfig.md#KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED)
 
 `QueryAnalyzer` is created when:
 

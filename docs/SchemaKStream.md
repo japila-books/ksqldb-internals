@@ -14,3 +14,17 @@
 
 * `SchemaKSourceFactory` is requested to [schemaKStream](SchemaKSourceFactory.md#schemaKStream)
 * `SchemaKStream` is requested to [into](#into), [filter](#filter), [flatMap](#flatMap) and _others_
+
+## <span id="getSourceStep"> getSourceStep
+
+```java
+ExecutionStep<?> getSourceStep()
+```
+
+`getSourceStep` returns the [Source ExecutionStep](#sourceStep).
+
+---
+
+`getSourceStep` is used when:
+
+* `ExecutionPlanBuilder` is requested for the [execution plan](ExecutionPlanBuilder.md#buildPhysicalPlan) (of a [Query](parser/Query.md) statement)

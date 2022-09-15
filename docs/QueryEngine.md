@@ -22,18 +22,18 @@ OutputNode buildQueryLogicalPlan(
   boolean rowpartitionRowoffsetEnabled)
 ```
 
-`buildQueryLogicalPlan` takes a [Query](parser/Query.md) statement and returns an [OutputNode](planner/OutputNode.md).
+In summary, `buildQueryLogicalPlan` takes a [Query](parser/Query.md) statement and returns an [OutputNode](planner/OutputNode.md).
 
 ---
 
-The optional `Sink` can only be defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](parser/QueryContainer.md#getSink)).
+The optional `Sink` is only defined when `EngineExecutor` is requested to [plan a statement](EngineExecutor.md#plan) (which is a [QueryContainer](parser/QueryContainer.md#getSink)).
 
 ---
 
 `buildQueryLogicalPlan` creates a [QueryAnalyzer](analyzer/QueryAnalyzer.md) with the [MetaStore](MetaStore.md) and the values of the following configuration properties (from the given [KsqlConfig](KsqlConfig.md)):
 
-* [KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG](KsqlConfig.md#KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG)
-* [KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED](KsqlConfig.md#KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED)
+* [ksql.output.topic.name.prefix](KsqlConfig.md#KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG)
+* [ksql.query.pull.limit.clause.enabled](KsqlConfig.md#KSQL_QUERY_PULL_LIMIT_CLAUSE_ENABLED)
 
 `buildQueryLogicalPlan` requests the `QueryAnalyzer` to [analyze the given query](analyzer/QueryAnalyzer.md#analyze).
 

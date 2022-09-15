@@ -44,6 +44,8 @@ For [DdlCommand](DdlCommand.md)s, [EngineExecutor](EngineExecutor.md) uses [Engi
 
 ksqlDB uses [Kafka Streams]({{ book.kafka_streams }}) to [build a physical query plan](QueryEngine.md#buildPhysicalPlan) and for [query implementation](QueryBuilder.md#buildQueryImplementation).
 
+[LogicalPlanner](planner/LogicalPlanner.md#buildPersistentLogicalPlan) plans [Query](parser/Query.md) statements (after analysis) into [OutputNode](planner/OutputNode.md)s (that can [build a SchemaKStream](planner/PlanNode.md#buildStream) that can in turn be requested for an [ExecutionStep](SchemaKStream.md#getSourceStep)).
+
 ## Vert.x
 
 [ksqlDB API server](api/Server.md) uses [Vert.x](https://vertx.io/) for HTTP communication using [ServerVerticle](api/ServerVerticle.md).

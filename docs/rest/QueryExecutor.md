@@ -51,7 +51,7 @@ For the given `PreparedStatement` for a [Query](../parser/Query.md), `handleStat
 * `StreamedQueryResource` is requested to [handleStatement](StreamedQueryResource.md#handleStatement)
 * `WSQueryEndpoint` is requested to [handleStatement](WSQueryEndpoint.md#handleStatement)
 
-### <span id="handleQuery"> Handling Query
+### <span id="handleQuery"> Handling Query Statement
 
 ```java
 QueryMetadataHolder handleQuery(
@@ -67,7 +67,7 @@ QueryMetadataHolder handleQuery(
 
 #### <span id="handleQuery-pull-query"><span id="handleQuery-pull-query-stream"><span id="handleQuery-pull-query-table"> Pull Query
 
-For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
+For a [pull query](../parser/Query.md#isPullQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyze the query statement with no sink](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
 
 With [ksql.pull.queries.enable](../KsqlConfig.md#KSQL_PULL_QUERIES_ENABLE_CONFIG) disabled, `handleQuery` throws a `KsqlStatementException`:
 
@@ -77,13 +77,15 @@ Pull queries are disabled.
 
 `handleQuery` determines a `ConsistencyOffsetVector` based on [ksql.query.pull.consistency.token.enabled](../KsqlConfig.md#KSQL_QUERY_PULL_CONSISTENCY_OFFSET_VECTOR_ENABLED) in the [KsqlConfig](#ksqlConfig) and the given `requestProperties`.
 
-For a `KTABLE` data source (`FROM` clause), `handleQuery` [handleTablePullQuery](#handleTablePullQuery).
+`handleQuery` determines the [DataSourceType](../DataSource.md#DataSourceType) of the [FROM](../analyzer/ImmutableAnalysis.md#getFrom) clause (of the [DataSource](../DataSource.md) of the [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md) of this pull query).
 
-For a `KSTREAM` data source (`FROM` clause), `handleQuery` [handleStreamPullQuery](#handleStreamPullQuery).
+For a `KTABLE` data source, `handleQuery` [handle the table pull query](#handleTablePullQuery).
+
+For a `KSTREAM` data source, `handleQuery` [handle the stream pull query](#handleStreamPullQuery).
 
 #### <span id="handleQuery-scalable-push-query"> Scalable Push Query
 
-For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyzeQueryWithNoOutputTopic](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
+For a [scalable push query](ScalablePushUtil.md#isScalablePushQuery), `handleQuery` requests the [KsqlEngine](#ksqlEngine) to [analyze the query statement with no sink](../KsqlEngine.md#analyzeQueryWithNoOutputTopic) (that gives an [ImmutableAnalysis](../analyzer/ImmutableAnalysis.md)).
 
 `handleQuery` prints out the following INFO message to the logs:
 
@@ -145,7 +147,7 @@ Streaming scalable push query
 
 * `QueryExecutor` is requested to [handle a query](#handleQuery-scalable-push-query)
 
-### <span id="handleStreamPullQuery"> handleStreamPullQuery
+### <span id="handleStreamPullQuery"> Handling Stream Pull Query
 
 ```java
 QueryMetadataHolder handleStreamPullQuery(
@@ -156,7 +158,7 @@ QueryMetadataHolder handleStreamPullQuery(
   AtomicReference<Decrementer> refDecrementer)
 ```
 
-Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [create a stream pull query](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata` to be returned inside a `QueryMetadataHolder`).
+In summary, `handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) for a [stream pull query](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata` to be returned inside a `QueryMetadataHolder`).
 
 ---
 
@@ -164,7 +166,7 @@ Most importantly, `handleStreamPullQuery` requests the [KsqlExecutionContext](#k
 
 `handleStreamPullQuery` requests the [pullBandRateLimiter](#pullBandRateLimiter) to [allow](../SlidingWindowRateLimiter.md#allow) a [PULL](../KsqlQueryType.md#PULL) query.
 
-`handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) to [createStreamPullQuery](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata`).
+`handleStreamPullQuery` requests the [KsqlExecutionContext](#ksqlEngine) for a [stream pull query](../KsqlExecutionContext.md#createStreamPullQuery) (that gives a `StreamPullQueryMetadata`).
 
 `handleStreamPullQuery` requests the [LocalCommands](#localCommands) (if defined) to `write` the `TransientQueryMetadata`.
 

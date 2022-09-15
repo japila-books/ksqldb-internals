@@ -120,6 +120,7 @@ nav:
       - DdlCommandExec.Executor: DdlCommandExec.Executor.md
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
+    - ExecutionPlanBuilder: ExecutionPlanBuilder.md
     - ExecutionSteps:
       - ExecutionStep: ExecutionStep.md
       - SourceStep: SourceStep.md

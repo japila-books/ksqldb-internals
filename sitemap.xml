@@ -836,6 +836,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/Sink/</loc>
+         <lastmod>2022-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/SourceAccumulator/</loc>
          <lastmod>2022-09-15</lastmod>
          <changefreq>daily</changefreq>

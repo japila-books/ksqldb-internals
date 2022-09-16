@@ -82,7 +82,7 @@ The optional [Sink](parser/Sink.md) and query ID are only given when `EngineExec
 
 In the end, `planQuery` creates an `ExecutorPlans` (with the `LogicalPlanNode` and the `PhysicalPlan`).
 
-## <span id="plan"> Statement Planning
+## <span id="plan"> KSQL Statement Planning
 
 ```java
 KsqlPlan plan(
@@ -143,7 +143,7 @@ Optional<DdlCommand> maybeCreateSinkDdl(
 
 Otherwise, `maybeCreateSinkDdl` requests the [EngineContext](#engineContext) to [createDdlCommand](EngineContext.md#createDdlCommand) for the given [KsqlStructuredDataOutputNode](planner/KsqlStructuredDataOutputNode.md).
 
-### <span id="sourceTablePlan"> sourceTablePlan
+### <span id="sourceTablePlan"> Planning Source Table Query
 
 ```java
 KsqlPlan sourceTablePlan(
@@ -152,7 +152,30 @@ KsqlPlan sourceTablePlan(
 
 `sourceTablePlan` assumes that the given `ConfiguredStatement` is for a [CreateTable](parser/CreateTable.md).
 
-`sourceTablePlan`...FIXME
+`sourceTablePlan` requests the [EngineContext](#engineContext) to [create a CreateTableCommand](EngineContext.md#createDdlCommand).
+
+`sourceTablePlan` creates a [Query](parser/Query.md) with the following:
+
+* `AliasedRelation` for the source table
+* `Select`
+* `RefinementInfo` with `CHANGES` output refinement
+* [pullQuery](parser/Query.md#pullQuery) flag off
+
+`sourceTablePlan` registers a `KsqlTable` in a temporary [MetaStoreImpl](MetaStoreImpl.md) (so any future table name resolution will work).
+
+`sourceTablePlan` [plans the query statement](#planQuery) (with the given `ConfiguredStatement`, the `Query`, no sink and the temporary `MetaStoreImpl`). It will produce an `ExecutorPlans`.
+
+`sourceTablePlan` uses the `ExecutorPlans` to access a [KsqlBareOutputNode](planner/KsqlBareOutputNode.md).
+
+`sourceTablePlan` creates a [QueryPlan](QueryPlan.md) with the following:
+
+* [getSourceNames](#getSourceNames) of the [KsqlBareOutputNode](planner/KsqlBareOutputNode.md)
+* No sink
+* Other params from the `ExecutorPlans`
+
+`sourceTablePlan` requests the [EngineContext](#engineContext) for the [QueryValidator](EngineContext.md#createQueryValidator) to [validateQuery](analyzer/QueryValidator.md#validateQuery).
+
+In the end, `sourceTablePlan` [creates a KsqlPlan](KsqlPlan.md#queryPlanCurrent) (a [KsqlPlanV1](KsqlPlanV1.md)).
 
 ## <span id="execute"> Executing KsqlPlan
 
@@ -222,41 +245,44 @@ In the end, `executeScalablePushQuery` creates a `ScalablePushQueryMetadata` (wi
 
 ## <span id="executeStreamPullQuery"> Executing Stream Pull Query
 
-```java
-TransientQueryMetadata executeStreamPullQuery(
-  ConfiguredStatement<Query> statement,
-  boolean excludeTombstones,
-  ImmutableMap<TopicPartition, Long> endOffsets)
-```
+??? note "Signature"
+    ```java
+    TransientQueryMetadata executeStreamPullQuery(
+      ConfiguredStatement<Query> statement,
+      boolean excludeTombstones,
+      ImmutableMap<TopicPartition, Long> endOffsets)
+    ```
 
 `executeStreamPullQuery` [plans the query](#planQuery) (with an empty sink and query ID).
 
 `executeStreamPullQuery` requests the [EngineContext](#engineContext) to [create a QueryValidator](EngineContext.md#createQueryValidator) to [validateQuery](analyzer/QueryValidator.md#validateQuery) (with the [SessionConfig](#config) and the `ExecutionPlan` with [ExecutionStep](ExecutionStep.md)s).
 
-`executeStreamPullQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a stream pull query](QueryRegistry.md#createStreamPullQuery).
+In the end, `executeStreamPullQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a stream pull query](QueryRegistry.md#createStreamPullQuery).
 
----
+??? note "Usage"
+    `executeStreamPullQuery` is used when:
 
-`executeStreamPullQuery` is used when:
-
-* `KsqlEngine` is requested to [create a stream pull query](KsqlEngine.md#createStreamPullQuery)
+    * `KsqlEngine` is requested to [create a stream pull query](KsqlEngine.md#createStreamPullQuery)
 
 ## <span id="executeTransientQuery"> Executing Transient Query
 
-```java
-TransientQueryMetadata executeTransientQuery(
-  ConfiguredStatement<Query> statement,
-  boolean excludeTombstones)
-```
+??? note "Signature"
+
+    ```java
+    TransientQueryMetadata executeTransientQuery(
+      ConfiguredStatement<Query> statement,
+      boolean excludeTombstones)
+    ```
 
 `executeTransientQuery`...FIXME
 
 In the end, `executeTransientQuery` requests the [EngineContext](#engineContext) for the [QueryRegistry](EngineContext.md#getQueryRegistry) to [create a transient query](QueryRegistry.md#createTransientQuery).
 
-`executeTransientQuery` is used when:
+??? note "Usage"
+    `executeTransientQuery` is used when:
 
-* `KsqlEngine` is requested to [execute a transient query](KsqlEngine.md#executeTransientQuery)
-* `SandboxedExecutionContext` is requested to [execute a transient query](SandboxedExecutionContext.md#executeTransientQuery)
+    * `KsqlEngine` is requested to [execute a transient query](KsqlEngine.md#executeTransientQuery)
+    * `SandboxedExecutionContext` is requested to [execute a transient query](SandboxedExecutionContext.md#executeTransientQuery)
 
 ## <span id="executeTablePullQuery"> Executing Table Pull Query
 
@@ -328,3 +354,18 @@ String executeDdl(
 ```
 
 `executeDdl` requests the [EngineContext](#engineContext) to [executeDdl](EngineContext.md#executeDdl).
+
+## <span id="getSourceNames"> getSourceNames
+
+```java
+Set<SourceName> getSourceNames(
+  PlanNode outputNode)
+```
+
+`getSourceNames` gives the [name](DataSource.md#getName)s of all [DataSource](planner/DataSourceNode.md#getDataSource)s (via [DataSourceNode](planner/PlanNode.md#getSourceNodes)s) in the given [PlanNode](planner/PlanNode.md).
+
+---
+
+`getSourceNames` is used when:
+
+* `EngineExecutor` is requested to execute [transient](#executeTransientQuery) and [stream pull](#executeStreamPullQuery) queries, [plan a KSQL statement](#plan) (and [sourceTablePlan](#sourceTablePlan))

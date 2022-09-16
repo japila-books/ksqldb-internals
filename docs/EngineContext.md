@@ -22,7 +22,7 @@
 
 The `DdlCommandExec` is used to [execute DDL commands](#executeDdl).
 
-## <span id="queryRegistry"> QueryRegistry
+## <span id="queryRegistry"><span id="getQueryRegistry"> QueryRegistry
 
 `EngineContext` is given a [QueryRegistry](QueryRegistry.md) when [created](#creating-instance).
 
@@ -32,7 +32,7 @@ The `QueryRegistry` is used when:
 * [maybeTerminateCreateAsQuery](#maybeTerminateCreateAsQuery)
 * [throwIfInsertQueriesExist](#throwIfInsertQueriesExist)
 
-### <span id="getQueryRegistry"> getQueryRegistry
+### getQueryRegistry
 
 ```java
 QueryRegistry getQueryRegistry()

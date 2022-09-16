@@ -1,6 +1,6 @@
 # SingleSourcePlanNode
 
-`SingleSourcePlanNode` is an [extension](#contract) of the [PlanNode](PlanNode.md) abstraction for [plan nodes](#implementations) with one [source](#source).
+`SingleSourcePlanNode` is an [extension](#contract) of the [PlanNode](PlanNode.md) abstraction for [PlanNodes](#implementations) with a single [source](#source) (hence the name).
 
 ## Implementations
 
@@ -27,16 +27,18 @@
 !!! note "Abstract Class"
     `SingleSourcePlanNode` is an abstract class and cannot be created directly. It is created indirectly for the [concrete SingleSourcePlanNodes](#implementations).
 
-## <span id="source"><span id="getSource"> Source PlanNode
+## <span id="source"><span id="getSource"><span id="getSources"> Source PlanNode
 
-`SingleSourcePlanNode` is given a [PlanNode](PlanNode.md) when [created](#creating-instance).
+`SingleSourcePlanNode` is given a single source [PlanNode](PlanNode.md) when [created](#creating-instance).
 
-### <span id="getSources"> getSources
+### getSources
 
 ```java
 List<PlanNode> getSources()
 ```
 
-`getSources` returns the [source](#source).
-
 `getSources` is part of the [PlanNode](PlanNode.md#getSources) abstraction.
+
+---
+
+`getSources` returns the [source PlanNode](#source).

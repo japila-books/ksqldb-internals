@@ -4,7 +4,7 @@
 
 `SchemaKStream` takes the following to be created:
 
-* <span id="sourceStep"> [ExecutionStep](ExecutionStep.md) of `KStreamHolder<K>`
+* [ExecutionStep](#sourceStep)
 * <span id="schema"> `LogicalSchema`
 * <span id="keyFormat"> `KeyFormat`
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
@@ -15,7 +15,15 @@
 * `SchemaKSourceFactory` is requested to [schemaKStream](SchemaKSourceFactory.md#schemaKStream)
 * `SchemaKStream` is requested to [into](#into), [filter](#filter), [flatMap](#flatMap) and _others_
 
-## <span id="getSourceStep"> getSourceStep
+## <span id="sourceStep"> ExecutionStep
+
+```java
+ExecutionStep<KStreamHolder<K>> sourceStep
+```
+
+`SchemaKStream` is given an [ExecutionStep](ExecutionStep.md) (of `KStreamHolder<K>`) when [created](#creating-instance).
+
+### <span id="getSourceStep"> getSourceStep
 
 ```java
 ExecutionStep<?> getSourceStep()

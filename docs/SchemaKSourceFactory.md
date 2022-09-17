@@ -1,6 +1,6 @@
 # SchemaKSourceFactory
 
-## <span id="buildSource"> Building SchemaKStream
+## <span id="buildSource"> Building Source SchemaKStream
 
 ```java
 SchemaKStream<?> buildSource(
@@ -15,11 +15,13 @@ For `KSTREAM` type, `buildSource` builds a [windowed](#buildWindowedStream) or [
 
 For `KTABLE` type, `buildSource` builds a [windowed](#buildWindowedTable) or [regular](#buildTable) table based on whether it is windowed or not, respectively.
 
+---
+
 `buildSource` is used when:
 
-* `DataSourceNode` is [created](planner/DataSourceNode.md#schemaKStreamFactory)
+* `DataSourceNode` is requested for a [SchemaKStream](planner/DataSourceNode.md#buildStream)
 
-### <span id="buildStream"> buildStream
+### <span id="buildStream"> Creating SchemaKStream
 
 ```java
 SchemaKStream<?> buildStream(
@@ -30,7 +32,7 @@ SchemaKStream<?> buildStream(
 
 `buildStream` [creates a new SchemaKStream](#schemaKStream) with a [StreamSource](ExecutionStepFactory.md#streamSource).
 
-### <span id="buildWindowedStream"> buildWindowedStream
+### <span id="buildWindowedStream"> Creating Windowed SchemaKStream
 
 ```java
 SchemaKStream<?> buildWindowedStream(
@@ -41,7 +43,7 @@ SchemaKStream<?> buildWindowedStream(
 
 `buildWindowedStream`...FIXME
 
-### <span id="schemaKStream"> schemaKStream
+## <span id="schemaKStream"> Creating SchemaKStream
 
 ```java
 SchemaKStream<K> schemaKStream(
@@ -52,3 +54,9 @@ SchemaKStream<K> schemaKStream(
 ```
 
 `schemaKStream` creates a [SchemaKStream](SchemaKStream.md).
+
+---
+
+`schemaKStream` is used when:
+
+* `SchemaKSourceFactory` is requested for a [windowed](#buildWindowedStream) and [non-windowed SchemaKStream](#buildStream)

@@ -87,7 +87,7 @@ For a query with a `RefinementInfo` (per the [RewrittenAnalysis](#analysis)), `b
 
 In the end, `buildPersistentLogicalPlan` [builds an output node](#buildOutputNode).
 
-## <span id="buildQueryLogicalPlan"> Building Logical Plan of Query (buildQueryLogicalPlan)
+## <span id="buildQueryLogicalPlan"> Building Query Logical Plan
 
 ```java
 OutputNode buildQueryLogicalPlan(
@@ -115,14 +115,14 @@ For a non-`isScalablePush` query with `LIMIT` clause, `buildQueryLogicalPlan` [b
 
 In the end, `buildQueryLogicalPlan` [builds an output node](#buildOutputNode) with a [QueryProjectNode](QueryProjectNode.md).
 
-## <span id="buildSourceNode"> Building DataSourceNode or JoinNode (buildSourceNode)
+## <span id="buildSourceNode"> Building Source PlanNode
 
 ```java
 PlanNode buildSourceNode(
   boolean isWindowed)
 ```
 
-`buildSourceNode` [buildNonJoinNode](#buildNonJoinNode) when the [RewrittenAnalysis](#analysis) is not a join.
+`buildSourceNode` [builds a non-join node](#buildNonJoinNode) when the [RewrittenAnalysis](#analysis) is not of a join query.
 
 Otherwise, `buildSourceNode`...FIXME
 
@@ -130,9 +130,9 @@ Otherwise, `buildSourceNode`...FIXME
 
 `buildSourceNode` is used when:
 
-* `LogicalPlanner` is requested to [buildPersistentLogicalPlan](#buildPersistentLogicalPlan) and [buildQueryLogicalPlan](#buildQueryLogicalPlan)
+* `LogicalPlanner` is requested for a [persistent query logical plan](#buildPersistentLogicalPlan) or [query logical plan](#buildQueryLogicalPlan)
 
-### <span id="buildNonJoinNode"> Creating DataSourceNode (buildNonJoinNode)
+### <span id="buildNonJoinNode"> Creating DataSourceNode
 
 ```java
 DataSourceNode buildNonJoinNode(
@@ -143,7 +143,7 @@ DataSourceNode buildNonJoinNode(
 
 `buildNonJoinNode` creates a [DataSourceNode](DataSourceNode.md) (with a new `PlanNodeId` with `KsqlTopic` ID).
 
-### <span id="buildJoin"> Creating JoinNode (buildJoin)
+### <span id="buildJoin"> Creating JoinNode
 
 ```java
 JoinNode buildJoin(

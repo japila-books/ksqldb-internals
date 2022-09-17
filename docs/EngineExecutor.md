@@ -223,25 +223,27 @@ PersistentQueryMetadata executePersistentQuery(
 
 ## <span id="executeScalablePushQuery"> Executing Scalable Push Query
 
-```java
-ScalablePushQueryMetadata executeScalablePushQuery(
-  ImmutableAnalysis analysis,
-  ConfiguredStatement<Query> statement,
-  PushRouting pushRouting,
-  PushRoutingOptions pushRoutingOptions,
-  QueryPlannerOptions queryPlannerOptions,
-  Context context,
-  Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
-```
+??? note "Signature"
+    ```java
+    ScalablePushQueryMetadata executeScalablePushQuery(
+      ImmutableAnalysis analysis,
+      ConfiguredStatement<Query> statement,
+      PushRouting pushRouting,
+      PushRoutingOptions pushRoutingOptions,
+      QueryPlannerOptions queryPlannerOptions,
+      Context context,
+      Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
+    ```
 
-`executeScalablePushQuery` [buildAndValidateLogicalPlan](#buildAndValidateLogicalPlan) (with `isScalablePush` flag enabled).
+`executeScalablePushQuery` [builds a logical plan of the query](#buildAndValidateLogicalPlan) (with `isScalablePush` flag enabled).
 
 In the end, `executeScalablePushQuery` creates a `ScalablePushQueryMetadata` (with a new `TransientQueryQueue`).
 
-`executeScalablePushQuery` is used when:
+??? note "Usage"
+    `executeScalablePushQuery` is used when:
 
-* `KsqlEngine` is requested to [execute a scalable push query](KsqlEngine.md#executeScalablePushQuery)
-* `SandboxedExecutionContext` is requested to [execute a scalable push query](SandboxedExecutionContext.md#executeScalablePushQuery)
+    * `KsqlEngine` is requested to [execute a scalable push query](KsqlEngine.md#executeScalablePushQuery)
+    * `SandboxedExecutionContext` is requested to [execute a scalable push query](SandboxedExecutionContext.md#executeScalablePushQuery)
 
 ## <span id="executeStreamPullQuery"> Executing Stream Pull Query
 
@@ -309,7 +311,7 @@ PullQueryResult executeTablePullQuery(
 * `KsqlEngine` is requested to [execute a table pull query](KsqlEngine.md#executeTablePullQuery)
 * `SandboxedExecutionContext` is requested to [execute a table pull query](SandboxedExecutionContext.md#executeTablePullQuery)
 
-## <span id="buildAndValidateLogicalPlan"> Building Logical Plan of Query (buildAndValidateLogicalPlan)
+## <span id="buildAndValidateLogicalPlan"> Building Query Logical Plan
 
 ```java
 LogicalPlanNode buildAndValidateLogicalPlan(
@@ -334,7 +336,7 @@ LogicalPlanNode buildAndValidateLogicalPlan(
 
 `buildAndValidateLogicalPlan` creates a [LogicalPlanner](planner/LogicalPlanner.md) to [build a logical plan of a query](planner/LogicalPlanner.md#buildQueryLogicalPlan) (that gives an [OutputNode](planner/OutputNode.md)).
 
-In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement text of the given `ConfiguredStatement` and the [OutputNode](planner/OutputNode.md)).
+In the end, `buildAndValidateLogicalPlan` creates a `LogicalPlanNode` (with the statement text of the given `ConfiguredStatement` and the created `OutputNode`).
 
 ---
 

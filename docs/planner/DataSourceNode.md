@@ -15,7 +15,7 @@
 
 `DataSourceNode` is created when:
 
-* `LogicalPlanner` is requested to build a [join](LogicalPlanner.md#buildJoin) or a [non-join](LogicalPlanner.md#buildNonJoinNode) node
+* `LogicalPlanner` is requested to build a [join](LogicalPlanner.md#buildJoin) or a [non-join](LogicalPlanner.md#buildNonJoinNode) plan node
 
 ### <span id="schemaKStreamFactory"> SchemaKStreamFactory
 

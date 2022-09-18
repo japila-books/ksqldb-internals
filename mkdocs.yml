@@ -126,9 +126,13 @@ nav:
       - SourceStep: SourceStep.md
       - StreamSelect: StreamSelect.md
     - ExecutionStepFactory: ExecutionStepFactory.md
-    - Format: Format.md
-    - FormatFactory: FormatFactory.md
+    - Formats:
+      - Format: Format.md
+      - FormatFactory: FormatFactory.md
+      - KafkaFormat: KafkaFormat.md
+      - KafkaSerdeFactory: KafkaSerdeFactory.md
     - FunctionRegistry: FunctionRegistry.md
+    - GenericSerdeFactory: GenericSerdeFactory.md
     - HARouting: HARouting.md
     - Injectors:
       - DefaultSchemaInjector: DefaultSchemaInjector.md
@@ -138,6 +142,9 @@ nav:
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md
+    - KeySerdeFactory:
+      - GenericKeySerDe: GenericKeySerDe.md
+      - KeySerdeFactory: KeySerdeFactory.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine:
@@ -174,6 +181,7 @@ nav:
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
+    - SerdeFeaturesFactory: SerdeFeaturesFactory.md
     - ServiceContext: ServiceContext.md
     - ServiceContextFactory: ServiceContextFactory.md
     - ServiceInfo: ServiceInfo.md
@@ -188,6 +196,9 @@ nav:
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md
+    - ValueSerdeFactory:
+      - GenericRowSerDe: GenericRowSerDe.md
+      - ValueSerdeFactory: ValueSerdeFactory.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
     - features.md

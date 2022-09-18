@@ -7,12 +7,12 @@
 * [StreamsBuilder](#streamsBuilder)
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> `ProcessingLogContext`
-* <span id="functionRegistry"> `FunctionRegistry`
+* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
+* <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * <span id="applicationId"> Application ID
 * <span id="queryId"> `QueryId`
 * <span id="keySerdeFactory"> `KeySerdeFactory`
-* <span id="valueSerdeFactory"> `ValueSerdeFactory`
+* <span id="valueSerdeFactory"> [ValueSerdeFactory](ValueSerdeFactory.md)
 
 `RuntimeBuildContext` is created using [of](#of) factory.
 
@@ -38,7 +38,12 @@ RuntimeBuildContext of(
   final QueryId queryId)
 ```
 
-`of` creates a [RuntimeBuildContext](#creating-instance) (with a `GenericKeySerDe` and `GenericRowSerDe`).
+`of` creates a [RuntimeBuildContext](#creating-instance) with the arguments and the following:
+
+* [GenericKeySerDe](GenericKeySerDe.md) for the [KeySerdeFactory](#keySerdeFactory)
+* [GenericRowSerDe](GenericRowSerDe.md) for the [ValueSerdeFactory](#valueSerdeFactory)
+
+---
 
 `of` is used when:
 

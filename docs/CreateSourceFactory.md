@@ -5,9 +5,19 @@
 `CreateSourceFactory` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
+* <span id="keySerdeFeaturesSupplier"> `keySerdeFeaturesSupplier`
+* <span id="valueSerdeFeaturesSupplier"> `valueSerdeFeaturesSupplier`
+* <span id="keySerdeFactory"> `KeySerdeFactory`
+* [ValueSerdeFactory](#valueSerdeFactory)
 * <span id="metaStore"> [MetaStore](MetaStore.md)
 
 `CreateSourceFactory` is created alongside a [CommandFactories](CommandFactories.md#createSourceFactory).
+
+### <span id="valueSerdeFactory"> ValueSerdeFactory
+
+`CreateSourceFactory` is given a [ValueSerdeFactory](ValueSerdeFactory.md) when [created](#creating-instance).
+
+The `ValueSerdeFactory` is used in [validateSerdesCanHandleSchemas](#validateSerdesCanHandleSchemas).
 
 ## <span id="createStreamCommand"> Creating CreateStreamCommand
 

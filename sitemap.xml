@@ -146,6 +146,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/GenericKeySerDe/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/GenericRowSerDe/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/GenericSerdeFactory/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/HARouting/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
@@ -166,6 +181,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KafkaFormat/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KafkaSerdeFactory/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/KafkaStreamsBuilder/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
@@ -177,6 +202,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/KafkaTopicClientImpl/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KeySerdeFactory/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -401,6 +431,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SerdeFeaturesFactory/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceContext/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
@@ -492,6 +527,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/UserFunctionLoader/</loc>
+         <lastmod>2022-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/ValueSerdeFactory/</loc>
          <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

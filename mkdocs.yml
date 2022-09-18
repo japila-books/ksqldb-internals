@@ -155,6 +155,8 @@ nav:
     - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
+    - PullPhysicalPlanBuilder: PullPhysicalPlanBuilder.md
+    - PullQueryExecutionUtil: PullQueryExecutionUtil.md
     - PushQueryMetadata: PushQueryMetadata.md
     - PushRouting: PushRouting.md
     - QueryApplicationId: QueryApplicationId.md
@@ -168,6 +170,7 @@ nav:
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
     - RouteQuery: RouteQuery.md
+    - RowDeserializer: RowDeserializer.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
@@ -372,3 +375,4 @@ nav:
     - Pull Queries: demo/pull-queries.md
     - SHOW STREAMS: demo/show-streams.md
     - CREATE TABLE AS SELECT: demo/create-table-as-select.md
+    - Table isn't queryable: demo/table-isnt-queryable.md

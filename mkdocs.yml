@@ -349,6 +349,7 @@ nav:
     - ProcessingLogConfig: rest/ProcessingLogConfig.md
     - ProcessingLogContext: rest/ProcessingLogContext.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
+    - RecordFormatter: rest/RecordFormatter.md
     - RequestHandler: rest/RequestHandler.md
     - RequestValidator: rest/RequestValidator.md
     - ReservedInternalTopics: rest/ReservedInternalTopics.md

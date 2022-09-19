@@ -11,7 +11,7 @@ Statement: select * from my_table;: select * from my_table;
 
 ## Create Stream
 
-Create a stream and send two records to make sure that it works just fine.
+Create a stream.
 
 === "KSQL"
     ```sql
@@ -40,7 +40,7 @@ In a terminal, execute the following command:
 kcat -C -b :9092 -t my_topic
 ```
 
-In another terminal, execute the following commands that sends two messages to a Kafka cluster.
+Send two messages to a Kafka cluster.
 
 ```shell
 echo '1:{"id": 1, "name": "one"}' | kcat -P -b :9092 -t my_topic -K :
@@ -124,12 +124,19 @@ It turns out that a solution is to create a `SOURCE TABLE` instead.
         value_format='json');
     ```
 
+```text
+ Message
+---------------------------------------------
+ Created query with ID CST_MY_SOURCE_TABLE_5
+---------------------------------------------
+```
+
 Execute the KSQL query that, this time, should work just fine.
 
 === "KSQL"
 
     ```sql
-    select * from my_source_table;
+    SELECT * FROM my_source_table;
     ```
 
 ### Source Table Explained
@@ -137,7 +144,7 @@ Execute the KSQL query that, this time, should work just fine.
 === "KSQL"
 
     ```sql
-    describe my_source_table extended;
+    DESCRIBE my_source_table EXTENDED;
     ```
 
 ```text
@@ -157,7 +164,7 @@ Statement            : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID INTEGER PRIMARY K
 
 Queries that read from this TABLE
 -----------------------------------
-CST_MY_SOURCE_TABLE_21 (RUNNING) : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID INTEGER PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
+CST_MY_SOURCE_TABLE_5 (RUNNING) : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID INTEGER PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
 
 For query topology and execution plan please run: EXPLAIN <QueryId>
 
@@ -165,11 +172,11 @@ Runtime statistics by host
 -------------------------
  Host           | Metric                           | Value      | Last Message
 -------------------------------------------------------------------------------------------
- localhost:8088 | consumer-failed-messages         |          2 | 2022-09-18T11:27:17.437Z
- localhost:8088 | consumer-failed-messages-per-sec |          0 | 2022-09-18T11:27:17.437Z
- localhost:8088 | consumer-messages-per-sec        |          0 | 2022-09-18T11:27:17.436Z
- localhost:8088 | consumer-total-bytes             |         50 | 2022-09-18T11:27:17.436Z
- localhost:8088 | consumer-total-messages          |          2 | 2022-09-18T11:27:17.436Z
+ localhost:8088 | consumer-failed-messages         |          2 | 2022-09-19T15:13:06.147Z
+ localhost:8088 | consumer-failed-messages-per-sec |          0 | 2022-09-19T15:13:06.147Z
+ localhost:8088 | consumer-messages-per-sec        |          0 | 2022-09-19T15:13:06.137Z
+ localhost:8088 | consumer-total-bytes             |         50 | 2022-09-19T15:13:06.137Z
+ localhost:8088 | consumer-total-messages          |          2 | 2022-09-19T15:13:06.137Z
 -------------------------------------------------------------------------------------------
 (Statistics of the local KSQL server interaction with the Kafka topic my_topic)
 ```

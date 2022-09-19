@@ -1146,6 +1146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/RecordFormatter/</loc>
+         <lastmod>2022-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/RequestHandler/</loc>
          <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>

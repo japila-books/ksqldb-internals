@@ -441,6 +441,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SerdeUtil/</loc>
+         <lastmod>2022-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/ServiceContext/</loc>
          <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>

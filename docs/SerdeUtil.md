@@ -1,3 +1,0 @@
-# SerdeUtil
-
-`SerdeUtil` is...FIXME

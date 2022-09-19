@@ -14,7 +14,6 @@ Used when:
 
 * `Analyzer.Visitor` is requested to [validate](analyzer/Analyzer.Visitor.md#validate)
 * `SerdeFeaturesFactory` is requested to [formatSupportsMultipleColumns](SerdeFeaturesFactory.md#formatSupportsMultipleColumns)
-* `SerdeUtil` is used to [look up a SerdeSupplier](SerdeUtil.md#getSerdeSupplier)
 * `FormatFactory` is used to [look up a Format](FormatFactory.md#fromName)
 
 ### name

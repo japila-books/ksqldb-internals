@@ -183,7 +183,6 @@ nav:
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
     - SerdeFeaturesFactory: SerdeFeaturesFactory.md
-    - SerdeUtil: SerdeUtil.md
     - ServiceContext: ServiceContext.md
     - ServiceContextFactory: ServiceContextFactory.md
     - ServiceInfo: ServiceInfo.md

@@ -23,7 +23,7 @@ While being created, `KafkaConfigStore` initializes [KsqlConfig](#ksqlConfig).
 
 The topic name is [computed](../rest/ReservedInternalTopics.md#configsTopic) and [created](../KsqlInternalTopicUtils.md#ensureTopic) when `StandaloneExecutorFactory` is requested to [create a StandaloneExecutor](StandaloneExecutorFactory.md#create).
 
-## <span id="ksqlConfig"> KsqlConfig
+## <span id="ksqlConfig"><span id="getKsqlConfig"> KsqlConfig
 
 `KafkaConfigStore` creates a new [KsqlConfig](../KsqlConfig.md) when [created](#creating-instance).
 
@@ -33,10 +33,10 @@ The topic name is [computed](../rest/ReservedInternalTopics.md#configsTopic) and
 
 In the end, `KafkaConfigStore` requests the [current KsqlConfig](#currentConfig) to [overrideBreakingConfigsWithOriginalValues](../KsqlConfig.md#overrideBreakingConfigsWithOriginalValues) with the `KsqlProperties`.
 
-### <span id="getKsqlConfig"> getKsqlConfig
+### getKsqlConfig
 
-```scala
-getKsqlConfig
+```java
+KsqlConfig getKsqlConfig()
 ```
 
 `getKsqlConfig` returns the [KsqlConfig](#ksqlConfig).

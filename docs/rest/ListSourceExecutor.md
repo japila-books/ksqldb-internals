@@ -7,7 +7,7 @@
 
 ## <span id="streams"> streams
 
-```scala
+```java
 StatementExecutorResponse streams(
   ConfiguredStatement<ListStreams> statement,
   SessionProperties sessionProperties,

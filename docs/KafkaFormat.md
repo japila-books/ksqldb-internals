@@ -52,3 +52,19 @@ Serde<List<?>> getSerde(
 `getSerde` validates the given `PersistenceSchema` (against the [supported schema features](#supportedFeatures) of this format).
 
 In the end, `getSerde` [creates a Serde](KafkaSerdeFactory.md#createSerde).
+
+## <span id="supportsKeyType"> supportsKeyType
+
+```java
+boolean supportsKeyType(
+  SqlType type)
+```
+
+`supportsKeyType` is part of the [Format](Format.md#supportsKeyType) abstraction.
+
+---
+
+`supportsKeyType` holds `true` if the given [SqlType](types/SqlType.md) meets the following requirements:
+
+* It is a [SqlPrimitiveType](types/SqlPrimitiveType.md)
+* There is [Serde available](KafkaSerdeFactory.md#containsSerde)

@@ -12,18 +12,18 @@ Type | Serde
  `String` | `Serdes.String`
  `ByteBuffer` | `Serdes.ByteBuffer`
 
-### <span id="supportsKeyType"> supportsKeyType
+### <span id="containsSerde"> containsSerde
 
 ```java
 boolean containsSerde(
   Class<?> javaType)
 ```
 
-`supportsKeyType` is `true` when the given `javaType` is in [SERDE](#SERDE) registry.
+`containsSerde` is `true` when the given `javaType` is in [SERDE](#SERDE) registry.
 
 ---
 
-`supportsKeyType` is used when:
+`containsSerde` is used when:
 
 * `KafkaFormat` is requested to [supportsKeyType](KafkaFormat.md#supportsKeyType)
 

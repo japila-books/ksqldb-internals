@@ -142,6 +142,7 @@ nav:
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md
+    - KeyFormat: KeyFormat.md
     - KeySerdeFactory:
       - GenericKeySerDe: GenericKeySerDe.md
       - KeySerdeFactory: KeySerdeFactory.md

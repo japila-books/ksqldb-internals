@@ -386,6 +386,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/QueryStateMetricsReportingListener/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/RegisterTypeCommand/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -762,6 +767,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/metrics/ConsumerCollector/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/metrics/KsqlMetricsExtension/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

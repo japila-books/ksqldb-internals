@@ -158,7 +158,6 @@ nav:
       - MetaStore: MetaStore.md
       - MetaStoreImpl: MetaStoreImpl.md
       - MutableMetaStore: MutableMetaStore.md
-    - MetricCollectors: MetricCollectors.md
     - PersistentQueryMetadata: PersistentQueryMetadata.md
     - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
     - PlanBuilder: PlanBuilder.md
@@ -216,6 +215,13 @@ nav:
         - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
       - REST:
         - rest/index.md
+    - Metrics:
+        - metrics/index.md
+        - ConsumerCollector: metrics/ConsumerCollector.md
+        - MetricCollector: metrics/MetricCollector.md
+        - MetricCollectors: metrics/MetricCollectors.md
+        - ProducerCollector: metrics/ProducerCollector.md
+        - StreamsErrorCollector: metrics/StreamsErrorCollector.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md

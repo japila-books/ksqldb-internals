@@ -1,3 +1,0 @@
-# MetricCollectors
-
-`MetricCollectors` is...FIXME

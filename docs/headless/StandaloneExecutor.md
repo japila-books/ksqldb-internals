@@ -15,7 +15,7 @@
 * <span id="failOnNoQueries"> `failOnNoQueries` flag
 * <span id="versionChecker"> [VersionCheckerAgent](../VersionCheckerAgent.md)
 * <span id="injectorFactory"> Factory to build an [Injector](../Injector.md) (based on [KsqlExecutionContext](../KsqlExecutionContext.md) and [ServiceContext](../ServiceContext.md))
-* <span id="metricCollectors"> [MetricCollectors](../MetricCollectors.md)
+* <span id="metricCollectors"> [MetricCollectors](../metrics/MetricCollectors.md)
 
 `StandaloneExecutor` is created when:
 

@@ -21,7 +21,7 @@ StandaloneExecutor create(
   MetricCollectors metricCollectors)
 ```
 
-`create` creates a [KsqlConfig](../KsqlConfig.md) (with the given `properties`) and adds the [addConfluentMetricsContextConfigs](../MetricCollectors.md#addConfluentMetricsContextConfigs) (from the given [MetricCollectors](../MetricCollectors.md)).
+`create` creates a [KsqlConfig](../KsqlConfig.md) (with the given `properties`) and adds the [addConfluentMetricsContextConfigs](../metrics/MetricCollectors.md#addConfluentMetricsContextConfigs) (from the given [MetricCollectors](../metrics/MetricCollectors.md)).
 
 `create` [creates a ServiceContext](../ServiceContextFactory.md#create).
 
@@ -29,7 +29,7 @@ StandaloneExecutor create(
 
 `create` creates a [ProcessingLogConfig](../rest/ProcessingLogConfig.md).
 
-`create` creates a [ProcessingLogContext](../rest/ProcessingLogContext.md#create) (with the [ProcessingLogConfig](../rest/ProcessingLogConfig.md), the given [MetricCollectors](../MetricCollectors.md) and the tags based on [ksql.metrics.tags.custom](../KsqlConfig.md#KSQL_CUSTOM_METRICS_TAGS) configuration property).
+`create` creates a [ProcessingLogContext](../rest/ProcessingLogContext.md#create) (with the [ProcessingLogConfig](../rest/ProcessingLogConfig.md), the given [MetricCollectors](../metrics/MetricCollectors.md) and the tags based on [ksql.metrics.tags.custom](../KsqlConfig.md#KSQL_CUSTOM_METRICS_TAGS) configuration property).
 
 `create` creates a `InternalFunctionRegistry`.
 

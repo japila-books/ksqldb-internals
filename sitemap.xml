@@ -701,6 +701,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/demo/dealing-with-deserialization-errors/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/demo/multi-node-ksqldb-deployment/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -772,6 +777,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/metrics/KsqlMetricsExtension/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/metrics/LogMetricAndContinueExceptionHandler/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

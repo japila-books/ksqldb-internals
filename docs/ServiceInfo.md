@@ -6,7 +6,7 @@
 
 * <span id="serviceId"> [ksql.service.id](KsqlConfig.md#KSQL_SERVICE_ID_CONFIG)
 * <span id="customMetricsTags"> Custom Metrics Tags (`Map<String, String>`)
-* <span id="metricsExtension"> `KsqlMetricsExtension`
+* <span id="metricsExtension"> [KsqlMetricsExtension](metrics/KsqlMetricsExtension.md)
 * <span id="metricsPrefix"> Metrics Prefix
 
 `ServiceInfo` is created using [create](#create) factory.

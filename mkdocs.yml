@@ -176,6 +176,7 @@ nav:
     - QueryMetadataImpl: QueryMetadataImpl.md
     - QueryRegistry: QueryRegistry.md
     - QueryRegistryImpl: QueryRegistryImpl.md
+    - QueryStateMetricsReportingListener: QueryStateMetricsReportingListener.md
     - RouteQuery: RouteQuery.md
     - RowDeserializer: RowDeserializer.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
@@ -218,6 +219,7 @@ nav:
     - Metrics:
         - metrics/index.md
         - ConsumerCollector: metrics/ConsumerCollector.md
+        - KsqlMetricsExtension: metrics/KsqlMetricsExtension.md
         - MetricCollector: metrics/MetricCollector.md
         - MetricCollectors: metrics/MetricCollectors.md
         - ProducerCollector: metrics/ProducerCollector.md

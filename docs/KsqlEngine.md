@@ -24,7 +24,7 @@ Execution | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor
 * <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
 * [Service ID](#serviceId)
 * [MutableMetaStore](#metaStore)
-* <span id="engineMetricsFactory"> Function to create a [KsqlEngineMetrics](KsqlEngineMetrics.md) for this `KsqlEngine`
+* <span id="engineMetricsFactory"> Function to [create a KsqlEngineMetrics](#engineMetrics)
 * <span id="queryIdGenerator"> `QueryIdGenerator`
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="queryEventListeners"> `QueryEventListener`s
@@ -55,6 +55,21 @@ The `MutableMetaStore` is used to create the [EngineContext](#primaryContext).
 `KsqlEngine` [creates an EngineContext](EngineContext.md#create) when [created](#creating-instance).
 
 `KsqlEngine` delegates most of its processing to the `EngineContext` (directly or indirectly using[EngineExecutor](EngineExecutor.md#create)) and is (pretty much) their facade.
+
+### <span id="engineMetrics"> KsqlEngineMetrics
+
+`KsqlEngine` creates a [KsqlEngineMetrics](KsqlEngineMetrics.md) (using the [engineMetricsFactory](#engineMetricsFactory)) when [created](#creating-instance).
+
+The `KsqlEngineMetrics` is used for the following:
+
+* [Accessing the QueryStateMetricsReportingListener](KsqlEngineMetrics.md#getQueryEventListener) when this `KsqlEngine` is [created](#creating-instance)
+* [Updating runtime metrics](#updateMetrics)
+
+## <span id="aggregateMetricsCollector"><span id="updateMetrics"> Runtime Metrics
+
+`KsqlEngine` creates a single-threaded Java `Executor` for [updating performance metrics](KsqlEngineMetrics.md#updateMetrics) (using [KsqlEngineMetrics](#engineMetrics)) every 1 second.
+
+`KsqlEngine` stops updating metrics when [closed](#close).
 
 ## <span id="execute"> Executing Statement
 

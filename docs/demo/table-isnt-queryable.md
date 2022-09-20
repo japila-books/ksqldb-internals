@@ -3,26 +3,32 @@
 This demo shows the internals of this infamous error while querying a table that is not queryable whatsoever.
 
 ```text
-ksql> select * from my_table;
+ksql> SELECT * FROM my_table;
 The `MY_TABLE` table isn't queryable. To derive a queryable table, you can do 'CREATE TABLE QUERYABLE_MY_TABLE AS SELECT * FROM MY_TABLE'. See https://cnfl.io/queries for more info.
 Add EMIT CHANGES if you intended to issue a push query.
-Statement: select * from my_table;: select * from my_table;
+Statement: SELECT * FROM my_table;: SELECT * FROM my_table;
 ```
 
 ## Create Stream
 
-Create a stream.
-
 === "KSQL"
+
     ```sql
     CREATE STREAM my_stream (
         id INTEGER,
         name STRING)
     WITH (
-        kafka_topic='my_topic',
-        value_format='json',
-        partitions=1);
+        KAFKA_TOPIC='my_topic',
+        VALUE_FORMAT='json',
+        PARTITIONS=1);
     ```
+
+```text
+ Message
+----------------
+ Stream created
+----------------
+```
 
 ```text
 ksql> LIST STREAMS;
@@ -47,9 +53,12 @@ echo '1:{"id": 1, "name": "one"}' | kcat -P -b :9092 -t my_topic -K :
 echo '1:{"id": 1, "name": "ONE"}' | kcat -P -b :9092 -t my_topic -K :
 ```
 
+Query the stream to make sure that there are two records indeed.
+
 === "KSQL"
+
     ```sql
-    select * from my_stream;
+    SELECT * FROM my_stream;
     ```
 
 ```text
@@ -62,38 +71,63 @@ Query Completed
 Query terminated
 ```
 
-You should see two records. All should be working as expected.
+You could instead use `PRINT [topic]` command.
+
+=== "KSQL"
+
+    ```sql
+    PRINT my_topic FROM BEGINNING LIMIT 2;
+    ```
+
+```text
+Key format: JSON or KAFKA_STRING
+Value format: JSON or KAFKA_STRING
+rowtime: 2022/09/20 19:28:31.292 Z, key: 1, value: {"id": 1, "name": "one"}, partition: 0
+rowtime: 2022/09/20 19:28:31.324 Z, key: 1, value: {"id": 1, "name": "ONE"}, partition: 0
+Topic printing ceased
+```
 
 ## Create Table
 
-This step will create a table on the stream topic (that, as you may have experienced already, makes a table non-queryable).
+Given these two records with the same key `1`, I thought I'd use a ksql table to turn them into a single record with the last values for `id` and `name` columns.
+
+I created a table on the stream topic directly.
 
 === "KSQL"
+
     ```sql
     CREATE TABLE my_table (
-        id INTEGER PRIMARY KEY,
+        id STRING PRIMARY KEY,
         name STRING)
     WITH (
-        kafka_topic='my_topic',
-        value_format='json');
+        KAFKA_TOPIC='my_topic',
+        VALUE_FORMAT='json');
     ```
+
+```text
+ Message
+---------------
+ Table created
+---------------
+```
 
 ## Issue: Table Isn't Queryable
 
-Execute the following KSQL query to reproduce the error.
+Execute the following KSQL query to reproduce the infamous `table isn't queryable` error.
 
 === "KSQL"
+
     ```sql
-    select * from my_table;
+    SELECT * FROM my_table;
     ```
 
 ```text
 The `MY_TABLE` table isn't queryable. To derive a queryable table, you can do 'CREATE TABLE QUERYABLE_MY_TABLE AS SELECT * FROM MY_TABLE'. See https://cnfl.io/queries for more info.
 Add EMIT CHANGES if you intended to issue a push query.
-Statement: select * from my_table;: select * from my_table;
+Statement: SELECT * FROM my_table;: SELECT * FROM my_table;
 ```
 
-Why?! It worked like a charm with a stream, but does not with a table?!
+Why?! It worked like a charm with a stream. Why does it not work with a table?!
 
 ## ksqlDB Internals
 
@@ -111,17 +145,17 @@ There are two code paths that lead to [throwing a notMaterializedException](../P
 
 ## Solution: Create Source Table
 
-It turns out that a solution is to create a `SOURCE TABLE` instead.
+It turns out that a solution is to `CREATE SOURCE TABLE` (not `CREATE TABLE`).
 
 === "KSQL"
 
     ```sql
     CREATE SOURCE TABLE my_source_table (
-        id INTEGER PRIMARY KEY,
+        id STRING PRIMARY KEY,
         name STRING)
     WITH (
-        kafka_topic='my_topic',
-        value_format='json');
+        KAFKA_TOPIC='my_topic',
+        VALUE_FORMAT='json');
     ```
 
 ```text
@@ -139,6 +173,14 @@ Execute the KSQL query that, this time, should work just fine.
     SELECT * FROM my_source_table;
     ```
 
+```text
++-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+|ID                                                                       |NAME                                                                     |
++-------------------------------------------------------------------------+-------------------------------------------------------------------------+
+|1                                                                        |ONE                                                                      |
+Query terminated
+```
+
 ### Source Table Explained
 
 === "KSQL"
@@ -154,32 +196,36 @@ Timestamp field      : Not set - using <ROWTIME>
 Key format           : KAFKA
 Value format         : JSON
 Kafka topic          : my_topic (partitions: 1, replication: 1)
-Statement            : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID INTEGER PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
+Statement            : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID STRING PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
 
  Field | Type
 ----------------------------------------
- ID    | INTEGER          (primary key)
+ ID    | VARCHAR(STRING)  (primary key)
  NAME  | VARCHAR(STRING)
 ----------------------------------------
 
 Queries that read from this TABLE
 -----------------------------------
-CST_MY_SOURCE_TABLE_5 (RUNNING) : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID INTEGER PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
+CST_MY_SOURCE_TABLE_5 (RUNNING) : CREATE SOURCE TABLE MY_SOURCE_TABLE (ID STRING PRIMARY KEY, NAME STRING) WITH (KAFKA_TOPIC='my_topic', KEY_FORMAT='KAFKA', VALUE_FORMAT='JSON');
 
 For query topology and execution plan please run: EXPLAIN <QueryId>
 
 Runtime statistics by host
 -------------------------
- Host           | Metric                           | Value      | Last Message
--------------------------------------------------------------------------------------------
- localhost:8088 | consumer-failed-messages         |          2 | 2022-09-19T15:13:06.147Z
- localhost:8088 | consumer-failed-messages-per-sec |          0 | 2022-09-19T15:13:06.147Z
- localhost:8088 | consumer-messages-per-sec        |          0 | 2022-09-19T15:13:06.137Z
- localhost:8088 | consumer-total-bytes             |         50 | 2022-09-19T15:13:06.137Z
- localhost:8088 | consumer-total-messages          |          2 | 2022-09-19T15:13:06.137Z
--------------------------------------------------------------------------------------------
+ Host           | Metric                    | Value      | Last Message
+------------------------------------------------------------------------------------
+ localhost:8088 | consumer-messages-per-sec |          0 | 2022-09-20T19:35:24.371Z
+ localhost:8088 | consumer-total-bytes      |         50 | 2022-09-20T19:35:24.371Z
+ localhost:8088 | consumer-total-messages   |          2 | 2022-09-20T19:35:24.371Z
+------------------------------------------------------------------------------------
 (Statistics of the local KSQL server interaction with the Kafka topic my_topic)
 ```
+
+## Follow-Up
+
+One thing that may have caught your attention is the type of the primary key, i.e. `ID STRING PRIMARY KEY`.
+
+The reason for this choice is that the demo uses `kcat` to send records and, as it turns out, keys cannot be any other type but `STRING`. Learn more in [Demo: Dealing with Deserialization Errors](dealing-with-deserialization-errors.md).
 
 ## Learn More
 

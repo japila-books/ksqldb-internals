@@ -220,6 +220,7 @@ nav:
         - metrics/index.md
         - ConsumerCollector: metrics/ConsumerCollector.md
         - KsqlMetricsExtension: metrics/KsqlMetricsExtension.md
+        - LogMetricAndContinueExceptionHandler: metrics/LogMetricAndContinueExceptionHandler.md
         - MetricCollector: metrics/MetricCollector.md
         - MetricCollectors: metrics/MetricCollectors.md
         - ProducerCollector: metrics/ProducerCollector.md

@@ -6,6 +6,15 @@ Enables [query request migration](rest/StreamedQueryResource.md#shouldMigrateToQ
 
 Default: `true`
 
+## <span id="KSQL_INTERNAL_STREAMS_ERROR_COLLECTOR_CONFIG"><span id="ksql.internal.streams.error.collector"> ksql.internal.streams.error.collector
+
+Used internally to register a new [StreamsErrorCollector](metrics/StreamsErrorCollector.md#create) when `QueryBuilder` is requested to [buildStreamsProperties](QueryBuilder.md#buildStreamsProperties).
+
+The `StreamsErrorCollector` is used for the following:
+
+* [recordError](metrics/StreamsErrorCollector.md#recordError) when [LogMetricAndContinueExceptionHandler](metrics/LogMetricAndContinueExceptionHandler.md) is notified about a deserialization error
+* [cleanup](metrics/StreamsErrorCollector.md#cleanup) when `KsqlEngine.CleanupListener` is requested to `onClose`
+
 ## <span id="KSQL_LAMBDAS_ENABLED"><span id="ksql.lambdas.enabled"> ksql.lambdas.enabled
 
 ## <span id="KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG"><span id="ksql.output.topic.name.prefix"> ksql.output.topic.name.prefix

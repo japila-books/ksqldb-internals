@@ -1,6 +1,6 @@
 # Node
 
-`Node` is an abstraction of [nodes](#implementations) of trees that are result of parsing SQL statements (using [AstBuilder.Visitor](AstBuilder.Visitor.md)).
+`Node` is an abstraction of [tree nodes](#implementations) that are result of parsing SQL statements (using [AstBuilder.Visitor](AstBuilder.Visitor.md)).
 
 ## Implementations
 

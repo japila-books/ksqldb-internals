@@ -17,6 +17,14 @@ The `StreamsErrorCollector` is used for the following:
 
 ## <span id="KSQL_LAMBDAS_ENABLED"><span id="ksql.lambdas.enabled"> ksql.lambdas.enabled
 
+Enables lambdas. If `true`, lambdas are processed normally. If `false`, new lambda queries won't be processed but existing lambda queries are unaffected.
+
+Default: `true`
+
+Used when:
+
+* `EngineContext` is requested to [prepare a KSQL statement for execution](EngineContext.md#prepare)
+
 ## <span id="KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG"><span id="ksql.output.topic.name.prefix"> ksql.output.topic.name.prefix
 
 ## <span id="KSQL_DEFAULT_VALUE_FORMAT_CONFIG"><span id="ksql.persistence.default.format.value"> ksql.persistence.default.format.value
@@ -71,6 +79,10 @@ Used when:
 * `KsMaterializationFactory` is requested to `create` a `KsMaterialization`
 
 ## <span id="KSQL_ROWPARTITION_ROWOFFSET_ENABLED"><span id="ksql.rowpartition.rowoffset.enabled"> ksql.rowpartition.rowoffset.enabled
+
+Enables `ROWPARTITION` and `ROWOFFSET` pseudo-columns in queries
+
+Default: `true`
 
 ## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url
 

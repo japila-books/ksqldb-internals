@@ -180,6 +180,7 @@ nav:
     - RouteQuery: RouteQuery.md
     - RowDeserializer: RowDeserializer.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
+    - SandboxedServiceContext: SandboxedServiceContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
     - SerdeFeaturesFactory: SerdeFeaturesFactory.md
@@ -217,14 +218,17 @@ nav:
       - REST:
         - rest/index.md
     - Metrics:
-        - metrics/index.md
-        - ConsumerCollector: metrics/ConsumerCollector.md
-        - KsqlMetricsExtension: metrics/KsqlMetricsExtension.md
-        - LogMetricAndContinueExceptionHandler: metrics/LogMetricAndContinueExceptionHandler.md
-        - MetricCollector: metrics/MetricCollector.md
-        - MetricCollectors: metrics/MetricCollectors.md
-        - ProducerCollector: metrics/ProducerCollector.md
-        - StreamsErrorCollector: metrics/StreamsErrorCollector.md
+      - metrics/index.md
+      - ConsumerCollector: metrics/ConsumerCollector.md
+      - KsqlMetricsExtension: metrics/KsqlMetricsExtension.md
+      - LogMetricAndContinueExceptionHandler: metrics/LogMetricAndContinueExceptionHandler.md
+      - MetricCollector: metrics/MetricCollector.md
+      - MetricCollectors: metrics/MetricCollectors.md
+      - ProducerCollector: metrics/ProducerCollector.md
+      - StreamsErrorCollector: metrics/StreamsErrorCollector.md
+    - Monitoring:
+      - ProcessingLogConfig: monitoring/ProcessingLogConfig.md
+      - ProcessingLogContext: monitoring/ProcessingLogContext.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
@@ -236,7 +240,7 @@ nav:
     - UDFs:
       - Column: udf/Column.md
       - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
-  - Query Parsing:
+  - Statement Parsing:
     - parser/index.md
     - AstBuilder:
       - AstBuilder: parser/AstBuilder.md
@@ -256,27 +260,32 @@ nav:
     - Tree Nodes:
       - AlterSource: parser/AlterSource.md
       - AlterSystemProperty: parser/AlterSystemProperty.md
+      - AssertStatement: parser/AssertStatement.md
       - AstNode: parser/AstNode.md
       - CreateAsSelect: parser/CreateAsSelect.md
       - CreateSourceAsProperties: parser/CreateSourceAsProperties.md
       - CreateStream: parser/CreateStream.md
       - CreateStreamAsSelect: parser/CreateStreamAsSelect.md
       - CreateTableAsSelect: parser/CreateTableAsSelect.md
+      - DescribeTables: parser/DescribeTables.md
       - Explain: parser/Explain.md
       - Expression: parser/Expression.md
       - InsertInto: parser/InsertInto.md
       - KsqlWindowExpression: parser/KsqlWindowExpression.md
       - ListStreams: parser/ListStreams.md
       - Node: parser/Node.md
-      - Sink: parser/Sink.md
-      - Statement: parser/Statement.md
       - Query: parser/Query.md
       - QueryContainer: parser/QueryContainer.md
+      - ShowColumns: parser/ShowColumns.md
+      - Sink: parser/Sink.md
+      - Statement: parser/Statement.md
+      - StatementWithExtendedClause: parser/StatementWithExtendedClause.md
+      - WindowExpression: parser/WindowExpression.md
     - SourceAccumulator: parser/SourceAccumulator.md
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
     - TerminateQuery: parser/TerminateQuery.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
-  - Query Analysis:
+  - Statement Analysis:
     - analyzer/index.md
     - Analysis: analyzer/Analysis.md
     - Analyzer:
@@ -287,7 +296,7 @@ nav:
     - QueryAnalyzer: analyzer/QueryAnalyzer.md
     - QueryValidator: analyzer/QueryValidator.md
     - RewrittenAnalysis: analyzer/RewrittenAnalysis.md
-  - Query Planning:
+  - Statement Planning:
     - planner/index.md
     - AstSanitizer: AstSanitizer.md
     - CommandFactories: CommandFactories.md
@@ -355,8 +364,6 @@ nav:
     - KsqlServerMain: rest/KsqlServerMain.md
     - QueryEndpoint: rest/QueryEndpoint.md
     - QueryExecutor: rest/QueryExecutor.md
-    - ProcessingLogConfig: rest/ProcessingLogConfig.md
-    - ProcessingLogContext: rest/ProcessingLogContext.md
     - ProcessingLogServerUtils: rest/ProcessingLogServerUtils.md
     - RecordFormatter: rest/RecordFormatter.md
     - RequestHandler: rest/RequestHandler.md

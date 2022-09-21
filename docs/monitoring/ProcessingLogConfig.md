@@ -6,7 +6,7 @@
 
 **ksql.logging.processing.topic.auto.create** enables automatic processing log topic creation.
 
-If `true`, a processing log topic is created when the [ksqlDB server](KsqlServerMain.md) starts up.
+If `true`, a processing log topic is created when the [ksqlDB server](../rest/KsqlServerMain.md) starts up.
 
 Topic Config | Value
 -------------|------
@@ -18,5 +18,5 @@ Default: `false`
 
 Used when:
 
-* `ProcessingLogServerUtils` is requested to [maybeCreateProcessingLogTopic](ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic)
-* `KsqlRestApplication` is requested to [build an application](KsqlRestApplication.md#buildApplication)
+* `ProcessingLogServerUtils` is requested to [maybeCreateProcessingLogTopic](../rest/ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic)
+* `KsqlRestApplication` is requested to [build an application](../rest/KsqlRestApplication.md#buildApplication)

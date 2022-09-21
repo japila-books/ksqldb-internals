@@ -1,12 +1,14 @@
 # EngineContext
 
+`EngineContext` is the execution context of [ksqlDB engine](KsqlEngine.md).
+
 ## Creating Instance
 
 `EngineContext` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> `ProcessingLogContext`
-* <span id="metaStore"> `MutableMetaStore`
+* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* <span id="metaStore"> [MutableMetaStore](MutableMetaStore.md)
 * <span id="queryIdGenerator"> `QueryIdGenerator`
 * <span id="parser"> [KsqlParser](parser/KsqlParser.md)
 * <span id="cleanupService"> `QueryCleanupService`
@@ -108,14 +110,14 @@ PreparedStatement<?> prepare(
 * [ksql.lambdas.enabled](KsqlConfig.md#KSQL_LAMBDAS_ENABLED)
 * [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED)
 
-In the end, `prepare` creates a new `PreparedStatement`.
+In the end, `prepare` creates a new `PreparedStatement` (with an unmasked KSQL statement in text format and the sanitized [Statement](parser/Statement.md)).
 
 ---
 
-`prepare` is used when:
+`prepare` is used when (the available [KsqlExecutionContext](KsqlExecutionContext.md)s are requested to [prepare a KSQL statement for execution](KsqlExecutionContext.md#prepare)):
 
-* `KsqlEngine` is requested to [prepare a statement for execution](KsqlEngine.md#prepare)
-* `SandboxedExecutionContext` is requested to [prepare a statement for execution](SandboxedExecutionContext.md#prepare)
+* [KsqlEngine](KsqlEngine.md#prepare)
+* [SandboxedExecutionContext](SandboxedExecutionContext.md#prepare)
 
 ### <span id="substituteVariables"> Variable Substitution
 
@@ -140,7 +142,9 @@ EngineContext create(
   Collection<QueryEventListener> registrationListeners)
 ```
 
-`create` creates a [EngineContext](#creating-instance) (with a new [DefaultKsqlParser](parser/DefaultKsqlParser.md), a new [QueryRegistryImpl](QueryRegistryImpl.md) and the others).
+`create` creates an [EngineContext](#creating-instance) (with a new [DefaultKsqlParser](parser/DefaultKsqlParser.md), a new [QueryRegistryImpl](QueryRegistryImpl.md) and the others).
+
+---
 
 `create` is used when:
 
@@ -153,7 +157,9 @@ EngineContext createSandbox(
   ServiceContext serviceContext)
 ```
 
-`createSandbox` creates an [EngineContext](#creating-instance).
+`createSandbox` creates an [EngineContext](#creating-instance) (with a [SandboxedServiceContext](SandboxedServiceContext.md#create), a new [DefaultKsqlParser](parser/DefaultKsqlParser.md), and the others sandboxed).
+
+---
 
 `createSandbox` is used when:
 

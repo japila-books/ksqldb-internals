@@ -27,9 +27,9 @@ StandaloneExecutor create(
 
 `create` [configsTopic](../rest/ReservedInternalTopics.md#configsTopic), [KsqlInternalTopicUtils.ensureTopic](../KsqlInternalTopicUtils.md#ensureTopic) and creates a [KafkaConfigStore](KafkaConfigStore.md) (with the config topic name).
 
-`create` creates a [ProcessingLogConfig](../rest/ProcessingLogConfig.md).
+`create` creates a [ProcessingLogConfig](../monitoring/ProcessingLogConfig.md).
 
-`create` creates a [ProcessingLogContext](../rest/ProcessingLogContext.md#create) (with the [ProcessingLogConfig](../rest/ProcessingLogConfig.md), the given [MetricCollectors](../metrics/MetricCollectors.md) and the tags based on [ksql.metrics.tags.custom](../KsqlConfig.md#KSQL_CUSTOM_METRICS_TAGS) configuration property).
+`create` creates a [ProcessingLogContext](../monitoring/ProcessingLogContext.md#create) (with the [ProcessingLogConfig](../monitoring/ProcessingLogConfig.md), the given [MetricCollectors](../metrics/MetricCollectors.md) and the tags based on [ksql.metrics.tags.custom](../KsqlConfig.md#KSQL_CUSTOM_METRICS_TAGS) configuration property).
 
 `create` creates a `InternalFunctionRegistry`.
 

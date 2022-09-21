@@ -5,7 +5,7 @@
 `QueryBuilder` takes the following to be created:
 
 * <span id="config"> [SessionConfig](SessionConfig.md)
-* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
+* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * [KafkaStreamsBuilder](#kafkaStreamsBuilder)

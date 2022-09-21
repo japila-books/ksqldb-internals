@@ -7,7 +7,7 @@
 * [StreamsBuilder](#streamsBuilder)
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md)
+* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * <span id="applicationId"> Application ID
 * <span id="queryId"> `QueryId`

@@ -181,6 +181,19 @@ CREATE (OR REPLACE)? TABLE (IF NOT EXISTS)? sourceName
 
 `visitCreateTableAs` creates a [CreateTableAsSelect](CreateTableAsSelect.md).
 
+### <span id="visitShowColumns"> DESCRIBE SOURCE
+
+`visitShowColumns` handles `DESCRIBE [source]` statements.
+
+```antlr
+DESCRIBE sourceName EXTENDED?
+```
+
+`visitShowColumns` creates the following:
+
+* [DescribeTables](DescribeTables.md) for `DESCRIBE TABLES` (when the `sourceName` is `TABLES` case-insensitive)
+* [ShowColumns](ShowColumns.md) otherwise
+
 ### <span id="visitExplain"> EXPLAIN
 
 ```java

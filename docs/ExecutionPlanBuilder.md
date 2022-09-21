@@ -7,7 +7,7 @@
 * <span id="builder"> `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/StreamsBuilder))
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> [ProcessingLogContext](rest/ProcessingLogContext.md) (_not used_)
+* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md) (_not used_)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 
 `ExecutionPlanBuilder` is created when:

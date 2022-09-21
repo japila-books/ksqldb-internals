@@ -60,6 +60,6 @@ PreparedStatement<?> prepare(
 
 ---
 
-`prepare` creates an [AstBuilder](AstBuilder.md) (with the given `TypeRegistry`) to [build a Statement](AstBuilder.md#buildStatement).
+`prepare` creates an [AstBuilder](AstBuilder.md) (with the given [TypeRegistry](../TypeRegistry.md)) to [build a Statement](AstBuilder.md#buildStatement).
 
-In the end, `prepare` creates a `PreparedStatement` (with the SQL query in text format and as the [Statement](Statement.md)).
+In the end, `prepare` creates a `PreparedStatement` (with the KSQL statement in text format and the [Statement](Statement.md)).

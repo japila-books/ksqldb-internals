@@ -21,7 +21,7 @@ Used when:
 * `EngineContext` is requested to [parse SQL statements](../EngineContext.md#parse)
 * `KsqlResource` is requested for [TERMINATE_CLUSTER](../rest/KsqlResource.md#TERMINATE_CLUSTER)
 
-### <span id="prepare"> Preparing ParsedStatement
+### <span id="prepare"> Preparing Statement
 
 ```java
 PreparedStatement<?> prepare(
@@ -33,7 +33,7 @@ See [DefaultKsqlParser](DefaultKsqlParser.md#prepare)
 
 Used when:
 
-* `EngineContext` is requested to [prepare a ParsedStatement](../EngineContext.md#prepare)
+* `EngineContext` is requested to [prepare a statement](../EngineContext.md#prepare)
 
 ## Implementations
 

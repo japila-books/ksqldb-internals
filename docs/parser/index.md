@@ -1,7 +1,15 @@
-# Query Parsing
+# Statement Parsing
 
-ksqlDB uses [AstBuilder](AstBuilder.md) to parse and [build Statement tree nodes](AstBuilder.md#buildStatement) from SQL text (possibly with multiple SQL statements separated by `;`).
+!!! note "Title"
+    A title "Query Parsing" would probably make more sense but [Query](Query.md) is an overloaded term in ksqlDB (a subtype of a [Statement](Statement.md) which is more generic term) so I decided to use the latter instead.
 
-ksqlDB uses [DefaultKsqlParser](DefaultKsqlParser.md) to [prepare a statement for execution](DefaultKsqlParser.md#prepare).
+ksqlDB uses [AstBuilder](AstBuilder.md) (and [AstBuilder.Visitor](AstBuilder.Visitor.md)) to parse and [build a tree node](AstBuilder.md#build) for a KSQL text:
 
-`EngineContext` is used for [Variable Substitution](../EngineContext.md#substituteVariables) and [sanitize](../AstSanitizer.md#sanitize) while [preparing a statement for execution](../EngineContext.md#prepare).
+* [AssertStatement](AssertStatement.md)
+* [Expression](Expression.md)
+* [Statement](Statement.md)
+* [WindowExpression](WindowExpression.md)
+
+ksqlDB uses [DefaultKsqlParser](DefaultKsqlParser.md) to [prepare a statement for execution](DefaultKsqlParser.md#prepare) (using [AstBuilder](AstBuilder.md) with [AstBuilder.Visitor](AstBuilder.Visitor.md)).
+
+In the end, ksqlDB uses [EngineContext](../EngineContext.md) for [Variable Substitution](../EngineContext.md#substituteVariables) and [Sanitization](../AstSanitizer.md#sanitize) while [preparing a KSQL statement for execution](../EngineContext.md#prepare).

@@ -1136,6 +1136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/CustomValidators/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/DefaultCommandQueueSync/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>

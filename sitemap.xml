@@ -421,6 +421,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SandboxedServiceContext/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaKSourceFactory/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
@@ -806,6 +811,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/monitoring/ProcessingLogConfig/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/monitoring/ProcessingLogContext/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
@@ -817,6 +832,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/AlterSystemProperty/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/AssertStatement/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -901,6 +921,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/DescribeTables/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/ExecutableDdlStatement/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
@@ -951,6 +976,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/ShowColumns/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Sink/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
@@ -971,12 +1001,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/StatementWithExtendedClause/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/TerminateQuery/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/VariableSubstitutor/</loc>
+         <lastmod>2022-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/WindowExpression/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1162,16 +1202,6 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ListSourceExecutor/</loc>
-         <lastmod>2022-09-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/rest/ProcessingLogConfig/</loc>
-         <lastmod>2022-09-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/rest/ProcessingLogContext/</loc>
          <lastmod>2022-09-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

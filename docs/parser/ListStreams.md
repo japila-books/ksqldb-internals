@@ -1,6 +1,6 @@
 # ListStreams
 
-`ListStreams` is a `StatementWithExtendedClause` (a [Statement](Statement.md) with optional `EXTENDED` clause) that represents the following ksql statement:
+`ListStreams` is a [StatementWithExtendedClause](StatementWithExtendedClause.md) that represents the following KSQL statement:
 
 ```antlr
 (LIST | SHOW) STREAMS EXTENDED?

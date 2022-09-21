@@ -242,22 +242,7 @@ nav:
       - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
   - Statement Parsing:
     - parser/index.md
-    - AstBuilder:
-      - AstBuilder: parser/AstBuilder.md
-      - AstBuilder.Visitor: parser/AstBuilder.Visitor.md
-    - AstVisitor: parser/AstVisitor.md
-    - CommonCreateConfigs: parser/CommonCreateConfigs.md
-    - CreateSource:
-      - CreateSource: parser/CreateSource.md
-      - CreateSourceProperties: parser/CreateSourceProperties.md
-    - CreateTable: parser/CreateTable.md
-    - DdlStatement:
-      - DdlStatement: parser/DdlStatement.md
-      - ExecutableDdlStatement: parser/ExecutableDdlStatement.md
-    - DefaultKsqlParser: parser/DefaultKsqlParser.md
-    - DefaultTraversalVisitor: parser/DefaultTraversalVisitor.md
-    - KsqlParser: parser/KsqlParser.md
-    - Tree Nodes:
+    - AST Tree Nodes:
       - AlterSource: parser/AlterSource.md
       - AlterSystemProperty: parser/AlterSystemProperty.md
       - AssertStatement: parser/AssertStatement.md
@@ -281,6 +266,21 @@ nav:
       - Statement: parser/Statement.md
       - StatementWithExtendedClause: parser/StatementWithExtendedClause.md
       - WindowExpression: parser/WindowExpression.md
+    - AstBuilder:
+      - AstBuilder: parser/AstBuilder.md
+      - AstBuilder.Visitor: parser/AstBuilder.Visitor.md
+    - AstVisitor: parser/AstVisitor.md
+    - CommonCreateConfigs: parser/CommonCreateConfigs.md
+    - CreateSource:
+      - CreateSource: parser/CreateSource.md
+      - CreateSourceProperties: parser/CreateSourceProperties.md
+    - CreateTable: parser/CreateTable.md
+    - DdlStatement:
+      - DdlStatement: parser/DdlStatement.md
+      - ExecutableDdlStatement: parser/ExecutableDdlStatement.md
+    - DefaultKsqlParser: parser/DefaultKsqlParser.md
+    - DefaultTraversalVisitor: parser/DefaultTraversalVisitor.md
+    - KsqlParser: parser/KsqlParser.md
     - SourceAccumulator: parser/SourceAccumulator.md
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
     - TerminateQuery: parser/TerminateQuery.md
@@ -349,6 +349,7 @@ nav:
     - CommandTopic: rest/CommandTopic.md
     - CommandTopicBackup: rest/CommandTopicBackup.md
     - CustomExecutors: rest/CustomExecutors.md
+    - CustomValidators: rest/CustomValidators.md
     - DefaultCommandQueueSync: rest/DefaultCommandQueueSync.md
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md

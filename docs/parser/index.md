@@ -13,3 +13,10 @@ ksqlDB uses [AstBuilder](AstBuilder.md) (and [AstBuilder.Visitor](AstBuilder.Vis
 ksqlDB uses [DefaultKsqlParser](DefaultKsqlParser.md) to [prepare a statement for execution](DefaultKsqlParser.md#prepare) (using [AstBuilder](AstBuilder.md) with [AstBuilder.Visitor](AstBuilder.Visitor.md)).
 
 In the end, ksqlDB uses [EngineContext](../EngineContext.md) for [Variable Substitution](../EngineContext.md#substituteVariables) and [Sanitization](../AstSanitizer.md#sanitize) while [preparing a KSQL statement for execution](../EngineContext.md#prepare).
+
+## Statements
+
+KSQL | Statement
+-----|----------
+ [DESCRIBE SOURCE](AstBuilder.Visitor.md#visitShowColumns) | [ShowColumns](ShowColumns.md)
+ _others_ |

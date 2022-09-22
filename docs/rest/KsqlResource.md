@@ -8,7 +8,7 @@
 
 * <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
 * [CommandRunner](#commandRunner)
-* <span id="distributedCmdResponseTimeout"> `distributedCmdResponse` Timeout
+* <span id="distributedCmdResponseTimeout"> [ksql.server.command.response.timeout.ms](KsqlRestConfig.md#ksql.server.command.response.timeout.ms)
 * <span id="activenessRegistrar"> `ActivenessRegistrar`
 * <span id="injectorFactory"> [Injector](../Injector.md) factory
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`

@@ -23,9 +23,9 @@ The `KsqlEngine` is used for [executing SQL Statements](#execute) (to [execute a
 
 `RequestHandler` is given a [DistributingExecutor](DistributingExecutor.md) when [created](#creating-instance).
 
-The `DistributingExecutor` is used for [executing SQL statements](#executeStatement).
+The `DistributingExecutor` is used for [executing KSQL statements](#executeStatement).
 
-## <span id="execute"> Executing SQL Statements (execute)
+## <span id="execute"> Executing KSQL Statements
 
 ```java
 KsqlEntityList execute(
@@ -40,7 +40,7 @@ For every SQL statement (in the given `statements`), `execute` requests the [Ksq
 
 * `KsqlResource` is requested to [handle a REST request to execute SQL statements](KsqlResource.md#handleKsqlStatements) and [terminate the cluster](KsqlResource.md#terminateCluster)
 
-### <span id="executeStatement"> Executing Statement
+### <span id="executeStatement"> Executing KSQL Statement
 
 ```java
 <T extends Statement> Optional<KsqlEntity> executeStatement(

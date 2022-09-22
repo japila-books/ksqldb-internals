@@ -9,7 +9,7 @@
 * [StatementParser](#statementParser)
 * [CommandQueue](#commandQueue)
 * <span id="disconnectCheckInterval"> `disconnectCheckInterval`
-* <span id="commandQueueCatchupTimeout"> `commandQueueCatchupTimeout`
+* <span id="commandQueueCatchupTimeout"> [ksql.server.command.response.timeout.ms](KsqlRestConfig.md#ksql.server.command.response.timeout.ms)
 * <span id="activenessRegistrar"> `ActivenessRegistrar`
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`
 * <span id="errorHandler"> `Errors` handler

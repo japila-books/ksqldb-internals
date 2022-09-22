@@ -21,7 +21,7 @@
 * [SequenceNumberFutureStore](#sequenceNumberFutureStore)
 * [Kafka Consumer Properties](#kafkaConsumerProperties)
 * [Kafka Producer properties](#kafkaProducerProperties)
-* <span id="commandQueueCatchupTimeout"> Command Queue Catchup Timeout
+* <span id="commandQueueCatchupTimeout"> [ksql.server.command.response.timeout.ms](KsqlRestConfig.md#ksql.server.command.response.timeout.ms)
 * <span id="commandIdSerializer"> `Serializer<CommandId>`
 * <span id="commandSerializer"> `Serializer<Command>`
 * <span id="commandIdDeserializer"> `Deserializer<CommandId>`

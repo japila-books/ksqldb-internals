@@ -1,5 +1,11 @@
 # DistributingExecutor
 
+`DistributingExecutor` is created for [RequestHandler](RequestHandler.md#distributor) (to [execute KSQL statements](RequestHandler.md#executeStatement)).
+
+<figure markdown>
+  ![DistributingExecutor](../images/DistributingExecutor.png)
+</figure>
+
 When requested to [execute a statement](#execute), `DistributingExecutor` uses a transactional Kafka producer to [enqueue the command](CommandQueue.md#enqueueCommand) (to the [CommandQueue](#commandQueue)).
 
 ## Creating Instance
@@ -8,7 +14,7 @@ When requested to [execute a statement](#execute), `DistributingExecutor` uses a
 
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="commandQueue"> [CommandQueue](CommandQueue.md)
-* <span id="distributedCmdResponseTimeout"> Distributed Command Response Timeout
+* <span id="distributedCmdResponseTimeout"> [ksql.server.command.response.timeout.ms](KsqlRestConfig.md#ksql.server.command.response.timeout.ms)
 * <span id="injectorFactory"> [Injector](../Injector.md) factory (for a [KsqlExecutionContext](../KsqlExecutionContext.md) and [ServiceContext](../ServiceContext.md))
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`
 * <span id="validatedCommandFactory"> [ValidatedCommandFactory](ValidatedCommandFactory.md)
@@ -18,6 +24,12 @@ When requested to [execute a statement](#execute), `DistributingExecutor` uses a
 `DistributingExecutor` is created when:
 
 * `KsqlResource` is requested to [configure](KsqlResource.md#configure) (and creates a [RequestHandler](KsqlResource.md#handler))
+
+### <span id="commandIdAssigner"> CommandIdAssigner
+
+`DistributingExecutor` creates a [CommandIdAssigner](CommandIdAssigner.md) when [created](#creating-instance).
+
+The `CommandIdAssigner` is used to [generate a CommandId](CommandIdAssigner.md#getCommandId) to [execute a KSQL statement](#execute).
 
 ## <span id="execute"> Executing Statement
 

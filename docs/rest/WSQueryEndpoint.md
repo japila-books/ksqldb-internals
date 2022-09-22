@@ -10,7 +10,7 @@
 * <span id="commandQueue"> [CommandQueue](CommandQueue.md)
 * <span id="exec"> `ListeningScheduledExecutorService`
 * <span id="activenessRegistrar"> `ActivenessRegistrar`
-* <span id="commandQueueCatchupTimeout"> `commandQueueCatchup` timeout
+* <span id="commandQueueCatchupTimeout"> [ksql.server.command.response.timeout.ms](KsqlRestConfig.md#ksql.server.command.response.timeout.ms)
 * <span id="authorizationValidator"> `KsqlAuthorizationValidator`
 * <span id="errorHandler"> `Errors`
 * <span id="denyListPropertyValidator"> `DenyListPropertyValidator`

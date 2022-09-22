@@ -211,12 +211,7 @@ EXPLAIN (statement | identifier)
 
 ### <span id="visitInsertInto"> INSERT INTO
 
-```java
-Node visitInsertInto(
-  SqlBaseParser.InsertIntoContext context)
-```
-
-`visitInsertInto` is part of the `SqlBaseBaseVisitor` abstraction to handle `INSERT INTO` statements.
+`visitInsertInto` handles `INSERT INTO` statements.
 
 ```antlr
 INSERT INTO sourceName
@@ -224,7 +219,7 @@ INSERT INTO sourceName
   query
 ```
 
-`visitInsertInto` creates a [InsertInto](InsertInto.md).
+`visitInsertInto` creates an [InsertInto](InsertInto.md).
 
 ### <span id="visitListStreams"> LIST STREAMS
 

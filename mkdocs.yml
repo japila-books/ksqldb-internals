@@ -147,6 +147,7 @@ nav:
       - GenericKeySerDe: GenericKeySerDe.md
       - KeySerdeFactory: KeySerdeFactory.md
     - KSPlanBuilder: KSPlanBuilder.md
+    - KsqlAuthorizationValidatorImpl: KsqlAuthorizationValidatorImpl.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine:
       - KsqlEngine: KsqlEngine.md
@@ -194,6 +195,9 @@ nav:
     - SourceBuilderBase: SourceBuilderBase.md
     - SourceBuilderV1: SourceBuilderV1.md
     - SqlTypeParser: SqlTypeParser.md
+    - StatementRewriter:
+      - StatementRewriter: StatementRewriter.md
+      - StatementRewriter.Rewriter: StatementRewriter.Rewriter.md
     - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
@@ -298,7 +302,9 @@ nav:
     - RewrittenAnalysis: analyzer/RewrittenAnalysis.md
   - Statement Planning:
     - planner/index.md
-    - AstSanitizer: AstSanitizer.md
+    - AstSanitizer:
+      - AstSanitizer: AstSanitizer.md
+      - AstSanitizer.RewriterPlugin: AstSanitizer.RewriterPlugin.md
     - CommandFactories: CommandFactories.md
     - ConfiguredKsqlPlan: ConfiguredKsqlPlan.md
     - CreateSourceCommand: CreateSourceCommand.md
@@ -330,7 +336,6 @@ nav:
       - PlanNode: planner/PlanNode.md
       - QueryProjectNode: planner/QueryProjectNode.md
       - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
-    - RewriterPlugin: RewriterPlugin.md
     - QueryPlan: QueryPlan.md
     - QueryPlannerOptions: planner/QueryPlannerOptions.md
     - RuntimeBuildContext: RuntimeBuildContext.md

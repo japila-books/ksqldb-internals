@@ -147,6 +147,9 @@ nav:
       - GenericKeySerDe: GenericKeySerDe.md
       - KeySerdeFactory: KeySerdeFactory.md
     - KSPlanBuilder: KSPlanBuilder.md
+    - KsqlAccessValidator: KsqlAccessValidator.md
+    - KsqlAuthorizationValidator: KsqlAuthorizationValidator.md
+    - KsqlAuthorizationValidatorFactory: KsqlAuthorizationValidatorFactory.md
     - KsqlAuthorizationValidatorImpl: KsqlAuthorizationValidatorImpl.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine:
@@ -263,6 +266,7 @@ nav:
       - KsqlWindowExpression: parser/KsqlWindowExpression.md
       - ListStreams: parser/ListStreams.md
       - Node: parser/Node.md
+      - PrintTopic: parser/PrintTopic.md
       - Query: parser/Query.md
       - QueryContainer: parser/QueryContainer.md
       - ShowColumns: parser/ShowColumns.md

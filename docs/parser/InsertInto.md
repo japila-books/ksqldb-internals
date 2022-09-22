@@ -2,8 +2,14 @@
 
 `InsertInto` is a [Statement](Statement.md) and a [QueryContainer](QueryContainer.md) that represents [INSERT INTO](AstBuilder.Visitor.md#visitInsertInto) statement.
 
-!!! note
-    `INSERT INTO` can only be used to [insert into a stream](../AstSanitizer.RewriterPlugin.md#visitInsertInto).
+`InsertInto` is a distributed command and executed by [DistributingExecutor](../rest/DistributingExecutor.md) (in [REST execution mode](../rest/index.md)).
+
+## Limitations
+
+1. `INSERT INTO` can only be used to [insert into a stream](../AstSanitizer.RewriterPlugin.md#visitInsertInto)
+1. The [target](#target) should be [registered in MetaStore](../rest/DistributingExecutor.md#validateInsertIntoQueries)
+1. The [target](#target) datasource [cannot have header columns](../rest/DistributingExecutor.md#validateInsertIntoQueries)
+1. The topic of the [target](#target) datasource [cannot be read-only](../rest/DistributingExecutor.md#validateInsertIntoQueries)
 
 ## Creating Instance
 
@@ -21,7 +27,7 @@
 
 ### <span id="target"><span id="getTarget"> Target DataSource
 
-`InsertInto` is given the name of the target [DataSource](../DataSource.md) (to write records into). The target should already be in [MetaStore](../MetaStore.md).
+`InsertInto` is given the name of the target [DataSource](../DataSource.md) (to write records into).
 
 #### getTarget
 

@@ -1,0 +1,3 @@
+# KsqlAuthorizationValidator
+
+`KsqlAuthorizationValidator` is...FIXME

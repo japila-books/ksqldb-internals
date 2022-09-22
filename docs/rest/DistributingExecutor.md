@@ -42,7 +42,7 @@ StatementExecutorResponse execute(
 
 `execute` requests the [injectorFactory](#injectorFactory) to [inject](../Injector.md#inject) into the given `ConfiguredStatement`.
 
-For [InsertInto](../parser/InsertInto.md)s, `execute` [validateInsertIntoQueries](#validateInsertIntoQueries).
+For a [InsertInto](../parser/InsertInto.md) statement, `execute` [validateInsertIntoQueries](#validateInsertIntoQueries).
 
 `execute` [checkIfNotExistsResponse](#checkIfNotExistsResponse).
 
@@ -69,3 +69,29 @@ In the end, `execute` creates a `StatementExecutorResponse` (as handled) and clo
 `execute` is used when:
 
 * `RequestHandler` is requested to [execute a SQL statement](RequestHandler.md#executeStatement)
+
+### <span id="validateInsertIntoQueries"> validateInsertIntoQueries
+
+```java
+void validateInsertIntoQueries(
+  MetaStore metaStore,
+  InsertInto insertInto)
+```
+
+`validateInsertIntoQueries` throws a `KsqlException` when the given [MetaStore](../MetaStore.md) could not [find a DataSource](../MetaStore.md#getSource) for the [target](../parser/InsertInto.md#getTarget) of the given [InsertInto](../parser/InsertInto.md).
+
+```text
+Cannot insert into an unknown stream: [target]
+```
+
+`validateInsertIntoQueries` throws a `KsqlException` when the [underlying topic](../DataSource.md#getKafkaTopicName) (of the `DataSource`) is [read-only](ReservedInternalTopics.md#isReadOnly):
+
+```text
+Cannot insert into read-only topic: [topic]
+```
+
+`validateInsertIntoQueries` throws a `KsqlException` when the `DataSource` has header columns:
+
+```text
+Cannot insert into [target] because it has header columns
+```

@@ -221,26 +221,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/KsqlAccessValidator/</loc>
-         <lastmod>2022-09-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidator/</loc>
-         <lastmod>2022-09-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidatorFactory/</loc>
-         <lastmod>2022-09-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidatorImpl/</loc>
-         <lastmod>2022-09-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlConfig/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
@@ -586,11 +566,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/features/</loc>
-         <lastmod>2022-09-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://books.japila.pl/ksqldb-internals/logging/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
@@ -767,6 +742,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/embedded/KsqlContext/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/features/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1322,6 +1302,46 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/WSQueryEndpoint/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlAccessValidator/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlAuthorizationProvider/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlAuthorizationValidator/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlAuthorizationValidatorFactory/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlAuthorizationValidatorImpl/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlDefaultSecurityExtension/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/security/KsqlSecurityExtension/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

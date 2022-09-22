@@ -1,3 +1,0 @@
-# KsqlAccessValidator
-
-`KsqlAccessValidator` is...FIXME

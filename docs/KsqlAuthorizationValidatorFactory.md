@@ -1,3 +1,0 @@
-# KsqlAuthorizationValidatorFactory
-
-`KsqlAuthorizationValidatorFactory` is...FIXME

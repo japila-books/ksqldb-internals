@@ -31,11 +31,11 @@ void checkAuthorization(
 
 Statement | Handler
 ----------|--------
- [Query](parser/Query.md) | [validateQuery](#validateQuery)
- [InsertInto](parser/InsertInto.md) | [validateInsertInto](#validateInsertInto)
- [CreateAsSelect](parser/CreateAsSelect.md) | [validateCreateAsSelect](#validateCreateAsSelect)
- [PrintTopic](parser/PrintTopic.md) | [validatePrintTopic](#validatePrintTopic)
- [CreateSource](parser/CreateSource.md) | [validateCreateSource](#validateCreateSource)
+ [Query](../parser/Query.md) | [validateQuery](#validateQuery)
+ [InsertInto](../parser/InsertInto.md) | [validateInsertInto](#validateInsertInto)
+ [CreateAsSelect](../parser/CreateAsSelect.md) | [validateCreateAsSelect](#validateCreateAsSelect)
+ [PrintTopic](../parser/PrintTopic.md) | [validatePrintTopic](#validatePrintTopic)
+ [CreateSource](../parser/CreateSource.md) | [validateCreateSource](#validateCreateSource)
 
 ### <span id="validateInsertInto"> validateInsertInto
 
@@ -46,6 +46,6 @@ void validateInsertInto(
   InsertInto insertInto)
 ```
 
-`validateInsertInto` [validates](#validateQuery) the [query](parser/InsertInto.md#getQuery) of the given [InsertInto](parser/InsertInto.md).
+`validateInsertInto` [validates](#validateQuery) the [query](../parser/InsertInto.md#getQuery) of the given [InsertInto](../parser/InsertInto.md).
 
-`validateInsertInto` [checks WRITE access](#checkTopicAccess) to the [underlying topic](#getSourceTopicName) of the [target](parser/InsertInto.md#getTarget) of the given [InsertInto](parser/InsertInto.md).
+`validateInsertInto` [checks WRITE access](#checkTopicAccess) to the [underlying topic](#getSourceTopicName) of the [target](../parser/InsertInto.md#getTarget) of the given [InsertInto](../parser/InsertInto.md).

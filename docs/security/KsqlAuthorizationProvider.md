@@ -1,0 +1,3 @@
+# KsqlAuthorizationProvider
+
+`KsqlAuthorizationProvider` is...FIXME

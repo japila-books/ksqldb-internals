@@ -42,7 +42,7 @@ SourceName getTarget()
 `getTarget` is used when:
 
 * `AstSanitizer.RewriterPlugin` is requested to [visitInsertInto](../AstSanitizer.RewriterPlugin.md#visitInsertInto)
-* `KsqlAuthorizationValidatorImpl` is requested to [validateInsertInto](../KsqlAuthorizationValidatorImpl.md#validateInsertInto)
+* `KsqlAuthorizationValidatorImpl` is requested to [validateInsertInto](../security/KsqlAuthorizationValidatorImpl.md#validateInsertInto)
 * `CommandIdAssigner` is requested to [getInsertIntoCommandId](../rest/CommandIdAssigner.md#getInsertIntoCommandId)
 * `DistributingExecutor` is requested to [validateInsertIntoQueries](../rest/DistributingExecutor.md#validateInsertIntoQueries)
 

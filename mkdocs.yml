@@ -147,10 +147,6 @@ nav:
       - GenericKeySerDe: GenericKeySerDe.md
       - KeySerdeFactory: KeySerdeFactory.md
     - KSPlanBuilder: KSPlanBuilder.md
-    - KsqlAccessValidator: KsqlAccessValidator.md
-    - KsqlAuthorizationValidator: KsqlAuthorizationValidator.md
-    - KsqlAuthorizationValidatorFactory: KsqlAuthorizationValidatorFactory.md
-    - KsqlAuthorizationValidatorImpl: KsqlAuthorizationValidatorImpl.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine:
       - KsqlEngine: KsqlEngine.md
@@ -210,7 +206,11 @@ nav:
       - ValueSerdeFactory: ValueSerdeFactory.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
-    - features.md
+    - features/index.md
+    - Data Types:
+      - SqlBaseType: types/SqlBaseType.md
+      - SqlPrimitiveType: types/SqlPrimitiveType.md
+      - SqlType: types/SqlType.md
     - Execution Modes:
       - Embedded:
         - embedded/index.md
@@ -240,13 +240,18 @@ nav:
     - Processing Log: processing-log.md
     - Pull Queries: pull-queries.md
     - Push Queries: push-queries.md
-    - Data Types:
-      - SqlBaseType: types/SqlBaseType.md
-      - SqlPrimitiveType: types/SqlPrimitiveType.md
-      - SqlType: types/SqlType.md
     - UDFs:
       - Column: udf/Column.md
       - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
+    - Security:
+      - security/index.md
+      - KsqlAccessValidator: security/KsqlAccessValidator.md
+      - KsqlAuthorizationProvider: security/KsqlAuthorizationProvider.md
+      - KsqlAuthorizationValidator: security/KsqlAuthorizationValidator.md
+      - KsqlAuthorizationValidatorFactory: security/KsqlAuthorizationValidatorFactory.md
+      - KsqlAuthorizationValidatorImpl: security/KsqlAuthorizationValidatorImpl.md
+      - KsqlSecurityExtension: security/KsqlSecurityExtension.md
+      - KsqlDefaultSecurityExtension: security/KsqlDefaultSecurityExtension.md
   - Statement Parsing:
     - parser/index.md
     - AST Tree Nodes:

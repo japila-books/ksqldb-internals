@@ -221,6 +221,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlAccessValidator/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidator/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidatorFactory/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/KsqlAuthorizationValidatorImpl/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
@@ -977,6 +992,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/Node/</loc>
+         <lastmod>2022-09-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/PrintTopic/</loc>
          <lastmod>2022-09-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

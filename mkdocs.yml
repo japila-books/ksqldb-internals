@@ -154,6 +154,7 @@ nav:
     - KsqlExecutionContext: KsqlExecutionContext.md
     - KsqlSchemaRegistryClientFactory: KsqlSchemaRegistryClientFactory.md
     - KsqlQueryType: KsqlQueryType.md
+    - LogicalSchema: LogicalSchema.md
     - MetaStore:
       - MetaStore: MetaStore.md
       - MetaStoreImpl: MetaStoreImpl.md
@@ -199,6 +200,7 @@ nav:
       - StatementRewriter.Rewriter: StatementRewriter.Rewriter.md
     - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSource: StreamSource.md
+    - SystemColumns: SystemColumns.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md
     - ValueSerdeFactory:

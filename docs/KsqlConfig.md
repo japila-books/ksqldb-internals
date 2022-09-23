@@ -84,6 +84,18 @@ Enables `ROWPARTITION` and `ROWOFFSET` pseudo-columns in queries
 
 Default: `true`
 
+Used when:
+
+* `LogicalSchema` is requested to [withPseudoAndKeyColsInValue](LogicalSchema.md#withPseudoAndKeyColsInValue)
+* `SystemColumns` is requested to [getPseudoColumnVersionFromConfig](SystemColumns.md#getPseudoColumnVersionFromConfig)
+* `EngineContext` is requested to [prepare a KSQL statement](EngineContext.md#prepare)
+* `EngineExecutor` is requested to [getRowpartitionRowoffsetEnabled](EngineExecutor.md#getRowpartitionRowoffsetEnabled)
+* `KsqlEngine` is requested to [getRowpartitionRowoffsetEnabled](KsqlEngine.md#getRowpartitionRowoffsetEnabled)
+* `QueryFilterNode` is created
+* `QueryProjectNode` is created
+* `SchemaKSourceFactory` is requested to [build a table](SchemaKSourceFactory.md#buildTable)
+* `ScalablePushUtil` is requested to [containsDisallowedColumns](rest/ScalablePushUtil.md#containsDisallowedColumns)
+
 ## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url
 
 The URL of the REST endpoint of a schema registry (e.g. [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/), [Apicurio Schema Registry](https://www.apicur.io/registry/))

@@ -4,12 +4,18 @@
 
 `InsertInto` is a distributed command and executed by [DistributingExecutor](../rest/DistributingExecutor.md) (in [REST execution mode](../rest/index.md)).
 
-## Limitations
+## Requirements
 
 1. `INSERT INTO` can only be used to [insert into a stream](../AstSanitizer.RewriterPlugin.md#visitInsertInto)
 1. The [target](#target) should be [registered in MetaStore](../rest/DistributingExecutor.md#validateInsertIntoQueries)
 1. The [target](#target) datasource [cannot have header columns](../rest/DistributingExecutor.md#validateInsertIntoQueries)
 1. The topic of the [target](#target) datasource [cannot be read-only](../rest/DistributingExecutor.md#validateInsertIntoQueries)
+
+!!! question "Possible Code Duplication"
+    There are two entities that assert these requirements:
+
+    * [AstSanitizer.RewriterPlugin](../AstSanitizer.RewriterPlugin.md#visitInsertInto)
+    * [DistributingExecutor](../rest/DistributingExecutor.md#validateInsertIntoQueries)
 
 ## Creating Instance
 
@@ -57,3 +63,8 @@ Sink getSink()
 ---
 
 `getSink` [creates a Sink](Sink.md#of) (with [createSink](Sink.md#createSink) flag disabled).
+
+## Learning Resources
+
+1. [Insert Into | Level Up your KSQL by Confluent](https://youtu.be/z508VDdtp_M)
+1. [KSQL demo - INSERT INTO](https://asciinema.org/a/191977)

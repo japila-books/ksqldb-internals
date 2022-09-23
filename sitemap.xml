@@ -441,6 +441,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/SchemaKTable/</loc>
+         <lastmod>2022-09-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/SchemaRegisterInjector/</loc>
          <lastmod>2022-09-23</lastmod>
          <changefreq>daily</changefreq>

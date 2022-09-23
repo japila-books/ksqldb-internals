@@ -5,8 +5,8 @@
 `SchemaKStream` takes the following to be created:
 
 * [ExecutionStep](#sourceStep)
-* <span id="schema"> `LogicalSchema`
-* <span id="keyFormat"> `KeyFormat`
+* <span id="schema"> [LogicalSchema](LogicalSchema.md)
+* <span id="keyFormat"> [KeyFormat](KeyFormat.md)
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 

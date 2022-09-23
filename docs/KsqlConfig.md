@@ -93,7 +93,7 @@ Used when:
 * `KsqlEngine` is requested to [getRowpartitionRowoffsetEnabled](KsqlEngine.md#getRowpartitionRowoffsetEnabled)
 * `QueryFilterNode` is created
 * `QueryProjectNode` is created
-* `SchemaKSourceFactory` is requested to [build a table](SchemaKSourceFactory.md#buildTable)
+* `SchemaKSourceFactory` is requested for a [SchemaKTable](SchemaKSourceFactory.md#buildTable)
 * `ScalablePushUtil` is requested to [containsDisallowedColumns](rest/ScalablePushUtil.md#containsDisallowedColumns)
 
 ## <span id="SCHEMA_REGISTRY_URL_PROPERTY"><span id="ksql.schema.registry.url"> ksql.schema.registry.url

@@ -7,8 +7,8 @@
 * <span id="builder"> `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder))
 * <span id="ksqlConfig"> [KsqlConfig](KsqlConfig.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> `ProcessingLogContext`
-* <span id="functionRegistry"> `FunctionRegistry`
+* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 
 `PhysicalPlanBuilder` is created when:
 
@@ -24,6 +24,8 @@ PhysicalPlan buildPhysicalPlan(
 ```
 
 `buildPhysicalPlan`...FIXME
+
+---
 
 `buildPhysicalPlan` is used when:
 

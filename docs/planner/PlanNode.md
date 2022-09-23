@@ -15,7 +15,7 @@ Builds a [SchemaKStream](../SchemaKStream.md)
 
 Used when:
 
-* `PhysicalPlanBuilder` is requested to [build a PhysicalPlan](../PhysicalPlanBuilder.md#buildPhysicalPlan)
+* `ExecutionPlanBuilder` is requested for a [PhysicalPlan](../ExecutionPlanBuilder.md#buildPhysicalPlan)
 * _others_ (less important?)
 
 ### <span id="getPartitions"> Number of Partitions

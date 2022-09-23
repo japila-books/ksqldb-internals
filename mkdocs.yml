@@ -184,6 +184,7 @@ nav:
     - SandboxedServiceContext: SandboxedServiceContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
+    - SchemaKTable: SchemaKTable.md
     - SerdeFeaturesFactory: SerdeFeaturesFactory.md
     - ServiceContext: ServiceContext.md
     - ServiceContextFactory: ServiceContextFactory.md

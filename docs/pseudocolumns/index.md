@@ -1,6 +1,8 @@
 # Pseudocolumns
 
-**Pseudocolumns** are [SystemColumns](SystemColumns.md#pseudoColumns) to access record partition and offset data in KSQL statements:
+ksqlDB exposes the timestamp, partition and offset of Kafka records as pseudocolumns.
+
+**Pseudocolumns** are [SystemColumns](SystemColumns.md#pseudoColumns) to access record metadata in KSQL statements:
 
 * `ROWTIME`
 * `ROWPARTITION`

@@ -12,6 +12,16 @@ DataSourceType getDataSourceType()
 
 [DataSourceType](#DataSourceType) of this `DataSource`
 
+### <span id="getSchema"> getSchema
+
+```java
+LogicalSchema getSchema()
+```
+
+[LogicalSchema](LogicalSchema.md) of this `DataSource`
+
+See [StructuredDataSource](StructuredDataSource.md#getSchema)
+
 ### <span id="getTimestampColumn"> getTimestampColumn
 
 ```java

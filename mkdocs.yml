@@ -111,6 +111,7 @@ nav:
     - Overview: overview.md
     - Server Properties: server-properties.md
     - AlterSourceFactory: AlterSourceFactory.md
+    - Column: Column.md
     - DataSource:
       - DataSource: DataSource.md
       - KsqlStream: KsqlStream.md
@@ -156,7 +157,9 @@ nav:
     - KsqlExecutionContext: KsqlExecutionContext.md
     - KsqlSchemaRegistryClientFactory: KsqlSchemaRegistryClientFactory.md
     - KsqlQueryType: KsqlQueryType.md
-    - LogicalSchema: LogicalSchema.md
+    - LogicalSchema:
+      - LogicalSchema: LogicalSchema.md
+      - LogicalSchema.Builder: LogicalSchema.Builder.md
     - MetaStore:
       - MetaStore: MetaStore.md
       - MetaStoreImpl: MetaStoreImpl.md
@@ -164,6 +167,7 @@ nav:
     - PersistentQueryMetadata: PersistentQueryMetadata.md
     - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
     - PhysicalPlanner: PhysicalPlanner.md
+    - PhysicalSchema: PhysicalSchema.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
     - PullPhysicalPlanBuilder: PullPhysicalPlanBuilder.md
@@ -229,6 +233,7 @@ nav:
         - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
       - REST:
         - rest/index.md
+    - Header Columns: features/header-columns.md
     - Metrics:
       - metrics/index.md
       - ConsumerCollector: metrics/ConsumerCollector.md
@@ -304,6 +309,7 @@ nav:
     - KsqlParser: parser/KsqlParser.md
     - SourceAccumulator: parser/SourceAccumulator.md
     - SourcePropertiesUtil: parser/SourcePropertiesUtil.md
+    - TableElements: parser/TableElements.md
     - TerminateQuery: parser/TerminateQuery.md
     - VariableSubstitutor: parser/VariableSubstitutor.md
   - Statement Analysis:

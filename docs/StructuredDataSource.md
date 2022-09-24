@@ -13,7 +13,7 @@
 
 * <span id="sqlExpression"> SQL expression
 * <span id="dataSourceName"> Data source name
-* <span id="schema"> `LogicalSchema`
+* <span id="schema"> [LogicalSchema](LogicalSchema.md)
 * <span id="tsExtractionPolicy"> `TimestampColumn`
 * <span id="dataSourceType"> [DataSourceType](DataSource.md#DataSourceType)
 * <span id="casTarget"> `casTarget` flag

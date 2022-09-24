@@ -99,7 +99,7 @@ Default: `true`
 Used when:
 
 * `LogicalSchema` is requested to [withPseudoAndKeyColsInValue](LogicalSchema.md#withPseudoAndKeyColsInValue)
-* `SystemColumns` is requested to [getPseudoColumnVersionFromConfig](SystemColumns.md#getPseudoColumnVersionFromConfig)
+* `SystemColumns` is requested to [getPseudoColumnVersionFromConfig](pseudocolumns/SystemColumns.md#getPseudoColumnVersionFromConfig)
 * `EngineContext` is requested to [prepare a KSQL statement](EngineContext.md#prepare)
 * `EngineExecutor` is requested to [getRowpartitionRowoffsetEnabled](EngineExecutor.md#getRowpartitionRowoffsetEnabled)
 * `KsqlEngine` is requested to [getRowpartitionRowoffsetEnabled](KsqlEngine.md#getRowpartitionRowoffsetEnabled)

@@ -1,3 +1,0 @@
-# SystemColumns
-
-`SystemColumns` is...FIXME

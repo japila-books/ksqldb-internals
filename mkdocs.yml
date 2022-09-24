@@ -204,7 +204,6 @@ nav:
       - StatementRewriter.Rewriter: StatementRewriter.Rewriter.md
     - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSource: StreamSource.md
-    - SystemColumns: SystemColumns.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md
     - ValueSerdeFactory:
@@ -244,6 +243,9 @@ nav:
       - ProcessingLogContext: monitoring/ProcessingLogContext.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
+    - Pseudocolumns:
+      - pseudocolumns/index.md
+      - SystemColumns: pseudocolumns/SystemColumns.md
     - Pull Queries: pull-queries.md
     - Push Queries: push-queries.md
     - UDFs:

@@ -173,6 +173,7 @@ nav:
     - PullPhysicalPlanBuilder: PullPhysicalPlanBuilder.md
     - PullQueryExecutionUtil: PullQueryExecutionUtil.md
     - PushQueryMetadata: PushQueryMetadata.md
+    - PushPhysicalPlanBuilder: PushPhysicalPlanBuilder.md
     - PushRouting: PushRouting.md
     - QueryApplicationId: QueryApplicationId.md
     - QueryBuilder: QueryBuilder.md
@@ -243,20 +244,22 @@ nav:
       - MetricCollectors: metrics/MetricCollectors.md
       - ProducerCollector: metrics/ProducerCollector.md
       - StreamsErrorCollector: metrics/StreamsErrorCollector.md
-    - Monitoring:
-      - ProcessingLogConfig: monitoring/ProcessingLogConfig.md
-      - ProcessingLogContext: monitoring/ProcessingLogContext.md
-      - ProcessingLogger: monitoring/ProcessingLogger.md
     - Persistent Queries: persistent-queries.md
-    - Processing Log: processing-log.md
+    - Processing Log:
+      - processing-log/index.md
+      - MeteredProcessingLogger: processing-log/MeteredProcessingLogger.md
+      - MeteredProcessingLoggerFactory: processing-log/MeteredProcessingLoggerFactory.md
+      - ProcessingLogConfig: processing-log/ProcessingLogConfig.md
+      - ProcessingLogContext: processing-log/ProcessingLogContext.md
+      - ProcessingLogContextImpl: processing-log/ProcessingLogContextImpl.md
+      - ProcessingLogger: processing-log/ProcessingLogger.md
+      - ProcessingLoggerFactory: processing-log/ProcessingLoggerFactory.md
+      - ProcessingLoggerImpl: processing-log/ProcessingLoggerImpl.md
     - Pseudocolumns:
       - pseudocolumns/index.md
       - SystemColumns: pseudocolumns/SystemColumns.md
     - Pull Queries: pull-queries.md
     - Push Queries: push-queries.md
-    - UDFs:
-      - Column: udf/Column.md
-      - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
     - Security:
       - security/index.md
       - KsqlAccessValidator: security/KsqlAccessValidator.md
@@ -266,6 +269,9 @@ nav:
       - KsqlAuthorizationValidatorImpl: security/KsqlAuthorizationValidatorImpl.md
       - KsqlSecurityExtension: security/KsqlSecurityExtension.md
       - KsqlDefaultSecurityExtension: security/KsqlDefaultSecurityExtension.md
+    - UDFs:
+      - Column: udf/Column.md
+      - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md
   - Statement Parsing:
     - parser/index.md
     - AST Tree Nodes:

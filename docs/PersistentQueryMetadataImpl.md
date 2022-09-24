@@ -8,11 +8,11 @@
 
 * <span id="persistentQueryType"> `PersistentQueryType`
 * <span id="statementString"> Statement Text
-* <span id="schema"> `PhysicalSchema`
+* <span id="schema"> [PhysicalSchema](PhysicalSchema.md)
 * <span id="sourceNames"> Source Names
 * <span id="sinkDataSource"> Sink [DataSource](DataSource.md)
 * <span id="executionPlan"> Execution Plan
-* <span id="id"> `QueryId`
+* <span id="id"> Query ID
 * <span id="materializationProviderBuilder"> `MaterializationProviderBuilder`
 * <span id="queryApplicationId"> Query Application ID
 * <span id="topology"> `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology))
@@ -24,7 +24,7 @@
 * <span id="errorClassifier"> `QueryErrorClassifier`
 * <span id="physicalPlan"> [ExecutionStep](ExecutionStep.md)
 * <span id="maxQueryErrorsQueueSize"> `maxQueryErrorsQueueSize`
-* <span id="processingLogger"> `ProcessingLogger`
+* [ProcessingLogger](#processingLogger)
 * <span id="retryBackoffInitialMs"> `retryBackoffInitialMs`
 * <span id="retryBackoffMaxMs"> `retryBackoffMaxMs`
 * <span id="listener"> `QueryMetadata.Listener`
@@ -33,3 +33,22 @@
 `PersistentQueryMetadataImpl` is created when:
 
 * `QueryBuilder` is requested to [buildPersistentQueryInDedicatedRuntime](QueryBuilder.md#buildPersistentQueryInDedicatedRuntime)
+
+### <span id="processingLogger"><span id="getProcessingLogger"> ProcessingLogger
+
+`PersistentQueryMetadataImpl` is given a [ProcessingLogger](processing-log/ProcessingLogger.md) when [created](#creating-instance).
+
+The `ProcessingLogger` is used in [uncaughtHandler](#uncaughtHandler) (to [error log](processing-log/ProcessingLogger.md#error) unhandled exceptions caught in streams threads).
+
+## <span id="uncaughtHandler"> uncaughtHandler
+
+```java
+StreamsUncaughtExceptionHandler.StreamThreadExceptionResponse uncaughtHandler(
+  Throwable error)
+```
+
+`uncaughtHandler` is part of the [PersistentQueryMetadata](PersistentQueryMetadata.md#uncaughtHandler) abstraction.
+
+---
+
+`uncaughtHandler`...FIXME

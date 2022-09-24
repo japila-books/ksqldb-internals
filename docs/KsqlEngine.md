@@ -21,7 +21,7 @@ Execution | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor
 `KsqlEngine` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* [ProcessingLogContext](#processingLogContext)
 * [Service ID](#serviceId)
 * [MutableMetaStore](#metaStore)
 * <span id="engineMetricsFactory"> Function to [create a KsqlEngineMetrics](#engineMetrics)
@@ -34,6 +34,12 @@ Execution | [KsqlContext](embedded/KsqlContext.md#execute) | [StandaloneExecutor
 * `KsqlContext` is requested to [create](embedded/KsqlContext.md#create)
 * `KsqlRestApplication` is requested to [buildApplication](rest/KsqlRestApplication.md#buildApplication)
 * `StandaloneExecutorFactory` is requested to [create](headless/StandaloneExecutorFactory.md#create)
+
+### <span id="processingLogContext"> ProcessingLogContext
+
+`KsqlEngine` is given a [ProcessingLogContext](processing-log/ProcessingLogContext.md) when [created](#creating-instance).
+
+The `ProcessingLogContext` is used to [create a primary context](#primaryContext) ([EngineContext](EngineContext.md#processingLogContext)).
 
 ### <span id="serviceId"><span id="getServiceId"> Service ID
 

@@ -9,10 +9,10 @@
 `QueryMetadataImpl` takes the following to be created:
 
 * <span id="statementString"> Statement Text
-* <span id="logicalSchema"> `LogicalSchema`
-* <span id="sourceNames"> Names of the Sources
+* <span id="logicalSchema"> [LogicalSchema](LogicalSchema.md)
+* <span id="sourceNames"> Source Names
 * <span id="executionPlan"> Execution Plan
-* <span id="queryApplicationId"> queryApplicationId
+* <span id="queryApplicationId"> Query Application ID
 * [Topology](#topology)
 * [KafkaStreamsBuilder](#kafkaStreamsBuilder)
 * <span id="streamsProperties"> Streams Properties
@@ -25,7 +25,7 @@
 * <span id="retryBackoffMaxMs"> `retryBackoffMaxMs`
 * <span id="listener"> `Listener`
 
-## <span id="topology"> Topology
+## <span id="topology"><span id="getTopology"> Topology
 
 `QueryMetadataImpl` is given a `Topology` ([Kafka Streams]({{ book.kafka_streams }}/Topology)) when [created](#creating-instance).
 
@@ -34,7 +34,7 @@ The `Topology` is used when:
 * [initialize](#initialize)
 * [getTopologyDescription](#getTopologyDescription)
 
-### <span id="getTopology"> getTopology
+### getTopology
 
 ```java
 Topology getTopology()
@@ -46,7 +46,7 @@ Topology getTopology()
 
 `getTopology` returns the [Topology](#topology) instance.
 
-## <span id="kafkaStreams"> KafkaStreams
+## <span id="kafkaStreams"><span id="getKafkaStreams"> KafkaStreams
 
 `QueryMetadataImpl` is given a `KafkaStreams` ([Kafka Streams]({{ book.kafka_streams }}/KafkaStreams)) when [created](#creating-instance) and requested to [resetKafkaStreams](#resetKafkaStreams).
 
@@ -61,7 +61,7 @@ The `KafkaStreams` is used when:
 * [getAllStreamsHostMetadata](#getAllStreamsHostMetadata)
 * [doClose](#doClose)
 
-### <span id="getKafkaStreams"> getKafkaStreams
+### getKafkaStreams
 
 ```java
 KafkaStreams getKafkaStreams()
@@ -83,11 +83,13 @@ KafkaStreams getKafkaStreams()
 void initialize()
 ```
 
+`initialize` is part of the [QueryMetadata](QueryMetadata.md#initialize) abstraction.
+
+---
+
 `initialize` requests the [KafkaStreamsBuilder](#kafkaStreamsBuilder) to [build a KafkaStreams instance](KafkaStreamsBuilder.md#build) (with the [Topology](#topology) and the [streamsProperties](#streamsProperties)).
 
 `initialize` [resets the KafkaStreams instance](#resetKafkaStreams) and turns the [initialized](#initialized) flag on.
-
-`initialize` is part of the [QueryMetadata](QueryMetadata.md#initialize) abstraction.
 
 ## <span id="getQueryType"> Query Type
 

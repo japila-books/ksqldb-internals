@@ -7,7 +7,7 @@
 `StandaloneExecutor` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](../ServiceContext.md)
-* <span id="processingLogConfig"> [ProcessingLogConfig](../monitoring/ProcessingLogConfig.md)
+* <span id="processingLogConfig"> [ProcessingLogConfig](../processing-log/ProcessingLogConfig.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * [KsqlEngine](#ksqlEngine)
 * <span id="queriesFile"> Query File

@@ -4,7 +4,7 @@
 
 `PullPhysicalPlanBuilder` takes the following to be created:
 
-* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* <span id="processingLogContext"> [ProcessingLogContext](processing-log/ProcessingLogContext.md)
 * <span id="persistentQueryMetadata"> [PersistentQueryMetadata](PersistentQueryMetadata.md)
 * <span id="analysis"> [ImmutableAnalysis](analyzer/ImmutableAnalysis.md)
 * <span id="queryPlannerOptions"> [QueryPlannerOptions](planner/QueryPlannerOptions.md)

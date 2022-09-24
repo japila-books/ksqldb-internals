@@ -7,7 +7,7 @@
 `EngineContext` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* [ProcessingLogContext](#processingLogContext)
 * <span id="metaStore"> [MutableMetaStore](MutableMetaStore.md)
 * <span id="queryIdGenerator"> `QueryIdGenerator`
 * <span id="parser"> [KsqlParser](parser/KsqlParser.md)
@@ -17,6 +17,15 @@
 * <span id="runtimeAssignor"> `RuntimeAssignor`
 
 `EngineContext` is created using [create](#create) and [createSandbox](#createSandbox) factories.
+
+### <span id="processingLogContext"> ProcessingLogContext
+
+`EngineContext` is given a [ProcessingLogContext](processing-log/ProcessingLogContext.md) when [created](#creating-instance).
+
+The `ProcessingLogContext` is used when:
+
+* [getProcessingLogContext](#getProcessingLogContext)
+* [Creating a QueryEngine](#createQueryEngine)
 
 ## <span id="ddlCommandExec"> DdlCommandExec
 

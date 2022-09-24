@@ -8,7 +8,7 @@ Use `SHOW PROPERTIES` command to for the current list of configuration settings.
 
 Enables creating the processing log topic if not exists
 
-[ProcessingLogConfig](monitoring/ProcessingLogConfig.md#TOPIC_AUTO_CREATE)
+[ProcessingLogConfig](processing-log/ProcessingLogConfig.md#TOPIC_AUTO_CREATE)
 
 ## <span id="ksql.logging.processing.stream.name"> ksql.logging.processing.stream.name
 
@@ -24,4 +24,4 @@ Enables creating the processing log topic if not exists
 
 ## <span id="ksql.logging.processing.rows.include"> ksql.logging.processing.rows.include
 
-[ProcessingLogConfig](monitoring/ProcessingLogConfig.md#INCLUDE_ROWS)
+[ProcessingLogConfig](processing-log/ProcessingLogConfig.md#INCLUDE_ROWS)

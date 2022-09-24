@@ -1,3 +1,0 @@
-# ProcessingLogger
-
-`ProcessingLogger` is...FIXME

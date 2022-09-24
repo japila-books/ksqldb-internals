@@ -1,3 +1,0 @@
-# ProcessingLogContext
-
-`ProcessingLogContext` is...FIXME

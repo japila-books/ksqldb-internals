@@ -5,7 +5,7 @@
 `QueryBuilder` takes the following to be created:
 
 * <span id="config"> [SessionConfig](SessionConfig.md)
-* <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
+* <span id="processingLogContext"> [ProcessingLogContext](processing-log/ProcessingLogContext.md)
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * [KafkaStreamsBuilder](#kafkaStreamsBuilder)
@@ -222,7 +222,7 @@ SharedKafkaStreamsRuntime getKafkaStreamsInstance(
 
 `getKafkaStreamsInstance`...FIXME
 
-## <span id="buildStreamsProperties"> buildStreamsProperties
+## <span id="buildStreamsProperties"> Building Streams Properties
 
 ```java
 Map<String, Object> buildStreamsProperties(
@@ -232,6 +232,14 @@ Map<String, Object> buildStreamsProperties(
   KsqlConfig config,
   ProcessingLogContext processingLogContext)
 ```
+
+`buildStreamsProperties` requests the given [KsqlConfig](KsqlConfig.md) for [getKsqlStreamConfigProps](KsqlConfig.md#getKsqlStreamConfigProps) for the given `applicationId`.
+
+`buildStreamsProperties` sets `StreamsConfig.APPLICATION_ID_CONFIG` to the given `applicationId`.
+
+`buildStreamsProperties` requests the given [ProcessingLogContext](processing-log/ProcessingLogContext.md) for [ProcessingLoggerFactory](processing-log/ProcessingLogContext.md#getLoggerFactory) to [build a ProcessingLogger](processing-log/ProcessingLoggerFactory.md#getLogger).
+
+`buildStreamsProperties` sets `ProductionExceptionHandlerUtil.KSQL_PRODUCTION_ERROR_LOGGER` to the [ProcessingLogger](processing-log/ProcessingLogger.md).
 
 `buildStreamsProperties`...FIXME
 

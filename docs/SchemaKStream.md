@@ -1,5 +1,7 @@
 # SchemaKStream
 
+`SchemaKStream` (of `K` keys) is...FIXME
+
 ## Creating Instance
 
 `SchemaKStream` takes the following to be created:
@@ -13,7 +15,7 @@
 `SchemaKStream` is created when:
 
 * `SchemaKSourceFactory` is requested for a [SchemaKStream](SchemaKSourceFactory.md#schemaKStream)
-* `SchemaKStream` is requested to [into](#into), [filter](#filter), [flatMap](#flatMap) and _others_
+* `SchemaKStream` is requested to [into](#into), [filter](#filter), [flatMap](#flatMap), [select](#select) and _others_
 
 ## <span id="sourceStep"><span id="getSourceStep"> Source ExecutionStep
 
@@ -47,3 +49,23 @@ ExecutionStep<?> getSourceStep()
 `getSourceStep` is used when:
 
 * `ExecutionPlanBuilder` is requested for the [execution plan](ExecutionPlanBuilder.md#buildPhysicalPlan) (of a [Query](parser/Query.md) statement)
+
+## <span id="select"> select
+
+```java
+SchemaKStream<K> select(
+  List<ColumnName> keyColumnNames,
+  List<SelectExpression> selectExpressions,
+  Stacker contextStacker,
+  PlanBuildContext buildContext,
+  FormatInfo valueFormat)
+```
+
+`select` creates a [SchemaKStream](#creating-instance) with a [StreamSelect execution step](ExecutionStepFactory.md#streamSelect) (with the [source ExecutionStep](#sourceStep)).
+
+---
+
+`select` is used when:
+
+* `AggregateNode` is requested to `selectRequiredInputColumns`, `selectRequiredOutputColumns`
+* `ProjectNode` is requested to [buildStream](planner/ProjectNode.md#buildStream)

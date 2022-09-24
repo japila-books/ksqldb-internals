@@ -48,6 +48,9 @@ TransientQueryMetadata createStreamPullQuery(
   ImmutableMap<TopicPartition, Long> endOffsets)
 ```
 
+!!! note
+    `createStreamPullQuery` is [createTransientQuery](#createTransientQuery) with `endOffsets`.
+
 See [QueryRegistryImpl.createStreamPullQuery](QueryRegistryImpl.md#createStreamPullQuery)
 
 Used when:
@@ -72,6 +75,9 @@ TransientQueryMetadata createTransientQuery(
   Optional<WindowInfo> windowInfo,
   boolean excludeTombstones)
 ```
+
+!!! note
+    `createTransientQuery` is [createStreamPullQuery](#createStreamPullQuery) with no `endOffsets`.
 
 See [QueryRegistryImpl.createTransientQuery](QueryRegistryImpl.md#createTransientQuery)
 

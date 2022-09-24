@@ -97,7 +97,7 @@ OutputNode buildQueryLogicalPlan(
 
 `buildQueryLogicalPlan` is used when:
 
-* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](../EngineExecutor.md#buildAndValidateLogicalPlan)
+* `EngineExecutor` is requested to [build a query logical plan](../EngineExecutor.md#buildAndValidateLogicalPlan)
 
 ### <span id="buildQueryLogicalPlan-source"> Step 1. Source Node
 

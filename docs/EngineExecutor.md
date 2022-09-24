@@ -38,7 +38,7 @@ EngineExecutor
 * `KsqlEngine` is requested to [plan](KsqlEngine.md#plan), [execute](KsqlEngine.md#execute), [executeTransientQuery](KsqlEngine.md#executeTransientQuery), [createStreamPullQuery](KsqlEngine.md#createStreamPullQuery), [executeScalablePushQuery](KsqlEngine.md#executeScalablePushQuery), [executeTablePullQuery](KsqlEngine.md#executeTablePullQuery)
 * `SandboxedExecutionContext` is requested to [plan](SandboxedExecutionContext.md#plan), [execute](SandboxedExecutionContext.md#execute), [executeTransientQuery](SandboxedExecutionContext.md#executeTransientQuery), [executeTablePullQueryQuery](SandboxedExecutionContext.md#executeTablePullQueryQuery), [executeScalablePushQuery](SandboxedExecutionContext.md#executeScalablePushQuery)
 
-## <span id="planQuery"> Planning Query for Execution (planQuery)
+## <span id="planQuery"> Planning Query for Execution
 
 ```java
 ExecutorPlans planQuery(
@@ -49,7 +49,7 @@ ExecutorPlans planQuery(
   MetaStore metaStore)
 ```
 
-In summary, `planQuery` takes a [Query](parser/Query.md) and [creates an ExecutorPlans](#planQuery-PhysicalPlan).
+In summary, `planQuery` takes a [Query](parser/Query.md) statement and [creates an ExecutorPlans](#planQuery-PhysicalPlan).
 
 ---
 
@@ -80,7 +80,7 @@ The optional [Sink](parser/Sink.md) and query ID are only given when `EngineExec
 
 ### <span id="planQuery-PhysicalPlan"> Step 4. Creating ExecutorPlans
 
-In the end, `planQuery` creates an `ExecutorPlans` (with the `LogicalPlanNode` and the `PhysicalPlan`).
+In the end, `planQuery` creates an `ExecutorPlans` (with the `LogicalPlanNode` and the [PhysicalPlan](PhysicalPlan.md)).
 
 ## <span id="plan"> KSQL Statement Planning
 
@@ -371,3 +371,19 @@ Set<SourceName> getSourceNames(
 `getSourceNames` is used when:
 
 * `EngineExecutor` is requested to execute [transient](#executeTransientQuery) and [stream pull](#executeStreamPullQuery) queries, [plan a KSQL statement](#plan) (and [sourceTablePlan](#sourceTablePlan))
+
+## <span id="buildPlanSummary"> Execution Plan Summary
+
+```java
+String buildPlanSummary(
+  QueryId queryId,
+  ExecutionStep<?> plan)
+```
+
+`buildPlanSummary`...FIXME
+
+---
+
+`buildPlanSummary` is used when:
+
+* `EngineExecutor` is requested to execute [transient](#executeTransientQuery), [stream pull](#executeStreamPullQuery) and [persistent](#executePersistentQuery) queries (and requests the [QueryRegistry](EngineContext.md#getQueryRegistry) to [createTransientQuery](QueryRegistry.md#createTransientQuery), [createStreamPullQuery](QueryRegistry.md#createStreamPullQuery) and [createOrReplacePersistentQuery](QueryRegistry.md#createOrReplacePersistentQuery), respectively)

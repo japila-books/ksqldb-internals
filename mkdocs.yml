@@ -340,7 +340,7 @@ nav:
     - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: planner/LogicalPlanner.md
     - PhysicalPlan: PhysicalPlan.md
-    - Plan Tree Nodes:
+    - Logical Plan Nodes:
       - DataSourceNode: planner/DataSourceNode.md
       - FlatMapNode: planner/FlatMapNode.md
       - JoinNode: planner/JoinNode.md
@@ -348,6 +348,7 @@ nav:
       - KsqlStructuredDataOutputNode: planner/KsqlStructuredDataOutputNode.md
       - OutputNode: planner/OutputNode.md
       - PlanNode: planner/PlanNode.md
+      - ProjectNode: planner/ProjectNode.md
       - QueryProjectNode: planner/QueryProjectNode.md
       - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
     - QueryPlan: QueryPlan.md

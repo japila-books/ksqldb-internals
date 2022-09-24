@@ -6,7 +6,7 @@
 
 * <span id="eventListeners"> [QueryEventListener](QueryEventListener.md)s
 * [QueryBuilderFactory](#queryBuilderFactory)
-* <span id="metricCollectors"> `MetricCollectors`
+* <span id="metricCollectors"> [MetricCollectors](metrics/MetricCollectors.md)
 
 `QueryRegistryImpl` is created when:
 
@@ -40,6 +40,9 @@ TransientQueryMetadata createStreamPullQuery(
 
 ---
 
+!!! note
+    `createStreamPullQuery` is [createTransientQuery](#createTransientQuery) with `endOffsets`.
+
 `createStreamPullQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create) to [buildTransientQuery](QueryBuilder.md#buildTransientQuery) (with a new Kafka Streams' `StreamsBuilder`).
 
 `createStreamPullQuery` requests the [TransientQueryMetadata](TransientQueryMetadata.md) to [initialize](QueryMetadataImpl.md#initialize).
@@ -68,6 +71,9 @@ TransientQueryMetadata createTransientQuery(
 `createTransientQuery` is part of the [QueryRegistry](QueryRegistry.md#createTransientQuery) abstraction.
 
 ---
+
+!!! note
+    `createTransientQuery` is [createStreamPullQuery](#createStreamPullQuery) with no `endOffsets`.
 
 `createTransientQuery` requests the [QueryBuilderFactory](#queryBuilderFactory) for a [QueryBuilder](QueryBuilderFactory.md#create).
 

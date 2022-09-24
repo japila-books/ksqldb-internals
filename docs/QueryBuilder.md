@@ -56,6 +56,9 @@ TransientQueryMetadata buildTransientQuery(
 
 `buildTransientQuery` requests the [SessionConfig](#config) for the [KsqlConfig](SessionConfig.md#getConfig) (with overrides applied).
 
+!!! important "Kafka Streams"
+    This is the moment where ksqlDB relies on Kafka Streams (when [building a QueryImplementation](#buildQueryImplementation))
+
 `buildTransientQuery` builds the following:
 
 * [Application ID](QueryApplicationId.md#build) (with `persistent` flag disabled)
@@ -146,8 +149,8 @@ PersistentQueryMetadata buildPersistentQueryInDedicatedRuntime(
 
 `buildPersistentQueryInDedicatedRuntime` [buildContext](#buildContext) (with the application ID, the given `QueryId` and `StreamsBuilder`).
 
-!!! warning "Kafka Streams"
-    This is the moment where ksqlDB relies on Kafka Streams.
+!!! important "Kafka Streams"
+    This is the moment where ksqlDB relies on Kafka Streams (when [building a QueryImplementation](#buildQueryImplementation))
 
 `buildPersistentQueryInDedicatedRuntime` [buildQueryImplementation](#buildQueryImplementation) (with the given [ExecutionStep physical plan](ExecutionStep.md) and the [RuntimeBuildContext](RuntimeBuildContext.md)).
 

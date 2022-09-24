@@ -25,6 +25,13 @@ ExecutionPlan buildPhysicalPlan(
 
 `buildPhysicalPlan` requests the given `LogicalPlanNode` for an [OutputNode](planner/OutputNode.md) to [build a SchemaKStream](planner/PlanNode.md#buildStream).
 
+??? note "IllegalArgumentException for no OutputNode"
+    `buildPhysicalPlan` throws an `IllegalArgumentException` if the `LogicalPlanNode` has got no [OutputNode](planner/OutputNode.md):
+
+    ```text
+    Need an output node to build a plan
+    ```
+
 In the end, `buildPhysicalPlan` returns an `ExecutionPlan` with the [ExecutionStep](#getSourceStep) of the [SchemaKStream](SchemaKStream.md) and the given `QueryId`.
 
 ---

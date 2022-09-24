@@ -1,6 +1,6 @@
 # QueryProjectNode
 
-`QueryProjectNode` is a `ProjectNode`.
+`QueryProjectNode` is a [ProjectNode](ProjectNode.md) that is the [top-level PlanNode](LogicalPlanner.md#buildQueryLogicalPlan-project) in a query logical plan (after `LogicalPlanner` is requested to [build a query logical plan](LogicalPlanner.md#buildQueryLogicalPlan)).
 
 ## Creating Instance
 

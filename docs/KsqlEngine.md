@@ -157,9 +157,11 @@ ScalablePushQueryMetadata executeScalablePushQuery(
   Optional<ScalablePushQueryMetrics> scalablePushQueryMetrics)
 ```
 
-`executeScalablePushQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [execute a scalable push query](EngineExecutor.md#executeScalablePushQuery).
-
 `executeScalablePushQuery` is part of the [KsqlExecutionContext](KsqlExecutionContext.md#executeScalablePushQuery) abstraction.
+
+---
+
+`executeScalablePushQuery` [creates an EngineExecutor](EngineExecutor.md#create) to [execute a scalable push query](EngineExecutor.md#executeScalablePushQuery).
 
 ## <span id="executeTablePullQuery"> Executing Table Pull Query
 

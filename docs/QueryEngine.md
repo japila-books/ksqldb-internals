@@ -60,7 +60,7 @@ PhysicalPlan buildPhysicalPlan(
 
 `buildPhysicalPlan` creates a [ExecutionPlanBuilder](ExecutionPlanBuilder.md) (with the `StreamsBuilder`).
 
-In the end, `buildPhysicalPlan` requests the `ExecutionPlanBuilder` to [build a ExecutionPlan](ExecutionPlanBuilder.md#buildPhysicalPlan) for the given `LogicalPlanNode` (and the given `QueryId` and the current `PlanInfo` of the query to be "replaced").
+In the end, `buildPhysicalPlan` requests the `ExecutionPlanBuilder` to [build an ExecutionPlan](ExecutionPlanBuilder.md#buildPhysicalPlan) for the given `LogicalPlanNode` (and the given `QueryId` and the current `PlanInfo` of the query to be "replaced" if available).
 
 ---
 

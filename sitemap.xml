@@ -556,11 +556,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://books.japila.pl/ksqldb-internals/SystemColumns/</loc>
-         <lastmod>2022-09-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://books.japila.pl/ksqldb-internals/TransientQueryMetadata/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -1122,6 +1117,16 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/planner/SingleSourcePlanNode/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/pseudocolumns/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/pseudocolumns/SystemColumns/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

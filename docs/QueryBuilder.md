@@ -241,3 +241,18 @@ Map<String, Object> buildStreamsProperties(
 
 * `QueryBuilder` is requested to build a [transient query](#buildTransientQuery) and a persistent query in [dedicated](#buildPersistentQueryInDedicatedRuntime) or [shared](#buildPersistentQueryInSharedRuntime) runtime (and [getKafkaStreamsInstance](#getKafkaStreamsInstance))
 * `QueryRegistryImpl` is requested to [updateStreamsPropertiesAndRestartRuntime](QueryRegistryImpl.md#updateStreamsPropertiesAndRestartRuntime) (and [updateStreamsProperties](QueryRegistryImpl.md#updateStreamsProperties))
+
+## <span id="getUncaughtExceptionProcessingLogger"> getUncaughtExceptionProcessingLogger
+
+```java
+ProcessingLogger getUncaughtExceptionProcessingLogger(
+  QueryId queryId)
+```
+
+`getUncaughtExceptionProcessingLogger`...FIXME
+
+---
+
+`getUncaughtExceptionProcessingLogger` is used when:
+
+* `QueryBuilder` is requested to build persistent query in [dedicated](QueryBuilder.md#buildPersistentQueryInDedicatedRuntime) or [shared](QueryBuilder.md#buildPersistentQueryInSharedRuntime) runtime (and build a [PersistentQueryMetadata](PersistentQueryMetadata.md#getProcessingLogger))

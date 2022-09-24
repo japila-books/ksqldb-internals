@@ -22,6 +22,14 @@ Used when:
 * `PersistentQueryMetadataImpl` is [created](PersistentQueryMetadataImpl.md#persistentQueryType)
 * `ValidatedCommandFactory` is requested to [createForTerminateQuery](rest/ValidatedCommandFactory.md#createForTerminateQuery)
 
+### <span id="getProcessingLogger"> getProcessingLogger
+
+```java
+ProcessingLogger getProcessingLogger()
+```
+
+`ProcessingLogger` of this persistent query
+
 ## Implementations
 
 * `BinPackedPersistentQueryMetadataImpl`

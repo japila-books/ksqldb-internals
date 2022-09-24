@@ -10,7 +10,7 @@
 * <span id="processingLogContext"> [ProcessingLogContext](monitoring/ProcessingLogContext.md)
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * <span id="applicationId"> Application ID
-* <span id="queryId"> `QueryId`
+* <span id="queryId"> Query ID
 * <span id="keySerdeFactory"> `KeySerdeFactory`
 * <span id="valueSerdeFactory"> [ValueSerdeFactory](ValueSerdeFactory.md)
 
@@ -48,3 +48,12 @@ RuntimeBuildContext of(
 `of` is used when:
 
 * `QueryBuilder` is requested for a [RuntimeBuildContext](QueryBuilder.md#buildContext)
+
+## <span id="getProcessingLogger"> ProcessingLogger
+
+```java
+ProcessingLogger getProcessingLogger(
+  QueryContext queryContext)
+```
+
+`getProcessingLogger`...FIXME

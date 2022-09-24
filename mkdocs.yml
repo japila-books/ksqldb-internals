@@ -246,6 +246,7 @@ nav:
     - Monitoring:
       - ProcessingLogConfig: monitoring/ProcessingLogConfig.md
       - ProcessingLogContext: monitoring/ProcessingLogContext.md
+      - ProcessingLogger: monitoring/ProcessingLogger.md
     - Persistent Queries: persistent-queries.md
     - Processing Log: processing-log.md
     - Pseudocolumns:
@@ -425,8 +426,11 @@ nav:
   - Misc:
     - Debugging ksqlDB: debugging.md
     - Logging: logging.md
-    - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
-    - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
+    - Utils:
+      - KsqlInternalTopicUtils: KsqlInternalTopicUtils.md
+      - PlanSummary: PlanSummary.md
+      - QueryLoggerUtil: QueryLoggerUtil.md
+      - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
   - Demos:
     - Confluent Schema Registry: demo/confluent-schema-registry.md
     - Multi-Node ksqlDB Deployment: demo/multi-node-ksqldb-deployment.md

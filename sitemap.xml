@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/Column/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/CommandFactories/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -281,6 +286,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/LogicalSchema.Builder/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/LogicalSchema/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -317,6 +327,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/PhysicalPlanner/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/PhysicalSchema/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -771,6 +786,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/features/header-columns/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/headless/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -1037,6 +1057,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/parser/StatementWithExtendedClause/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/parser/TableElements/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

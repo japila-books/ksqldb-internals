@@ -121,6 +121,7 @@ nav:
     - EngineContext: EngineContext.md
     - EngineExecutor: EngineExecutor.md
     - ExecutionPlanBuilder: ExecutionPlanBuilder.md
+    - ExecutionPlanner: ExecutionPlanner.md
     - ExecutionSteps:
       - ExecutionStep: ExecutionStep.md
       - SourceStep: SourceStep.md
@@ -134,6 +135,7 @@ nav:
     - FunctionRegistry: FunctionRegistry.md
     - GenericSerdeFactory: GenericSerdeFactory.md
     - HARouting: HARouting.md
+    - ImmutableProperties: ImmutableProperties.md
     - Injectors:
       - DefaultSchemaInjector: DefaultSchemaInjector.md
       - Injector: Injector.md
@@ -161,6 +163,7 @@ nav:
       - MutableMetaStore: MutableMetaStore.md
     - PersistentQueryMetadata: PersistentQueryMetadata.md
     - PersistentQueryMetadataImpl: PersistentQueryMetadataImpl.md
+    - PhysicalPlanner: PhysicalPlanner.md
     - PlanBuilder: PlanBuilder.md
     - PlanInfoExtractor: PlanInfoExtractor.md
     - PullPhysicalPlanBuilder: PullPhysicalPlanBuilder.md
@@ -337,7 +340,6 @@ nav:
     - KsqlPlanV1: KsqlPlanV1.md
     - LogicalPlanner: planner/LogicalPlanner.md
     - PhysicalPlan: PhysicalPlan.md
-    - PhysicalPlanBuilder: PhysicalPlanBuilder.md
     - Plan Tree Nodes:
       - DataSourceNode: planner/DataSourceNode.md
       - FlatMapNode: planner/FlatMapNode.md

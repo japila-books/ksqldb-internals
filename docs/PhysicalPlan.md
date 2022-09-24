@@ -4,9 +4,21 @@
 
 `PhysicalPlan` takes the following to be created:
 
-* <span id="queryId"><span id="getQueryId"> `QueryId`
-* <span id="physicalPlan"><span id="getPhysicalPlan"> [ExecutionStep](ExecutionStep.md)
+* [Root Node](#root)
 
 `PhysicalPlan` is created when:
 
-* `PhysicalPlanBuilder` is requested to [buildPhysicalPlan](PhysicalPlanBuilder.md#buildPhysicalPlan)
+* `PhysicalPlanner` is requested to [build a PhysicalPlan](PhysicalPlanner.md#buildPhysicalPlan)
+
+### <span id="root"><span id="getRoot"> Root Node
+
+```java
+Node<?> root
+```
+
+`PhysicalPlan` is given a root [Node](parser/Node.md) when [created](#creating-instance).
+
+The root node is used when:
+
+* `EngineExecutor` is requested to [plan a Query](EngineExecutor.md#planQuery)
+* `ExecutionPlanner` is requested to [build an ExecutionPlan](ExecutionPlanner.md#buildPlan)

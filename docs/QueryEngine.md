@@ -45,7 +45,7 @@ In the end, `buildQueryLogicalPlan` creates a [LogicalPlanner](planner/LogicalPl
 
 * `EngineExecutor` is requested to [plan a query](EngineExecutor.md#planQuery)
 
-## <span id="buildPhysicalPlan"> Building Physical Query Plan (buildPhysicalPlan)
+## <span id="buildPhysicalPlan"> Building Physical Query Plan
 
 ```java
 PhysicalPlan buildPhysicalPlan(
@@ -58,9 +58,9 @@ PhysicalPlan buildPhysicalPlan(
 
 `buildPhysicalPlan` creates a `StreamsBuilder` ([Kafka Streams]({{ book.kafka_streams }}/kstream/StreamsBuilder)).
 
-`buildPhysicalPlan` creates a [PhysicalPlanBuilder](PhysicalPlanBuilder.md) (with the `StreamsBuilder`).
+`buildPhysicalPlan` creates a [ExecutionPlanBuilder](ExecutionPlanBuilder.md) (with the `StreamsBuilder`).
 
-In the end, `buildPhysicalPlan` requests the `PhysicalPlanBuilder` to [build a physical plan](PhysicalPlanBuilder.md#buildPhysicalPlan) for the given `LogicalPlanNode` (and the given `QueryId` and the current `PlanInfo` of the query to be "replaced").
+In the end, `buildPhysicalPlan` requests the `ExecutionPlanBuilder` to [build a ExecutionPlan](ExecutionPlanBuilder.md#buildPhysicalPlan) for the given `LogicalPlanNode` (and the given `QueryId` and the current `PlanInfo` of the query to be "replaced").
 
 ---
 

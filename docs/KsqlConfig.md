@@ -25,6 +25,18 @@ Used when:
 
 * `EngineContext` is requested to [prepare a KSQL statement for execution](EngineContext.md#prepare)
 
+## <span id="KSQL_NEW_QUERY_PLANNER_ENABLED"><span id="ksql.new.query.planner.enabled"> ksql.new.query.planner.enabled
+
+Enables the [new ExecutionPlanner](ExecutionPlanner.md) for [persistent queries](persistent-queries.md)
+
+Default: `false`
+
+[Immutable property](ImmutableProperties.md)
+
+Used when:
+
+* `EngineExecutor` is requested to [throwIfUnsupported](EngineExecutor.md#throwIfUnsupported)
+
 ## <span id="KSQL_OUTPUT_TOPIC_NAME_PREFIX_CONFIG"><span id="ksql.output.topic.name.prefix"> ksql.output.topic.name.prefix
 
 ## <span id="KSQL_DEFAULT_VALUE_FORMAT_CONFIG"><span id="ksql.persistence.default.format.value"> ksql.persistence.default.format.value

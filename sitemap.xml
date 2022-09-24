@@ -346,6 +346,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/PlanSummary/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/PullPhysicalPlanBuilder/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -392,6 +397,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/QueryLogger/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/QueryLoggerUtil/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -867,6 +877,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/monitoring/ProcessingLogContext/</loc>
+         <lastmod>2022-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/monitoring/ProcessingLogger/</loc>
          <lastmod>2022-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

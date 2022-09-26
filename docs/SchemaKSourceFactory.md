@@ -32,7 +32,7 @@ SchemaKStream<?> buildStream(
   Stacker contextStacker)
 ```
 
-`buildStream` [creates a new SchemaKStream](#schemaKStream) with a [StreamSource](ExecutionStepFactory.md#streamSource).
+`buildStream` [creates a new SchemaKStream](#schemaKStream) for a new [StreamSource](ExecutionStepFactory.md#streamSource) (with [pseudoColumnVersionToUse](#determinePseudoColumnVersionToUse)).
 
 ### <span id="buildWindowedStream"> Windowed SchemaKStream
 
@@ -112,3 +112,14 @@ int determinePseudoColumnVersionToUse(
 `schemaKTable` is used when:
 
 * `SchemaKSourceFactory` is requested to build a [windowed](#buildWindowedTable) or [regular table](#buildTable)
+
+## <span id="resolveSchema"> Resolving LogicalSchema (of ExecutionStep)
+
+```java
+LogicalSchema resolveSchema(
+  PlanBuildContext buildContext,
+  ExecutionStep<?> step,
+  DataSource dataSource)
+```
+
+`resolveSchema` creates a [StepSchemaResolver](StepSchemaResolver.md) (for the given `PlanBuildContext`) to [resolve](StepSchemaResolver.md#resolve) the [LogicalSchema](DataSource.md#getSchema) (from the given [DataSource](DataSource.md)) of the given [ExecutionStep](ExecutionStep.md).

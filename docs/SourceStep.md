@@ -18,7 +18,7 @@
 * <span id="topicName"> Topic Name
 * <span id="formats"> `Formats`
 * <span id="timestampColumn"> `TimestampColumn`
-* <span id="sourceSchema"> `LogicalSchema`
+* <span id="sourceSchema"> [LogicalSchema](LogicalSchema.md)
 * <span id="pseudoColumnVersion"> Pseudo Column Version
 
 !!! note "Abstract Class"

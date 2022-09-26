@@ -69,3 +69,12 @@ SchemaKStream<K> select(
 
 * `AggregateNode` is requested to `selectRequiredInputColumns`, `selectRequiredOutputColumns`
 * `ProjectNode` is requested to [buildStream](planner/ProjectNode.md#buildStream)
+
+## <span id="resolveSchema"> Resolving LogicalSchema (of ExecutionStep)
+
+```java
+LogicalSchema resolveSchema(
+  ExecutionStep<?> step)
+```
+
+`resolveSchema` creates a [StepSchemaResolver](StepSchemaResolver.md) to [resolve](StepSchemaResolver.md#resolve) the [LogicalSchema](#schema) of the given [ExecutionStep](ExecutionStep.md).

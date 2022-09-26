@@ -1,5 +1,30 @@
 # SystemColumns
 
+## <span id="ROWKEY_NAME"><span id="ROWKEY"> ROWKEY
+
+## <span id="handleStreamSelectKeyV1"> handleStreamSelectKeyV1
+
+```java
+LogicalSchema handleStreamSelectKeyV1(
+  LogicalSchema sourceSchema,
+  StreamSelectKeyV1 step)
+```
+
+`handleStreamSelectKeyV1` requests the given [StreamSelectKeyV1](../StreamSelectKeyV1.md) for the [key expression](../StreamSelectKeyV1.md#getKeyExpression).
+
+`handleStreamSelectKeyV1` creates a `ExpressionTypeManager` to [getExpressionSqlType](#getExpressionSqlType) for the key expression (that gives a [SqlType](../types/SqlType.md)).
+
+In the end, `handleStreamSelectKeyV1` creates a [LogicalSchema](../LogicalSchema.md) with the following columns:
+
+* [ROWKEY](#ROWKEY) of the `SqlType`
+* [Value columns](../LogicalSchema.md#value) of the given source [LogicalSchema](../LogicalSchema.md)
+
+---
+
+`handleStreamSelectKeyV1` is used when:
+
+* `StepSchemaResolver` is requested for the [HANDLERS](../StepSchemaResolver.md#HANDLERS) (of [StreamSelectKeyV1](../StreamSelectKeyV1.md))
+
 ## <span id="pseudoColumns"> Pseudo Columns
 
 Column Name | Type | Version | isDisallowedForInsertValues | isDisallowedInPullAndScalablePushQueries

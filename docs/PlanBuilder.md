@@ -20,6 +20,22 @@ Used when:
 
 * `StreamSelect` is requested to [build a KStreamHolder](StreamSelect.md#build)
 
+### <span id="visitStreamSelectKey"> Visiting StreamSelectKey
+
+```java
+KStreamHolder<GenericKey> visitStreamSelectKey(
+  StreamSelectKeyV1 streamSelectKey,
+  PlanInfo planInfo)
+```
+
+Visits a [StreamSelectKeyV1](StreamSelectKeyV1.md)
+
+See [KSPlanBuilder](KSPlanBuilder.md#visitStreamSelectKey)
+
+Used when:
+
+* `StreamSelectKeyV1` is requested to [build a KStreamHolder](StreamSelectKeyV1.md#build)
+
 ### <span id="visitStreamSource"> Visiting StreamSource
 
 ```java

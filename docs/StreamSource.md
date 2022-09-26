@@ -10,7 +10,7 @@
 * <span id="topicName"> Topic Name
 * <span id="formats"> `Formats`
 * <span id="timestampColumn"> `TimestampColumn`
-* <span id="sourceSchema"> `LogicalSchema`
+* <span id="sourceSchema"> [LogicalSchema](LogicalSchema.md)
 * <span id="pseudoColumnVersion"> Pseudo Column Version
 
 `StreamSource` is created when:
@@ -25,6 +25,21 @@ KStreamHolder<GenericKey> build(
   PlanInfo info)
 ```
 
+`build` is part of the [ExecutionStep](ExecutionStep.md#build) abstraction.
+
+---
+
 `build` requests the given [PlanBuilder](PlanBuilder.md) to [visitStreamSource](PlanBuilder.md#visitStreamSource) (with this `StreamSource` and the given `PlanInfo`).
 
-`build` is part of the [ExecutionStep](ExecutionStep.md#build) abstraction.
+## <span id="extractPlanInfo"> extractPlanInfo
+
+```java
+PlanInfo extractPlanInfo(
+  PlanInfoExtractor extractor)
+```
+
+`extractPlanInfo` is part of the [ExecutionStep](ExecutionStep.md#extractPlanInfo) abstraction.
+
+---
+
+`extractPlanInfo` requests the given [PlanInfoExtractor](PlanInfoExtractor.md) to [visitStreamSource](PlanInfoExtractor.md#visitStreamSource) (with this `StreamSource`).

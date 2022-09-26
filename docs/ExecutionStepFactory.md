@@ -12,7 +12,9 @@ StreamSource streamSource(
   int pseudoColumnVersion)
 ```
 
-`streamSource` creates a [StreamSource](StreamSource.md).
+`streamSource` creates a [StreamSource](StreamSource.md) (with `ExecutionStepPropertiesV1`).
+
+---
 
 `streamSource` is used when:
 

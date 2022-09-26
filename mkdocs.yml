@@ -127,6 +127,7 @@ nav:
       - ExecutionStep: ExecutionStep.md
       - SourceStep: SourceStep.md
       - StreamSelect: StreamSelect.md
+      - StreamSelectKeyV1: StreamSelectKeyV1.md
     - ExecutionStepFactory: ExecutionStepFactory.md
     - Formats:
       - Format: Format.md
@@ -207,7 +208,9 @@ nav:
     - StatementRewriter:
       - StatementRewriter: StatementRewriter.md
       - StatementRewriter.Rewriter: StatementRewriter.Rewriter.md
+    - StepSchemaResolver: StepSchemaResolver.md
     - StreamSelectBuilder: StreamSelectBuilder.md
+    - StreamSelectKeyBuilderV1: StreamSelectKeyBuilderV1.md
     - StreamSource: StreamSource.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md

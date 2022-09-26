@@ -31,6 +31,22 @@ KStreamHolder<K> visitStreamSelect(
 
 In the end, `visitStreamSelect` [builds a KStreamHolder](StreamSelectBuilder.md#build).
 
+## <span id="visitStreamSelectKey"> visitStreamSelectKey
+
+```java
+KStreamHolder<GenericKey> visitStreamSelectKey(
+  StreamSelectKeyV1 streamSelectKey,
+  PlanInfo planInfo)
+```
+
+`visitStreamSelectKey` is part of the [PlanBuilder](PlanBuilder.md#visitStreamSelectKey) abstraction.
+
+---
+
+`visitStreamSelectKey` requests the given [StreamSelectKeyV1](StreamSelectKeyV1.md) for the [source ExecutionStep](StreamSelect.md#getSource) to [build a KStreamHolder](ExecutionStep.md#build).
+
+In the end, `visitStreamSelectKey` [builds a KStreamHolder](StreamSelectKeyBuilderV1.md#build) with the source `KStreamHolder` and the [StreamSelectKeyV1](StreamSelectKeyV1.md).
+
 ## <span id="visitStreamSource"> visitStreamSource
 
 ```java

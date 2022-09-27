@@ -386,6 +386,7 @@ nav:
       - ProjectNode: planner/ProjectNode.md
       - QueryProjectNode: planner/QueryProjectNode.md
       - SingleSourcePlanNode: planner/SingleSourcePlanNode.md
+      - SuppressNode: planner/SuppressNode.md
     - QueryPlan: QueryPlan.md
     - QueryPlannerOptions: planner/QueryPlannerOptions.md
     - RuntimeBuildContext: RuntimeBuildContext.md

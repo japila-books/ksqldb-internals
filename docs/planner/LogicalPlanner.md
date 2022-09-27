@@ -1,5 +1,10 @@
 # LogicalPlanner
 
+`LogicalPlanner` is used (directly or indirectly through [QueryEngine](../QueryEngine.md)) by [EngineExecutor](../EngineExecutor.md) for building a logical plan of the following:
+
+* [Non-persistent queries](#buildQueryLogicalPlan)
+* [Persistent queries](#buildPersistentLogicalPlan)
+
 ## Creating Instance
 
 `LogicalPlanner` takes the following to be created:
@@ -10,8 +15,8 @@
 
 `LogicalPlanner` is created when:
 
-* `EngineExecutor` is requested to [buildAndValidateLogicalPlan](../EngineExecutor.md#buildAndValidateLogicalPlan)
-* `QueryEngine` is requested to [buildQueryLogicalPlan](../QueryEngine.md#buildQueryLogicalPlan)
+* `EngineExecutor` is requested to [build a query logical plan](../EngineExecutor.md#buildAndValidateLogicalPlan)
+* `QueryEngine` is requested to [buil a query logical plan](../QueryEngine.md#buildQueryLogicalPlan)
 
 ## <span id="analysis"> ImmutableAnalysis and RewrittenAnalysis
 
@@ -36,7 +41,7 @@ The `RewrittenAnalysis` is used when `LogicalPlanner` is requested for the follo
 * [buildJoinKey](#buildJoinKey)
 * [buildAggregateSchema](#buildAggregateSchema)
 
-## <span id="buildPersistentLogicalPlan"> buildPersistentLogicalPlan
+## <span id="buildPersistentLogicalPlan"> Building Logical Plan of Persistent Query
 
 ```java
 OutputNode buildPersistentLogicalPlan()
@@ -50,15 +55,15 @@ In summary, `buildPersistentLogicalPlan` creates an [OutputNode](OutputNode.md) 
 
 * `QueryEngine` is requested to [build a logical plan of a query](../QueryEngine.md#buildQueryLogicalPlan)
 
-### <span id="buildPersistentLogicalPlan-source"> Step 1. Source Node
+### <span id="buildPersistentLogicalPlan-source"> Step 1. Source Node (FROM)
 
 `buildPersistentLogicalPlan` [builds a source node](#buildSourceNode) (with `isWindowed` flag based on the [RewrittenAnalysis](#analysis) of the query).
 
-### <span id="buildPersistentLogicalPlan-where"> Step 2. FilterNode
+### <span id="buildPersistentLogicalPlan-where"> Step 2. FilterNode (WHERE)
 
 For a query with `WHERE` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` creates a new `QueryFilterNode` to be the current [PlanNode](PlanNode.md).
 
-### <span id="buildPersistentLogicalPlan-partitionBy"> Step 3. UserRepartitionNode
+### <span id="buildPersistentLogicalPlan-partitionBy"> Step 3. UserRepartitionNode (PARTITION BY)
 
 For a query with `PartitionBy` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildUserRepartitionNode](#buildUserRepartitionNode).
 
@@ -66,22 +71,13 @@ For a query with `PartitionBy` clause (per the [RewrittenAnalysis](#analysis)), 
 
 For a query with `TableFunctions` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildFlatMapNode](#buildFlatMapNode).
 
-#### <span id="buildFlatMapNode"> Building FlatMapNode
-
-```java
-FlatMapNode buildFlatMapNode(
-  PlanNode sourcePlanNode)
-```
-
-`buildFlatMapNode` creates a [FlatMapNode](FlatMapNode.md) (with a `PlanNodeId` with `FlatMap` ID).
-
-### <span id="buildPersistentLogicalPlan-groupBy"> AggregateNode
+### <span id="buildPersistentLogicalPlan-groupBy"> Step 5. AggregateNode (GROUP BY)
 
 For a query with `GroupBy` clause (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan` [buildAggregateNode](#buildAggregateNode). Otherwise, `buildPersistentLogicalPlan`...FIXME
 
-### <span id="buildPersistentLogicalPlan-RefinementInfo"> RefinementInfo
+### <span id="buildPersistentLogicalPlan-RefinementInfo"> Step 6. SuppressNode (EMIT FINAL)
 
-For a query with a `RefinementInfo` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan`...FIXME
+For a query with a `EMIT FINAL` (per the [RewrittenAnalysis](#analysis)), `buildPersistentLogicalPlan`...FIXME
 
 ### <span id="buildPersistentLogicalPlan-OutputNode"> OutputNode
 
@@ -171,3 +167,22 @@ OutputNode buildOutputNode(
 `buildOutputNode` is used when:
 
 * `LogicalPlanner` is requested to [buildPersistentLogicalPlan](#buildPersistentLogicalPlan) and [buildQueryLogicalPlan](#buildQueryLogicalPlan)
+
+## <span id="buildFlatMapNode"> Building FlatMapNode
+
+```java
+FlatMapNode buildFlatMapNode(
+  PlanNode sourcePlanNode)
+```
+
+`buildFlatMapNode` creates a [FlatMapNode](FlatMapNode.md) (with `FlatMap` ID).
+
+## <span id="buildSuppressNode"> Building SuppressNode
+
+```java
+SuppressNode buildSuppressNode(
+  PlanNode sourcePlanNode,
+  RefinementInfo refinementInfo)
+```
+
+`buildSuppressNode` creates a [SuppressNode](SuppressNode.md) (with `Suppress` ID).

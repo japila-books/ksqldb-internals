@@ -5,13 +5,13 @@
 `QueryEngine` takes the following to be created:
 
 * <span id="serviceContext"> [ServiceContext](ServiceContext.md)
-* <span id="processingLogContext"> `ProcessingLogContext`
+* <span id="processingLogContext"> [ProcessingLogContext](processing-log/ProcessingLogContext.md)
 
 `QueryEngine` is created when:
 
-* `EngineContext` is requested to [create one](EngineContext.md#createQueryEngine) (when `EngineExecutor` is requested to [plan a Query for execution](#planQuery))
+* `EngineContext` is requested to [create one](EngineContext.md#createQueryEngine) (when `EngineExecutor` is requested to [plan a query for execution](#planQuery))
 
-## <span id="buildQueryLogicalPlan"> Building Logical Plan of Query (buildQueryLogicalPlan)
+## <span id="buildQueryLogicalPlan"> Building Query Logical Plan
 
 ```java
 OutputNode buildQueryLogicalPlan(

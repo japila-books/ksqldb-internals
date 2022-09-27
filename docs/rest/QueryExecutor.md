@@ -5,21 +5,21 @@
 `QueryExecutor` takes the following to be created:
 
 * <span id="ksqlEngine"> [KsqlEngine](../KsqlEngine.md)
-* <span id="ksqlRestConfig"> `KsqlRestConfig`
+* <span id="ksqlRestConfig"> [KsqlRestConfig](KsqlRestConfig.md)
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * <span id="pullQueryMetrics"> `PullQueryExecutorMetrics`
 * <span id="scalablePushQueryMetrics"> `ScalablePushQueryMetrics`
 * <span id="rateLimiter"> `RateLimiter`
 * <span id="concurrencyLimiter"> `ConcurrencyLimiter`
-* <span id="pullBandRateLimiter"> `SlidingWindowRateLimiter`
-* <span id="scalablePushBandRateLimiter"> `SlidingWindowRateLimiter`
+* <span id="pullBandRateLimiter"> [Pull Band Rate Limiter](../SlidingWindowRateLimiter.md)
+* <span id="scalablePushBandRateLimiter"> [Scalable Push Band Rate Limiter](../SlidingWindowRateLimiter.md)
 * [HARouting](#routing)
-* <span id="pushRouting"> `PushRouting`
+* <span id="pushRouting"> [PushRouting](../PushRouting.md)
 * <span id="localCommand"> `LocalCommands`
 
 `QueryExecutor` is created when:
 
-* `KsqlRestApplication` utility is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
+* `KsqlRestApplication` is used to [build a KsqlRestApplication](KsqlRestApplication.md#buildApplication)
 
 ### <span id="routing"> HARouting
 

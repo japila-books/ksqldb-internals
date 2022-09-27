@@ -776,6 +776,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/formats/DelimitedFormat/</loc>
+         <lastmod>2022-09-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/formats/Format/</loc>
          <lastmod>2022-09-27</lastmod>
          <changefreq>daily</changefreq>
@@ -1532,6 +1537,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/security/KsqlSecurityExtension/</loc>
+         <lastmod>2022-09-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/types/</loc>
          <lastmod>2022-09-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

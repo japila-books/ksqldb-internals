@@ -1,3 +1,0 @@
-# UserFunctionLoader
-
-`UserFunctionLoader` is...FIXME

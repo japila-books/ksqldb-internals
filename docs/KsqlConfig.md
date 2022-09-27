@@ -6,6 +6,10 @@ Enables [query request migration](rest/StreamedQueryResource.md#shouldMigrateToQ
 
 Default: `true`
 
+## <span id="DEFAULT_EXT_DIR"><span id="KSQL_EXT_DIR"><span id="ksql.extension.dir"> ksql.extension.dir
+
+Default: `ext`
+
 ## <span id="KSQL_INTERNAL_STREAMS_ERROR_COLLECTOR_CONFIG"><span id="ksql.internal.streams.error.collector"> ksql.internal.streams.error.collector
 
 Used internally to register a new [StreamsErrorCollector](metrics/StreamsErrorCollector.md#create) when `QueryBuilder` is requested to [buildStreamsProperties](QueryBuilder.md#buildStreamsProperties).
@@ -149,6 +153,12 @@ Used when:
 * _others_
 
 ## <span id="KSQL_SOURCE_TABLE_MATERIALIZATION_ENABLED"><span id="ksql.source.table.materialization.enabled"> ksql.source.table.materialization.enabled
+
+## <span id="KSQL_COLLECT_UDF_METRICS"><span id="ksql.udf.collect.metrics"> ksql.udf.collect.metrics
+
+## <span id="KSQL_UDF_SECURITY_MANAGER_ENABLED"><span id="ksql.udf.enable.security.manager"> ksql.udf.enable.security.manager
+
+## <span id="KSQL_ENABLE_UDFS"><span id="ksql.udfs.enabled"> ksql.udfs.enabled
 
 ## <span id="KSQL_VARIABLE_SUBSTITUTION_ENABLE"><span id="ksql.variable.substitution.enable"> ksql.variable.substitution.enable
 

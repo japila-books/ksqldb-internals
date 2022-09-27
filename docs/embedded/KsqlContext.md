@@ -36,7 +36,7 @@ KsqlContext create(
 
 `create` [creates a ServiceContext](../ServiceContextFactory.md#create) (with the given [KsqlConfig](../KsqlConfig.md)).
 
-`create` [creates a UserFunctionLoader](../UserFunctionLoader.md#newInstance) to [load UDFs](../UserFunctionLoader.md#load).
+`create` [creates a UserFunctionLoader](../functions/UserFunctionLoader.md#newInstance) to [load UDFs](../functions/UserFunctionLoader.md#load).
 
 `create` [creates a ServiceInfo](../ServiceInfo.md#create).
 

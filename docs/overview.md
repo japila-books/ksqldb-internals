@@ -50,6 +50,10 @@ ksqlDB uses [Kafka Streams]({{ book.kafka_streams }}) to [build a physical query
 
 [ksqlDB API server](api/Server.md) uses [Vert.x](https://vertx.io/) for HTTP communication using [ServerVerticle](api/ServerVerticle.md).
 
+## Libraries Used I Found Interesting
+
+* [ClassGraph](https://github.com/classgraph/classgraph) to [load UDFs](functions/UserFunctionLoader.md#loadFunctions)
+
 ## Run It Yourself
 
 !!! note "Get standalone ksqlDB first"

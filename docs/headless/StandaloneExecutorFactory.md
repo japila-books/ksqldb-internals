@@ -35,7 +35,7 @@ StandaloneExecutor create(
 
 `create` creates a [KsqlEngine](../KsqlEngine.md) (with a new [ServiceInfo](../ServiceInfo.md#create), a `SequentialQueryIdGenerator` and no [QueryEventListener](../QueryEventListener.md)s).
 
-`create` [creates a UserFunctionLoader](../UserFunctionLoader.md#newInstance).
+`create` [creates a UserFunctionLoader](../functions/UserFunctionLoader.md#newInstance).
 
 `create` creates a [VersionCheckerAgent](../VersionCheckerAgent.md).
 

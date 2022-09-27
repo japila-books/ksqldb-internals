@@ -11,7 +11,7 @@
 * <span id="ksqlConfig"> [KsqlConfig](../KsqlConfig.md)
 * [KsqlEngine](#ksqlEngine)
 * <span id="queriesFile"> Query File
-* <span id="udfLoader"> [UserFunctionLoader](../UserFunctionLoader.md)
+* <span id="udfLoader"> [UserFunctionLoader](../functions/UserFunctionLoader.md)
 * <span id="failOnNoQueries"> `failOnNoQueries` flag
 * <span id="versionChecker"> [VersionCheckerAgent](../VersionCheckerAgent.md)
 * <span id="injectorFactory"> Factory to build an [Injector](../Injector.md) (based on [KsqlExecutionContext](../KsqlExecutionContext.md) and [ServiceContext](../ServiceContext.md))
@@ -38,7 +38,7 @@ The `KsqlEngine` is used when:
 void startAsync()
 ```
 
-`startAsync` requests the [UserFunctionLoader](#udfLoader) to [load](../UserFunctionLoader.md#load).
+`startAsync` requests the [UserFunctionLoader](#udfLoader) to [load](../functions/UserFunctionLoader.md#load).
 
 `startAsync` [maybeCreateProcessingLogTopic](../rest/ProcessingLogServerUtils.md#maybeCreateProcessingLogTopic).
 

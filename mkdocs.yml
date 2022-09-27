@@ -237,6 +237,17 @@ nav:
         - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
       - REST:
         - rest/index.md
+    - Functions:
+      - functions/index.md
+      - LatestByOffset: functions/LatestByOffset.md
+      - UdafDescription: functions/UdafDescription.md
+      - UdafLoader: functions/UdafLoader.md
+      - UdfDescription: functions/UdfDescription.md
+      - UdfLoader: functions/UdfLoader.md
+      - UdfLoaderUtil: functions/UdfLoaderUtil.md
+      - UdtfDescription: functions/UdtfDescription.md
+      - UdtfLoader: functions/UdtfLoader.md
+      - UserFunctionLoader: functions/UserFunctionLoader.md
     - Header Columns: features/header-columns.md
     - Metrics:
       - metrics/index.md
@@ -372,7 +383,6 @@ nav:
     - QueryPlan: QueryPlan.md
     - QueryPlannerOptions: planner/QueryPlannerOptions.md
     - RuntimeBuildContext: RuntimeBuildContext.md
-    - UserFunctionLoader: UserFunctionLoader.md
   - REST:
     - rest/index.md
     - Command: rest/Command.md

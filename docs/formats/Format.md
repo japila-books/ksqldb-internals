@@ -4,7 +4,7 @@
 
 ## Contract
 
-### <span id="getSerde"> getSerde
+### <span id="getSerde"> Create Serde
 
 ```java
 Serde<List<?>> getSerde(
@@ -15,9 +15,11 @@ Serde<List<?>> getSerde(
   boolean isKey)
 ```
 
+Creates a `Serde` (Apache Kafka) for the given `PersistenceSchema`
+
 Used when:
 
-* `GenericSerdeFactory` is requested to [createFormatSerde](GenericSerdeFactory.md#createFormatSerde)
+* `GenericSerdeFactory` is requested to [create a Serde for a Format](GenericSerdeFactory.md#createFormatSerde)
 
 ### <span id="name"> name
 

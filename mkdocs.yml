@@ -208,10 +208,6 @@ nav:
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
     - features/index.md
-    - Data Types:
-      - SqlBaseType: types/SqlBaseType.md
-      - SqlPrimitiveType: types/SqlPrimitiveType.md
-      - SqlType: types/SqlType.md
     - Execution Modes:
       - Embedded:
         - embedded/index.md
@@ -227,13 +223,16 @@ nav:
         - rest/index.md
     - Formats:
       - formats/index.md
+      - DELIMITED:
+        - DelimitedFormat: formats/DelimitedFormat.md
       - Format: formats/Format.md
       - FormatFactory: formats/FormatFactory.md
       - GenericKeySerDe: formats/GenericKeySerDe.md
       - GenericRowSerDe: formats/GenericRowSerDe.md
       - GenericSerdeFactory: formats/GenericSerdeFactory.md
-      - KafkaFormat: formats/KafkaFormat.md
-      - KafkaSerdeFactory: formats/KafkaSerdeFactory.md
+      - KAFKA:
+        - KafkaFormat: formats/KafkaFormat.md
+        - KafkaSerdeFactory: formats/KafkaSerdeFactory.md
       - KeyFormat: formats/KeyFormat.md
       - KeySerdeFactory: formats/KeySerdeFactory.md
       - RowDeserializer: formats/RowDeserializer.md
@@ -285,6 +284,11 @@ nav:
       - KsqlAuthorizationValidatorImpl: security/KsqlAuthorizationValidatorImpl.md
       - KsqlSecurityExtension: security/KsqlSecurityExtension.md
       - KsqlDefaultSecurityExtension: security/KsqlDefaultSecurityExtension.md
+    - Types:
+      - types/index.md
+      - SqlBaseType: types/SqlBaseType.md
+      - SqlPrimitiveType: types/SqlPrimitiveType.md
+      - SqlType: types/SqlType.md
     - UDFs:
       - Column: udf/Column.md
       - SqlTypeSchemaSerializer: udf/SqlTypeSchemaSerializer.md

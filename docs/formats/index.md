@@ -5,7 +5,7 @@ ksqlDB comes with the following built-in [Format](Format.md)s for keys and value
 Format Name | Format
 ------------|-------
  AVRO | `AvroFormat`
- DELIMITED | `DelimitedFormat`
+ DELIMITED | [DelimitedFormat](DelimitedFormat.md)
  JSON | `JsonFormat`
  JSON_SR | `JsonSchemaFormat`
  KAFKA | [KafkaFormat](KafkaFormat.md)

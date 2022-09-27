@@ -1,24 +1,18 @@
 # SqlPrimitiveType
 
-`SqlPrimitiveType` is a [SqlType](SqlType.md).
+`SqlPrimitiveType` is a [SqlType](SqlType.md) and represents the following primitive types:
 
-## <span id="PRIMITIVE_TYPE_NAMES"> Primitive Types
-
-* `ARRAY`
 * `BIGINT`
 * `BOOLEAN`
 * `BYTES`
 * `DATE`
-* `DECIMAL`
 * `DOUBLE`
+* `INT` (a synonym of `INTEGER`)
 * `INTEGER`
-* `INT`
-* `MAP`
 * `STRING`
-* `STRUCT`
-* `TIMESTAMP`
 * `TIME`
-* `VARCHAR`
+* `TIMESTAMP`
+* `VARCHAR` (a synonym of `STRING`)
 
 ## Demo
 

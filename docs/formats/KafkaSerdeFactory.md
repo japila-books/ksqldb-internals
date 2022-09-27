@@ -27,7 +27,7 @@ boolean containsSerde(
 
 * `KafkaFormat` is requested to [supportsKeyType](KafkaFormat.md#supportsKeyType)
 
-## <span id="createSerde"> Creating Serde for Schema
+## <span id="createSerde"> Creating Serde
 
 ```java
 Serde<List<?>> createSerde(
@@ -42,7 +42,7 @@ Serde<List<?>> createSerde(
 The 'KAFKA' format only supports a single field. Got: [columns]
 ```
 
-`createSerde` converts the SQL type of the single column (in the schema) to a Java type and [create a Serde](#createSerde-column-javatype).
+`createSerde` converts the SQL type of the single column (in the schema) to a Java type and [creates a Serde](#createSerde-column-javatype).
 
 ---
 

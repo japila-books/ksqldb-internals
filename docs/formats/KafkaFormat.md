@@ -2,21 +2,9 @@
 
 `KafkaFormat` is a [Format](Format.md) known as [KAFKA](#NAME).
 
-`KafkaFormat` supports a [single field only in schema](KafkaSerdeFactory.md#createSerde) (does not [support multiple columns](SerdeFeaturesFactory.md#formatSupportsMultipleColumns)) and throws a `KsqlException` otherwise.
+`KafkaFormat` supports a [single field only in schema](KafkaSerdeFactory.md#createSerde) (does not [support multiple columns](SerdeFeaturesFactory.md#formatSupportsMultipleColumns)).
 
 ## <span id="NAME"><span id="name"> Name
-
-The name of `KafkaFormat` is `KAFKA`.
-
----
-
-Used when:
-
-* `Analyzer.Visitor` is requested to [validate](../analyzer/Analyzer.Visitor.md#validate)
-* `SerdeFeaturesFactory` is requested to [formatSupportsMultipleColumns](SerdeFeaturesFactory.md#formatSupportsMultipleColumns)
-* `FormatFactory` is used to [look up a Format](FormatFactory.md#fromName)
-
-### name
 
 ```java
 String name()
@@ -26,13 +14,13 @@ String name()
 
 ---
 
-`name` is [KAFKA](#NAME).
+`name` is `KAFKA`.
 
-## <span id="SUPPORTED_FEATURES"> Supported Serde Features
+## <span id="SUPPORTED_FEATURES"><span id="supportedFeatures"> Supported Serde Features
 
 `KafkaFormat` supports `UNWRAP_SINGLES` feature.
 
-## <span id="getSerde"> Create Serde for Schema
+## <span id="getSerde"> Create Serde
 
 ```java
 Serde<List<?>> getSerde(
@@ -47,11 +35,14 @@ Serde<List<?>> getSerde(
 
 ---
 
-`getSerde` validates the given `formatProperties` (against the [supported properties](Format.md#getSupportedProperties) of this format that `KafkaFormat` has got none).
+`getSerde` validates the given `formatProperties` against the [supported properties](Format.md#getSupportedProperties).
 
-`getSerde` validates the given `PersistenceSchema` (against the [supported schema features](#supportedFeatures) of this format).
+!!! note
+    `KAFKA` format supports no custom properties in the WITH clause.
 
-In the end, `getSerde` [creates a Serde](KafkaSerdeFactory.md#createSerde).
+`getSerde` validates the `SerdeFeatures` (of the given `PersistenceSchema`) against the [supported schema features](#supportedFeatures).
+
+In the end, `getSerde` [creates a Serde](KafkaSerdeFactory.md#createSerde) for the given `PersistenceSchema`.
 
 ## <span id="supportsKeyType"> supportsKeyType
 

@@ -1,6 +1,6 @@
 # StreamSelect
 
-`StreamSelect<K>` is an [ExecutionStep](ExecutionStep.md) (of `KStreamHolder`).
+`StreamSelect<K>` is an [ExecutionStep](ExecutionStep.md) of `KStreamHolder<K>`.
 
 ## Creating Instance
 
@@ -8,8 +8,8 @@
 
 * <span id="props"> `ExecutionStepPropertiesV1`
 * <span id="source"> Source [ExecutionStep](ExecutionStep.md)
-* <span id="keyColumnNames"> Key column names (`List<ColumnName>`)
-* <span id="selectedKeys"> Select keys (`Optional<List<ColumnName>>`)
+* <span id="keyColumnNames"> Key column names
+* <span id="selectedKeys"> Select Keys
 * <span id="selectExpressions"> Select Expressions (`List<SelectExpression>`)
 
 `StreamSelect` is created when:

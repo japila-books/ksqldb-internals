@@ -68,7 +68,7 @@ SchemaKStream<K> select(
 `select` is used when:
 
 * `AggregateNode` is requested to `selectRequiredInputColumns`, `selectRequiredOutputColumns`
-* `ProjectNode` is requested to [buildStream](planner/ProjectNode.md#buildStream)
+* `ProjectNode` is requested to [build a SchemaKStream](planner/ProjectNode.md#buildStream)
 
 ## <span id="resolveSchema"> Resolving LogicalSchema (of ExecutionStep)
 

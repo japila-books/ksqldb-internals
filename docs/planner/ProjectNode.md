@@ -31,7 +31,7 @@ Used when:
 !!! note "Abstract Class"
     `ProjectNode` is an abstract class and cannot be created directly. It is created indirectly for the [concrete ProjectNodes](#implementations).
 
-## <span id="buildStream"> buildStream
+## <span id="buildStream"> Building SchemaKStream
 
 ```java
 SchemaKStream<?> buildStream(

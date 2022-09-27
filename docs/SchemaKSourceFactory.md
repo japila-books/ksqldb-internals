@@ -58,7 +58,7 @@ SchemaKTable<?> buildTable(
 
 `buildTable` [determinePseudoColumnVersionToUse](#determinePseudoColumnVersionToUse).
 
-`buildTable` creates a [TableSource](ExecutionStepFactory.md#tableSource) (or legacy [TableSourceV1](ExecutionStepFactory.md#tableSourceV1)) if [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED) is enabled or not, respectively.
+`buildTable` creates a [TableSource](ExecutionStepFactory.md#tableSource) (or legacy [TableSourceV1](ExecutionStepFactory.md#tableSourceV1) based on whether [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED) is enabled or not, respectively).
 
 In the end, `buildTable` [resolves the schema](#resolveSchema) and [creates a SchemaKTable](#schemaKTable) (for the `SourceStep<KTableHolder<GenericKey>>`).
 
@@ -111,7 +111,7 @@ int determinePseudoColumnVersionToUse(
 
 `schemaKTable` is used when:
 
-* `SchemaKSourceFactory` is requested to build a [windowed](#buildWindowedTable) or [regular table](#buildTable)
+* `SchemaKSourceFactory` is requested to build a [windowed](#buildWindowedTable) or [non-windowed table](#buildTable)
 
 ## <span id="resolveSchema"> Resolving LogicalSchema (of ExecutionStep)
 

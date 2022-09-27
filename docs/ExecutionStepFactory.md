@@ -38,3 +38,24 @@ StreamSource streamSource(
 `tableMapValues` is used when:
 
 * `SchemaKTable` is requested to [select](SchemaKTable.md#select)
+
+## <span id="tableSource"> Creating TableSource
+
+```java
+TableSource tableSource(
+  QueryContext.Stacker stacker,
+  LogicalSchema sourceSchema,
+  String topicName,
+  Formats formats,
+  Optional<TimestampColumn> timestampColumn,
+  Formats stateStoreFormats,
+  int pseudoColumnVersion)
+```
+
+`tableSource` creates a [TableSource](TableSource.md) (with a new `ExecutionStepPropertiesV1`).
+
+---
+
+`tableSource` is used when:
+
+* `SchemaKSourceFactory` is requested to [build a SchemaKTable](SchemaKSourceFactory.md#buildTable)

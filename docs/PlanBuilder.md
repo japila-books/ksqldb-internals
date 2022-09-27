@@ -52,23 +52,41 @@ Used when:
 
 * `StreamSource` is requested to [build a KStreamHolder](StreamSource.md#build)
 
+### <span id="visitTableSelect"> Visiting TableSelect
+
+```java
+<K> KTableHolder<K> visitTableSelect(
+  TableSelect<K> tableSelect,
+  PlanInfo planInfo)
+```
+
+Visits a [TableSelect](TableSelect.md)
+
+See [KSPlanBuilder](KSPlanBuilder.md#visitTableSelect)
+
+Used when:
+
+* `TableSelect` is requested to [build a KTableHolder](TableSelect.md#build)
+
 ### <span id="visitTableSource"> Visiting TableSource
 
 ```java
 KTableHolder<GenericKey> visitTableSource(
-  TableSourceV1 tableSourceV1,
-  PlanInfo planInfo)
-KTableHolder<GenericKey> visitTableSource(
   TableSource tableSource,
   PlanInfo planInfo)
+KTableHolder<GenericKey> visitTableSource(
+  TableSourceV1 tableSourceV1,
+  PlanInfo planInfo)  // (1)!
 ```
+
+1. legacy
 
 See [KSPlanBuilder](KSPlanBuilder.md#visitTableSource)
 
 Used when:
 
-* `TableSourceV1` is requested to `build` a `KTableHolder`
-* `TableSource` is requested to `build` a `KTableHolder`
+* `TableSource` is requested to [build a KTableHolder](TableSource.md#build)
+* `TableSourceV1` is requested to build a `KTableHolder`
 
 ## Implementations
 

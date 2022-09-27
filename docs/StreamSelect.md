@@ -28,4 +28,4 @@ KStreamHolder<K> build(
 
 ---
 
-`build` requests the given [PlanBuilder](PlanBuilder.md) to [visit a StreamSelect](PlanBuilder.md#visitStreamSelect).
+`build` requests the given [PlanBuilder](PlanBuilder.md) to [visit this StreamSelect](PlanBuilder.md#visitStreamSelect).

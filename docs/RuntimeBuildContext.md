@@ -11,8 +11,8 @@
 * <span id="functionRegistry"> [FunctionRegistry](FunctionRegistry.md)
 * <span id="applicationId"> Application ID
 * <span id="queryId"> Query ID
-* <span id="keySerdeFactory"> `KeySerdeFactory`
-* <span id="valueSerdeFactory"> [ValueSerdeFactory](ValueSerdeFactory.md)
+* <span id="keySerdeFactory"> [KeySerdeFactory](formats/KeySerdeFactory.md)
+* <span id="valueSerdeFactory"> [ValueSerdeFactory](formats/ValueSerdeFactory.md)
 
 `RuntimeBuildContext` is created using [of](#of) factory.
 
@@ -40,8 +40,8 @@ RuntimeBuildContext of(
 
 `of` creates a [RuntimeBuildContext](#creating-instance) with the arguments and the following:
 
-* [GenericKeySerDe](GenericKeySerDe.md) for the [KeySerdeFactory](#keySerdeFactory)
-* [GenericRowSerDe](GenericRowSerDe.md) for the [ValueSerdeFactory](#valueSerdeFactory)
+* [GenericKeySerDe](formats/GenericKeySerDe.md) for the [KeySerdeFactory](#keySerdeFactory)
+* [GenericRowSerDe](formats/GenericRowSerDe.md) for the [ValueSerdeFactory](#valueSerdeFactory)
 
 ---
 
@@ -57,3 +57,18 @@ ProcessingLogger getProcessingLogger(
 ```
 
 `getProcessingLogger`...FIXME
+
+## <span id="buildValueSerde"> Building Value Serde
+
+```java
+Serde<GenericRow> buildValueSerde(
+  FormatInfo format,
+  PhysicalSchema schema,
+  QueryContext queryContext)
+```
+
+`buildValueSerde` [builds a query logger prefix](QueryLoggerUtil.md#queryLoggerName) for the [Query ID](#queryId) (and the given `QueryContext`).
+
+`buildValueSerde` requests the [QuerySchemas](#schemas) to `trackValueSerdeCreation`.
+
+In the end, `buildValueSerde` requests the [ValueSerdeFactory](#valueSerdeFactory) to [create a value Serde](formats/ValueSerdeFactory.md#create).

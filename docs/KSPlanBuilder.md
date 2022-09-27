@@ -63,7 +63,7 @@ KStreamHolder<GenericKey> visitStreamSource(
 
 `visitStreamSource` uses the [SourceBuilderV1](SourceBuilderV1.md#instance) to [build a KStream](SourceBuilderV1.md#buildStream) (for the [RuntimeBuildContext](#buildContext), the given [StreamSource](StreamSource.md) and the `ConsumedFactory` from the [StreamsFactories](#streamsFactories)).
 
-## <span id="visitTableSource"> visitTableSource
+## <span id="visitTableSource"> Visiting TableSource
 
 ```java
 KTableHolder<GenericKey> visitTableSource(
@@ -78,4 +78,20 @@ KTableHolder<GenericKey> visitTableSource(
 
 ---
 
-`visitTableSource` requests the [SourceBuilder](SourceBuilder.md#instance) or [SourceBuilderV1](SourceBuilderV1.md#instance) to [buildTable](SourceBuilderBase.md#buildTable).
+`visitTableSource` [creates a SourceBuilder](SourceBuilder.md#instance) to [build a KTableHolder](SourceBuilderBase.md#buildTable) for the given [TableSource](TableSource.md).
+
+## <span id="visitTableSelect"> visitTableSelect
+
+```java
+<K> KTableHolder<K> visitTableSelect(
+  TableSelect<K> tableSelect,
+  PlanInfo planInfo)
+```
+
+`visitTableSelect` is part of the [PlanBuilder](PlanBuilder.md#visitTableSelect) abstraction.
+
+---
+
+`visitTableSelect` requests the given [TableSelect](TableSelect.md) for the [source ExecutionStep](TableSelect.md#getSource) to [build a KTableHolder](ExecutionStep.md#build).
+
+In the end, `visitTableSelect` [builds a KTableHolder](TableSelectBuilder.md#build) with the source `KTableHolder`.

@@ -128,15 +128,11 @@ nav:
       - SourceStep: SourceStep.md
       - StreamSelect: StreamSelect.md
       - StreamSelectKeyV1: StreamSelectKeyV1.md
+      - StreamSource: StreamSource.md
       - TableSelect: TableSelect.md
+      - TableSource: TableSource.md
     - ExecutionStepFactory: ExecutionStepFactory.md
-    - Formats:
-      - Format: Format.md
-      - FormatFactory: FormatFactory.md
-      - KafkaFormat: KafkaFormat.md
-      - KafkaSerdeFactory: KafkaSerdeFactory.md
     - FunctionRegistry: FunctionRegistry.md
-    - GenericSerdeFactory: GenericSerdeFactory.md
     - HARouting: HARouting.md
     - ImmutableProperties: ImmutableProperties.md
     - Injectors:
@@ -147,10 +143,6 @@ nav:
     - KafkaStreamsBuilder: KafkaStreamsBuilder.md
     - KafkaStreamsBuilderImpl: KafkaStreamsBuilderImpl.md
     - KafkaTopicClientImpl: KafkaTopicClientImpl.md
-    - KeyFormat: KeyFormat.md
-    - KeySerdeFactory:
-      - GenericKeySerDe: GenericKeySerDe.md
-      - KeySerdeFactory: KeySerdeFactory.md
     - KSPlanBuilder: KSPlanBuilder.md
     - KsqlConfig: KsqlConfig.md
     - KsqlEngine:
@@ -189,13 +181,11 @@ nav:
     - QueryRegistryImpl: QueryRegistryImpl.md
     - QueryStateMetricsReportingListener: QueryStateMetricsReportingListener.md
     - RouteQuery: RouteQuery.md
-    - RowDeserializer: RowDeserializer.md
     - SandboxedExecutionContext: SandboxedExecutionContext.md
     - SandboxedServiceContext: SandboxedServiceContext.md
     - SchemaKSourceFactory: SchemaKSourceFactory.md
     - SchemaKStream: SchemaKStream.md
     - SchemaKTable: SchemaKTable.md
-    - SerdeFeaturesFactory: SerdeFeaturesFactory.md
     - ServiceContext: ServiceContext.md
     - ServiceContextFactory: ServiceContextFactory.md
     - ServiceInfo: ServiceInfo.md
@@ -212,12 +202,9 @@ nav:
     - StepSchemaResolver: StepSchemaResolver.md
     - StreamSelectBuilder: StreamSelectBuilder.md
     - StreamSelectKeyBuilderV1: StreamSelectKeyBuilderV1.md
-    - StreamSource: StreamSource.md
+    - TableSelectBuilder: TableSelectBuilder.md
     - TransientQueryMetadata: TransientQueryMetadata.md
     - TypeRegistry: TypeRegistry.md
-    - ValueSerdeFactory:
-      - GenericRowSerDe: GenericRowSerDe.md
-      - ValueSerdeFactory: ValueSerdeFactory.md
     - VersionCheckerAgent: VersionCheckerAgent.md
   - Features:
     - features/index.md
@@ -238,6 +225,20 @@ nav:
         - StatementExecutor: headless/StandaloneExecutor_StatementExecutor.md
       - REST:
         - rest/index.md
+    - Formats:
+      - formats/index.md
+      - Format: formats/Format.md
+      - FormatFactory: formats/FormatFactory.md
+      - GenericKeySerDe: formats/GenericKeySerDe.md
+      - GenericRowSerDe: formats/GenericRowSerDe.md
+      - GenericSerdeFactory: formats/GenericSerdeFactory.md
+      - KafkaFormat: formats/KafkaFormat.md
+      - KafkaSerdeFactory: formats/KafkaSerdeFactory.md
+      - KeyFormat: formats/KeyFormat.md
+      - KeySerdeFactory: formats/KeySerdeFactory.md
+      - RowDeserializer: formats/RowDeserializer.md
+      - SerdeFeaturesFactory: formats/SerdeFeaturesFactory.md
+      - ValueSerdeFactory: formats/ValueSerdeFactory.md
     - Functions:
       - functions/index.md
       - LatestByOffset: functions/LatestByOffset.md
@@ -451,6 +452,7 @@ nav:
       - PlanSummary: PlanSummary.md
       - QueryLoggerUtil: QueryLoggerUtil.md
       - SlidingWindowRateLimiter: SlidingWindowRateLimiter.md
+      - SourceBuilderUtils: SourceBuilderUtils.md
   - Demos:
     - Confluent Schema Registry: demo/confluent-schema-registry.md
     - Multi-Node ksqlDB Deployment: demo/multi-node-ksqldb-deployment.md

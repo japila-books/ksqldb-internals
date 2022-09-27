@@ -11,11 +11,11 @@
 
 `GenericRowSerDe` is created when:
 
-* `CreateSourceFactory` is [created](CreateSourceFactory.md#valueSerdeFactory)
+* `CreateSourceFactory` is [created](../CreateSourceFactory.md#valueSerdeFactory)
 * `InsertsSubscriber` is requested to `createInsertsSubscriber`
 * `InsertValuesExecutor` is created
 * `KafkaConsumerFactory` is requested to create a `KafkaConsumer`
-* `RuntimeBuildContext` utility is used to [create a RuntimeBuildContext](RuntimeBuildContext.md#of)
+* `RuntimeBuildContext` utility is used to [create a RuntimeBuildContext](../RuntimeBuildContext.md#of)
 
 ## <span id="create"> Creating Value Serde
 

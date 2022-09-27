@@ -29,7 +29,7 @@ KStreamHolder<GenericKey> build(
 
 ---
 
-`build` requests the given [PlanBuilder](PlanBuilder.md) to [visitStreamSource](PlanBuilder.md#visitStreamSource) (with this `StreamSource` and the given `PlanInfo`).
+`build` requests the given [PlanBuilder](PlanBuilder.md) to [visit this StreamSource](PlanBuilder.md#visitStreamSource).
 
 ## <span id="extractPlanInfo"> extractPlanInfo
 

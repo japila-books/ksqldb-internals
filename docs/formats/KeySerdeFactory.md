@@ -23,10 +23,10 @@ See [GenericKeySerDe](GenericKeySerDe.md#create)
 
 Used when:
 
-* `CreateSourceFactory` is requested to [validateSerdesCanHandleSchemas](CreateSourceFactory.md#validateSerdesCanHandleSchemas)
+* `CreateSourceFactory` is requested to [validateSerdesCanHandleSchemas](../CreateSourceFactory.md#validateSerdesCanHandleSchemas)
 * `KafkaConsumerFactory` is requested to create a `KafkaConsumer`
 * `MaterializationProviderBuilderFactory` is requested to `buildMaterializationProvider`
-* `RuntimeBuildContext` is requested to [buildKeySerde](RuntimeBuildContext.md#buildKeySerde)
+* `RuntimeBuildContext` is requested to [buildKeySerde](../RuntimeBuildContext.md#buildKeySerde)
 * `InsertsSubscriber` is requested to `createInsertsSubscriber`
 * `InsertValuesExecutor` is requested to `serializeValue`
 
@@ -51,7 +51,7 @@ See [GenericKeySerDe](GenericKeySerDe.md#create)
 Used when:
 
 * `KafkaConsumerFactory` is requested to create a `KafkaConsumer`
-* `RuntimeBuildContext` is requested to [buildKeySerde](RuntimeBuildContext.md#buildKeySerde)
+* `RuntimeBuildContext` is requested to [buildKeySerde](../RuntimeBuildContext.md#buildKeySerde)
 
 ## Implementations
 

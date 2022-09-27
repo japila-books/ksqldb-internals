@@ -15,3 +15,17 @@
 `TableSelect` is created when:
 
 * `ExecutionStepFactory` is requested to [create a TableSelect](ExecutionStepFactory.md#tableMapValues)
+
+## <span id="build"> Building KTableHolder
+
+```java
+KTableHolder<K> build(
+  PlanBuilder builder,
+  PlanInfo planInfo)
+```
+
+`build` is part of the [ExecutionStep](ExecutionStep.md#build) abstraction.
+
+---
+
+`build` requests the given [PlanBuilder](PlanBuilder.md) to [visit this TableSelect](PlanBuilder.md#visitTableSelect).

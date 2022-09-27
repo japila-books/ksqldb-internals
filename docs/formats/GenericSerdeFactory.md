@@ -11,7 +11,7 @@
 * [GenericKeySerDe](GenericKeySerDe.md#innerFactory)
 * [GenericRowSerDe](GenericRowSerDe.md#innerFactory)
 
-## <span id="createFormatSerde"> createFormatSerde
+## <span id="createFormatSerde"> Creating Format Serde
 
 ```java
 Serde<List<?>> createFormatSerde(
@@ -23,9 +23,16 @@ Serde<List<?>> createFormatSerde(
   boolean isKey)
 ```
 
-`createFormatSerde` creates a [Format](Format.md) using the [formatFactory](#formatFactory) (for the given `FormatInfo`).
+`createFormatSerde` creates a [Format](Format.md) (using the [factory](#formatFactory) for the given `FormatInfo`) to [get a Serde](Format.md#getSerde) for the given `PersistenceSchema`.
 
-`createFormatSerde` requests the `Format` for the [Serde](Format.md#getSerde) for the given `PersistenceSchema`.
+In case of any exception, `createFormatSerde` throws a `SchemaNotSupportedException`:
+
+```text
+[target] format does not support schema.
+format: [name]
+schema: [schema]
+reason: [reason]
+```
 
 ---
 

@@ -31,9 +31,9 @@ KeyFormat of(
 
 `of` is used when:
 
-* `DdlCommandExec` is requested for a [KsqlTopic](DdlCommandExec.md#getKsqlTopic) (for a [CreateSourceCommand](CreateSourceCommand.md))
-* `EngineExecutor` is requested for a [source table plan](EngineExecutor.md#sourceTablePlan)
-* `LogicalPlanner` is requested to [getSinkTopic](planner/LogicalPlanner.md#getSinkTopic)
+* `DdlCommandExec` is requested for a [KsqlTopic](../DdlCommandExec.md#getKsqlTopic) (for a [CreateSourceCommand](../CreateSourceCommand.md))
+* `EngineExecutor` is requested for a [source table plan](../EngineExecutor.md#sourceTablePlan)
+* `LogicalPlanner` is requested to [getSinkTopic](../planner/LogicalPlanner.md#getSinkTopic)
 * `KsqlAuthorizationValidatorImpl` is requested to `getCreateAsSelectSinkTopic`
 
 ## <span id="nonWindowed"> Creating Non-Windowed KeyFormat Instance
@@ -50,12 +50,12 @@ KeyFormat nonWindowed(
 
 `nonWindowed` is used when:
 
-* `EngineExecutor` is requested to [getSinkTopic](EngineExecutor.md#getSinkTopic)
-* `JoinNode` is requested to [getDefaultSourceKeyFormat](planner/JoinNode.md#getDefaultSourceKeyFormat)
+* `EngineExecutor` is requested to [getSinkTopic](../EngineExecutor.md#getSinkTopic)
+* `JoinNode` is requested to [getDefaultSourceKeyFormat](../planner/JoinNode.md#getDefaultSourceKeyFormat)
 * `SerdeFeaturesFactory` is requested to [convertToJsonFormat](SerdeFeaturesFactory.md#convertToJsonFormat)
-* `SchemaKStream` is requested to [groupBy](SchemaKStream.md#groupBy)
+* `SchemaKStream` is requested to [groupBy](../SchemaKStream.md#groupBy)
 * `SchemaKTable` is requested to `groupBy`
-* `RuntimeBuildContext` is requested to [buildKeySerde](RuntimeBuildContext.md#buildKeySerde)
+* `RuntimeBuildContext` is requested to [buildKeySerde](../RuntimeBuildContext.md#buildKeySerde)
 
 ## <span id="withSerdeFeatures"> withSerdeFeatures
 

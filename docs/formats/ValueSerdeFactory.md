@@ -23,9 +23,9 @@ See [GenericRowSerDe](GenericRowSerDe.md#create)
 
 Used when:
 
-* `CreateSourceFactory` is requested to [validateSerdesCanHandleSchemas](CreateSourceFactory.md#validateSerdesCanHandleSchemas)
+* `CreateSourceFactory` is requested to [validateSerdesCanHandleSchemas](../CreateSourceFactory.md#validateSerdesCanHandleSchemas)
 * `KafkaConsumerFactory` is requested to create a `KafkaConsumer`
-* `RuntimeBuildContext` is requested to [buildValueSerde](RuntimeBuildContext.md#buildValueSerde)
+* `RuntimeBuildContext` is requested to [build a value Serde](../RuntimeBuildContext.md#buildValueSerde)
 * `InsertsSubscriber` is requested to `createInsertsSubscriber`
 * `InsertValuesExecutor` is requested to `serializeValue`
 * `GenericRowSerDe` is requested to [create a Serde](GenericRowSerDe.md#from)

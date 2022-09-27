@@ -184,7 +184,7 @@ boolean canRegister(
   String topic)
 ```
 
-`canRegister` is `true` unless the given [Format](Format.md) does not [support](Format.md#supportsFeature) `SCHEMA_INFERENCE` feature.
+`canRegister` is `true` unless the given [Format](formats/Format.md) does not [support](formats/Format.md#supportsFeature) `SCHEMA_INFERENCE` feature.
 
 `canRegister` throws a `KsqlSchemaRegistryNotConfiguredException` unless [ksql.schema.registry.url](KsqlConfig.md#SCHEMA_REGISTRY_URL_PROPERTY) is defined (non-empty):
 

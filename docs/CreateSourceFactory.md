@@ -15,7 +15,7 @@
 
 ### <span id="valueSerdeFactory"> ValueSerdeFactory
 
-`CreateSourceFactory` is given a [ValueSerdeFactory](ValueSerdeFactory.md) when [created](#creating-instance).
+`CreateSourceFactory` is given a [ValueSerdeFactory](formats/ValueSerdeFactory.md) when [created](#creating-instance).
 
 The `ValueSerdeFactory` is used in [validateSerdesCanHandleSchemas](#validateSerdesCanHandleSchemas).
 

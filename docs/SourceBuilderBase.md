@@ -1,6 +1,6 @@
 # SourceBuilderBase
 
-`SourceBuilderBase` is an [abstraction](#contract) of [source builders](#implementations) (that `KSPlanBuilder` uses when [visitTableSource](KSPlanBuilder.md#visitTableSource)).
+`SourceBuilderBase` is an [abstraction](#contract) of [source builders](#implementations) (that `KSPlanBuilder` uses when [visiting a TableSource](KSPlanBuilder.md#visitTableSource)).
 
 ## Contract
 
@@ -49,7 +49,7 @@ Used when:
 * [SourceBuilder](SourceBuilder.md)
 * [SourceBuilderV1](SourceBuilderV1.md)
 
-## <span id="buildTable"> buildTable
+## <span id="buildTable"> Building KTableHolder
 
 ```java
 KTableHolder<GenericKey> buildTable(
@@ -60,13 +60,21 @@ KTableHolder<GenericKey> buildTable(
   PlanInfo planInfo)
 ```
 
-`buildTable` gets a [PhysicalSchema](#getPhysicalSchema), a [ValueSerde](#getValueSerde) and a [KeySerde](#getKeySerde) (`Serde<GenericKey>`s).
+`buildTable` gets a [PhysicalSchema](#getPhysicalSchema), a [ValueSerde](#getValueSerde) and a [KeySerde](#getKeySerde) (`Serde<GenericKey>`s) of the given [SourceStep](SourceStep.md).
 
-`buildTable` [buildSourceConsumed](#buildSourceConsumed) (with `AutoOffsetReset.EARLIEST` offset reset).
+`buildTable` [builds](#buildSourceConsumed) a `Consumed<GenericKey, GenericRow>` ([Kafka Streams]({{ book.kafka_streams }}/kstream/Consumed)) for the given [SourceStep](SourceStep.md) (with `AutoOffsetReset.EARLIEST` offset reset).
 
-`buildTable` [buildTableMaterialized](#buildTableMaterialized) and [buildKTable](#buildKTable) (a `KTable<GenericKey, GenericRow>`).
+`buildTable` [tableChangeLogOpName](#tableChangeLogOpName).
+
+`buildTable` [builds](#buildTableMaterialized) a `Materialized<GenericKey, GenericRow, KeyValueStore<Bytes, byte[]>>` ([Kafka Streams]({{ book.kafka_streams }}/kstream/Materialized)).
+
+`buildTable` [builds](#buildKTable) a `KTable<GenericKey, GenericRow>` ([Kafka Streams]({{ book.kafka_streams }}/kstream/KTable)).
+
+`buildTable` requests the given [SourceStep](SourceStep.md) for the [LogicalSchema](SourceStep.md#getSourceSchema) and [adds pseudocolumns](#withPseudoColumnsToMaterialize).
 
 In the end, `buildTable` creates a `KTableHolder` (with the `KTable`).
+
+---
 
 `buildTable` is used when:
 

@@ -12,7 +12,7 @@ The name of `KafkaFormat` is `KAFKA`.
 
 Used when:
 
-* `Analyzer.Visitor` is requested to [validate](analyzer/Analyzer.Visitor.md#validate)
+* `Analyzer.Visitor` is requested to [validate](../analyzer/Analyzer.Visitor.md#validate)
 * `SerdeFeaturesFactory` is requested to [formatSupportsMultipleColumns](SerdeFeaturesFactory.md#formatSupportsMultipleColumns)
 * `FormatFactory` is used to [look up a Format](FormatFactory.md#fromName)
 
@@ -64,7 +64,7 @@ boolean supportsKeyType(
 
 ---
 
-`supportsKeyType` holds `true` if the given [SqlType](types/SqlType.md) meets the following requirements:
+`supportsKeyType` holds `true` if the given [SqlType](../types/SqlType.md) meets the following requirements:
 
-* It is a [SqlPrimitiveType](types/SqlPrimitiveType.md)
+* It is a [SqlPrimitiveType](../types/SqlPrimitiveType.md)
 * There is [Serde available](KafkaSerdeFactory.md#containsSerde)

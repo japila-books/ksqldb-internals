@@ -54,13 +54,13 @@ SchemaKTable<?> buildTable(
   Stacker contextStacker)
 ```
 
-`buildTable` requests the given [DataSource](DataSource.md) for the [KeyFormat](KeyFormat.md) (through the [KsqlTopic](DataSource.md#getKsqlTopic)).
+`buildTable` requests the given [DataSource](DataSource.md) for the [KeyFormat](formats/KeyFormat.md) (through the [KsqlTopic](DataSource.md#getKsqlTopic)).
 
 `buildTable` [determinePseudoColumnVersionToUse](#determinePseudoColumnVersionToUse).
 
-`buildTable` creates a [TableSource](ExecutionStepFactory.md#tableSource) (or legacy [TableSourceV1](ExecutionStepFactory.md#tableSourceV1) based on whether [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED) is enabled or not, respectively).
+`buildTable` [creates a TableSource](ExecutionStepFactory.md#tableSource) (or legacy [TableSourceV1](ExecutionStepFactory.md#tableSourceV1) based on whether [ksql.rowpartition.rowoffset.enabled](KsqlConfig.md#KSQL_ROWPARTITION_ROWOFFSET_ENABLED) is enabled or not, respectively).
 
-In the end, `buildTable` [resolves the schema](#resolveSchema) and [creates a SchemaKTable](#schemaKTable) (for the `SourceStep<KTableHolder<GenericKey>>`).
+In the end, `buildTable` [resolves the schema](#resolveSchema) and [creates a SchemaKTable](#schemaKTable) (for the [TableSource](TableSource.md) of `KTableHolder` of `GenericKey`s).
 
 ## <span id="schemaKStream"> Creating SchemaKStream
 

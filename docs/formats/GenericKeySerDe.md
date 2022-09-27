@@ -11,9 +11,9 @@
 
 `GenericKeySerDe` is created when:
 
-* `CreateSourceFactory` is [created](CreateSourceFactory.md#keySerdeFactory)
+* `CreateSourceFactory` is [created](../CreateSourceFactory.md#keySerdeFactory)
 * `InsertsSubscriber` is requested to `createInsertsSubscriber`
 * `InsertValuesExecutor` is created
 * `KafkaConsumerFactory` is requested to create a `KafkaConsumer`
 * `MaterializationProviderBuilderFactory` is requested to `buildMaterializationProvider`
-* `RuntimeBuildContext` utility is used to [create a RuntimeBuildContext](RuntimeBuildContext.md#of)
+* `RuntimeBuildContext` utility is used to [create a RuntimeBuildContext](../RuntimeBuildContext.md#of)

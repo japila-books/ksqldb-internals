@@ -1306,6 +1306,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/ClusterStatusResource/</loc>
+         <lastmod>2022-09-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/Command/</loc>
          <lastmod>2022-09-28</lastmod>
          <changefreq>daily</changefreq>
@@ -1377,6 +1382,11 @@
     </url>
     <url>
          <loc>https://books.japila.pl/ksqldb-internals/rest/ExplainExecutor/</loc>
+         <lastmod>2022-09-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://books.japila.pl/ksqldb-internals/rest/HeartbeatAgent/</loc>
          <lastmod>2022-09-28</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -392,6 +392,7 @@ nav:
     - RuntimeBuildContext: RuntimeBuildContext.md
   - REST:
     - rest/index.md
+    - ClusterStatusResource: rest/ClusterStatusResource.md
     - Command: rest/Command.md
     - CommandIdAssigner: rest/CommandIdAssigner.md
     - CommandQueue: rest/CommandQueue.md
@@ -409,6 +410,7 @@ nav:
     - DistributingExecutor: rest/DistributingExecutor.md
     - Executable: rest/Executable.md
     - ExplainExecutor: rest/ExplainExecutor.md
+    - HeartbeatAgent: rest/HeartbeatAgent.md
     - InsertsStreamEndpoint: rest/InsertsStreamEndpoint.md
     - InteractiveStatementExecutor: rest/InteractiveStatementExecutor.md
     - InternalKsqlClientFactory: rest/InternalKsqlClientFactory.md

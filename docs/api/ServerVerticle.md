@@ -46,7 +46,7 @@ URI      | HTTP Method | Handler
 ---------|-------------|--------
  `/` | `GET` | `ServerVerticle::handleInfoRedirect`
  `/close-query` | `POST` | `CloseQueryHandler`
- `/clusterStatus` | `GET` | `handleClusterStatusRequest`
+ `/clusterStatus` | `GET` | [handleClusterStatusRequest](#handleClusterStatusRequest)
  `/healthcheck` | `GET` | `handleHealthcheckRequest`
  `/heartbeat` | `POST` | `handleHeartbeatRequest`
  `/info` | `GET` | [handleInfoRequest](#handleInfoRequest)
@@ -83,6 +83,19 @@ content-type: application/json
         "stream/`KSQL_PROCESSING_LOG`/create": "SUCCESS"
     }
 }
+```
+
+### <span id="handleClusterStatusRequest"> handleClusterStatusRequest
+
+```java
+void handleClusterStatusRequest(
+  RoutingContext routingContext)
+```
+
+`handleClusterStatusRequest` requests the [Endpoints](#endpoints) to [executeClusterStatus](Endpoints.md#executeClusterStatus).
+
+```console
+$ http -b http://localhost:8088/clusterStatus
 ```
 
 ### <span id="handleInfoRequest"> handleInfoRequest

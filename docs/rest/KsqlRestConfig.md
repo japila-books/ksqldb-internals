@@ -1,5 +1,15 @@
 # KsqlRestConfig
 
+## <span id="KSQL_HEARTBEAT_ENABLE_CONFIG"><span id="ksql.heartbeat.enable"> ksql.heartbeat.enable
+
+Enables [heartheat agent](KsqlRestApplication.md#initializeHeartbeatAgent) (and possibly [lag reporting](KsqlRestApplication.md#initializeLagReportingAgent) with [ksql.lag.reporting.enable](#KSQL_LAG_REPORTING_ENABLE_CONFIG) enabled)
+
+Default: `false`
+
+Used when:
+
+* `KsqlRestApplication` is requested to initialize [HeartbeatAgent](KsqlRestApplication.md#initializeHeartbeatAgent) and [LagReportingAgent](KsqlRestApplication.md#initializeLagReportingAgent)
+
 ## <span id="DISTRIBUTED_COMMAND_RESPONSE_TIMEOUT_MS_CONFIG"><span id="ksql.server.command.response.timeout.ms"> ksql.server.command.response.timeout.ms
 
 How long to wait for a distributed command to be executed by the local node before returning a response

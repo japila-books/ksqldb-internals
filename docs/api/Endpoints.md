@@ -42,6 +42,19 @@ Used when:
 
 * `ServerVerticle` is requested to [handle /inserts-stream REST endpoint](ServerVerticle.md#setupRouter)
 
+### <span id="executeClusterStatus"> executeClusterStatus
+
+```java
+CompletableFuture<EndpointResponse> executeClusterStatus(
+  ApiSecurityContext apiSecurityContext)
+```
+
+See [KsqlServerEndpoints](../rest/KsqlServerEndpoints.md#executeClusterStatus)
+
+Used when:
+
+* `ServerVerticle` is requested to [handle /clusterStatus](ServerVerticle.md#handleClusterStatusRequest)
+
 ### <span id="executeKsqlRequest"> Executing KsqlRequest
 
 ```java

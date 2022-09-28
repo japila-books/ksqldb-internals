@@ -13,7 +13,7 @@
 * [StreamedQueryResource](#streamedQueryResource)
 * <span id="serverInfoResource"> `ServerInfoResource`
 * <span id="heartbeatResource"> `HeartbeatResource`
-* <span id="clusterStatusResource"> `ClusterStatusResource`
+* [ClusterStatusResource](#clusterStatusResource)
 * <span id="statusResource"> `StatusResource`
 * <span id="lagReportingResource"> `LagReportingResource`
 * <span id="healthCheckResource"> `HealthCheckResource`
@@ -26,6 +26,12 @@
 `KsqlServerEndpoints` is created when:
 
 * `KsqlRestApplication` is requested to [startAsync](KsqlRestApplication.md#startAsync)
+
+### <span id="clusterStatusResource"> ClusterStatusResource
+
+`KsqlServerEndpoints` can be given a [ClusterStatusResource](ClusterStatusResource.md) when [created](#creating-instance).
+
+If given, the `ClusterStatusResource` is used in [executeClusterStatus](#executeClusterStatus).
 
 ### <span id="ksqlEngine"> KsqlEngine
 
@@ -176,3 +182,18 @@ void executeWebsocketStream(
 ---
 
 `executeWebsocketStream` requests the [WSQueryEndpoint](#wsQueryEndpoint) to [executeStreamQuery](WSQueryEndpoint.md#executeStreamQuery).
+
+## <span id="executeClusterStatus"> executeClusterStatus
+
+```java
+CompletableFuture<EndpointResponse> executeClusterStatus(
+  ApiSecurityContext apiSecurityContext)
+```
+
+`executeClusterStatus` is part of the [Endpoints](../api/Endpoints.md#executeClusterStatus) abstraction.
+
+---
+
+`executeClusterStatus` requests the [ClusterStatusResource](#clusterStatusResource) to [checkClusterStatus](ClusterStatusResource.md#checkClusterStatus).
+
+In case [ClusterStatusResource](#clusterStatusResource) is not defined, `executeClusterStatus` returns `NOT_FOUND` HTTP response back.

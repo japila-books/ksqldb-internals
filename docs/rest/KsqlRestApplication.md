@@ -277,6 +277,20 @@ void maybeCreateProcessingLogStream(
 
 `maybeCreateProcessingLogStream`...FIXME
 
+## <span id="initializeHeartbeatAgent"> Initializing HeartbeatAgent
+
+```java
+Optional<HeartbeatAgent> initializeHeartbeatAgent(
+  KsqlRestConfig restConfig,
+  KsqlEngine ksqlEngine,
+  ServiceContext serviceContext,
+  Optional<LagReportingAgent> lagReportingAgent)
+```
+
+With [ksql.heartbeat.enable](KsqlRestConfig.md#KSQL_HEARTBEAT_ENABLE_CONFIG) enabled, `initializeHeartbeatAgent` builds a [HeartbeatAgent](HeartbeatAgent.md).
+
+Otherwise, `initializeHeartbeatAgent` does nothing and returns no `HeartbeatAgent`.
+
 ## Logging
 
 Enable `ALL` logging level for `io.confluent.ksql.rest.server.KsqlRestApplication` logger to see what happens inside.

@@ -42,26 +42,26 @@ Router setupRouter()
 
 `setupRouter` registers the query handlers.
 
-URI      | HTTP Method | Handler | Produces
----------|-------------|---------|---------
- `/` | `GET` | `ServerVerticle::handleInfoRedirect` |
- `/close-query` | `POST` | `CloseQueryHandler` |
- `/clusterStatus` | `GET` | `handleClusterStatusRequest` |
- `/healthcheck` | `GET` | `handleHealthcheckRequest` |
- `/heartbeat` | `POST` | `handleHeartbeatRequest` |
- `/info` | `GET` | [handleInfoRequest](#handleInfoRequest) |
- `/inserts-stream` | `POST` | `InsertsStreamHandler` |
- `/is_valid_property/:property` | `GET` | `handleIsValidPropertyRequest` |
- `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest) |
- `/ksql/terminate` | `POST` | `handleTerminateRequest` |
- `/lag` | `POST` | `handleLagReportRequest` |
- `/query` | `POST` | [handleQueryRequest](#handleQueryRequest) or [QueryStreamHandler](QueryStreamHandler.md) based on [ksql.endpoint.migrate.query](../KsqlConfig.md#KSQL_ENDPOINT_MIGRATE_QUERY_CONFIG) |
- `/query-stream` | `POST` | [QueryStreamHandler](QueryStreamHandler.md) |
- `/status/:type/:entity/:action` | `GET` | `handleStatusRequest` |
- `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest) |
- `/v1/metadata` | `GET` | `handleServerMetadataRequest` |
- `/v1/metadata/id` | `GET` | `handleServerMetadataClusterIdRequest` |
- `/ws/query` | `GET` | [handleWebsocket](#handleWebsocket) | `application/vnd.ksql.v1+json`<br>`application/json`
+URI      | HTTP Method | Handler
+---------|-------------|--------
+ `/` | `GET` | `ServerVerticle::handleInfoRedirect`
+ `/close-query` | `POST` | `CloseQueryHandler`
+ `/clusterStatus` | `GET` | `handleClusterStatusRequest`
+ `/healthcheck` | `GET` | `handleHealthcheckRequest`
+ `/heartbeat` | `POST` | `handleHeartbeatRequest`
+ `/info` | `GET` | [handleInfoRequest](#handleInfoRequest)
+ `/inserts-stream` | `POST` | `InsertsStreamHandler`
+ `/is_valid_property/:property` | `GET` | `handleIsValidPropertyRequest`
+ `/ksql` | `POST` | [handleKsqlRequest](#handleKsqlRequest)
+ `/ksql/terminate` | `POST` | `handleTerminateRequest`
+ `/lag` | `POST` | `handleLagReportRequest`
+ `/query` | `POST` | [handleQueryRequest](#handleQueryRequest) or [QueryStreamHandler](QueryStreamHandler.md) based on [ksql.endpoint.migrate.query](../KsqlConfig.md#KSQL_ENDPOINT_MIGRATE_QUERY_CONFIG)
+ `/query-stream` | `POST` | [QueryStreamHandler](QueryStreamHandler.md)
+ `/status/:type/:entity/:action` | `GET` | `handleStatusRequest`
+ `/status` | `GET` | [handleAllStatusesRequest](#handleAllStatusesRequest)
+ `/v1/metadata` | `GET` | `handleServerMetadataRequest`
+ `/v1/metadata/id` | `GET` | `handleServerMetadataClusterIdRequest`
+ `/ws/query` | `GET` | [handleWebsocket](#handleWebsocket)
 
 ### <span id="handleAllStatusesRequest"> handleAllStatusesRequest
 

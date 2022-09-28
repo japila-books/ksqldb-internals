@@ -466,3 +466,4 @@ nav:
     - CREATE TABLE AS SELECT: demo/create-table-as-select.md
     - Table isn't queryable: demo/table-isnt-queryable.md
     - Dealing with Deserialization Errors: demo/dealing-with-deserialization-errors.md
+    - YavaConf 2022: demo/yavaconf.md

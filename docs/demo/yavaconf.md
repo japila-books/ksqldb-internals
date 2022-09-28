@@ -19,8 +19,12 @@ SHOW TOPICS;
 ```
 
 ```sql
-CREATE STREAM names (name STRING)
-WITH (kafka_topic='names', partitions=1, value_format='kafka');
+CREATE STREAM names (
+  name STRING)
+WITH (
+  kafka_topic='names',
+  partitions=1,
+  value_format='kafka');
 ```
 
 ```sql
@@ -31,10 +35,19 @@ SELECT * FROM names;
 SELECT * FROM names EMIT CHANGES;
 ```
 
-```console
-echo yavaconf | kcat -P -b :9092 -t names
-echo java | kcat -P -b :9092 -t names
-```
+=== "KSQL"
+
+    ```sql
+    INSERT INTO names VALUES ('yavaconf');
+    INSERT INTO names VALUES ('java');
+    ```
+
+=== "Shell"
+
+    ```console
+    $ echo yavaconf | kcat -P -b :9092 -t names
+    $ echo java | kcat -P -b :9092 -t names
+    ```
 
 ```sql
 SHOW FUNCTIONS;
